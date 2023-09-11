@@ -4,8 +4,8 @@
   <ShortName>nanocosmos Docs</ShortName>
   <Description>Search nanocosmos Docs</Description>
   <InputEncoding>UTF-8</InputEncoding>
-  <Image width="16" height="16" type="image/x-icon">https://documentation.nanocosmos.de/img/favicon.ico</Image>
-  <Url type="text/html" method="get" template="https://documentation.nanocosmos.de/search?q={searchTerms}"/>
-  <Url type="application/opensearchdescription+xml" rel="self" template="https://documentation.nanocosmos.de/opensearch.xml" />
-  <moz:SearchForm>https://documentation.nanocosmos.de/</moz:SearchForm>
+  <Image width="16" height="16" type="image/x-icon">https://docs.nanocosmos.de/img/favicon.ico</Image>
+  <Url type="text/html" method="get" template="https://docs.nanocosmos.de/search?q={searchTerms}"/>
+  <Url type="application/opensearchdescription+xml" rel="self" template="https://docs.nanocosmos.de/opensearch.xml" />
+  <moz:SearchForm>https://docs.nanocosmos.de/</moz:SearchForm>
 </OpenSearchDescription>
