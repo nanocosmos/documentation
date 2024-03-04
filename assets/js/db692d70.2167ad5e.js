@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunknanocosomos_documentation=self.webpackChunknanocosomos_documentation||[]).push([[3436],{14800:e=>{e.exports=JSON.parse('{"name":"docusaurus-theme-search-typesense","id":"default"}')}}]);
