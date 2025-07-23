@@ -168,7 +168,7 @@ var source = {
         "apiurl": "https://bintu.nanocosmos.de", // optional
         "startQuality": "medium" // optional: high, medium-high, medium, medium-low, low
     },
-    // ABR is enabled by default with "deviationOfMean2"
+    // ABR is enabled by default with "deviationOfMean2" for group configuration
     "options": {
         "switch": {
             'method': 'server',
