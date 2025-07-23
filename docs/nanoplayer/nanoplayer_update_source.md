@@ -21,7 +21,7 @@ The updateSource method **always** expects a new source object as a parameter.
 
 As you may notice this object is similar to the structure of the `config` object you are using to set up the player. 
 
-**Example single stream source:**
+**Example single stream source:**{#updateSourceObject-single-stream-entry}
 
 ```js
 var source = {
@@ -56,7 +56,7 @@ var source = {
 }
 ```
 
-**Example multi stream source object with ABR:**
+**Example multi stream source object with ABR:**{#updateSourceObject-multi-stream-entries}
 
 ```js
 var source = {
@@ -156,7 +156,7 @@ var source = {
 }
 ```
 
-**Example stream group source object with ABR:**
+**Example stream group source object with ABR:**{#updateSourceObject-stream-group}
 
 ```js
 var source = {
@@ -183,7 +183,7 @@ var source = {
 
 ## updateSource API
 
-**Example updateSource call with entries:**
+**Example updateSource call with entries:**{#updateSourceCall-entries}
 
 ```javascript
 var source = {
@@ -225,7 +225,7 @@ player.updateSource(source).then(function(config) {
 });
 ```
 
-**Example updateSource call with stream group:**
+**Example updateSource call with stream group:**{#updateSourceCall-stream-group}
 
 ```javascript
 var source = {
