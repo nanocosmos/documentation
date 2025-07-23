@@ -156,9 +156,36 @@ var source = {
 }
 ```
 
+**Example stream group source object with ABR:**
+
+```js
+var source = {
+    "group": {
+        "id": "xxxxxxxx-zzzz-yyy-aaaa-aaabbbcccddd", // your stream group id
+        "security": {   // required for secure group playback
+            "jwtoken": "xxx" // your security token if applicable
+        },
+        "apiurl": "https://bintu.nanocosmos.de", // optional
+        "startQuality": "medium" // optional: high, medium-high, medium, medium-low, low
+    },
+    "options": {
+        "adaption": {
+            "rule": "deviationOfMean" // enable ABR
+        },
+        "switch": {
+            'method': 'server',
+            'pauseOnError': false,
+            'forcePlay': true,
+            'fastStart': false,
+            'timeout': 10,
+        }
+    }
+}
+```
+
 ## updateSource API
 
-**Example updateSource call:**
+**Example updateSource call with entries:**
 
 ```javascript
 var source = {
@@ -200,6 +227,27 @@ player.updateSource(source).then(function(config) {
 });
 ```
 
+**Example updateSource call with stream group:**
+
+```javascript
+var source = {
+    "group": {
+        "id": "xxxxxxxx-zzzz-yyy-aaaa-aaabbbcccddd", // your stream group id
+        "security": {   // required for secure group playback
+            "jwtoken": "xxx" // your security token if applicable
+        },
+        "startQuality": "high" // optional: high, medium-high, medium, medium-low, low
+    }
+}
+
+// player instance
+player.updateSource(source).then(function(config) {
+    console.log('update source with group ok with config: ' + JSON.stringify(config));
+}, function(error) {
+    console.log(error);
+});
+```
+
 ## updateSource Events
 With the release of the `updateSource` method there are also **4** events you should keep in mind:
 
@@ -216,4 +264,3 @@ With the release of the `updateSource` method there are also **4** events you sh
 :::info **Note:** 
 You can find more specific information on all player events [here](./nanoplayer_api#NanoPlayer..event_onUpdateSourceInit).
 :::
-
