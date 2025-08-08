@@ -4,6 +4,13 @@ title: Stream switching and ABR
 sidebar_label: Stream switching and ABR
 ---
 
+<div class="video-wrap">
+    <div class="video-container">
+        <iframe src="https://www.youtube.com/embed/gLlTmCBCQAk" frameborder="0" allowfullscreen></iframe>
+    </div>
+</div>
+*Click `PLAY` button to start*
+
 ## Multi stream configuration, integrated ABR and stream switching features
 
 The **nanoStream H5Live Player Version 4.3** is introducing new features related to stream switching and integrated adaptive bitrate playback enabling automatic and application/viewer controlled stream switching either separately or in combination.
