@@ -29,6 +29,7 @@ var config = {
     "metrics": {
         "accountId": "YOUR-METRICS-ACCOUNT-ID", // replace with your metrics account id
         "accountKey": "YOUR-METRICS-ACCOUNT-KEY", // replace with your metrics account key
+        "serverDomain": "glog1.nanocosmos.cloud", // default is "glog1.nanocosmos.de" if omitted
         "userId": "viewer1", // value can be changed per viewer
         "eventId": "event1", // value can be changed per event
         "statsInterval": 10, // statistics interval in seconds
