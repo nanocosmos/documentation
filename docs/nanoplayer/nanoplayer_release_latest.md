@@ -4,20 +4,20 @@ title: Latest Release
 sidebar_label: Latest
 ---
 
-## **[4.30.1]**
+## **[4.31.0]**
 
 ### **Release Notes**  
 
-This update resolves an issue on iOS 18.4+ that prevented video playback from starting when using HLS fallback mode. The issue affected WebView-based iOS apps that load the web application from local content, e.g. app bundle.
+In this release, we introduce the new config option `metrics.serverDomain`, which allows you to configure a custom white-label domain for nanoStream Cloud metrics and telemetry endpoints.
 
 ### **Changelog**
 
-### Fixed
+### Added
 
-- resolved an issue on iOS 18.4+ that prevented video playback from starting when using HLS fallback mode
+- option `metrics.serverDomain` enabling to configure a custom white-label domain name for nanoStream Cloud metrics/telemetry endpoints
 
 ### **Release Package**
 
-- [4.30.1](https://files.nanocosmos.de/index.php/s/Xn54ZSHSyakr3f9)
+- [4.31.0](https://files.nanocosmos.de/index.php/s/Xf9X46ctW3im7LB)
 - [latest 4.x](https://files.nanocosmos.de/index.php/s/4nndC45mcB6oSa6)
 - [latest](https://files.nanocosmos.de/index.php/s/2tpCzgRjNEZDzeP)

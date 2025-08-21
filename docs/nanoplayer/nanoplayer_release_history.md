@@ -6,6 +6,18 @@ sidebar_label: History
 
 # **NanoPlayer - Release History**
 
+## **[4.31.0]**
+
+### **Release Notes**  
+
+In this release, we introduce the new config option `metrics.serverDomain`, which allows you to configure a custom white-label domain for nanoStream Cloud metrics and telemetry endpoints.
+
+### **Changelog**
+
+### Added
+
+- option `metrics.serverDomain` enabling to configure a custom white-label domain name for nanoStream Cloud metrics/telemetry endpoints
+
 ## **[4.30.1]**
 
 ### **Release Notes**  
@@ -112,9 +124,8 @@ This version includes several improvements. Playback attempts on mobile devices 
 - playback start behaviour in iOS WebView apps requiring user interaction for video playback `mediaTypesRequiringUserActionForPlayback`
   - in case of a playback attempt rejected due to missing user interaction, the player will now emit error `1005 Playback must be initialized by user gesture.` early on
   - this enables the application to handle the condition faster by asking the user to interact
-  - see recommended settings for iOS WebView:[nanoplayer WebView iOS](./nanoplayer_webview#ios) 
+  - see recommended settings for iOS WebView:[nanoplayer WebView iOS](./nanoplayer_webview#ios)
   
-
 ## **[4.25.1]**
 
 ### **Release Notes**
