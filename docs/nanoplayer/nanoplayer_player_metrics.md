@@ -29,10 +29,11 @@ var config = {
     "metrics": {
         "accountId": "YOUR-METRICS-ACCOUNT-ID", // replace with your metrics account id
         "accountKey": "YOUR-METRICS-ACCOUNT-KEY", // replace with your metrics account key
-        "userId": "viewer1", // value can be changed per viewer
-        "eventId": "event1", // value can be changed per event
-        "statsInterval": 10, // statistics interval in seconds
-        "customField1": "CustomInfo1" // value can be changed
+        "userId": "viewer1", // OPTIONAL - value can be changed per viewer
+        "eventId": "event1", // OPTIONAL - value can be changed per event
+        "statsInterval": 10, // OPTIONAL - statistics interval in seconds
+        "customField1": "CustomInfo1" // OPTIONAL - value can be changed
+        "serverDomain": "YOUR-METRICS-WHITE-LABEL-DOMAIN", // OPTIONAL - default is "glog1.nanocosmos.de". SINCE 4.31.0
     },
     ...
 }
