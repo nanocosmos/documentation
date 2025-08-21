@@ -6,6 +6,18 @@ sidebar_label: History
 
 # **NanoPlayer - Release History**
 
+## **[4.31.0]**
+
+### **Release Notes**  
+
+In this release, we introduce the new config option `metrics.serverDomain`, which allows you to configure a custom white-label domain for nanoStream Cloud metrics and telemetry endpoints.
+
+### **Changelog**
+
+### Added
+
+- option `metrics.serverDomain` enabling to configure a custom white-label domain name for nanoStream Cloud metrics/telemetry endpoints
+
 ## **[4.30.1]**
 
 ### **Release Notes**  
@@ -112,9 +124,8 @@ This version includes several improvements. Playback attempts on mobile devices 
 - playback start behaviour in iOS WebView apps requiring user interaction for video playback `mediaTypesRequiringUserActionForPlayback`
   - in case of a playback attempt rejected due to missing user interaction, the player will now emit error `1005 Playback must be initialized by user gesture.` early on
   - this enables the application to handle the condition faster by asking the user to interact
-  - see recommended settings for iOS WebView:[nanoplayer WebView iOS](./nanoplayer_webview#ios) 
+  - see recommended settings for iOS WebView:[nanoplayer WebView iOS](./nanoplayer_webview#ios)
   
-
 ## **[4.25.1]**
 
 ### **Release Notes**
@@ -1629,7 +1640,7 @@ This release patches an issue with bintu sources. Now after a successful bintu c
 ### **Release Notes**
 
 With this release come new features and some patches. One feature is about firing 'onError' with new error codes in case of a setup error. See the docs for more information ([https://demo.nanocosmos.de/nanoplayer/docs/nanoplayer/NanoPlayer.html#toc21__anchor](https://demo.nanocosmos.de/nanoplayer/docs/nanoplayer/NanoPlayer.html#toc21__anchor)). Also a warnings will be fired if config properties are not valid or from wrong type.
-The other introduces a new metrics api which enables internal event logging and data aggregation with a nanocosmos backend. Please contact our sales team (sales@nanocosmos.de) for more information and see './js/nanoplayer-metrics-config.js' in the 'Demo Package'. This release also includes patches for IE/Edge regarding play stats and stable playback after viewport lost.
+The other introduces a new metrics api which enables internal event logging and data aggregation with a nanocosmos backend. Please contact our sales team (<sales@nanocosmos.de>) for more information and see './js/nanoplayer-metrics-config.js' in the 'Demo Package'. This release also includes patches for IE/Edge regarding play stats and stable playback after viewport lost.
 Now also 'Windows 10' will be detected correctly and on 'Destroy' pause will be fired only if playing.
 
 ### **Changelog**
@@ -1666,7 +1677,7 @@ Now also 'Windows 10' will be detected correctly and on 'Destroy' pause will be 
   - enables event logging and data aggregation
   - configurable via the new 'config.metrics' object, see [https://demo.nanocosmos.de/nanoplayer/docs/nanoplayer/NanoPlayer.html#toc20__anchor](https://demo.nanocosmos.de/nanoplayer/docs/nanoplayer/NanoPlayer.html#toc20__anchor)
   - disabled by default
-  - for more information contact our sales team: sales@nanocosmos.de
+  - for more information contact our sales team: <sales@nanocosmos.de>
   - NOTE: don't set if you have no account!
   - NOTE: if 'Demo Package' is used see './js/nanoplayer-metrics-config.js'!
 
@@ -1764,7 +1775,7 @@ This version brings a new feature. Now it's possible to change the source withou
   - the video element will be kept
   - pass the subobject 'source' of the config object
   - the Promise return's the new complete config
-  - see docs https://demo.nanocosmos.de/nanoplayer/docs/nanoplayer/NanoPlayer.html#updateSource__anchor
+  - see docs <https://demo.nanocosmos.de/nanoplayer/docs/nanoplayer/NanoPlayer.html#updateSource__anchor>
 
 ````javascript
 player.updateSource(source).then(function (config) {
@@ -2286,7 +2297,7 @@ reconnect: {
   - the delay in milliseconds before start connecting to the server
   - positive if a reconnect is imminent, otherwise zero
 - dispatch network error 4503: service unavailable
-- add performance marks with timestamps (see https://demo.nanocosmos.de/nanoplayer/docs/nanoplayer3/global.html#performancemarks),
+- add performance marks with timestamps (see <https://demo.nanocosmos.de/nanoplayer/docs/nanoplayer3/global.html#performancemarks>),
   the middle part of the name string is the elementId of the player container (not supported on Safari 11 OSX and iOS):
   - 'nano.[playerDivId]**.connecting'
   - 'nano.[playerDivId]**.connected'
