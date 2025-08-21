@@ -33,7 +33,7 @@ var config = {
         "eventId": "event1", // OPTIONAL - value can be changed per event
         "statsInterval": 10, // OPTIONAL - statistics interval in seconds
         "customField1": "CustomInfo1" // OPTIONAL - value can be changed
-        "serverDomain": "YOUR-METRICS-WHITE-LABEL-DOMAIN", // OPTIONAL - default is "glog1.nanocosmos.de". Please contact support team for other possible domains.
+        "serverDomain": "YOUR-METRICS-WHITE-LABEL-DOMAIN", // OPTIONAL - default is "glog1.nanocosmos.de". SINCE 4.31.0
     },
     ...
 }
