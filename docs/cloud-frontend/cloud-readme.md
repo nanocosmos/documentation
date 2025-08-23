@@ -117,7 +117,7 @@ After creating a new stream, you see an overview with all information you need t
 In this section you can see the `live playout URL`.
 **By clicking on it, you can also see a code snippet which is all you need to embed the H5Live Player with your stream into your web page**. 
    
-> To get more informations about the H5Live Player and its implementation, see our [documentation](https://docs.nanocosmos.de/docs/nanoplayer/nanoplayer_getting_started/).
+> To get more informations about the H5Live Player and its implementation, see our [documentation](../nanoplayer/nanoplayer_getting_started/).
 
 ![New Stream: Access Playout](../assets/cloud-frontend-v2/access-playout.png)
 

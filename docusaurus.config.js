@@ -1,8 +1,18 @@
 // @ts-check
 // Note: type annotations allow type checking and IDEs autocompletion
 
+
+const getConfig = require('./environment.setup');
+const { targetUrl, baseUrl, projectName, cname } = getConfig();
+
 const lightCodeTheme = require('prism-react-renderer').themes.github;
 const darkCodeTheme = require('prism-react-renderer').themes.dracula;
+
+
+console.log('targetUrl: ' + targetUrl);
+console.log('baseUrl: ' + baseUrl);
+console.log('projectName: ' + projectName);
+console.log('cname: ' + cname);
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
@@ -11,16 +21,17 @@ const config = {
   favicon: 'img/favicon.ico',
 
   // Set the production url of your site here
-  url: 'https://docs.nanocosmos.de',
+  url: targetUrl,
 
   // Set the /<baseUrl>/ pathname under which your site is served
   // For GitHub pages deployment, it is often '/<projectName>/'
-  baseUrl: '/',
+  baseUrl: baseUrl,
 
   // GitHub pages deployment config.
+  //
   // If you aren't using GitHub pages, you don't need these.
   organizationName: 'nanocosmos', // Usually your GitHub org/user name.
-  projectName: 'docs', // Usually your repo name.
+  projectName: projectName, // Usually your repo name. should be documentation or documentation-net
 
   // deploymentBranch: 'gh-pages', // default
   trailingSlash: false, //
@@ -93,7 +104,7 @@ const config = {
           alt: 'nanocosmos Logo',
           src: 'img/logo.svg',
           // srcDark: 'img/logo_dark.svg',
-          href: 'https://docs.nanocosmos.de',
+          href: targetUrl, // replace with variable
           target: '_self',
         },
         // Navigation Items

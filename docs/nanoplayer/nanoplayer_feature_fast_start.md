@@ -39,4 +39,4 @@ For adaptive bitrate (ABR) playback with fast start enabled it is recommended to
 
 ### More about the player configuration
 
-Please check examples on how to configure the player at the [Getting started](https://docs.nanocosmos.de/docs/nanoplayer/nanoplayer_getting_started/) section.
+Please check examples on how to configure the player at the [Getting started](../nanoplayer/nanoplayer_getting_started) section.

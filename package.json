@@ -1,6 +1,6 @@
 {
   "name": "nanocosomos-documentation",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "private": true,
   "scripts": {
     "docusaurus": "docusaurus",
@@ -24,6 +24,7 @@
     "acorn": "^8.14.0",
     "clsx": "^2.1.1",
     "docusaurus-theme-search-typesense": "^0.23.0-0",
+    "dotenv": "^17.2.0",
     "install": "^0.13.0",
     "npm": "^10.9.0",
     "prism-react-renderer": "^2.4.0",
