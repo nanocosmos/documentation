@@ -65,7 +65,7 @@ You can choose from three modes:
 :::tip buffer tweaks
 `balancedadaptive` and `fastadaptive` should not be used in combination with custom `tweaks.buffer` settings, as they manage buffer values automatically. 
 
-👉 Read more about Buffer Tweaks in our dedicated [H5Live Docs](https://docs.nanocosmos.de/docs/nanoplayer/nanoplayer_feature_latency_control_modes#buffer-tweaks).
+👉 Read more about Buffer Tweaks in our dedicated [H5Live Docs](../nanoplayer/nanoplayer_feature_latency_control_modes#buffer-tweaks).
 :::
 
 

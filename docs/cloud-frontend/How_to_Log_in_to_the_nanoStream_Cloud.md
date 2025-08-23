@@ -14,4 +14,4 @@ If you don't have an account yet, click *Sign Up*. You'll be redirected, enter y
 ![signing-up](../assets/cloud-frontend-v2/sign-up.png)
 
 
-I hope that this tutorial was helpful for you. For further assistance, check our [support page](https://docs.nanocosmos.de/), browse the [FAQs](https://docs.nanocosmos.de/docs/faq/faq_streaming/) or contact us.
+I hope that this tutorial was helpful for you. For further assistance, check our [support page](../cloud/support), browse the [FAQs](../faq/faq_streaming) or contact us.

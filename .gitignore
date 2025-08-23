@@ -1,6 +1,5 @@
 node_modules/
 build/
-yarn.lock
 .docusaurus
 .idea
 
@@ -91,7 +90,8 @@ web_modules/
 # Yarn Integrity file
 .yarn-integrity
 
-# dotenv environment variable files
+### dotenv ###
+.env
 
 # parcel-bundler cache (https://parceljs.org/)
 .cache

@@ -68,7 +68,7 @@ For most use cases the implementation of the player directly into the page is th
 
 #### 1. Creating the embedded page including the player on your side
 
-Please find information and examples on how to add the player to a webpage [here](https://docs.nanocosmos.de/docs/nanoplayer/nanoplayer_getting_started/).
+Please find information and examples on how to add the player to a webpage [here](../nanoplayer/nanoplayer_getting_started).
 
 #### 2. Embedding the player page in an iframe on a second page on the distribution side
 

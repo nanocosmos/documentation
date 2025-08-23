@@ -87,6 +87,6 @@ curl --location 'https://guardian.nanostream.cloud/referrer' \
 ```
 
 :::caution support
-For further assistance using nanoStream Guardian, use our [support form](https://www.nanocosmos.de/support), browse the [FAQs](https://docs.nanocosmos.de/docs/faq/faq_streaming/) or contact us via support(at)nanocosmos.de
+For further assistance using nanoStream Guardian, use our [support form](https://www.nanocosmos.de/support), browse the [FAQs](../faq/faq_streaming/) or contact us via support(at)nanocosmos.de
 
 :::

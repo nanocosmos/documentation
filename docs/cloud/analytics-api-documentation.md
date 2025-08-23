@@ -27,7 +27,7 @@ H5Live metrics routes offer a wide spectrum of information about everything conn
 
 ### Webcaster Metrics
 
-To get more information about the [nanoStream Webcaster](https://docs.nanocosmos.de/docs/webrtc/nanostream_webrtc_introduction) usage in practice and it's benefits regarding additional meta data for ingest metrics, consider taking a look at these routes.
+To get more information about the [nanoStream Webcaster](../webrtc/nanostream_webrtc_introduction) usage in practice and it's benefits regarding additional meta data for ingest metrics, consider taking a look at these routes.
 
 ### Viewer Metrics
 
@@ -39,7 +39,7 @@ Being able to monitor your live streams is a great idea to observe live performa
 
 ### Alerting
 
-The alerting routes provide an overview of either your current and historical alerts, recommended actions and their potential causes. For more details about Alerting, please refer to our [Stream Health Monitoring Guide](https://docs.nanocosmos.de/docs/analytics/monitoring).
+The alerting routes provide an overview of either your current and historical alerts, recommended actions and their potential causes. For more details about Alerting, please refer to our [Stream Health Monitoring Guide](../analytics/monitoring).
 
 ### Successful Playback Start Ratio
 
