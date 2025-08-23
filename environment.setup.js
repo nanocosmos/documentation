@@ -33,7 +33,8 @@ function getEnvironmentConfig() {
     const path = require('path');
     
     cname = targetUrlMap[deployTarget].replace(/^https?:\/\//, '');
-    fs.writeFileSync(path.join(__dirname, 'build', 'CNAME'), cname);
+    fs.writeFileSync(path.join(__dirname, 'static', 'CNAME'), cname);
+
   } else if (process.env.GITLAB_CI === 'true' && process.env.CI_ENVIRONMENT_URL) {
     projectName = process.env.CI_PROJECT_NAME;
     deployTarget = 'gitlab-ci';
