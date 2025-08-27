@@ -10,7 +10,7 @@ We will show you here how to easily setup your low latency live stream with just
 
 <div class="video-wrap">
     <div class="video-container">
-        <iframe src="https://www.youtube.com/embed/om3cOpV0WKo" frameborder="0" allowfullscreen></iframe>
+        <iframe src="https://www.youtube.com/embed/82m21Wc9MS8" frameborder="0" allowfullscreen></iframe>
     </div>
 </div>
 *Click `PLAY` button to start*

@@ -88,6 +88,13 @@ Push with URL encoded stream name parameters and VOD recording:<br/>
 
 ### Example of Setup using OBS Studio
 
+<div class="video-wrap">
+    <div class="video-container">
+        <iframe src="https://www.youtube.com/embed/vkQmMIQJl_4" frameborder="0" allowfullscreen></iframe>
+    </div>
+</div>
+*Click `PLAY` button to start*
+
 OBS Studio is able to support SRT streaming in versions 25.0 or newer and has the flexibility of fine tuning capabilities.
 You can refer more here: [SRT Protocol Streaming Guide](https://obsproject.com/de/kb/srt-protocol-streaming-guide#stream-with-srt. "OBS SRT Protocol Streaming Guide")
 

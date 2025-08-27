@@ -4,6 +4,13 @@ title: Support
 sidebar_label: Support
 ---
 
+<div class="video-wrap">
+    <div class="video-container">
+        <iframe src="https://www.youtube.com/embed/8XThnYENLXs" frameborder="0" allowfullscreen></iframe>
+    </div>
+</div>
+*Click `PLAY` button to start*
+
 ## Support Options
 
 If you experience any issues or have questions, there are certain ways to do some diagnostics on your end. 

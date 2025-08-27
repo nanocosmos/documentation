@@ -4,6 +4,13 @@ title: Changes Guide (v4 → v5)
 sidebar_label: Changes Guide (v4 → v5)
 ---
 
+<div class="video-wrap">
+    <div class="video-container">
+        <iframe src="https://www.youtube.com/embed/M5I6JaII_-E" frameborder="0" allowfullscreen></iframe>
+    </div>
+</div>
+*Click `PLAY` button to start*
+
 # Changes from Dashboard v4 to v5
 
 The **nanoStream Cloud Dashboard** has received a visual and structural refresh in version 5. This guide highlights the most relevant changes for users familiar with version 4. While there are no breaking changes or major workflow updates, a few UI improvements and new layout patterns were introduced to improve usability and clarity.
