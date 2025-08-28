@@ -31,10 +31,10 @@ Starting from version `3.7.1.0` onwards, beside the Analytics Dashboard, the nan
 
 Our Analytics API provides 2 different alerting routes:
 
-> [Click here](https://metrics-dev.nanocosmos.de/api/doc/v2/#tag/Alerting) to dive into the alerting routes and visit our nanoStream Analytics API developer documentation.
+> [Click here](https://metrics.nanocosmos.de/api/doc/v2/#tag/Alerting) to dive into the alerting routes and visit our nanoStream Analytics API developer documentation.
 
-- **[`GET` Ingest stream alerts/advices](https://metrics-dev.nanocosmos.de/api/doc/v2/#tag/Alerting/paths/~1api~1v2~1alerting~1ingest/get)**: Returns all detected alerts and advices for all live ingest streams in the last 15 minutes.
-- **[`POST` Custom ingest stream alerts/advices](https://metrics-dev.nanocosmos.de/api/doc/v2/#tag/Alerting/paths/~1api~1v2~1alerting~1ingest~1custom/post)**: Returns all detected alerts and advices for all live ingest streams in the last 15 minutes. Additionally, through this API route, it is possible to pass ingest streams that should either be excluded from detection or define ingest streams for which an alert should be triggered if they are detected as offline.
+- **[`GET` Ingest stream alerts/advices](https://metrics.nanocosmos.de/api/doc/v2/#tag/Alerting/paths/~1api~1v2~1alerting~1ingest/get)**: Returns all detected alerts and advices for all live ingest streams in the last 15 minutes.
+- **[`POST` Custom ingest stream alerts/advices](https://metrics.nanocosmos.de/api/doc/v2/#tag/Alerting/paths/~1api~1v2~1alerting~1ingest~1custom/post)**: Returns all detected alerts and advices for all live ingest streams in the last 15 minutes. Additionally, through this API route, it is possible to pass ingest streams that should either be excluded from detection or define ingest streams for which an alert should be triggered if they are detected as offline.
 
 #### via nanoStream Cloud Dashboard
 
