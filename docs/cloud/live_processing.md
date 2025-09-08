@@ -18,23 +18,17 @@ In the **[Enabled Packages](./organization_overview#enabled-packages)** section,
 To activate this feature or learn more about available plans, feel free to reach out via [nanocosmos.de/contact](https://www.nanocosmos.de/contact). We're happy to assist you in finding the best setup for your use case.
 :::
 
-<article class="margin-top--lg">
-    <section class="row list_ZO3j">
-        <article class="col col--6 margin-bottom--lg">
-            <a class="card padding--lg cardContainer_Uewx" href="../dashboard/live_processing">
-                <h2 class="text--truncate cardTitle_dwRT" title="Installation">Dashboard</h2>
-                <p class="text--truncate cardDescription_mCBT">
-                    To configure the live processing options, follow the steps during the stream creation.
-                </p>
-            </a></article>
-        <article class="col col--6 margin-bottom--lg">
-            <a class="card padding--lg cardContainer_Uewx"href="https://doc.pages.nanocosmos.de/bintuapi-docs/#operation/processing">
-                <h2 class="text--truncate cardTitle_dwRT" title="Configuration">Bintu API</h2>
-                <p class="text--truncate cardDescription_mCBT">
-                    To utilize the API requests, read more in the bintu docs.
-                </p>
-            </a></article>
-    </section>
+<article className="margin-vert--lg">
+  <Columns className="list_ZO3j" >
+    <Card className="col col--6 margin-horiz--md" href="../dashboard/live_processing">
+      <Card.Header title="Live Processing">Dashboard</Card.Header>
+      <Card.Body className="padding-vert--md">To configure the live processing options, follow the steps during the stream creation.</Card.Body>
+    </Card>
+    <Card className="col col--6 margin-horiz--md" href="https://doc.pages.nanocosmos.de/bintuapi-docs/#operation/processing">
+      <Card.Header title="Configuration">Bintu API</Card.Header>
+      <Card.Body className="padding-vert--md">To utilize the API requests, read more in the bintu docs.</Card.Body>
+    </Card>
+  </Columns>
 </article>
 
 ## Example Use Cases

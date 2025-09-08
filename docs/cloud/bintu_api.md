@@ -10,23 +10,17 @@ Bintu is the stream management dashboard and API for nanoStream Cloud and CDN. B
 
 You can manage your streams via the dashboard or the REST API:
 
-<article class="margin-top--lg">
-    <section class="row list_ZO3j">
-        <article class="col col--6 margin-bottom--lg">
-            <a class="card padding--lg cardContainer_Uewx" href="https://dashboard.nanostream.cloud/">
-                <h2 class="text--truncate cardTitle_dwRT" title="Installation">Dashboard</h2>
-                <p class="text--truncate cardDescription_mCBT">
-                    The nanoStream Cloud Dashboard is a web-based tool implemented and designed to provide users with an intuitive and comprehensive overview of their streaming activities.
-                </p>
-            </a></article>
-        <article class="col col--6 margin-bottom--lg">
-            <a class="card padding--lg cardContainer_Uewx"href="https://doc.pages.nanocosmos.de/bintuapi-docs/">
-                <h2 class="text--truncate cardTitle_dwRT" title="Configuration">Bintu API</h2>
-                <p class="text--truncate cardDescription_mCBT">
-                    bintu.live is a stream management platform used by nanoStream for end to end live streaming services. bintu live can be used to create, manage, group and tag live streams.
-                </p>
-            </a></article>
-    </section>
+<article className="margin-vert--lg">
+  <Columns className="list_ZO3j" >
+    <Card className="col col--6 margin-horiz--md" href="https://dashboard.nanostream.cloud/">
+      <Card.Header title="Installation">Dashboard</Card.Header>
+      <Card.Body className="padding-vert--md">The nanoStream Cloud Dashboard is a web-based tool implemented and designed to provide users with an intuitive and comprehensive overview of their streaming activities.</Card.Body>
+    </Card>
+    <Card className="col col--6 margin-horiz--md" href="https://doc.pages.nanocosmos.de/bintuapi-docs/">
+      <Card.Header title="Configuration">Bintu API</Card.Header>
+      <Card.Body className="padding-vert--md">bintu.live is a stream management platform used by nanoStream for end to end live streaming services. bintu live can be used to create, manage, group and tag live streams.</Card.Body>
+    </Card>
+  </Columns>
 </article>
 
 ## What do I need?

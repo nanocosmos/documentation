@@ -16,23 +16,17 @@ If you don’t have an account yet, you can [sign up](https://dashboard.nanostre
 👉  Check the [Authentication section](../dashboard/getting_started#authentication) for step-by-step guidance on creating an account, logging in, and requesting access from your system administrator.
 :::
 
-<article class="margin-top--lg">
-    <section class="row list_ZO3j">
-        <article class="col col--6 margin-bottom--lg">
-            <a class="card padding--lg cardContainer_Uewx" href="https://dashboard.nanostream.cloud/">
-                <h2 class="text--truncate cardTitle_dwRT" title="Installation">Dashboard</h2>
-                <p class="text--truncate cardDescription_mCBT">
-                    The nanoStream Cloud Dashboard is a web-based tool implemented and designed to provide users with an intuitive and comprehensive overview of their streaming activities.
-                </p>
-            </a></article>
-        <article class="col col--6 margin-bottom--lg">
-            <a class="card padding--lg cardContainer_Uewx"href="https://doc.pages.nanocosmos.de/bintuapi-docs/">
-                <h2 class="text--truncate cardTitle_dwRT" title="Configuration">Bintu API</h2>
-                <p class="text--truncate cardDescription_mCBT">
-                    bintu.live is a stream management platform used by nanoStream for end to end live streaming services. bintu live can be used to create, manage, group and tag live streams.
-                </p>
-            </a></article>
-    </section>
+<article className="margin-vert--lg">
+  <Columns className="list_ZO3j" >
+    <Card className="col col--6 margin-horiz--md" href="https://dashboard.nanostream.cloud/">
+      <Card.Header title="Installation">Dashboard</Card.Header>
+      <Card.Body className="padding-vert--md">The nanoStream Cloud Dashboard is a web-based tool implemented and designed to provide users with an intuitive and comprehensive overview of their streaming activities.</Card.Body>
+    </Card>
+    <Card className="col col--6 margin-horiz--md" href="https://doc.pages.nanocosmos.de/bintuapi-docs/">
+      <Card.Header title="Configuration">Bintu API</Card.Header>
+      <Card.Body className="padding-vert--md">bintu.live is a stream management platform used by nanoStream for end to end live streaming services. bintu live can be used to create, manage, group and tag live streams.</Card.Body>
+    </Card>
+  </Columns>
 </article>
 
 ### What you need
@@ -56,21 +50,17 @@ See our introduction videos and tutorials for step-by-step instructions!
 
 ### Create a new live stream
 
-<article class="margin-top--lg">
-    <section class="row list_ZO3j">
-        <article class="col col--6 margin-bottom--lg">
-            <a class="card padding--lg cardContainer_Uewx" href="../dashboard/start_streaming">
-                <h2>Create a new stream</h2>
-                <p>Learn how to set up and start your live stream with nanoStream.</p>
-            </a>
-        </article>
-        <article class="col col--6 margin-bottom--lg">
-            <a class="card padding--lg cardContainer_Uewx" href="../dashboard/stream_overview">
-                <h2>Stream Overview</h2>
-                <p>Understand how to read stream data.</p>
-            </a>
-        </article>
-    </section>
+<article className="margin-vert--lg">
+  <Columns className="list_ZO3j" >
+    <Card className="col col--6 margin-horiz--md" href="../dashboard/start_streaming">
+      <Card.Header title="Create a new stream" />
+      <Card.Body className="padding-vert--md">Learn how to set up and start your live stream with nanoStream.</Card.Body>
+    </Card>
+    <Card className="col col--6 margin-horiz--md" href="../dashboard/stream_overview">
+      <Card.Header title="Stream Overview"/>
+      <Card.Body className="padding-vert--md">Understand how to read stream data.</Card.Body>
+    </Card>
+  </Columns>
 </article>
 
 ## Start a live stream broadcast
