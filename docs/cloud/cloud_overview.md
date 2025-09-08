@@ -40,11 +40,11 @@ The platform includes a global Content Delivery Network, Adaptive Bitrate Player
 
 <article className="margin-vert--lg">
   <Columns className="list_ZO3j" >
-    <Card className="col col--6 margin-horiz--md" href="/docs/nanoplayer/nanoplayer_getting_started">
+    <Card className="col col--6 margin-horiz--md" href="../nanoplayer/nanoplayer_getting_started">
       <Card.Header title="Configuration">Getting Started</Card.Header>
       <Card.Body className="padding-vert--md">nanoStream H5Live is a client-server technology based on nanoStream Cloud and nanoStream H5Live Player (aka nanoPlayer).</Card.Body>
     </Card>
-    <Card className="col col--6 margin-horiz--md" href="https://doc.pages.nanocosmos.de/bintuapi-docs/#operation/processing">
+    <Card className="col col--6 margin-horiz--md" href="../nanoplayer/nanoplayer_feature_stream_switching">
 <Card.Header title="Installation">ABR & Stream Switching</Card.Header>
     <Card.Body className="padding-vert--md">The stream switching and integrated adaptive bitrate playback enables automatic and application/viewer controlled stream switching either separately or in combination.</Card.Body>
     </Card>
