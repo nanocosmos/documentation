@@ -1,0 +1,19 @@
+.row {
+    display: flex;
+    flex-wrap:nowrap;
+    /* align-items: center; */
+    justify-content: space-between;
+    flex-direction: row;
+    max-width: 97%;
+}
+
+@media only screen and (max-width: 996px) {
+    .row {
+        flex-direction: column;
+        padding-bottom: 0 !important;
+    }
+
+    .row > a {
+        margin-bottom: 2em;
+    }
+}

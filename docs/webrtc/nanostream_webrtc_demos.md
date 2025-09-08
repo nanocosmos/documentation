@@ -21,23 +21,17 @@ If you don’t have an account yet, you can [sign up](https://dashboard.nanostre
 3. Append the stream name to the sample pages' URLs using the `streamName` URL parameter.
 :::
 
-<article class="margin-top--lg">
-    <section class="row list_ZO3j">
-        <article class="col col--6 margin-bottom--lg">
-            <a class="card padding--lg cardContainer_Uewx" href="./nanostream_webrtc_demos#webcaster-samples">
-                <h2 class="text--truncate cardTitle_dwRT" title="Installation">Webcaster Samples</h2>
-                <p class="text--truncate cardDescription_mCBT">
-                    Find browser demos and examples how to implement the webcaster on your webpage.
-                </p>
-            </a></article>
-        <article class="col col--6 margin-bottom--lg">
-            <a class="card padding--lg cardContainer_Uewx" href="../dashboard/start_streaming#ingesting-with-the-nanostream-webcaster">
-                <h2 class="text--truncate cardTitle_dwRT" title="Configuration">Dashboard Integration</h2>
-                <p class="text--truncate cardDescription_mCBT">
-                    Use the Webcaster directly in the Cloud Dashboard.
-                </p>
-            </a></article>
-    </section>
+<article className="margin-vert--lg">
+  <Columns className="list_ZO3j" >
+    <Card className="col col--6 margin-horiz--md" href="./nanostream_webrtc_demos#webcaster-samples">
+      <Card.Header title="Installation">Webcaster Samples</Card.Header>
+      <Card.Body className="padding-vert--md">The nanoStream Cloud Dashboard is a web-based tool implemented and designed to provide users with an intuitive and comprehensive overview of their streaming activities.</Card.Body>
+    </Card>
+    <Card className="col col--6 margin-horiz--md" href="../dashboard/start_streaming#ingesting-with-the-nanostream-webcaster">
+      <Card.Header title="Configuration">Dashboard Integration</Card.Header>
+      <Card.Body className="padding-vert--md">Use the Webcaster directly in the Cloud Dashboard.</Card.Body>
+    </Card>
+  </Columns>
 </article>
 
 :::warning Live Transcoding

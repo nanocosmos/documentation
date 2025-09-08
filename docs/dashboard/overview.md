@@ -10,35 +10,27 @@ The intended audience of the nanoStream Dashboard includes streaming professiona
 
 This documentation explains the key features and how to use the dashboard efficiently.
 
-<article class="margin-top--lg">
-    <section class="row list_ZO3j">
-        <article class="col col--6 margin-bottom--lg">
-            <a class="card padding--lg cardContainer_Uewx" href="./getting_started">
-                <h2>Getting Started</h2>
-                <p>Learn how to create a nanoStream account and manage your streams easily.</p>
-            </a>
-        </article>
-        <article class="col col--6 margin-bottom--lg">
-            <a class="card padding--lg cardContainer_Uewx" href="./start_streaming">
-                <h2>Start Streaming</h2>
-                <p>Learn how to set up and start your live stream with nanoStream.</p>
-            </a>
-        </article>
-    </section>
-    <section class="row list_ZO3j">
-        <article class="col col--6 margin-bottom--lg">
-            <a class="card padding--lg cardContainer_Uewx" href="./stream_overview">
-                <h2>Stream Overview</h2>
-                <p>Understand how to read stream data.</p>
-            </a>
-        </article>
-            <article class="col col--6 margin-bottom--lg">
-            <a class="card padding--lg cardContainer_Uewx" href="./abr_transcoding">
-                <h2>Adaptive Bitrate</h2>
-                <p>Learn how adaptive bitrate streaming works and how to configure it.</p>
-            </a>
-        </article>
-    </section>
+<article className="margin-vert--lg">
+  <Columns className="list_ZO3j padding-bottom--lg" >
+      <Card className="col col--6 margin-horiz--md" href="./getting_started">
+      <Card.Header title="Getting Started"/>
+      <Card.Body className="padding-vert--md">Learn how to create a nanoStream account and manage your streams easily. </Card.Body>
+    </Card>
+    <Card className="col col--6 margin-horiz--md" href="./start_streaming">
+      <Card.Header title="Start Streaming"/>
+      <Card.Body className="padding-vert--md">Learn how to set up and start your live stream with nanoStream. </Card.Body>
+    </Card>
+  </Columns>
+  <Columns className="list_ZO3j padding-bottom--lg" >
+    <Card className="col col--6 margin-horiz--md" href="./stream_overview">
+      <Card.Header title="Start Streaming"/>
+      <Card.Body className="padding-vert--md">Understand how to read stream data.</Card.Body>
+    </Card>
+    <Card className="col col--6 margin-horiz--md" href="./abr_transcoding">
+      <Card.Header title="Adaptive Bitrate" />
+      <Card.Body className="padding-vert--md">Learn how adaptive bitrate streaming works and how to configure it.</Card.Body>
+    </Card>
+  </Columns>
 </article>
 
 ## Key features
