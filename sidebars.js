@@ -143,6 +143,7 @@ const sidebars = {
           "collapsed": false,
           "items": [
             "nanoplayer/nanoplayer_release_latest",
+            "nanoplayer/nanoplayer_release_latest_v4",
             "nanoplayer/nanoplayer_release_history"
           ]
         },

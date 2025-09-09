@@ -1,7 +1,7 @@
 ---
-id: nanoplayer_release_latest_v4
-title: Latest Release v4
-sidebar_label: Latest v4
+id: nanoplayer_release_latest
+title: Latest Release
+sidebar_label: Latest
 ---
 
 ## **[4.31.0]**
