@@ -1,5 +1,5 @@
 ---
-id: nanoplayer_feature_MOQ
+id: nanoplayer_feature_moq
 title: Media Over QUIC (MOQ)
 sidebar_label: Media Over QUIC (MOQ)
 ---
