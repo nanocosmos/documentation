@@ -122,6 +122,7 @@ const sidebars = {
           "collapsible": true,
           "collapsed": false,
           "items": [
+            "nanoplayer/nanoplayer_moq",
             "nanoplayer/nanoplayer_autoplay",
             "nanoplayer/nanoplayer_feature_fast_start",
             "nanoplayer/nanoplayer_feature_latency_control_modes",
