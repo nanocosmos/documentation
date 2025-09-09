@@ -19,7 +19,7 @@ sidebar_label: History
 This major release introduces Media over QUIC (MoQ) playback, bringing next-generation streaming with ultra-low latency and real-time playback powered by modern web technologies like QUIC and WebCodecs. This unlocks smoother, more interactive streaming experiences while still maintaining full compatibility with proven playback modes such as WebSocket/MSE and H5Live-HLS.
 Playback control has also been improved. You can now set the player volume directly at startup, and the player performs smarter connection checks to ensure QUIC compatibility before playback begins.
 We have optimized the default settings to deliver faster startup times, lower latency, and more reliable adaptive streaming. When multiple quality levels are available, the player will automatically use adaptive bitrate (ABR).
-Finally, we have cleaned up outdated and rarely used features. Flash player and legacy iOS<=9 native-HLS fallback modes have been removed, configuration options have been simplified, and older scaling modes have been retired to ensure a more consistent playback experience.
+Finally, we have cleaned up outdated and rarely used features. Flash player and legacy iOS ≤ 9 native-HLS fallback modes have been removed, configuration options have been simplified, and older scaling modes have been retired to ensure a more consistent playback experience.
 
 ### **Changelog**
 
