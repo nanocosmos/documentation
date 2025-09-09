@@ -153,6 +153,7 @@ const sidebars = {
           "collapsed": false,
           "items": [
             "nanoplayer/nanoplayer_api",
+            "nanoplayer/nanoplayer_api_v4",
             "nanoplayer/nanoplayer_api_errors",
           ]
         },
