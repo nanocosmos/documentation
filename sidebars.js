@@ -116,12 +116,14 @@ const sidebars = {
         "nanoplayer/nanoplayer_player_metrics",
         "nanoplayer/nanoplayer_iframe",
         "nanoplayer/nanoplayer_webview",
+        "nanoplayer/nanoplayer_v5_migration_guide",
         {
           "type": "category",
           "label": "Features",
           "collapsible": true,
           "collapsed": false,
           "items": [
+            "nanoplayer/nanoplayer_feature_moq",
             "nanoplayer/nanoplayer_autoplay",
             "nanoplayer/nanoplayer_feature_fast_start",
             "nanoplayer/nanoplayer_feature_latency_control_modes",
@@ -143,6 +145,7 @@ const sidebars = {
           "collapsed": false,
           "items": [
             "nanoplayer/nanoplayer_release_latest",
+            "nanoplayer/nanoplayer_release_latest_v4",
             "nanoplayer/nanoplayer_release_history"
           ]
         },
@@ -153,6 +156,7 @@ const sidebars = {
           "collapsed": false,
           "items": [
             "nanoplayer/nanoplayer_api",
+            "nanoplayer/nanoplayer_api_v4",
             "nanoplayer/nanoplayer_api_errors",
           ]
         },
