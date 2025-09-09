@@ -7,7 +7,7 @@ sidebar_label: NanoPlayer
 ## NanoPlayer {#NanoPlayer}
 NanoPlayer (H5Live) Public API Class 5.0.0
 
-**Kind**: global class  
+**Kind**: global className  
 **Version**: 5.0.0  
 ### new NanoPlayer(playerDivId) {#new_NanoPlayer_new}
 The constructor. The source can be loaded via script tag, AMD (requirejs) or CommonJS
@@ -72,7 +72,7 @@ The constructor. The source can be loaded via script tag, AMD (requirejs) or Com
 <!-- Example: load player with existing html video element -->
 <div id="playerDiv">
     <video id="myPlayer"></video>
-    <!-- HLS PLAYBACK ONLY uses 2 video elements for playback if more than one stream is configured, required for seamless stream switching -->
+    <!-- HLS PLAYBACK ONLY uses 2 video elements htmlFor playback if more than one stream is configured, required htmlFor seamless stream switching -->
     <video id="myPlayer2"></video>
 </div>
 <script>
@@ -122,11 +122,11 @@ The constructor. The source can be loaded via script tag, AMD (requirejs) or Com
     requirejs.config({
         paths: {
             // loads the player ...
-            // for a local copy of the minified player use a relative path e.g. 'js/nanoplayer.5.min'
+            // htmlFor a local copy of the minified player use a relative path e.g. 'js/nanoplayer.5.min'
             // if 'baseUrl' is defined a local path have to be relative to the base path
             nanoplayer: '//demo.nanocosmos.de/nanoplayer/api/release/nanoplayer.5.min.js'
         },
-        waitSeconds: 20, // timeout for loading modules
+        waitSeconds: 20, // timeout htmlFor loading modules
     });
     require('nanoplayer', function() {
         initPlayer();
@@ -174,7 +174,7 @@ Initializes the player with a given config object.
     </thead>
     <tbody>
         <tr>
-          <td>config</td><td><code><a href="#NanoPlayer..config">config</a></code></td><td><p>The config object for the player including sources, events, styles.</p></td>
+          <td>config</td><td><code><a href="#NanoPlayer..config">config</a></code></td><td><p>The config object htmlFor the player including sources, events, styles.</p></td>
         </tr>
     </tbody>
 
@@ -236,7 +236,7 @@ Unmutes the player.
 player.unmute();
 ```
 ### nanoPlayer.setVolume(volume) {#NanoPlayer+setVolume}
-Sets the volume of the player. NOT AVAILABLE FOR HLS PLAYBACK, see [<b>here</b>](https://developer.apple.com/library/archive/documentation/AudioVideo/Conceptual/Using_HTML5_Audio_Video/Device-SpecificConsiderations/Device-SpecificConsiderations.html#volume-control-in-javascript/) for more informations.
+Sets the volume of the player. NOT AVAILABLE FOR HLS PLAYBACK, see [<b>here</b>](https://developer.apple.com/library/archive/documentation/AudioVideo/Conceptual/Using_HTML5_Audio_Video/Device-SpecificConsiderations/Device-SpecificConsiderations.html#volume-control-in-javascript/) htmlFor more informations.
 
 **Kind**: instance method of [<code>NanoPlayer</code>](#NanoPlayer)  
 <table>
@@ -273,7 +273,7 @@ Updates the source of the player.
         <tr>
           <td>source</td><td><code>object</code></td><td></td><td><p>The object to configure the source to play, one of the following properties have to be set.</p></td>
         </tr><tr>
-          <td>[source.entries]</td><td><code><a href="#NanoPlayer..entry">Array.&lt;entry&gt;</a></code></td><td></td><td><p>The source entries array for a set of streams. USE INSTEAD OF SOURCE.H5LIVE. Used to configure stream entries. Can have one to many &#39;entry&#39; objects. Only one existing entry is similar than a single source. In this case no entries options are needed.</p></td>
+          <td>[source.entries]</td><td><code><a href="#NanoPlayer..entry">Array.&lt;entry&gt;</a></code></td><td></td><td><p>The source entries array htmlFor a set of streams. USE INSTEAD OF SOURCE.H5LIVE. Used to configure stream entries. Can have one to many &#39;entry&#39; objects. Only one existing entry is similar than a single source. In this case no entries options are needed.</p></td>
         </tr><tr>
           <td>[source.startIndex]</td><td><code>number</code></td><td><code>0</code></td><td><p>The index of the entry to start playback with. Can be in the range from 0 to &#39;entries.length-1&#39;.</p></td>
         </tr><tr>
@@ -289,11 +289,11 @@ Updates the source of the player.
         </tr><tr>
           <td>[source.options.switch.fastStart]</td><td><code>boolean</code></td><td><code>true</code></td><td><p>Only if method is &#39;server&#39;. Tries to accelerate the startup time of the new source. Default is true.</p></td>
         </tr><tr>
-          <td>[source.options.switch.timeout]</td><td><code>number</code></td><td><code>20</code></td><td><p>The timeout for the update source request in seconds. If reached the error 4006 will thrown in the <a href="NanoPlayer#~event:onUpdateSourceFail">&#39;onUpdateSourceFail&#39;</a> event. Default is 10 seconds, valid range is between 5 and 30.</p></td>
+          <td>[source.options.switch.timeout]</td><td><code>number</code></td><td><code>20</code></td><td><p>The timeout htmlFor the update source request in seconds. If reached the error 4006 will thrown in the <a href="NanoPlayer#~event:onUpdateSourceFail">&#39;onUpdateSourceFail&#39;</a> event. Default is 10 seconds, valid range is between 5 and 30.</p></td>
         </tr><tr>
           <td>[source.options.switch.tag]</td><td><code>string</code></td><td></td><td><p>A custom field that can be any string like &#39;stream-800k&#39; or &#39;720p&#39;. This tag will be returned in any completion event of the &#39;updateSource&#39; request like &#39;onUpdateSourceSuccess&#39;, &#39;onUpdateSourceFail&#39; and &#39;onUpdateSourceAbort&#39;.</p></td>
         </tr><tr>
-          <td>[source.options.adaption]</td><td><code>object</code></td><td></td><td><p>The object to set an adaption for switching.</p></td>
+          <td>[source.options.adaption]</td><td><code>object</code></td><td></td><td><p>The object to set an adaption htmlFor switching.</p></td>
         </tr><tr>
           <td>[source.options.adaption.rule]</td><td><code>string</code></td><td><code>&quot;none&quot;</code></td><td><p>The switch rule if multiple entries are defined. Possible values are &#39;deviationOfMean&#39; (ABR automatic), &#39;deviationOfMean2&#39; (ABR automatic) and &#39;none&#39; (default, means only manual stream switch via &#39;switchStream&#39; possible).</p></td>
         </tr><tr>
@@ -307,17 +307,17 @@ Updates the source of the player.
         </tr><tr>
           <td>[source.h5live.server.progressive]</td><td><code>string</code></td><td></td><td><p>The h5live progressive download url.</p></td>
         </tr><tr>
-          <td>[source.h5live.server.hls]</td><td><code>string</code></td><td></td><td><p>The h5live hls url. Have to be set for playback on iOS 10 or higher. iOS 9 or lower is not supported.</p></td>
+          <td>[source.h5live.server.hls]</td><td><code>string</code></td><td></td><td><p>The h5live hls url. Have to be set htmlFor playback on iOS 10 or higher. iOS 9 or lower is not supported.</p></td>
         </tr><tr>
           <td>[source.h5live.token]</td><td><code>string</code></td><td></td><td><p>The h5live server token.</p></td>
         </tr><tr>
-          <td>[source.h5live.rtmp]</td><td><code>object</code></td><td></td><td><p>The rtmp playout object for h5live playback.</p></td>
+          <td>[source.h5live.rtmp]</td><td><code>object</code></td><td></td><td><p>The rtmp playout object htmlFor h5live playback.</p></td>
         </tr><tr>
           <td>source.h5live.rtmp.url</td><td><code>string</code></td><td></td><td><p>The rtmp playout url. Have to include the domain, port and application e.g. &#39;rtmp://example.com:80/live&#39;.</p></td>
         </tr><tr>
           <td>source.h5live.rtmp.streamname</td><td><code>string</code></td><td></td><td><p>The rtmp streamname.</p></td>
         </tr><tr>
-          <td>[source.h5live.security]</td><td><code>object</code></td><td></td><td><p>The h5live security object for h5live playback.</p></td>
+          <td>[source.h5live.security]</td><td><code>object</code></td><td></td><td><p>The h5live security object htmlFor h5live playback.</p></td>
         </tr><tr>
           <td>source.h5live.security.token</td><td><code>string</code></td><td></td><td><p>The security service token.</p></td>
         </tr><tr>
@@ -550,7 +550,7 @@ if (!useAdaption) {
 player.setAdaption(adaption);
 ```
 ### nanoPlayer.requestFullscreen() ⇒ <code>Promise.&lt;(undefined\|error)&gt;</code> {#NanoPlayer+requestFullscreen}
-Request fullscreen mode for the player if not entered.
+Request fullscreen mode htmlFor the player if not entered.
 
 **Kind**: instance method of [<code>NanoPlayer</code>](#NanoPlayer)  
 #### Example
@@ -617,9 +617,9 @@ The ready event to pass in the 'config.events' object at the setup call. Fires i
 #### Example
 ```js
 // player instance of NanoPlayer
-var onReady = function (event) {
+var onReady = function (event) `{
     console.log('Ready: ' + JSON.stringify(event.data.config));
-}
+}`
 config.events.onReady = onReady;
 player.setup(config).then(function (config) {
     console.log('setup ok with config: ' + JSON.stringify(config));
@@ -675,10 +675,10 @@ The play event to pass in the 'config.events' object at the setup call. Fires if
 #### Example
 ```js
 // player instance of NanoPlayer
-var onPlay = function (event) {
+var onPlay = function (event) `{
     console.log('Playing');
     console.log('play stats: ' + JSON.stringify(event.data.stats));
-};
+}`;
 config.events.onPlay = onPlay;
 player.setup(config).then(function (config) {
     console.log('setup ok with config: ' + JSON.stringify(config));
@@ -722,11 +722,11 @@ The pause event to pass in the 'config.events' object at the setup call. Fires i
 #### Example
 ```js
 // player instance of NanoPlayer
-var onPause = function (event) {
+var onPause = function (event) `{
     console.log('Pause');
     if (event.data.reason !== 'normal') {
          alert('Paused with reason: ' + event.data.reason);
-    }
+    }`
 };
 config.events.onPause = onPause;
 player.setup(config).then(function (config) {
@@ -760,7 +760,7 @@ The load event to pass in the 'config.events' object at the setup call. Fires if
         </tr><tr>
           <td>data</td><td><code>object</code></td><td><p>The data object.</p></td>
         </tr><tr>
-          <td>data.connectDelay</td><td><code>number</code></td><td><p>The time in milliseconds to wait for initializing the connection to the server to get the stream. Is zero if no reconnect is imminent.</p></td>
+          <td>data.connectDelay</td><td><code>number</code></td><td><p>The time in milliseconds to wait htmlFor initializing the connection to the server to get the stream. Is zero if no reconnect is imminent.</p></td>
         </tr><tr>
           <td>state</td><td><code><a href="#NanoPlayer..state">state</a></code></td><td><p>The player state.</p></td>
         </tr>
@@ -771,9 +771,9 @@ The load event to pass in the 'config.events' object at the setup call. Fires if
 #### Example
 ```js
 // player instance of NanoPlayer
-var onLoading = function (event) {
+var onLoading = function (event) `{
     console.log('Loading with delay of ' + event.data.connectDelay + ' milliseconds');
-};
+}`;
 config.events.onLoading = onLoading;
 player.setup(config).then(function (config) {
     console.log('setup ok with config: ' + JSON.stringify(config));
@@ -929,13 +929,13 @@ The error event to pass in the 'config.events' object at the setup call. Fires i
 #### Example
 ```js
 // player instance of NanoPlayer
-var onError = function (event) {
+var onError = function (event) `{
     if (event.data.state) {
         alert('Startup Error: ' + event.data.code + ' ' + event.data.message + ' at ' + event.data.state.error + 'ms after load start');
-    }
-    else {
+    }`
+    else `{
         alert('Error: ' + event.data.code + ' ' + event.data.message);
-    }
+    }`
 };
 config.events.onError = onError;
 player.setup(config).then(function (config) {
@@ -1056,9 +1056,9 @@ The stats event to pass in the 'config.events' object at the setup call. Fires i
 #### Example
 ```js
 // player instance of NanoPlayer
-var onStats = function (event) {
+var onStats = function (event) `{
     console.log('Stats: ' + JSON.stringify(event.data.stats));
-};
+}`;
 config.events.onStats = onStats;
 player.setup(config).then(function (config) {
     console.log('setup ok with config: ' + JSON.stringify(config));
@@ -1104,9 +1104,9 @@ The metadata event to pass in the 'config.events' object at the setup call. The 
 #### Example
 ```js
 // player instance of NanoPlayer
-var onMetaData = function (event) {
+var onMetaData = function (event) `{
     console.log('MetaData: ' + JSON.stringify(event.data));
-};
+}`;
 config.events.onMetaData = onMetaData;
 player.setup(config).then(function (config) {
     console.log('setup ok with config: ' + JSON.stringify(config));
@@ -1148,9 +1148,9 @@ The mute event to pass in the 'config.events' object at the setup call. Fires if
 #### Example
 ```js
 // player instance of NanoPlayer
-var onMute = function (event) {
+var onMute = function (event) `{
     console.log('Muted with volume: ' + event.data.volume);
-};
+}`;
 config.events.onMute = onMute;
 player.setup(config).then(function (config) {
     console.log('setup ok with config: ' + JSON.stringify(config));
@@ -1192,9 +1192,9 @@ The unmute event to pass in the 'config.events' object at the setup call. Fires 
 #### Example
 ```js
 // player instance of NanoPlayer
-var onUnmute = function (event) {
+var onUnmute = function (event) `{
     console.log('Unmuted with volume: ' + event.data.volume);
-};
+}`;
 config.events.onUnmute = onUnmute;
 player.setup(config).then(function (config) {
     console.log('setup ok with config: ' + JSON.stringify(config));
@@ -1236,9 +1236,9 @@ The volume change event to pass in the 'config.events' object at the setup call.
 #### Example
 ```js
 // player instance of NanoPlayer
-var onVolumeChange = function (event) {
+var onVolumeChange = function (event) `{
     console.log('Volume: ' + event.data.volume);
-};
+}`;
 config.events.onVolumeChange = onVolumeChange;
 player.setup(config).then(function (config) {
     console.log('setup ok with config: ' + JSON.stringify(config));
@@ -1308,9 +1308,9 @@ The stream info event to pass in the 'config.events' object at the setup call. F
 #### Example
 ```js
 // player instance of NanoPlayer
-var onStreamInfo = function (event) {
+var onStreamInfo = function (event) `{
     console.log('StreamInfo: ' + JSON.stringify(event.data.streamInfo));
-};
+}`;
 config.events.onStreamInfo = onStreamInfo;
 player.setup(config).then(function (config) {
     console.log('setup ok with config: ' + JSON.stringify(config));
@@ -1374,9 +1374,9 @@ The stream info event to pass in the 'config.events' object at the setup call. F
 #### Example
 ```js
 // player instance of NanoPlayer
-var onStreamInfoUpdate = function (event) {
+var onStreamInfoUpdate = function (event) `{
     console.log('StreamInfo updated: ' + JSON.stringify(event.data.streamInfo));
-};
+}`;
 config.events.onStreamInfoUpdate = onStreamInfoUpdate;
 player.setup(config).then(function (config) {
     console.log('setup ok with config: ' + JSON.stringify(config));
@@ -1420,9 +1420,9 @@ The error event to pass in the 'config.events' object at the setup call. Fires i
 #### Example
 ```js
 // player instance of NanoPlayer
-var onWarning = function (event) {
+var onWarning = function (event) `{
     console.log('Warning: ' + event.data.message);
-};
+}`;
 config.events.onWarning = onWarning;
 player.setup(config).then(function (config) {
     console.log('setup ok with config: ' + JSON.stringify(config));
@@ -1524,11 +1524,11 @@ The event to signal that the update source request is initialized. This is alway
 #### Example
 ```js
 // player instance of NanoPlayer
-var onUpdateSourceInit = function (event) {
+var onUpdateSourceInit = function (event) `{
     console.log('update source init with source: ' + JSON.stringify(event.data.source) + ' and options: ' + JSON.stringify(event.data.options));
     console.log('update source tag: ' + event.data.tag);
     console.log('update source count: ' + event.data.count);
-};
+}`;
 config.events.onUpdateSourceInit = onUpdateSourceInit;
 player.setup(config).then(function (config) {
     console.log('setup ok with config: ' + JSON.stringify(config));
@@ -1584,9 +1584,9 @@ The event to signal that the update source request is succeeded. Fires if the so
 #### Example
 ```js
 // player instance of NanoPlayer
-var onUpdateSourceSuccess = function (event) {
+var onUpdateSourceSuccess = function (event) `{
     console.log('update source success with entry: ' + JSON.stringify(event.data.entry) + ', with tag: ' + event.data.tag + ' and count: ' + event.data.count);
-};
+}`;
 config.events.onUpdateSourceSuccess = onUpdateSourceSuccess;
 player.setup(config).then(function (config) {
     console.log('setup ok with config: ' + JSON.stringify(config));
@@ -1644,11 +1644,11 @@ The event to signal that the update source request is failed. Fired if an error 
 #### Example
 ```js
 // player instance of NanoPlayer
-var onUpdateSourceFail = function (event) {
+var onUpdateSourceFail = function (event) `{
     console.log('update source fail with entry: ' + JSON.stringify(event.data.entry) + ', with error code: ' + event.data.code + ' and error message: ' + event.data.message);
     console.log('update source tag: ' + event.data.tag);
     console.log('update source count: ' + event.data.count);
-};
+}`;
 config.events.onUpdateSourceFail = onUpdateSourceFail;
 player.setup(config).then(function (config) {
     console.log('setup ok with config: ' + JSON.stringify(config));
@@ -1706,11 +1706,11 @@ The event to signal that the update source request is aborted. Reasons can be an
 #### Example
 ```js
 // player instance of NanoPlayer
-var onUpdateSourceAbort = function (event) {
+var onUpdateSourceAbort = function (event) `{
     console.log('update source abort with entry: ' + JSON.stringify(event.data.entry) + ' and reason: ' + event.data.reason);
     console.log('tag: ' + event.data.tag);
     console.log('count: ' + event.data.count);
-};
+}`;
 config.events.onUpdateSourceAbort = onUpdateSourceAbort;
 player.setup(config).then(function (config) {
     console.log('setup ok with config: ' + JSON.stringify(config));
@@ -1751,7 +1751,7 @@ The event to signal that an stream switch request is initialized. Can be trigger
         </tr><tr>
           <td>data.options</td><td><code>object</code></td><td><p>The switch options object.</p></td>
         </tr><tr>
-          <td>data.tag</td><td><code>string</code></td><td><p>A static string in format: {data.entry.h5live.rtmp.streamname} + &#39; streamSwitch &#39; + {data.id}.</p></td>
+          <td>data.tag</td><td><code>string</code></td><td><p>A static string in format: `{data.entry.h5live.rtmp.streamname}` + &#39; streamSwitch &#39; + `{data.id}`.</p></td>
         </tr><tr>
           <td>data.count</td><td><code>number</code></td><td><p>The count of the switch stream request to identify the paired start and completion event. The start event is <a href="#NanoPlayer..event_onSwitchStreamInit">&#39;onSwitchStreamInit&#39;</a> and completion events are <a href="NanoPlayer~events:onSwitchStreamSuccess">&#39;onSwitchStreamSuccess&#39;</a>, <a href="NanoPlayer#~events:onSwitchStreamFail">&#39;onSwitchStreamFail&#39;</a> and <a href="NanoPlayer#~events:onSwitchStreamAbort">&#39;onSwitchStreamAbort&#39;</a></p></td>
         </tr><tr>
@@ -1768,11 +1768,11 @@ The event to signal that an stream switch request is initialized. Can be trigger
 #### Example
 ```js
 // player instance of NanoPlayer
-var onSwitchStreamInit = function (event) {
+var onSwitchStreamInit = function (event) `{
     console.log('switch stream init by rule ' + event.data.rule + ' from type ' + event.data.type + 'with entry: ' + JSON.stringify(event.data.entry) + ' and options: ' + JSON.stringify(event.data.options));
     console.log('switch stream tag: ' + event.data.tag);
     console.log('switch stream count: ' + event.data.count);
-};
+}`;
 config.events.onSwitchStreamInit = onSwitchStreamInit;
 player.setup(config).then(function (config) {
     console.log('setup ok with config: ' + JSON.stringify(config));
@@ -1811,7 +1811,7 @@ The event to signal that the switch stream request is succeeded. Fires if the so
         </tr><tr>
           <td>data.rule</td><td><code>string</code></td><td><p>The adaption switch rule.</p></td>
         </tr><tr>
-          <td>data.tag</td><td><code>string</code></td><td><p>A static string in format: {data.entry.h5live.rtmp.streamname} + &#39; streamSwitch &#39; + {data.id}.</p></td>
+          <td>data.tag</td><td><code>string</code></td><td><p>A static string in format: `{data.entry.h5live.rtmp.streamname}` + &#39; streamSwitch &#39; + `{data.id}`.</p></td>
         </tr><tr>
           <td>data.count</td><td><code>number</code></td><td><p>The count of the switch stream request to identify the paired start and completion event. The start event is <a href="#NanoPlayer..event_onSwitchStreamInit">&#39;onSwitchStreamInit&#39;</a> and completion events are <a href="NanoPlayer~events:onSwitchStreamSuccess">&#39;onSwitchStreamSuccess&#39;</a>, <a href="NanoPlayer#~events:onSwitchStreamFail">&#39;onSwitchStreamFail&#39;</a> and <a href="NanoPlayer#~events:onSwitchStreamAbort">&#39;onSwitchStreamAbort&#39;</a></p></td>
         </tr><tr>
@@ -1828,9 +1828,9 @@ The event to signal that the switch stream request is succeeded. Fires if the so
 #### Example
 ```js
 // player instance of NanoPlayer
-var onSwitchStreamSuccess = function (event) {
+var onSwitchStreamSuccess = function (event) `{
     console.log('switch stream success by rule ' + event.data.rule + ' from type ' + event.data.type + 'with entry: ' + JSON.stringify(event.data.entry) + ' with tag: ' + event.data.tag + ' and count: ' + event.data.count);
-};
+}`;
 config.events.onSwitchStreamSuccess = onSwitchStreamSuccess;
 player.setup(config).then(function (config) {
     console.log('setup ok with config: ' + JSON.stringify(config));
@@ -1871,7 +1871,7 @@ The event to signal that the switch stream request is failed. Fired if an error 
         </tr><tr>
           <td>data.message</td><td><code>object</code></td><td><p>The error message.</p></td>
         </tr><tr>
-          <td>data.tag</td><td><code>string</code></td><td><p>A static string in format: {data.entry.h5live.rtmp.streamname} + &#39; streamSwitch &#39; + {data.id}.</p></td>
+          <td>data.tag</td><td><code>string</code></td><td><p>A static string in format: `{data.entry.h5live.rtmp.streamname}` + &#39; streamSwitch &#39; + `{data.id}`.</p></td>
         </tr><tr>
           <td>data.count</td><td><code>number</code></td><td><p>The count of the switch stream request to identify the paired start and completion event. The start event is <a href="#NanoPlayer..event_onSwitchStreamInit">&#39;onSwitchStreamInit&#39;</a> and completion events are <a href="NanoPlayer~events:onSwitchStreamSuccess">&#39;onSwitchStreamSuccess&#39;</a>, <a href="NanoPlayer#~events:onSwitchStreamFail">&#39;onSwitchStreamFail&#39;</a> and <a href="NanoPlayer#~events:onSwitchStreamAbort">&#39;onSwitchStreamAbort&#39;</a></p></td>
         </tr><tr>
@@ -1888,11 +1888,11 @@ The event to signal that the switch stream request is failed. Fired if an error 
 #### Example
 ```js
 // player instance of NanoPlayer
-var onSwitchStreamFail = function (event) {
+var onSwitchStreamFail = function (event) `{
     console.log('switch stream fail by rule ' + event.data.rule + ' from type ' + event.data.type + 'with entry: ' + JSON.stringify(event.data.entry) + ' with error code: ' + event.data.code + ' and error message: ' + event.data.message);
     console.log('switch stream tag: ' + event.data.tag);
     console.log('switch stream count: ' + event.data.count);
-};
+}`;
 config.events.onSwitchStreamFail = onSwitchStreamFail;
 player.setup(config).then(function (config) {
     console.log('setup ok with config: ' + JSON.stringify(config));
@@ -1933,7 +1933,7 @@ The event to signal that the switch stream request is aborted. Reasons can be an
         </tr><tr>
           <td>data.reason</td><td><code>string</code></td><td><p>The abort reason. Possible values are &#39;equalsource&#39;, &#39;superseded&#39; and &#39;frequency&#39;.</p></td>
         </tr><tr>
-          <td>data.tag</td><td><code>string</code></td><td><p>A static string in format: {data.entry.h5live.rtmp.streamname} + &#39; streamSwitch &#39; + {data.id}.</p></td>
+          <td>data.tag</td><td><code>string</code></td><td><p>A static string in format: `{data.entry.h5live.rtmp.streamname}` + &#39; streamSwitch &#39; + `{data.id}`.</p></td>
         </tr><tr>
           <td>data.count</td><td><code>number</code></td><td><p>The count of the switch stream request to identify the paired start and completion event. The start event is <a href="NanoPlayer#~events:onSwitchStreamInit">&#39;onSwitchStreamInit&#39;</a>  and completion events are <a href="NanoPlayer#~events:onSwitchStreamSuccess">&#39;onSwitchStreamSuccess&#39;</a>, <a href="NanoPlayer#~events:onSwitchStreamFail">&#39;onSwitchStreamFail&#39;</a> and <a href="NanoPlayer#~events:onSwitchStreamAbort">&#39;onSwitchStreamAbort&#39;</a></p></td>
         </tr><tr>
@@ -1950,11 +1950,11 @@ The event to signal that the switch stream request is aborted. Reasons can be an
 #### Example
 ```js
 // player instance of NanoPlayer
-var onSwitchStreamAbort = function (event) {
+var onSwitchStreamAbort = function (event) `{
     console.log('switch stream abort by rule ' + event.data.rule + ' from type ' + event.data.type + 'with entry: ' + JSON.stringify(event.data.entry) + ' with reason: ' + event.data.reason));
     console.log('tag: ' + event.data.tag);
     console.log('count: ' + event.data.count);
-};
+}`;
 config.events.onSwitchStreamAbort = onSwitchStreamAbort;
 player.setup(config).then(function (config) {
     console.log('setup ok with config: ' + JSON.stringify(config));
@@ -2002,9 +2002,9 @@ The server info event to pass in the 'config.events' object at the setup call. F
 #### Example
 ```js
 // player instance of NanoPlayer
-var onServerInfo = function (event) {
+var onServerInfo = function (event) `{
     console.log('ServerInfo: ' + JSON.stringify(event.data.serverInfo));
-};
+}`;
 config.events.onServerInfo = onServerInfo;
 player.setup(config).then(function (config) {
     console.log('setup ok with config: ' + JSON.stringify(config));
@@ -2048,11 +2048,11 @@ The fullscreen change event to pass in the 'config.events' object at the setup c
 #### Example
 ```js
 // player instance of NanoPlayer
-var onFullscreenChange = function (event) {
+var onFullscreenChange = function (event) `{
     console.log('FullscreenChange');
     if (event.data.entered === true) {
          console.log('Fullscreen Mode Entered');
-    }
+    }`
 };
 config.events.onFullscreenChange = onFullscreenChange;
 player.setup(config).then(function (config) {
@@ -2062,7 +2062,7 @@ player.setup(config).then(function (config) {
 });
 ```
 ### "onActiveVideoElementChange" {#NanoPlayer..event_onActiveVideoElementChange}
-The event that fires when the active video element for playback has been created and if the element has been changed in case of a stream switch on iOS (HLS playback on iOS requires two video elements for a smooth stream switch behaviour).
+The event that fires when the active video element htmlFor playback has been created and if the element has been changed in case of a stream switch on iOS (HLS playback on iOS requires two video elements htmlFor a smooth stream switch behaviour).
 
 **Kind**: event emitted by [<code>NanoPlayer</code>](#NanoPlayer)  
 **See**: [config](#NanoPlayer..config)  
@@ -2097,14 +2097,14 @@ The event that fires when the active video element for playback has been created
 #### Example
 ```js
 // player instance of NanoPlayer
-var onActiveVideoElementChange = function (event) {
+var onActiveVideoElementChange = function (event) `{
     var activeVideoElement = event.data.activeVideoElement;
     var videoElementList = event.data.videoElementList;
     // IMPORTANT: Video elements should be treated as read-only and not be altered via properties or method calls.
     if (activeVideoElement) {
         console.log('ActiveVideoElementChange: The current active video element has the id: \'' + activeVideoElement.id + '\'');
-    }
-    for (var i = 0; i < videoElementList.length; i += 1) {
+    }`
+    htmlFor (var i = 0; i < videoElementList.length; i += 1) {
         console.log('ActiveVideoElementChange: The video element at index ' + i + ' has the id \'' + videoElementList[i].id + '\'');
     }
 };
@@ -2116,7 +2116,7 @@ player.setup(config).then(function (config) {
 });
 ```
 ### NanoPlayer~config : <code>object</code> {#NanoPlayer..config}
-The config object to pass as param for the 'setup' call.
+The config object to pass as param htmlFor the 'setup' call.
 
 **Kind**: inner typedef of [<code>NanoPlayer</code>](#NanoPlayer)  
 **See**: [NanoPlayer.setup](#NanoPlayer+setup)  
@@ -2132,13 +2132,13 @@ The config object to pass as param for the 'setup' call.
         <tr>
           <td>source</td><td><code>object</code></td><td></td><td><p>The object to configure the source to play, one of the following properties have to be set.</p></td>
         </tr><tr>
-          <td>[source.entries]</td><td><code><a href="#NanoPlayer..entry">Array.&lt;entry&gt;</a></code></td><td></td><td><p>The source entries array for a set of streams. USE INSTEAD OF SOURCE.H5LIVE. Used to configure stream entries. Can have one to many &#39;entry&#39; objects. Only one existing entry is similar than a single source. In this case no entries options are needed.</p></td>
+          <td>[source.entries]</td><td><code><a href="#NanoPlayer..entry">Array.&lt;entry&gt;</a></code></td><td></td><td><p>The source entries array htmlFor a set of streams. USE INSTEAD OF SOURCE.H5LIVE. Used to configure stream entries. Can have one to many &#39;entry&#39; objects. Only one existing entry is similar than a single source. In this case no entries options are needed.</p></td>
         </tr><tr>
           <td>[source.startIndex]</td><td><code>number</code></td><td><code>0</code></td><td><p>The index of the entry to start playback with. Can be in the range from 0 to &#39;entries.length-1&#39;.</p></td>
         </tr><tr>
           <td>[source.defaults]</td><td><code>object</code></td><td></td><td><p>The object to configure the source entries defaults.</p></td>
         </tr><tr>
-          <td>[source.defaults.service]</td><td><code>string</code></td><td></td><td><p>The defaults service. If a service is set, the <code>h5live.server</code> object and the <code>h5live.rtmp.url</code> in each entry can be omitted. In this case defaults will be applied internally. Values for <code>h5live.server</code> and/or <code>h5live.rtmp.url</code> that are defined explicitly in the entry have priority. The available value for <code>defaults.service</code> is <code>&#39;bintu&#39;</code> for using the standard <strong>nanoStream Cloud</strong>.</p></td>
+          <td>[source.defaults.service]</td><td><code>string</code></td><td></td><td><p>The defaults service. If a service is set, the <code>h5live.server</code> object and the <code>h5live.rtmp.url</code> in each entry can be omitted. In this case defaults will be applied internally. Values htmlFor <code>h5live.server</code> and/or <code>h5live.rtmp.url</code> that are defined explicitly in the entry have priority. The available value htmlFor <code>defaults.service</code> is <code>&#39;bintu&#39;</code> htmlFor using the standard <strong>nanoStream Cloud</strong>.</p></td>
         </tr><tr>
           <td>[source.group]</td><td><code>object</code></td><td></td><td><p>The object to configure a bintu stream group.</p></td>
         </tr><tr>
@@ -2150,7 +2150,7 @@ The config object to pass as param for the 'setup' call.
         </tr><tr>
           <td>[source.group.security]</td><td><code>object</code></td><td></td><td><p>The security object of the group.</p></td>
         </tr><tr>
-          <td>[source.group.security.jwtoken]</td><td><code>string</code></td><td></td><td><p>The JSON Web Token for security.</p></td>
+          <td>[source.group.security.jwtoken]</td><td><code>string</code></td><td></td><td><p>The JSON Web Token htmlFor security.</p></td>
         </tr><tr>
           <td>[source.general]</td><td><code>object</code></td><td></td><td><p>The object to configure general values.</p></td>
         </tr><tr>
@@ -2168,11 +2168,11 @@ The config object to pass as param for the 'setup' call.
         </tr><tr>
           <td>[source.options.switch.fastStart]</td><td><code>boolean</code></td><td><code>false</code></td><td><p>DEPRECATED. Only if method is &#39;server&#39;. Tries to accelerate the startup time of the new source. Default is false.</p></td>
         </tr><tr>
-          <td>[source.options.switch.timeout]</td><td><code>number</code></td><td><code>20</code></td><td><p>The timeout for the update source request in seconds. If reached the error 4006 will thrown in the <a href="NanoPlayer#~event:onUpdateSourceFail">&#39;onUpdateSourceFail&#39;</a> and the <a href="NanoPlayer#~event:onSwitchStreamFail">&#39;onSwitchStreamFail&#39;</a> event. Default is 20 seconds, valid range is between 5 and 30.</p></td>
+          <td>[source.options.switch.timeout]</td><td><code>number</code></td><td><code>20</code></td><td><p>The timeout htmlFor the update source request in seconds. If reached the error 4006 will thrown in the <a href="NanoPlayer#~event:onUpdateSourceFail">&#39;onUpdateSourceFail&#39;</a> and the <a href="NanoPlayer#~event:onSwitchStreamFail">&#39;onSwitchStreamFail&#39;</a> event. Default is 20 seconds, valid range is between 5 and 30.</p></td>
         </tr><tr>
           <td>[source.options.switch.tag]</td><td><code>string</code></td><td></td><td><p>A custom field that can be any string like &#39;stream-800k&#39; or &#39;720p&#39;. This tag will be returned in any completion event of the &#39;updateSource&#39; request like &#39;onUpdateSourceSuccess&#39;, &#39;onUpdateSourceFail&#39; and &#39;onUpdateSourceAbort&#39;.</p></td>
         </tr><tr>
-          <td>[source.options.adaption]</td><td><code>object</code></td><td></td><td><p>The object to set an adaption for switching.</p></td>
+          <td>[source.options.adaption]</td><td><code>object</code></td><td></td><td><p>The object to set an adaption htmlFor switching.</p></td>
         </tr><tr>
           <td>[source.options.adaption.rule]</td><td><code>string</code></td><td><code>&quot;none&quot;</code></td><td><p>The switch rule if multiple entries are defined. Possible values are &#39;deviationOfMean&#39; (ABR automatic), &#39;deviationOfMean2&#39; (ABR automatic) and &#39;none&#39; (default, means only manual stream switch via &#39;switchStream&#39; possible).</p></td>
         </tr><tr>
@@ -2188,17 +2188,17 @@ The config object to pass as param for the 'setup' call.
         </tr><tr>
           <td>[source.h5live.server.progressive]</td><td><code>string</code></td><td></td><td><p>The h5live progressive download url.</p></td>
         </tr><tr>
-          <td>[source.h5live.server.hls]</td><td><code>string</code></td><td></td><td><p>The h5live hls url. Have to be set for playback on iOS 10 or higher. iOS 9 or lower is not supported.</p></td>
+          <td>[source.h5live.server.hls]</td><td><code>string</code></td><td></td><td><p>The h5live hls url. Have to be set htmlFor playback on iOS 10 or higher. iOS 9 or lower is not supported.</p></td>
         </tr><tr>
           <td>[source.h5live.token]</td><td><code>string</code></td><td></td><td><p>The h5live server token.</p></td>
         </tr><tr>
-          <td>[source.h5live.rtmp]</td><td><code>object</code></td><td></td><td><p>The rtmp playout object for h5live playback.</p></td>
+          <td>[source.h5live.rtmp]</td><td><code>object</code></td><td></td><td><p>The rtmp playout object htmlFor h5live playback.</p></td>
         </tr><tr>
           <td>source.h5live.rtmp.url</td><td><code>string</code></td><td></td><td><p>The rtmp playout url. Have to include the domain, port and application e.g. &#39;rtmp://example.com:80/live&#39;.</p></td>
         </tr><tr>
           <td>source.h5live.rtmp.streamname</td><td><code>string</code></td><td></td><td><p>The rtmp streamname.</p></td>
         </tr><tr>
-          <td>[source.h5live.security]</td><td><code>object</code></td><td></td><td><p>The h5live security object for h5live playback.</p></td>
+          <td>[source.h5live.security]</td><td><code>object</code></td><td></td><td><p>The h5live security object htmlFor h5live playback.</p></td>
         </tr><tr>
           <td>source.h5live.security.token</td><td><code>string</code></td><td></td><td><p>The security service token.</p></td>
         </tr><tr>
@@ -2220,11 +2220,11 @@ The config object to pass as param for the 'setup' call.
         </tr><tr>
           <td>[playback]</td><td><code>object</code></td><td></td><td><p>The object to configure the playback.</p></td>
         </tr><tr>
-          <td>[playback.autoplay]</td><td><code>boolean</code></td><td><code>true</code></td><td><p>Enable/disable autoplay (default: true). <br /><b>IMPORTANT</b>: Browsers (mostly mobile) with stricter autoplay policy only allow autoplay with muted audio or within a user interaction (tap, click etc.). To allow autoplay in this case set the &#39;muted&#39; property to &#39;true&#39;. See our <a href="https://www.nanocosmos.de/blog/2018/03/autoplay-on-web-pages-with-h5live-player-for-ultra-low-latency-live-streams/"><b>nanocosmos-blog</b></a> for more informations.</p></td>
+          <td>[playback.autoplay]</td><td><code>boolean</code></td><td><code>true</code></td><td><p>Enable/disable autoPlay (default: true). <br /><b>IMPORTANT</b>: Browsers (mostly mobile) with stricter autoPlay policy only allow autoPlay with muted audio or within a user interaction (tap, click etc.). To allow autoPlay in this case set the &#39;muted&#39; property to &#39;true&#39;. See our <a href="https://www.nanocosmos.de/blog/2018/03/autoplay-on-web-pages-with-h5live-player-for-ultra-low-latency-live-streams/"><b>nanocosmos-blog</b></a> htmlFor more informations.</p></td>
         </tr><tr>
-          <td>[playback.automute]</td><td><code>boolean</code></td><td><code>true</code></td><td><p>Enable/disable automute (default: false). <br /><b>IMPORTANT</b>: Browsers (mostly mobile) with stricter autoplay policy only allow autoplay with muted audio or within a user interaction (tap, click etc.). With &#39;autoplay = true&#39; and this option enabled the player will be muted to allow autoplay in case the browsers policy restricted autoplay.</p></td>
+          <td>[playback.automute]</td><td><code>boolean</code></td><td><code>true</code></td><td><p>Enable/disable automute (default: false). <br /><b>IMPORTANT</b>: Browsers (mostly mobile) with stricter autoPlay policy only allow autoPlay with muted audio or within a user interaction (tap, click etc.). With &#39;autoPlay = true&#39; and this option enabled the player will be muted to allow autoPlay in case the browsers policy restricted autoplay.</p></td>
         </tr><tr>
-          <td>[playback.muted]</td><td><code>boolean</code></td><td><code>false</code></td><td><p>Mute/unmute the player (default: false). <br /><b>IMPORTANT</b>: Browsers (mostly mobile) with stricter autoplay policy only allow autoplay with muted audio. To allow autoplay set the &#39;muted&#39; property to &#39;true&#39;. See property &#39;autoplay&#39; for more informations.</p></td>
+          <td>[playback.muted]</td><td><code>boolean</code></td><td><code>false</code></td><td><p>Mute/unmute the player (default: false). <br /><b>IMPORTANT</b>: Browsers (mostly mobile) with stricter autoPlay policy only allow autoPlay with muted audio. To allow autoPlay set the &#39;muted&#39; property to &#39;true&#39;. See property &#39;autoplay&#39; htmlFor more informations.</p></td>
         </tr><tr>
           <td>[playback.latencyControlMode]</td><td><code>string</code></td><td><code>&quot;balancedadaptive&quot;</code></td><td><p>The latency control mode of the player - possible values: &quot;classic&quot;, &quot;fastadaptive&quot;, &quot;balancedadaptive&quot;</p></td>
         </tr><tr>
@@ -2234,21 +2234,21 @@ The config object to pass as param for the 'setup' call.
         </tr><tr>
           <td>[playback.enableQuicConnectionProbe]</td><td><code>string</code></td><td></td><td><p>Enable/disable Media Over Quic connection probe (default: true). If Media Over Quic playback is disabled, the probe functionality is not used.</p></td>
         </tr><tr>
-          <td>[playback.videoId]</td><td><code>string</code> | <code>Array.string</code></td><td></td><td><p>One or two element ids of existing video tags that should be used for playback. No new element(s) will be created and after destroy it/they will be kept. Can be a string (old, only one element) or a string array with one or two (HLS PLAYBACK ONLY!) element ids. Two video elements are required only for stream switching on iOS, MSE playback uses only one video tag. If only one element id is given on iOS the second video tag will be created by the player.</p></td>
+          <td>[playback.videoId]</td><td><code>string</code> | <code>Array.string</code></td><td></td><td><p>One or two element ids of existing video tags that should be used htmlFor playback. No new element(s) will be created and after destroy it/they will be kept. Can be a string (old, only one element) or a string array with one or two (HLS PLAYBACK ONLY!) element ids. Two video elements are required only htmlFor stream switching on iOS, MSE playback uses only one video tag. If only one element id is given on iOS the second video tag will be created by the player.</p></td>
         </tr><tr>
-          <td>[playback.keepConnection]</td><td><code>boolean</code></td><td><code>false</code></td><td><p>If enabled the player will have always a connection to the h5live server. NOTE: not recommended for general use</p></td>
+          <td>[playback.keepConnection]</td><td><code>boolean</code></td><td><code>false</code></td><td><p>If enabled the player will have always a connection to the h5live server. NOTE: not recommended htmlFor general use</p></td>
         </tr><tr>
           <td>[playback.allowSafariHlsFallback]</td><td><code>boolean</code></td><td><code>false</code></td><td><p>If enabled the player will select the playback method in Safari Mac OS X and utilize H5Live low latency HLS if appropriate.</p></td>
         </tr><tr>
-          <td>[playback.crossOrigin]</td><td><code>string</code></td><td><code>&quot;not-set&quot;</code></td><td><p>Sets or disables the native &quot;crossOrigin&quot; attribute for all internal video elements and images (poster). Possible values are &quot;anonymous&quot;, &quot;use-credentials&quot; and &quot;not-set&quot; (default). If &quot;not-set&quot; is used the attribute will not be added.</p></td>
+          <td>[playback.crossOrigin]</td><td><code>string</code></td><td><code>&quot;not-set&quot;</code></td><td><p>Sets or disables the native &quot;crossOrigin&quot; attribute htmlFor all internal video elements and images (poster). Possible values are &quot;anonymous&quot;, &quot;use-credentials&quot; and &quot;not-set&quot; (default). If &quot;not-set&quot; is used the attribute will not be added.</p></td>
         </tr><tr>
           <td>[playback.mediaErrorRecoveries]</td><td><code>number</code></td><td><code>3</code></td><td><p>The number of allowed media error recoveries within a minute. If threshold is reached the last error will be thrown and playback pauses. Possible recoverable error codes are 3003 (decode error), 3100 (media source ended) and 1008 (hls playback error). See <a href="#NanoPlayer..errorcode">errorcodes</a>.</p></td>
         </tr><tr>
-          <td>[playback.metadataLowDelay]</td><td><code>boolean</code></td><td><code>true</code></td><td><p>If enabled this mode for metadata processing is preventing occasionally delayed metadata on iOS. To use legacy mode set to false. The setting <code>playback.metadata</code> has to be enabled. HLS PLAYBACK ONLY</p></td>
+          <td>[playback.metadataLowDelay]</td><td><code>boolean</code></td><td><code>true</code></td><td><p>If enabled this mode htmlFor metadata processing is preventing occasionally delayed metadata on iOS. To use legacy mode set to false. The setting <code>playback.metadata</code> has to be enabled. HLS PLAYBACK ONLY</p></td>
         </tr><tr>
           <td>[playback.faststart]</td><td><code>boolean</code></td><td><code>true</code></td><td><p>If enabled the fast start mode is reducing the time to first frame and the playback start time.</p></td>
         </tr><tr>
-          <td>[playback.reconnect]</td><td><code>object</code></td><td></td><td><p>The reconnect object to configure the reconnect settings. See <a href="#NanoPlayer..errorcode">errorcodes</a> for reconnect possibility.</p></td>
+          <td>[playback.reconnect]</td><td><code>object</code></td><td></td><td><p>The reconnect object to configure the reconnect settings. See <a href="#NanoPlayer..errorcode">errorcodes</a> htmlFor reconnect possibility.</p></td>
         </tr><tr>
           <td>playback.reconnect.minDelay</td><td><code>number</code></td><td><code>2</code></td><td><p>The minimum time to reconnect in seconds. The lowest possible value is 1 sec.</p></td>
         </tr><tr>
@@ -2258,13 +2258,13 @@ The config object to pass as param for the 'setup' call.
         </tr><tr>
           <td>playback.reconnect.maxRetries</td><td><code>number</code></td><td><code>10</code></td><td><p>The maximum count of reconnect tries. If set to zero no reconnect will be done.</p></td>
         </tr><tr>
-          <td>[playback.timeouts]</td><td><code>object</code></td><td></td><td><p>The timeouts object to configure the timeouts for playback.</p></td>
+          <td>[playback.timeouts]</td><td><code>object</code></td><td></td><td><p>The timeouts object to configure the timeouts htmlFor playback.</p></td>
         </tr><tr>
-          <td>playback.timeouts.loading</td><td><code>number</code></td><td><code>20</code></td><td><p>The timeout for the loading state in seconds, range from 10 - 60 seconds. If reached the player will be stopped with reason &#39;streamnotfound&#39; and error 2001 will be thrown. Will be cleared if player goes to playing state.</p></td>
+          <td>playback.timeouts.loading</td><td><code>number</code></td><td><code>20</code></td><td><p>The timeout htmlFor the loading state in seconds, range from 10 - 60 seconds. If reached the player will be stopped with reason &#39;streamnotfound&#39; and error 2001 will be thrown. Will be cleared if player goes to playing state.</p></td>
         </tr><tr>
-          <td>playback.timeouts.buffering</td><td><code>number</code></td><td><code>20</code></td><td><p>The timeout for the buffering state in seconds, range from 10 - 60 seconds. If reached the player will be stopped with reason &#39;buffer&#39; and error 2002 will be thrown. Will be cleared if player goes to playing state again.</p></td>
+          <td>playback.timeouts.buffering</td><td><code>number</code></td><td><code>20</code></td><td><p>The timeout htmlFor the buffering state in seconds, range from 10 - 60 seconds. If reached the player will be stopped with reason &#39;buffer&#39; and error 2002 will be thrown. Will be cleared if player goes to playing state again.</p></td>
         </tr><tr>
-          <td>playback.timeouts.connecting</td><td><code>number</code></td><td><code>5</code></td><td><p>The timeout for establishing the websocket connection, range from 5 - 30 seconds. If reached the player will be stopped with reason &#39;connectionclose&#39; and error 4106 will be thrown. WEBSOCKET ONLY, FOR HLS PLAYBACK ONLY IF METADATA IS ENABLED</p></td>
+          <td>playback.timeouts.connecting</td><td><code>number</code></td><td><code>5</code></td><td><p>The timeout htmlFor establishing the websocket connection, range from 5 - 30 seconds. If reached the player will be stopped with reason &#39;connectionclose&#39; and error 4106 will be thrown. WEBSOCKET ONLY, FOR HLS PLAYBACK ONLY IF METADATA IS ENABLED</p></td>
         </tr><tr>
           <td>[style]</td><td><code>object</code></td><td></td><td><p>The object to configure the style of the player.</p></td>
         </tr><tr>
@@ -2280,7 +2280,7 @@ The config object to pass as param for the 'setup' call.
         </tr><tr>
           <td>[style.view]</td><td><code>boolean</code></td><td><code>true</code></td><td><p>Enable/disable view port handling/animations.</p></td>
         </tr><tr>
-          <td>[style.scaling]</td><td><code>string</code></td><td><code>&quot;letterbox&quot;</code></td><td><p>Set&#39;s the display mode for the video inside the player - possible values: &quot;letterbox&quot;, &quot;fill&quot;, &quot;crop&quot;, &quot;original&quot;, &quot;resize&quot;.</p></td>
+          <td>[style.scaling]</td><td><code>string</code></td><td><code>&quot;letterbox&quot;</code></td><td><p>Set&#39;s the display mode htmlFor the video inside the player - possible values: &quot;letterbox&quot;, &quot;fill&quot;, &quot;crop&quot;, &quot;original&quot;, &quot;resize&quot;.</p></td>
         </tr><tr>
           <td>[style.keepFrame]</td><td><code>boolean</code></td><td><code>true</code></td><td><p>If true the last played frame will be displayed after a pause.</p></td>
         </tr><tr>
@@ -2378,7 +2378,7 @@ The config object to pass as param for the 'setup' call.
         </tr><tr>
           <td>tweaks.bufferDynamic.cooldownTime</td><td><code>number</code></td><td></td><td><p>The time to check stable playback. If stable playback is detected, the buffer values will be decreased till original buffer values are reached.</p></td>
         </tr><tr>
-          <td>[metrics]</td><td><code>object</code></td><td></td><td><p>The metrics object. <b>Only usable with valid account.</b> Configuring this object allows you to collect and analyse data via the &#39;nanoStream Cloud&#39;. If not set, metrics are disabled. See our <a href="https://www.nanocosmos.de/v4/documentation/nanoplayer-h5live#nanostream_cloud_analytics_and_player_metrics"><b>nanocosmos / nanoStream documentation</b></a> for more informations.</p></td>
+          <td>[metrics]</td><td><code>object</code></td><td></td><td><p>The metrics object. <b>Only usable with valid account.</b> Configuring this object allows you to collect and analyse data via the &#39;nanoStream Cloud&#39;. If not set, metrics are disabled. See our <a href="https://www.nanocosmos.de/v4/documentation/nanoplayer-h5live#nanostream_cloud_analytics_and_player_metrics"><b>nanocosmos / nanoStream documentation</b></a> htmlFor more informations.</p></td>
         </tr><tr>
           <td>metrics.accountId</td><td><code>string</code></td><td></td><td><p>The account id provided by nanocosmos to use with the metrics.</p></td>
         </tr><tr>
@@ -2408,14 +2408,14 @@ var config = {
             "startQuality": "low"
         }
     },
-    "playback": {
+    "playback": `{
         "autoplay": true,
         "automute": true,
         "muted": false,
         "metadata": true,
         "faststart": true,
         "latencyControlMode": 'balancedadaptive'
-    },
+    }`,
     "events": {
         "onError": function (e) {
             console.log(e);
@@ -2593,7 +2593,7 @@ var config = {
         "startIndex": 2 // lowest
     },
     // playback is completely optional
-    "playback": {
+    "playback": `{
         "autoplay": true,
         "automute": true,
         "muted": false,
@@ -2605,7 +2605,7 @@ var config = {
             "maxDelay": 12.5,
             "delaySteps": 6,
             "maxRetries": 20
-        },
+        }`,
         "videoId": ['myVideoTagId', 'myVideoTagId']
     },
     "events": {
@@ -2691,15 +2691,15 @@ var config = {
         "onReady": function (e) {
             console.log('player ready with ' + JSON.stringify(e));
         },
-        "onPlay": function (e) {
+        "onPlay": function (e) `{
             console.log('playing');
             console.log('play stats: ' + JSON.stringify(e.data.stats));
-        },
-        "onPause": function (e) {
+        }`,
+        "onPause": function (e) `{
             console.log('pause');
             if (e.data.reason !== 'normal') {
                 alert('Paused with reason: ' + e.data.reason);
-            }
+            }`
         },
         "onError": function (e) {
             try {
@@ -2750,7 +2750,7 @@ An entry object to pass stream parameters like h5live config, stream information
         <tr>
           <td>index</td><td><code>number</code></td><td></td><td><p>The index of the stream entry. Have to be the same as the position in the &#39;entries&#39; array. Begins with &#39;0&#39;.</p></td>
         </tr><tr>
-          <td>[label]</td><td><code>string</code></td><td></td><td><p>A custom label for the stream e.g. &#39;high&#39;.</p></td>
+          <td>[label]</td><td><code>string</code></td><td></td><td><p>A custom label htmlFor the stream e.g. &#39;high&#39;.</p></td>
         </tr><tr>
           <td>[tag]</td><td><code>string</code></td><td></td><td><p>Custom informations about the stream entry.</p></td>
         </tr><tr>
@@ -2774,17 +2774,17 @@ An entry object to pass stream parameters like h5live config, stream information
         </tr><tr>
           <td>[h5live.server.progressive]</td><td><code>string</code></td><td></td><td><p>The h5live progressive download url.</p></td>
         </tr><tr>
-          <td>h5live.server.hls</td><td><code>string</code></td><td></td><td><p>The h5live hls url. Have to be set for playback on iOS 10 or higher. iOS 9 or lower is not supported.</p></td>
+          <td>h5live.server.hls</td><td><code>string</code></td><td></td><td><p>The h5live hls url. Have to be set htmlFor playback on iOS 10 or higher. iOS 9 or lower is not supported.</p></td>
         </tr><tr>
           <td>[h5live.token]</td><td><code>string</code></td><td></td><td><p>The h5live server token.</p></td>
         </tr><tr>
-          <td>h5live.rtmp</td><td><code>object</code></td><td></td><td><p>The rtmp playout object for h5live playback.</p></td>
+          <td>h5live.rtmp</td><td><code>object</code></td><td></td><td><p>The rtmp playout object htmlFor h5live playback.</p></td>
         </tr><tr>
           <td>h5live.rtmp.url</td><td><code>string</code></td><td></td><td><p>The rtmp playout url. Have to include the domain, port and application e.g. &#39;rtmp://example.com:80/live&#39;.</p></td>
         </tr><tr>
           <td>h5live.rtmp.streamname</td><td><code>string</code></td><td></td><td><p>The rtmp streamname.</p></td>
         </tr><tr>
-          <td>[h5live.security]</td><td><code>object</code></td><td></td><td><p>The h5live security object for h5live playback.</p></td>
+          <td>[h5live.security]</td><td><code>object</code></td><td></td><td><p>The h5live security object htmlFor h5live playback.</p></td>
         </tr><tr>
           <td>h5live.security.token</td><td><code>string</code></td><td></td><td><p>The security service token.</p></td>
         </tr><tr>
@@ -3051,7 +3051,7 @@ The possible error codes in a onError event.
         </tr><tr>
           <td>4108</td><td></td><td><p>An endpoint is terminating the connection because it has received a message that &quot;violates its policy&quot;. This reason is given either if there is no other sutible reason, or if there is a need to hide specific details about the policy. Reconnect possible.</p></td>
         </tr><tr>
-          <td>4109</td><td></td><td><p>An endpoint is terminating the connection because it has received a message that is too big for it to process. Reconnect possible.</p></td>
+          <td>4109</td><td></td><td><p>An endpoint is terminating the connection because it has received a message that is too big htmlFor it to process. Reconnect possible.</p></td>
         </tr><tr>
           <td>4110</td><td></td><td><p>An endpoint (client) is terminating the connection because it has expected the server to negotiate one or more extension, but the server didn&#39;t return them in the response message of the WebSocket handshake.</p></td>
         </tr><tr>
@@ -3099,7 +3099,7 @@ The possible error codes in a onError event.
         </tr><tr>
           <td>5008</td><td></td><td><p>Configuration error. Could not create/update player, the hls server configuration is missing.</p></td>
         </tr><tr>
-          <td>5009</td><td></td><td><p>Configuration error. Could not create/update player, the websocket server configuration for metadata is missing.</p></td>
+          <td>5009</td><td></td><td><p>Configuration error. Could not create/update player, the websocket server configuration htmlFor metadata is missing.</p></td>
         </tr><tr>
           <td>5010</td><td></td><td><p>Could not embed player.</p></td>
         </tr><tr>
@@ -3225,7 +3225,7 @@ The possible pause reason in a onPause event.
         </tr><tr>
           <td>destroy</td><td><p>Paused because the player will be destroyed.</p></td>
         </tr><tr>
-          <td>playbackrestart</td><td><p>Paused because the player was stopped for update source. The player will restart immediately.</p></td>
+          <td>playbackrestart</td><td><p>Paused because the player was stopped htmlFor update source. The player will restart immediately.</p></td>
         </tr><tr>
           <td>visibilityhidden</td><td><p>Paused because the player was not visible at load start.</p></td>
         </tr><tr>
