@@ -123,7 +123,6 @@ const sidebars = {
           "collapsed": false,
           "items": [
             "nanoplayer/nanoplayer_feature_moq",
-            "nanoplayer/nanoplayer_v5_migration_guide",
             "nanoplayer/nanoplayer_autoplay",
             "nanoplayer/nanoplayer_feature_fast_start",
             "nanoplayer/nanoplayer_feature_latency_control_modes",
@@ -146,7 +145,8 @@ const sidebars = {
           "items": [
             "nanoplayer/nanoplayer_release_latest",
             "nanoplayer/nanoplayer_release_latest_v4",
-            "nanoplayer/nanoplayer_release_history"
+            "nanoplayer/nanoplayer_release_history",
+            "nanoplayer/nanoplayer_v5_migration_guide",
           ]
         },
         {

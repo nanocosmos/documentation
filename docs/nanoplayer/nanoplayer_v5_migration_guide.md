@@ -1,4 +1,4 @@
-# Migration Guide to Version 5.x
+# Migration Guide to Version 5
 
 ## Overview
 MOQ builds on modern browser APIs such as **WebTransport**, **WebCodecs**, and **WebAudio/Canvas**, providing a new workflow optimized for  interactive live streaming at scale.
