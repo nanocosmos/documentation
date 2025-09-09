@@ -55,7 +55,7 @@ Finally, we have cleaned up outdated and rarely used features. Flash player and 
 ### Removed
 
 - flash player fallback mode
-- native hls fallback mode (iOS version <= 9)
+- native hls fallback mode (iOS version ≤ 9)
 - deprecated single source configuration via `config.source.h5live` object
   - remaining valid source configurations are `config.source.group` and `config.source.entries`
 - scaling modes `"resize"` and `"original"`

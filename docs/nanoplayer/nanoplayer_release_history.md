@@ -55,7 +55,7 @@ Finally, we have cleaned up outdated and rarely used features. Flash player and 
 ### Removed
 
 - flash player fallback mode
-- native hls fallback mode (iOS version <= 9)
+- native hls fallback mode (iOS version ≤ 9)
 - deprecated single source configuration via `config.source.h5live` object
   - remaining valid source configurations are `config.source.group` and `config.source.entries`
 - scaling modes `"resize"` and `"original"`
@@ -1723,7 +1723,7 @@ Now also 'Windows 10' will be detected correctly and on 'Destroy' pause will be 
     - 5001: An exception was thrown during setup.
     - 5002: A forced tech is not supported by your browser.
     - 5003: The players source configuration is malformed or missing.
-    - 5004: This browser does not fully support HTML5 and H5Live. Supported are: Chrome >=54 (Windows, MacOSX, Android), Firefox >=48 (Windows, MacOSX, Android), Microsoft Edge (Windows), Microsoft Internet Explorer 11 (at least Windows 8), Safari (MacOSX & at least iOS 10).
+    - 5004: This browser does not fully support HTML5 and H5Live. Supported are: Chrome ≥54 (Windows, MacOSX, Android), Firefox ≥48 (Windows, MacOSX, Android), Microsoft Edge (Windows), Microsoft Internet Explorer 11 (at least Windows 8), Safari (MacOSX & at least iOS 10).
     - 5005: Configuration error. Could not create player, the rtmp configuration is missing or incomplete. Add an rtmp url and streamname to the configuration.
     - 5006: Configuration error. Could not create player, with this configuration an security token is required. Add an token to the configuration.
     - 5007: Configuration error. Could not create player, the websocket server configuration is missing.
