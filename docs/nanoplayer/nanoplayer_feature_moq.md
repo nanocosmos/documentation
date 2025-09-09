@@ -19,7 +19,7 @@ MOQ builds on modern browser APIs such as **WebTransport**, **WebCodecs**, and *
 - **Reduced packet loss impact** (independent stream retransmissions).
 - **Smoother adaptive bitrate playback** under mobile/roaming conditions.
 
-Read more about MOQ in this [blog article](https://www.nanocosmos.de/blog/2025/01/MoQ-media-over-quic/).
+Read more about MOQ in this [blog article](https://www.nanocosmos.net/blog/media-over-quic-moq/).
 
 ---
 
