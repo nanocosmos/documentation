@@ -116,6 +116,7 @@ const sidebars = {
         "nanoplayer/nanoplayer_player_metrics",
         "nanoplayer/nanoplayer_iframe",
         "nanoplayer/nanoplayer_webview",
+        "nanoplayer/nanoplayer_v5_migration_guide",
         {
           "type": "category",
           "label": "Features",
@@ -145,8 +146,7 @@ const sidebars = {
           "items": [
             "nanoplayer/nanoplayer_release_latest",
             "nanoplayer/nanoplayer_release_latest_v4",
-            "nanoplayer/nanoplayer_release_history",
-            "nanoplayer/nanoplayer_v5_migration_guide",
+            "nanoplayer/nanoplayer_release_history"
           ]
         },
         {

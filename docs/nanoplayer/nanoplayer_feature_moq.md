@@ -35,7 +35,7 @@ MOQ depends on **WebTransport** and **WebCodecs** APIs in modern browsers:
 
 ## Migration Notes
 
-Check out the [nanoplayer v5 migration guide](./nanoplayer/nanoplayer_v5_migration_guide) for details on compatibility, fallback handling, and best practices.
+Check out the [nanoplayer v5 migration guide](./nanoplayer_v5_migration_guide) for details on compatibility, fallback handling, and best practices.
 
 ## Configuration for MOQ
 
