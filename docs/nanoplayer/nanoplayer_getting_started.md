@@ -26,7 +26,7 @@ More information about stream group configuration, can be found in the feature d
 
 ```html title="nanoplayer.html" live
 <div id='playerDiv'></div>
-<script src='https://demo.nanocosmos.de/nanoplayer/api/release/nanoplayer.4.min.js'></script>
+<script src='https://demo.nanocosmos.de/nanoplayer/api/release/nanoplayer.5.min.js'></script>
 <script>
 var player;
 var config = {
@@ -77,7 +77,7 @@ Using source defaults with standard nanoStream Cloud was introduced in **nanoStr
 
 ```html title="nanoplayer.html"
 <div id='playerDiv'></div>
-<script src='https://demo.nanocosmos.de/nanoplayer/api/release/nanoplayer.4.min.js'></script>
+<script src='https://demo.nanocosmos.de/nanoplayer/api/release/nanoplayer.5.min.js'></script>
 <script>
 var player;
 var config = {
@@ -124,7 +124,7 @@ In most cases the simple RTMP configuration is sufficient but in case of enhance
 
 ```html title="nanoplayer.html"
 <div id='playerDiv'></div>
-<script src='https://demo.nanocosmos.de/nanoplayer/api/release/nanoplayer.4.min.js'></script>
+<script src='https://demo.nanocosmos.de/nanoplayer/api/release/nanoplayer.5.min.js'></script>
 <script>
 var player;
 var streamName = 'XXXXX-YYYYY'; // your bintu stream name (not the stream ID)
@@ -140,7 +140,9 @@ var config = {
                     'server': {
                         'websocket': 'wss://bintu-h5live.nanocosmos.de:443/h5live/stream/stream.mp4',
                         'hls': 'https://bintu-h5live.nanocosmos.de:443/h5live/http/playlist.m3u8',
-                        'progressive': 'https://bintu-h5live.nanocosmos.de:443/h5live/http/stream.mp4'
+                        'progressive': 'https://bintu-h5live.nanocosmos.de:443/h5live/http/stream.mp4',
+                        "webtransport": "https://bintu-h5live.nanocosmos.de:443/h5live/stream/stream.mp4"
+
                     }
                 }
             }
@@ -170,7 +172,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
 ```html
 <div id='playerDiv'></div>
-<script src='https://demo.nanocosmos.de/nanoplayer/api/release/nanoplayer.4.min.js'></script>
+<script src='https://demo.nanocosmos.de/nanoplayer/api/release/nanoplayer.5.min.js'></script>
 <script>
 var player;
 var streamId = '1111-2222-3333-4444-5555'; // your bintu stream ID (not the stream name)
@@ -215,10 +217,10 @@ document.addEventListener('DOMContentLoaded', function () {
 
 Embedding the H5LivePlayer in your Vue.js project is simple:
 
-1. Include the provided `nanoplayer.4.min.js` script within your `index.html` in your `root` directory
+1. Include the provided `nanoplayer.5.min.js` script within your `index.html` in your `root` directory
 
     ```html title="index.html"
-    <script src='https://demo.nanocosmos.de/nanoplayer/api/release/nanoplayer.4.min.js'></script>
+    <script src='https://demo.nanocosmos.de/nanoplayer/api/release/nanoplayer.5.min.js'></script>
     ```
 
     Example
@@ -230,7 +232,7 @@ Embedding the H5LivePlayer in your Vue.js project is simple:
         <meta charset='utf-8'>
         <meta name='viewport' content='width=device-width,initial-scale=1.0'>
         <title>h5-live-player</title>
-        <script src='https://demo.nanocosmos.de/nanoplayer/api/release/nanoplayer.4.min.js'></script>
+        <script src='https://demo.nanocosmos.de/nanoplayer/api/release/nanoplayer.5.min.js'></script>
     </head>
     <body>
         <div id='app'></div>
@@ -310,7 +312,7 @@ Embedding the H5LivePlayer in your Vue.js project is simple:
 1. Import your minified nanoplayer version within your `index.html` in your `public` directory
 
     ```html title="index.html"
-    <script  src='https://demo.nanocosmos.de/nanoplayer/api/release/nanoplayer.4.min.js'></script>
+    <script  src='https://demo.nanocosmos.de/nanoplayer/api/release/nanoplayer.5.min.js'></script>
     ```
 
     Example:
@@ -321,7 +323,7 @@ Embedding the H5LivePlayer in your Vue.js project is simple:
     <head>
         <meta charset='utf-8' />
         <meta name='viewport' content='width=device-width, initial-scale=1' />
-        <script src='https://demo.nanocosmos.de/nanoplayer/api/release/nanoplayer.4.min.js'></script>
+        <script src='https://demo.nanocosmos.de/nanoplayer/api/release/nanoplayer.5.min.js'></script>
         <title>H5Live Player</title>
     </head>
     <body>
@@ -404,7 +406,7 @@ Embedding the H5LivePlayer in your Vue.js project is simple:
     - It is important to add a wrapper around the `playerDiv` element, otherwise you won't see the nanoStream H5Live Player
 
     ```html
-    <script src='https://demo.nanocosmos.de/nanoplayer/api/release/nanoplayer.4.min.js'></script>
+    <script src='https://demo.nanocosmos.de/nanoplayer/api/release/nanoplayer.5.min.js'></script>
     <div style='width: 480px; height: 360px; overflow: hidden; position: absolute; margin: 0; padding: 0;'>
     <div id='playerDiv'></div>
     </div>

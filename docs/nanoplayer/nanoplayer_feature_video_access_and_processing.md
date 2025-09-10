@@ -36,7 +36,7 @@ To draw/render image on the canvas or save a snapshot from the video, it is nece
     <!-- the image element for the snapshot -->
     <img id="image"/>
 </div>
-<script type="text/javascript" src="nanoplayer.4.min.js"></script>
+<script type="text/javascript" src="nanoplayer.5.min.js"></script>
 ```
 
 2. Setup the player configuration and declare necessary variables to enable the active video element feature. Due to cross-origin policies for video elements, it is required to set `'crossOrigin'` to `'anonymous'` to be able to take a snapshot.

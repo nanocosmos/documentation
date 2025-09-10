@@ -36,7 +36,7 @@ Wait until container is ready before creating the player at iframes `DOMContenLo
 
 ### New in v1.3.2
 
-Using nanoplayer.4.min.js instead of static nanoplayer.4.18.0.min.js again.
+Using nanoplayer.5.min.js instead of static nanoplayer.4.18.0.min.js again.
 
 ### New in v1.3.1
 
