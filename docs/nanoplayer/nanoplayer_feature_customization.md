@@ -287,14 +287,16 @@ In this example we want to change `controlBarColor` and `symbolColor`, replace t
 
 ```html showLineNumbers
     <div id="playerDiv" style="width:100%;padding-bottom: 56.25%"></div>
-    <script src="//demo.nanocosmos.de/nanoplayer/api/release/nanoplayer.4.min.js?20210127"></script>
+    <script src="//demo.nanocosmos.de/nanoplayer/api/release/nanoplayer.5.min.js?20210127"></script>
     <script>
     var player;
     var defaultUrl = "rtmp://bintu-play.nanocosmos.de/play"; 
     var defaultServer = {
         "websocket": "wss://bintu-h5live.nanocosmos.de:443/h5live/stream",
         "hls": "https://bintu-h5live.nanocosmos.de:443/h5live/http/playlist.m3u8",
-        "progressive": "https://bintu-h5live.nanocosmos.de:443/h5live/http/stream.mp4"
+        "progressive": "https://bintu-h5live.nanocosmos.de:443/h5live/http/stream.mp4",
+        "webtransport": "https://bintu-h5live.nanocosmos.de:443/h5live/stream/stream.mp4"
+
     }; 
     var streamNames = [ 
         "[your_streamname]"

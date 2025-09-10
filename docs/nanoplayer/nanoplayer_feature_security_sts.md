@@ -188,7 +188,7 @@ Refer to the detailed example code in [Embedding H5Live player on your own web p
 
 ```html
 <div id="playerDiv"></div>
-<script src="https://demo.nanocosmos.de/nanoplayer/api/release/nanoplayer.4.min.js?20200806"></script>
+<script src="https://demo.nanocosmos.de/nanoplayer/api/release/nanoplayer.5.min.js?20200806"></script>
 <script>
 var player;
 var streamName = "XXXXX-YYYYY"; // your stream name (NOT the bintu stream ID)

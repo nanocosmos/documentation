@@ -230,7 +230,7 @@ Refer to the detailed example code in [Embedding H5Live player on your own web p
 
 ```html
 <div id="playerDiv"></div>
-<script src="https://demo.nanocosmos.de/nanoplayer/api/release/nanoplayer.4.min.js"></script>
+<script src="https://demo.nanocosmos.de/nanoplayer/api/release/nanoplayer.5.min.js"></script>
 <script>
 var player;
 var config = {

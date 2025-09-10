@@ -270,7 +270,7 @@ Based on the last error code (stored in `onError` handler), the replay decision 
         <input type="checkbox" id="enableReplay" checked>
         <label for="replay">enable replay</label>
     </p>
-    <script src="https://demo.nanocosmos.de/nanoplayer/api/release/nanoplayer.4.min.js"></script>
+    <script src="https://demo.nanocosmos.de/nanoplayer/api/release/nanoplayer.5.min.js"></script>
     <script>
         var player;
         var config = {
