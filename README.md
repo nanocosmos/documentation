@@ -33,7 +33,7 @@ Each component and thus each menu item have their own folder. You can find the f
 
 ### 🔧 Configuring with `docusaurus.config`
 
-In this file you can set up the menu items, footer links and things like the announcement bar. You can also check the google tarcking and set up the search bar, as well as the copyright info.
+In this file, you can set up the menu items, footer links and the announcement bar. You can also check the Google tracking, set up the search bar and update the copyright information.
 
 - **Menu**: To add a new Menupoint, please add it in the `docusaurus.config` file. You can read more about the nav bar and e.g. dropdown [here](https://docusaurus.io/docs/api/themes/configuration#navbar).
 
