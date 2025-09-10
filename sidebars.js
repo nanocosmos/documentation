@@ -304,6 +304,7 @@ const sidebars = {
               },
               "items": [
                 "cloud/alerting",
+                "cloud/email-notification",
                 "cloud/troubleshooting",
               ]
             }
