@@ -26,6 +26,10 @@ MOQ builds on modern browser APIs such as **WebTransport**, **WebCodecs**, and *
 
 ## New Configuration Options
 
+:::info
+For MOQ, source defaults feature has to be used. In that case, there is no need to take any action to use MOQ playback. Otherwise, please set a URL for `'webtransport'` property in source object. For more guidance regarding source defaults and server URL paths, check our [source defaults feature](./nanoplayer_feature_source_defaults).
+:::
+
 ### `config.playback.enableMediaOverQuic`
 - **Description:** Enables MoQ playback with automatic MSE fallback for unsupported browsers
 - **Type:** Boolean
