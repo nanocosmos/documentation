@@ -54,6 +54,6 @@ MOQ playback can be controlled via new configuration settings.
     ...
 }
 ```
-
-* If enableMediaOverQuic is set to true and the browser supports it, MOQ will be used.
+* If source defaults feature is used, there is no need to take any action to use MOQ playback. Otherwise, please set a URL for `'webtransport'` property in source object. For more guidance regarding source defaults and server URL paths, check our [source defaults feature](./nanoplayer_feature_source_defaults#config-example-without-service-defaults).
+* If 'enableMediaOverQuic' is set to 'true' and the browser supports it, MOQ will be used.
 * If MOQ is not available or the connection probe fails, the player will fall back to WebSocket/MSE playback.
