@@ -12,6 +12,7 @@ MOQ is designed specifically for **real-time media streaming** and enables lower
 MOQ builds on modern browser APIs such as **WebTransport**, **WebCodecs**, and **WebAudio/Canvas**, providing a new workflow optimized for live and interactive streaming at scale.
 
 ## MOQ Benefits
+
 - **Ultra-low latency** for real-time interactivity (Q&A, betting, auctions).
 - **Improved stability**: playback is more resilient on unstable or fluctuating networks.
 - **Stream prioritization**: efficient bandwidth use for video, audio, and data.
@@ -54,6 +55,10 @@ MOQ playback can be controlled via new configuration settings.
     ...
 }
 ```
-* If source defaults feature is used, there is no need to take any action to use MOQ playback. Otherwise, please set a URL for `'webtransport'` property in source object. For more guidance regarding source defaults and server URL paths, check our [source defaults feature](./nanoplayer_feature_source_defaults#config-example-without-service-defaults).
-* If 'enableMediaOverQuic' is set to 'true' and the browser supports it, MOQ will be used.
-* If MOQ is not available or the connection probe fails, the player will fall back to WebSocket/MSE playback.
+
+- If 'enableMediaOverQuic' is set to 'true' and the browser supports it, MOQ will be used.
+- If MOQ is not available or the connection probe fails, the player will fall back to WebSocket/MSE playback.
+
+:::info
+In case of bintu configuration being set via **group** or **entries** or the **source defaults feature** is used, there is no need to take any action to use MOQ playback. Otherwise for h5live rtmp configuration with entries, there has to be set a URL for `'webtransport'` property in the entry's h5live server object. See [custom rtmp configuration](./nanoplayer_getting_started#option-3-custom-configuration-with-RTMP-streamname) for more guidance.
+:::
