@@ -46,7 +46,7 @@ var source = {
                     "websocket": "wss://bintu-h5live.nanocosmos.de:443/h5live/stream.mp4",
                     "hls": "https://bintu-h5live.nanocosmos.de:443/h5live/http/playlist.m3u8",
                     "progressive": "https://bintu-h5live.nanocosmos.de:443/h5live/http/stream.mp4",
-                    "webtransport": "https://bintu-h5live.nanocosmos.de:443/h5live/stream/stream.mp4"
+                    "webtransport": "https://bintu-h5live.nanocosmos.de:443/h5live/stream/stream.mp4" // important for MOQ playback
 
                 },
                 "token": "",
@@ -83,7 +83,7 @@ var source = {
                     "websocket": "wss://bintu-h5live.nanocosmos.de:443/h5live/stream.mp4",
                     "hls": "https://bintu-h5live.nanocosmos.de:443/h5live/http/playlist.m3u8",
                     "progressive": "https://bintu-h5live.nanocosmos.de:443/h5live/http/stream.mp4",
-                    "webtransport": "https://bintu-h5live.nanocosmos.de:443/h5live/stream/stream.mp4"
+                    "webtransport": "https://bintu-h5live.nanocosmos.de:443/h5live/stream/stream.mp4" // important for MOQ playback
 
                 },
                 "token": "",
@@ -111,7 +111,7 @@ var source = {
                     "websocket": "wss://bintu-h5live.nanocosmos.de:443/h5live/stream.mp4",
                     "hls": "https://bintu-h5live.nanocosmos.de:443/h5live/http/playlist.m3u8",
                     "progressive": "https://bintu-h5live.nanocosmos.de:443/h5live/http/stream.mp4",
-                    "webtransport": "https://bintu-h5live.nanocosmos.de:443/h5live/stream/stream.mp4"
+                    "webtransport": "https://bintu-h5live.nanocosmos.de:443/h5live/stream/stream.mp4" // important for MOQ playback
 
                 },
                 "token": "",
@@ -139,7 +139,7 @@ var source = {
                     "websocket": "wss://bintu-h5live.nanocosmos.de:443/h5live/stream.mp4",
                     "hls": "https://bintu-h5live.nanocosmos.de:443/h5live/http/playlist.m3u8",
                     "progressive": "https://bintu-h5live.nanocosmos.de:443/h5live/http/stream.mp4",
-                    "webtransport": "https://bintu-h5live.nanocosmos.de:443/h5live/stream/stream.mp4"
+                    "webtransport": "https://bintu-h5live.nanocosmos.de:443/h5live/stream/stream.mp4" // important for MOQ playback
 
                 },
                 "token": "",
@@ -216,7 +216,7 @@ var source = {
                     "websocket": "wss://bintu-h5live.nanocosmos.de:443/h5live/stream.mp4",
                     "hls": "https://bintu-h5live.nanocosmos.de:443/h5live/http/playlist.m3u8",
                     "progressive": "https://bintu-h5live.nanocosmos.de:443/h5live/http/stream.mp4",
-                    "webtransport": "https://bintu-h5live.nanocosmos.de:443/h5live/stream/stream.mp4"
+                    "webtransport": "https://bintu-h5live.nanocosmos.de:443/h5live/stream/stream.mp4" // important for MOQ playback
 
                 },
                 "token": "",
