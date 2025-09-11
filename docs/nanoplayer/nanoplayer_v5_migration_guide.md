@@ -48,7 +48,7 @@ MOQ builds on modern browser APIs such as **WebTransport**, **WebCodecs**, and *
 - **Default:** `1.0`
 
 :::info
-In case of bintu configuration being set via **group** or **entries** or the **source defaults feature** is used, there is no need to take any action to use MOQ playback. Otherwise for h5live rtmp configuration with entries, there has to be set a URL for `'webtransport'` property in the entry's h5live server object. See [custom rtmp configuration](./nanoplayer_getting_started#option-3-custom-configuration-with-RTMP-streamname) for more guidance.
+In case of bintu configuration being set via **group** or **entries** or the **source defaults feature** is used, there is no need to take any action to use MOQ playback. However, for custom h5live rtmp configuration with entries, a URL must be set for the `'webtransport'` property in the entry's h5live server object. See [custom rtmp configuration](./nanoplayer_getting_started#option-3-custom-configuration-with-RTMP-streamname) for more guidance.
 :::
 
 ## Breaking Changes
