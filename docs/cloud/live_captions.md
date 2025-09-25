@@ -66,6 +66,11 @@ Important
 If your stream is already live and you change live caption settings, updates will only take effect after you stop and restart the stream.
 :::
 
+## Languages Overview
+| Language  | Description                 |
+| ---------- | --------------------------- |
+| `en` | English |
+
 ## Looking Ahead
 
 As AI technology continues to advance, we’re excited about the possibilities ahead. Our roadmap includes:
