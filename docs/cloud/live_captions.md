@@ -23,9 +23,13 @@ Integration into your playback system or application is required.
 To enable and use the live captioning feature, the following requirements must be met:
 - Live captions must be enabled for your organisation  
 - Pricing and payment options must be set up, as live captions is a business option  
-- An Automatic Speech Recognition (ASR) engine type must be selected  
+- An Automatic Speech Recognition (ASR) engine type must be selected
+:::
 
+:::note
+Some of our ASR services require 24 hours’ prior notice.
 Please contact our [Sales team](https://www.nanocosmos.net/contact/) to find the best setup for your organisation and to receive comprehensive information about ASR types based on your use case.
+:::
 
 ## Quick Start: Enabling Live Captions via API
 
