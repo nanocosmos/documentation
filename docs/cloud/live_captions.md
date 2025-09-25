@@ -26,7 +26,7 @@ To enable and use the live captioning feature, the following requirements must b
 - An Automatic Speech Recognition (ASR) engine type must be selected
 :::
 
-:::note
+:::info
 Some of our ASR services require 24 hours’ prior notice.
 Please contact our [Sales team](https://www.nanocosmos.net/contact/) to find the best setup for your organisation and to receive comprehensive information about ASR types based on your use case.
 :::
@@ -65,8 +65,7 @@ This information has to be provided to the **Bintu API** to enable live captions
 - The first captions appear within **5–7 seconds** depending on the ASR provider  
 - Captions stop automatically when the stream ends 
 
-:::caution 
-Important
+:::warning 
 If your stream is already live and you change live caption settings, updates will only take effect after you stop and restart the stream.
 :::
 
