@@ -60,9 +60,9 @@ This information has to be provided to the **Bintu API** to enable live captions
 ### 3. Stream & Consume Captions
 - Live captions and caption switcher are **not part of the H5Live Player** and are not embedded automatically.  
 - Captions are generated in real time and made available through a **dedicated output channel**.  
-- To allow end users to enable/disable captions, you must integrate captions functionality into your playback system or application. [Contact nanocosmos support]() for detailed integration instructions.  
-- Live captions start automatically with the stream  
-- The first captions appear within **5–7 seconds** depending on the ASR provider  
+- To allow end users to enable/disable captions, you must integrate captions functionality into your playback system or application. [Contact nanocosmos support](#support) for detailed integration instructions.
+- Live captions start automatically with the stream
+- The first captions appear within **5–7 seconds** depending on the ASR provider
 - Captions stop automatically when the stream ends 
 
 :::warning 
@@ -83,7 +83,7 @@ As AI technology continues to advance, we’re excited about the possibilities a
 - **Superior subtitle accuracy** through continuous learning from client feedback  
 - **Deeper integration** with business systems and workflows (e.g., Cloud platform Dashboard)  
 
-
+<a id="support"></a>
 :::info Questions?
 Provide your live caption preferences via the [contact form](https://www.nanocosmos.net/contact) or by sending an email to sales(at)nanocosmos.net. <br/>
 **For technical questions you can use our [support form](https://www.nanocosmos.net/support).**
