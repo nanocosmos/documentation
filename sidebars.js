@@ -23,6 +23,7 @@ const sidebars = {
     "cloud/srt_ingest",
     "cloud/live-recording-vod",
     "cloud/live_processing",
+    "cloud/live_captions",
     {
       "type": "category",
       "label": "Security Features",
