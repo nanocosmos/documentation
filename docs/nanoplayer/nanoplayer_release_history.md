@@ -6,9 +6,21 @@ sidebar_label: History
 
 # **NanoPlayer - Release History**
 
-## Please find more about the **MoQ playback mode** feature in our [documentation](https://docs.nanocosmos.de/docs/nanoplayer/nanoplayer_feature_moq/)
+## Please find more about the **MOQ playback mode** feature in our [documentation](https://docs.nanocosmos.de/docs/nanoplayer/nanoplayer_feature_moq/)
 
 ## For easy-to-use migration follow our [guide](https://docs.nanocosmos.de/docs/nanoplayer/nanoplayer_v5_migration_guide)
+
+## **[5.0.2]**
+
+### **Release Notes**
+
+This update fixes an issue with secure token playback on iOS ≤ 17.1 in H5Live-HLS mode, resulting in error code `4200`.
+
+### **Changelog**
+
+### Fixed
+
+- secure token playback failing with error `4200` on iOS ≤ 17.1 in H5Live-HLS mode
 
 ## **[5.0.1]**
 
