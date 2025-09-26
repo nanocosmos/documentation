@@ -17,7 +17,6 @@ Integration into your playback system or application is required.
 - Provides dynamic and accurate readable content to enhance user engagement  
 - Improves the user experience by letting viewers follow along without sound  
 - Helps users hard of hearing to stay focused on what’s being said
-:::
 
 :::tip Prerequisites
 To enable and use the live captioning feature, the following requirements must be met:
@@ -43,10 +42,11 @@ To configure live captions, you need to collect the following information:
 
 - `StreamgroupId` / `StreamName` 
 
-![Screenshot: Stream-name](../assets/live-captions/stream-name.png)   
+ ![Screenshot: Stream Name](../assets/live-captions/stream-name.png)  
+
 - `ApiKey`  
 
-![Screenshot: Enabled Packages](../assets/live-captions/apikey.png)  
+![Screenshot: ApiKey](../assets/live-captions/api-key.png)  
 
 
 :::tip Your API key
