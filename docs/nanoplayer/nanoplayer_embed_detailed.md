@@ -35,6 +35,23 @@ Link: `https://demo.nanocosmos.de/nanoplayer/embed/2.0.0/nanoplayer.html?entry.r
 Using nanoplayer.5.min.js instead of nanoplayer.4.min.js.
 Embed Player 2.0.0 has full support of query params which are compatibile with [nanoStream H5Live Player Version v5](./nanoplayer_v5_migration_guide).
 
+#### Query Parameter Type Handling
+
+Embed Player 2.0.0 uses **strict type checking** for configuration parameters. This ensures proper behavior and prevents unexpected type conversions.
+
+**Boolean Parameters**
+- Only the string values `"true"` and `"false"` will be converted to boolean types
+- Numeric values like `1` or `0` will NOT be converted to booleans
+- Common boolean parameters include:
+  - `playback.autoplay=true`
+  - `playback.automute=true`
+  - `playback.muted=false`
+  - `playback.faststart=true`
+  - `playback.metadata=true`
+
+**Migration from v1.x:**
+If previously numeric values were used for boolean parameters (e.g., `playback.metadata=1`), in the Embed Player 2.0.0. it must be updated to use explicit boolean strings (`playback.metadata=true`).
+
 ### New in v1.3.3
 
 Wait until container is ready before creating the player at iframes `DOMContenLoaded`.
