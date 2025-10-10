@@ -40,6 +40,10 @@ One way to create a secure token for your stream(s) or organisation is to naviga
    - **Entire Organization** select the entire organization
 2. **Token Lifetime**: The default expiration date is set to 2 weeks, but you can choose any duration you prefer.
 
+:::danger Be careful with your organisation-wide tokens
+Always handle tokens as confidential credentials. Be careful who you share your organisation-wide token with, as it gives access to all your assets.
+:::
+
 ### Optional Settings
 
 1. **Not Before Date** (optional): Set the "not before" date to ensure that the token is not valid before a specific date.
@@ -69,10 +73,23 @@ security: {
 
 In addition to the **Secure Toke** creation page, you can also find the decoded token information and create new tokens within specific sections of the nanoStream dashboard. 
 
-You can find the inline token creation dialog in multiple locations within the dashboard:
+:::warning Copy your newly created Tokens
+When using the nanoStream Cloud Dashboard, please note that **you are always operating with the organization-wide token**.  
+You can create new tokens and copy the related information, URLs, and code snippets. The copied assets will use the token.
+However, **tokens cannot be restored after refreshing or closing the page**. Make sure to copy and store them securely before leaving the page.
+:::
 
-    - dashboard.nanostream.cloud/playout/**YOUR-STREAM-ID**
-    - dashboard.nanostream.cloud/stream/**YOUR-STREAM-ID**
-    - dashboard.nanostream.cloud/stream/**YOUR-STREAM-ID**/code-snippets
-    - dashboard.nanostream.cloud/stream/new/**YOUR-STREAM-ID**
-    - dashboard.nanostream.cloud/webcaster/**YOUR-STREAM-ID**
+![Screenshot: Secure Token Creation Dialog in Stream Overview](../assets/dashboard/secure-token-dialog.png)
+*Screenshot: Secure Token Creation Dialog in Stream Overview*
+
+You can access the inline token creation dialog in multiple locations within the dashboard:
+
+- Playout Overview
+   - [dashboard.nanostream.cloud/playout/YOUR-STREAM-ID](https://dashboard.nanostream.cloud/playout/YOUR-STREAM-ID)
+- Stream Overview
+   - [dashboard.nanostream.cloud/stream/YOUR-STREAM-ID](https://dashboard.nanostream.cloud/stream/YOUR-STREAM-ID)
+   - [dashboard.nanostream.cloud/stream/YOUR-STREAM-ID/code-snippets](https://dashboard.nanostream.cloud/stream/YOUR-STREAM-ID/code-snippets)
+- New Stream Overview / Stream Instructions Overview
+   - [dashboard.nanostream.cloud/stream/new/YOUR-STREAM-ID](https://dashboard.nanostream.cloud/stream/new/YOUR-STREAM-ID)
+- Webcaster Overview
+   - [dashboard.nanostream.cloud/webcaster/YOUR-STREAM-ID](https://dashboard.nanostream.cloud/webcaster/YOUR-STREAM-ID)
