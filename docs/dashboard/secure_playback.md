@@ -34,10 +34,10 @@ One way to create a secure token for your stream(s) or organisation is to naviga
 
 ### Required Information
 
-1. **Target**: Choose the target of the token.
-   - **Entire Streamgroup** The entire stream group by providing the stream ID
+1. **Target**: Choose the target of the token:
+   - **Entire Streamgroup** The entire stream group by providing/selectiong the streamgroup/stream ID,
    - **Streamname(s)** specify multiple stream names or
-   - **Entire Organization** select the entire organization
+   - **Entire Organization** select the entire organization.
 2. **Token Lifetime**: The default expiration date is set to 2 weeks, but you can choose any duration you prefer.
 
 :::danger Be careful with your organisation-wide tokens
