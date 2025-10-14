@@ -52,6 +52,10 @@ Embed Player 2.0.0 uses **strict type checking** for configuration parameters. T
 **Migration from v1.x:**
 If previously numeric values were used for boolean parameters (e.g., `playback.metadata=1`), in the Embed Player 2.0.0. it must be updated to use explicit boolean strings (`playback.metadata=true`).
 
+### New in v1.3.4
+
+Added support for embed page custom title via query param `title`.
+
 ### New in v1.3.3
 
 Wait until container is ready before creating the player at iframes `DOMContenLoaded`.
