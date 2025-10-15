@@ -55,12 +55,12 @@ You can find your bintu API key on the [organisation overview page](https://dash
 
 This information has to be provided to the **Bintu API** to enable live captions for your stream.  
 
-➡️ [How to configure Live Captions](https://doc.pages.nanocosmos.de/bintuapi-docs/#tag/Stream-Options)
+**➡️ [How to configure Live Captions](https://doc.pages.nanocosmos.de/bintuapi-docs/#tag/Stream-Options)**
 
 ### 3. Stream & Consume Captions
 - Live captions and caption switcher are **not part of the H5Live Player** and are not embedded automatically.  
 - Captions are generated in real time and made available through a **dedicated output channel**.  
-- To allow end users to enable/disable captions, you must integrate captions functionality into your playback system or application. [Contact nanocosmos support](#support) for detailed integration instructions.
+- To allow end users to enable/disable captions, you must integrate captions functionality into your playback system or application. **[Contact nanocosmos support](#support)** for detailed integration instructions.
 - Live captions start automatically with the stream
 - The first captions appear within **5–7 seconds** depending on the ASR provider
 - Captions stop automatically when the stream ends 
@@ -73,6 +73,9 @@ If your stream is already live and you change live caption settings, updates wil
 | Language  | Description                 |
 | ---------- | --------------------------- |
 | `en` | English |
+| `de` | German |
+| `es` | Spanish |
+| `id` | Indonesian |
 
 ## Looking Ahead
 
@@ -81,7 +84,7 @@ As AI technology continues to advance, we’re excited about the possibilities a
 - **Multi-language translation** to allow single streams to serve diverse global audiences  
 - **Industry-specific optimization** with specialized terminology  
 - **Superior subtitle accuracy** through continuous learning from client feedback  
-- **Deeper integration** with business systems and workflows (e.g., Cloud platform Dashboard)  
+- **Deeper integration** with business systems and workflows (nanoStream Cloud platform Dashboard)  
 
 <a id="support"></a>
 :::info Questions?
