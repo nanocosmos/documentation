@@ -6,7 +6,7 @@ title: Embed detailed
 ## Player Embed v2.0.0
 
 The version of the embed is related to the embed application code, current version is 2.0.0.
-The embed is using the latest player version which is always available at this location: [latest 5.x](https://files.nanocosmos.de/index.php/s/y4e2axW7s8qEtJb).
+The embed is using the latest player version, you can ready more about the latest version here: [latest 5.x](./nanoplayer_release_latest).
 
 
 ### Implementation with iFrame
