@@ -1,108 +1,106 @@
 ---
 id: cloud_overview
-title: nanoStream Cloud Product and Services Overview
+title: Product and Services Overview
 sidebar_label: Product & Services Overview
+description: Discover how nanoStream Cloud enables real-time interactive live streaming for global business applications from encoding to playback, analytics, and stream management.
 ---
 
-<!-- ![Logo](../assets/cloud/nsc.svg) -->
+## nanoStream Cloud
 
-## Real-time streaming to boost your business
-Enable interactive live video experiences that engage your audience anywhere, any time
+### Overview
 
-![Infographic: nanoStream Cloud Workflow](../assets/cloud/nsc-inforgraphic.png)
+nanoStream Cloud is an unique platform and API for live video streaming in real-time, specifically designed for global interactive business applications. It enables you to create high-quality, ultra-low-latency live video experiences, whether for [live betting](https://www.nanocosmos.de/blog/category/interactive-use-cases/gaming-betting-interactive-use-cases/), [townhall meetings](https://www.nanocosmos.net/blog/category/interactive-use-cases/townhall-events/), [auctions](https://www.nanocosmos.net/blog/category/use-cases/live-auctions/), or e-commerce.
 
-nanoStream Cloud is an unique platform and API for live video streaming in real-time, specifically designed for global interactive business applications. Whether it is for [live betting](https://www.nanocosmos.de/blog/category/interactive-use-cases/gaming-betting-interactive-use-cases/), [townhall meetings](https://www.nanocosmos.de/blog/category/interactive-use-cases/townhall-events/), or even e-commerce, nanoStream Cloud provides high-quality live streaming experiences, supported by its commitment to 100% uptime and 24/7 operations. <br/>
+Built for reliability and scalability, nanoStream Cloud ensures high-quality live streaming experiences, supported by its commitment to 100% uptime and 24/7 operations. <br/>
 The platform includes a global Content Delivery Network, Adaptive Bitrate Player, Analytics and a hand full of powerful features, all crafted to enhance both the Quality of Experience and Quality of Service.
 
-## nanoStream Cloud Components
+![Infographic: nanoStream Cloud Workflow](../assets/cloud/nsc-inforgraphic.png)
+*Infographic: nanoStream Cloud Worklow*
+
 
 ### Live Encoding
-- Ingest with RTMP, SRT, WHIP and WebRTC such as with [OBS](https://www.nanocosmos.de/blog/2019/03/how-to-use-obs-for-low-latency-live-encoding-to-nanostream-cloud/) and [Osprey Talon](https://www.nanocosmos.de/blog/2023/02/osprey-talon-and-nanostream-cloud/) 
-- Instest plugin-free directly from your browser with the included nanoStream Webcaster
 
-<article className="margin-vert--lg">
-  <Columns className="list_ZO3j" >
-    <Card className="col col--6 margin-horiz--md" href="/docs/webrtc/nanostream_webrtc">
-      <Card.Header title="Playground">Getting Started</Card.Header>
-      <Card.Body className="padding-vert--md">nanoStream Webcaster will work as a powerful live encoder from the broadcaster/publisher side, ingesting directly into nanoStream Cloud.</Card.Body>
-    </Card>
-    <Card className="col col--6 margin-horiz--md" href="/docs/webrtc/nanostream_webrtc_api">
-      <Card.Header title="TypeScript Support">Webcaster API</Card.Header>
-      <Card.Body className="padding-vert--md">The nanoStream Webcaster Browser API is based on a Javascript API connected to the nanoStream WebRTC Server. It can be used for creating your own live video broadcast web page for plugin-free live streaming with WebRTC.</Card.Body>
-    </Card>
-  </Columns>
-</article>
+Whether you use **software encoders**, **hardware devices**, or **browser-based tools**, nanoStream Cloud makes it simple to go live in real time.
+
+You can ingest streams through popular protocols such as **RTMP**, **SRT**, **WHIP**, and **WebRTC**. It integrates easily with industry-standard tools like [OBS](https://www.nanocosmos.net/blog/how-to-use-obs-for-low-latency-live-encoding-to-nanostream-cloud/) or [Osprey Talon](https://www.nanocosmos.net/blog/osprey-talon-and-nanostream-cloud/). For instant browser-based streaming, the **nanoStream Webcaster** lets you broadcast directly without any plugins or third-party software.
+
+This combination of flexibility, ultra-low latency, and browser compatibility makes nanoStream Cloud ideal for interactive applications where speed and simplicity matter most.
+
+
+:::tip nanoStream Webcaster Resources
+- **Try for free:** Check our end-to-end [instant test](https://www.nanocosmos.net/trial/) on our website.
+- **Getting Started:** Learn how to stream directly from your browser. [Read docs →](../webrtc/nanostream_webrtc_getting_started)
+- **Webcaster API:** Build your own web-based live broadcast solution with our JavaScript API. [View API Docs →](https://nanocosmos.github.io/webcaster/docs/)
+:::
 
 ### nanoStream Player
 
-- Live Playback is supported with our unique H5Live player. The same player code runs on all browsers. The player code can easily be embedded on your own web page with a code snippet shown on the player page, or managed by our Javascript API.
-- Includes Adaptive Bitrate for playback with different quality levels, based on the viewer's network conditions. The player decides automatically which quality level to use.
 
-<article className="margin-vert--lg">
-  <Columns className="list_ZO3j" >
-    <Card className="col col--6 margin-horiz--md" href="../nanoplayer/nanoplayer_getting_started">
-      <Card.Header title="Configuration">Getting Started</Card.Header>
-      <Card.Body className="padding-vert--md">nanoStream H5Live is a client-server technology based on nanoStream Cloud and nanoStream H5Live Player (aka nanoPlayer).</Card.Body>
-    </Card>
-    <Card className="col col--6 margin-horiz--md" href="../nanoplayer/nanoplayer_feature_stream_switching">
-<Card.Header title="Installation">ABR & Stream Switching</Card.Header>
-    <Card.Body className="padding-vert--md">The stream switching and integrated adaptive bitrate playback enables automatic and application/viewer controlled stream switching either separately or in combination.</Card.Body>
-    </Card>
-  </Columns>
-</article>
+Once your stream is live, **nanoStream H5Live Player** ensures your audience receives it instantly, on any device, anywhere in the world. As part of the nanoStream Cloud ecosystem, this browser-based playback solution delivers **ultra-low latency (\<500ms)** with smooth, adaptive performance.
+
+The player automatically adjusts to the viewer’s network conditions using **[Adaptive Bitrate (ABR)](../dashboard/abr_transcoding)**, ensuring continuous playback even under changing connectivity. Developers can easily [embed the player into websites or apps](../dashboard/code_snippets) using a simple JavaScript API, while keeping control over latency, security, and appearance.
+
+The **H5Live Player** is designed for performance, scalability, and brand integration, allowing you to maintain your look and feel while delivering the speed and reliability your users expect.
+
+:::tip nanoStream H5Live Player Resources
+- **Getting Started:** Understand the basics of nanoStream H5Live known as nanoPlayer. [Learn more →](../nanoplayer/nanoplayer_getting_started)
+- **ABR & Stream Switching:** Discover how to enable automatic or viewer-controlled stream switching. [See details →](../nanoplayer/nanoplayer_feature_stream_switching)
+:::
 
 ### nanoStream Analytics
 
-Complete streaming metrics overview for insights on Quality of Service and Quality of Experience.
+To ensure the best possible live streaming experience, **nanoStream Analytics** provides real-time insight into both **Quality of Service (QoS)** and **Quality of Experience (QoE)**.
 
-#### Security
-- Geo blocking
-- Token-based security
-- nanoStream Guardian for IP and Referrer blocking
+With detailed metrics on stream performance, viewer activity, and network behavior, you can identify trends, detect issues early, and make data-driven improvements to your live events. Custom alerts can help you monitor specific streams or regions.
+Together with the **nanoStream Guardian**, you can also actively protect your streams by blocking unwanted access, whether by IP, referrer, or entire regions.
 
-<article className="margin-vert--lg">
-  <Columns className="list_ZO3j" >
-    <Card className="col col--6 margin-horiz--md" href="/docs/cloud/analytics">
-      <Card.Header title="Playground">General</Card.Header>
-      <Card.Body className="padding-vert--md">nanoStream Cloud Analytics offers a great way to monitor and analyze the performance and quality of service of your live streams.</Card.Body>
-    </Card>
-    <Card className="col col--6 margin-horiz--md" href="/docs/analytics/guardian">
-      <Card.Header title="Security">nanoStream Guardian</Card.Header>
-      <Card.Body className="padding-vert--md">nanoStream Guardian is a new service integrated into nanoStream Cloud, which allows you to block specific IP addresses, referrers, and even entire CIDR masks from accessing your streams.</Card.Body>
-    </Card>
-  </Columns>
-</article>
+:::tip nanoStream Analytics Resources
+- **Introduction:** Learn how to monitor and analyze your live streaming performance. [Read more →](../cloud/analytics)
+- **nanoStream Guardian:** Discover how to secure your content with IP and referrer blocking. [See more →](../analytics/guardian)
+:::
 
-### Stream management dashboard and API
+### Stream Management: Dashboard & API
 
-Stream Management is done with our bintu dashboard and API. You will obtain and manage geo-loadbalanced URLs to enable global scale.
+All streaming operations can be managed through the **nanoStream Cloud Dashboard** (*which utilizes the bintu API*) or the **bintu API** directly.
+This gives you full control over your streaming workflow, whether you prefer an intuitive web interface or direct API integration.
 
 <article className="margin-vert--lg">
   <Columns className="list_ZO3j" >
-    <Card className="col col--6 margin-horiz--md" href="/docs/dashboard/overview">
-      <Card.Header title="Installation">Dashboard</Card.Header>
-      <Card.Body className="padding-vert--md">The nanoStream Cloud Dashboard is a web-based tool implemented and designed to provide users with an intuitive and comprehensive overview of their streaming activities.</Card.Body>
+    <Card className="col col--6 margin-horiz--md" href="../dashboard/overview">
+      <Card.Header title="Dashboard" />
+      <Card.Body className="padding-vert--md">
+        The <strong>nanoStream Cloud Dashboard</strong> provides an intuitive, web-based interface to manage streams, analytics, and account settings, where no coding is required.
+      </Card.Body>
     </Card>
     <Card className="col col--6 margin-horiz--md" href="https://doc.pages.nanocosmos.de/bintuapi-docs/">
-      <Card.Header title="Configuration">Bintu API</Card.Header>
-      <Card.Body className="padding-vert--md"> bintu.live is a stream management platform used by nanoStream for end to end live streaming services. bintu live can be used to create, manage, group and tag live streams. </Card.Body>
+      <Card.Header title="bintu API" />
+      <Card.Body className="padding-vert--md">
+        The <strong>bintu API</strong> enables developers to automate stream creation, grouping, tagging, and management for global, scalable live streaming operations.
+      </Card.Body>
     </Card>
   </Columns>
 </article>
 
-## nanoStream Cloud at a glance
+## Why nanoStream Cloud?
 
-- Sub-second latency
-- Global footprint 
-- Active stream protection
-- Live Transcoding and Adaptive Bitrate
-- Browser-based playback
-- Support to all major protocols RTMP, WebRTC, SRT, WHIP and more
-- Included Webcaster for streaming directly from the browser
-- Powerful API
-- User-friendly dashboard
-- Analytics
+**nanoStream Cloud** brings together all essential components for real-time live streaming, designed to meet the needs of interactive and business-critical applications.
+
+- **Ultra-Low Latency:** Sub-second delay for true interactivity
+- **Global Reach:** A worldwide CDN optimized for performance and stability
+- **Smart Playback:** Adaptive Bitrate and latency control for every device
+- **Security Built-In:** Token-based authentication, geo- and IP-blocking, and Guardian integration
+- **Flexible Integration:** Browser-based tools and powerful APIs
+- **Actionable Insights:** Real-time analytics for data-driven decisions
+- **Ease of Use:** A modern dashboard for fast setup and management
+
+Whether you are building a custom live video platform or streaming at scale, nanoStream Cloud provides the technology foundation for reliable, high-quality real-time video.
 
 ## Resources
 
-You can keep up with the latest news updates of nanoStream Cloud, upcoming events and industry trends by following our [blog](https://www.nanocosmos.de/blog/).
+Stay up to date with the latest nanoStream Cloud updates, best practices, and events:
+
+- [Support](https://www.nanocosmos.net/support/)  
+- [nanoStream Blog](https://www.nanocosmos.net/blog/)  
+- [Career Opportunities](https://www.nanocosmos.net/blog/jobs/)  
+- [Events](https://www.nanocosmos.net/events/)  
+- [Partner Program](https://www.nanocosmos.net/nanostreamready/)  
