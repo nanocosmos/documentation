@@ -176,6 +176,6 @@ Additionally, there is detailed information on audio and video bitrates, as well
 4. Start the live stream from your encoder to begin sending the video feed to nanoStream Cloud.
 
 :::info Additional Resources
-- Read more about [how to use OBS for Low Latency Live Encoding to nanoStream](https://www.nanocosmos.de/blog/2019/03/how-to-use-obs-for-low-latency-live-encoding-to-nanostream-cloud/).
-- Find also [instructions how to use Wirecast with nanoStream Cloud](https://www.nanocosmos.de/blog/2020/12/how-to-use-wirecast-with-nanostream-cloud-for-ultra-low-latency-live-streaming/) in our blog.
+- Get instructions on [how to use OBS Studio or Osprey Talon](/docs/cloud/cloud_getting_started#start-a-stream) in our dedicated documentation section.
+- Find also [instructions how to use Wirecast with nanoStream Cloud](https://www.nanocosmos.net/blog/how-to-use-wirecast-with-nanostream-cloud-for-ultra-low-latency-live-streaming/) in our blog.
 :::

@@ -1,7 +1,7 @@
 ---
 id: alerts_and_advices
-title: Alert and Advices
-sidebar_label: Alert and Advices
+title: Alerts and Advices
+sidebar_label: Alerts and Advices
 ---
 
 Alerts and advices are tools provided by nanoStream to give you real-time feedback and recommendations about your live streams. They provide invaluable insights into the performance of your live streams, potential issues, and even suggestions on how to enhance the viewer experience.

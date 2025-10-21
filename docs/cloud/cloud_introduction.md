@@ -1,7 +1,7 @@
 ---
 id: cloud_introduction
-title: Introduction
-sidebar_label: Introduction
+title: Core Concepts of bintu
+sidebar_label: Core Concepts
 description: Learn the fundamentals of nanoStream Cloud and its stream management system, bintu. Understand how to create, manage, and secure ultra-low-latency live streams using the Dashboard and API.
 ---
 
@@ -11,7 +11,14 @@ With bintu, you can easily create, manage, and monitor your live streams, either
 
 ## Getting Started
 
-Before you begin, make sure you have access to a **nanoStream Cloud/Bintu** account. If you don't have one yet, you can [sign up](https://dashboard.nanostream.cloud/auth?signup) for a free trial or contact our dedicated sales team via the [contact form](https://www.nanocosmos.de/contact) for a custom setup.
+To get started with the **nanoStream Dashboard**, sign in with your existing *nanoStream account*.  
+
+:::info Before starting
+If you don’t have an account yet you can [sign up](https://dashboard.nanostream.cloud/signup), or get in touch with our sales team via [nanocosmos.de/contact](https://www.nanocosmos.de/contact) or by email at sales(at)nanocosmos.net.
+
+*Need help accessing an existing organization or unsure how to proceed?* <br/>
+👉  Check the [Authentication section](#authentication) in our docs for step-by-step guidance on creating an account, logging in or requesting access from your system administrator.
+:::
 
 Once logged in, you can access bintu through:
 
@@ -34,7 +41,7 @@ Once logged in, you can access bintu through:
 
 :::tip Find your Api Key
 If you plan to use the **API**, you'll need the **API Key**, available in the Dashboard under your organization's settings: [dashboard.nanostream.cloud/organisation/overview](https://dashboard.nanostream.cloud/organisation/overview). 
-*Only <span className="role role-admin">nanoAdmin</span> have permission to access API keys.*
+*Only* <span className="role role-admin">nanoAdmin</span> *have permission to access **API keys**.*
 
 ![Screenshot: Organisation Overview with API Access](../assets/dashboard/orga-overview.png)
 *Screenshot: Organisation Overview with API Access*
@@ -62,7 +69,7 @@ A **stream** created with **bintu** represents a single live broadcast within na
 
 Both are based on a basic URL e.g. *rtmp://bintu-stream.nanocosmos.de/live* and a stream name e.g. *XXXX-YYYY*.
 
-You can use any live encoder, like [OBS](https://www.nanocosmos.net/blog/how-to-use-obs-for-low-latency-live-encoding-to-nanostream-cloud/) or [Osprey Talon](https://www.nanocosmos.net/blog/osprey-talon-and-nanostream-cloud/) or simply start streaming directly from your browser with the [nanoStream Webcaster](/docs/webrtc/nanostream_webrtc_getting_started).
+You can use any live encoder, like [OBS](https://www.nanocosmos.net/blog/how-to-use-obs-for-low-latency-live-encoding-to-nanostream-cloud/) or [Osprey Talon](https://www.nanocosmos.net/blog/osprey-talon-and-nanostream-cloud/) or simply start streaming directly from your browser with the nanoStream Webcaster. Find detailed instructions [here](/docs/dashboard/start_streaming).
 
 :::tip Example Stream
 Example stream ID: **1dec3bbc-758b-4879-a202-7ae877d511ba**
@@ -80,13 +87,11 @@ This allows you to repurpose live events as Video on Demand (VOD) assets or use 
 
 ### Live Processing
 
-[Learn more →](/docs/cloud/live_processing)
+Live Recording and VOD (Video on Demand) allow you to automatically store and replay your live streams. Once enabled, streams can be recorded for later playback or post-processing. [Learn more →](/docs/cloud/live_processing)
 
 ### Live Captions
 
-With AI-powered real-time captioning, spoken words are automatically converted into on-screen text. This improves accessibility and engagement for global audiences, especially in multilingual or large-scale live events.
-
-[Learn more →](/docs/cloud/live_captions)
+With AI-powered real-time captioning, spoken words are automatically converted into on-screen text. This improves accessibility and engagement for global audiences, especially in multilingual or large-scale live events. [Learn more →](/docs/cloud/live_captions)
 
 ### Security and Access Control
 

@@ -1,7 +1,7 @@
 ---
 id: cloud_overview
 title: Product and Services Overview
-sidebar_label: Product & Services Overview
+sidebar_label: Overview
 description: Discover how nanoStream Cloud enables real-time interactive live streaming for global business applications from encoding to playback, analytics, and stream management.
 ---
 
@@ -22,7 +22,7 @@ The platform includes a global Content Delivery Network, Adaptive Bitrate Player
 
 Whether you use **software encoders**, **hardware devices**, or **browser-based tools**, nanoStream Cloud makes it simple to go live in real time.
 
-You can ingest streams through popular protocols such as **RTMP**, **SRT**, **WHIP**, and **WebRTC**. It integrates easily with industry-standard tools like [OBS](https://www.nanocosmos.net/blog/how-to-use-obs-for-low-latency-live-encoding-to-nanostream-cloud/) or [Osprey Talon](https://www.nanocosmos.net/blog/osprey-talon-and-nanostream-cloud/). For instant browser-based streaming, the **nanoStream Webcaster** lets you broadcast directly without any plugins or third-party software.
+You can ingest streams through popular protocols such as **RTMP**, **SRT**, **WHIP**, and **WebRTC**. nanoStream Cloud integrates easily with industry-standard tools like [OBS](https://www.nanocosmos.net/blog/how-to-use-obs-for-low-latency-live-encoding-to-nanostream-cloud/) or [Osprey Talon](https://www.nanocosmos.net/blog/osprey-talon-and-nanostream-cloud/). For instant browser-based streaming, the **nanoStream Webcaster** lets you broadcast directly without any plugins or third-party software.
 
 This combination of flexibility, ultra-low latency, and browser compatibility makes nanoStream Cloud ideal for interactive applications where speed and simplicity matter most.
 
