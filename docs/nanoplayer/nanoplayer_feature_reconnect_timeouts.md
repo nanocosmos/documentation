@@ -8,8 +8,7 @@ sidebar_label: Reconnect and Timeouts
 
 The **nanoStream H5Live Player** can use an internal reconnect in case the network connection is broke up.
 
-Internal network reconnect is **supported on all platforms except iOS**. iOS media stream connections cannot be managed by the player, but by the browser and system.
-For the supported platforms automatic network reconnect is handling two main cases:
+The automatic network reconnect is handling two main cases:
 * Initial connect failing
 * Connection break up during streaming
 
@@ -26,9 +25,6 @@ the player will fire an [`onError`](./nanoplayer_api/#NanoPlayer..event_onError)
 The internal reconnect handles network connection break up only! It doesn't handle non network related stream break ups or pause reasons different then `normal`.
 :::
 
-:::caution Important
-Reconnect is not supported on iOS!
-:::
 
 ### Configuration {#reconnect-configuration}
 
