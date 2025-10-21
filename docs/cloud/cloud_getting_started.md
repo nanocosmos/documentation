@@ -288,6 +288,19 @@ You can find these snippets in multiple locations within the dashboard:
 
 ## Additional features
 
+The nanoStream Cloud offers several features that can boost your use case, like Secure Streaming, Live Recording or Analytics.
+
+:::warning Prerequisites
+To make use of the additional features mentioned below, it must be explicitly enabled for your organization. Activation may be subject to additional pricing or service terms.
+
+You can verify whether this feature is available by navigating to [dashboard.nanostream.cloud/organisation](https://dashboard.nanostream.cloud/organisation) in your dashboard.  
+In the **[Enabled Packages](./organization_overview#enabled-packages)** section, locate the entry for the feature you are looking for. If it shows **Upgrade needed**, please contact us.
+
+![Screenshot: Enabled Packages](../assets/dashboard/enabled-packages.png)  
+
+To activate features or learn more about available plans, feel free to reach out via [nanocosmos.de/contact](https://www.nanocosmos.de/contact). We're happy to assist you in finding the best setup for your use case.
+:::
+
 ### Analytics
 
 **nanoStream Analytics** gives you clear insights into the performance, reach, and stability of your live streams. It helps you monitor QoS (Quality of Service) and QoE (Quality of Experience) in real time so you can deliver a reliable streaming experience to all viewers. Some key benefits are:
