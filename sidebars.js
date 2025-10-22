@@ -19,14 +19,22 @@ const sidebars = {
     "cloud/cloud_overview",
     "cloud/cloud_introduction",
     "cloud/cloud_getting_started",
-    "cloud/live_encoding",
-    "cloud/srt_ingest",
-    "cloud/live-recording-vod",
-    "cloud/live_processing",
-    "cloud/live_captions",
     {
       "type": "category",
-      "label": "Security Features",
+      "label": "Live Streaming",
+      "collapsible": true,
+      "collapsed": false,
+      "items": [
+        "cloud/live_encoding",
+        "cloud/srt_ingest",
+        "cloud/live-recording-vod",
+        "cloud/live_processing",
+        "cloud/live_captions",
+      ]
+    },
+    {
+      "type": "category",
+      "label": "Security",
       "collapsible": true,
       "collapsed": false,
       "items": [
@@ -37,7 +45,7 @@ const sidebars = {
     },
     {
       "type": "category",
-      "label": "REST API",
+      "label": "API & Automation",
       "collapsible": false,
       "collapsed": false,
       "items": [
@@ -48,7 +56,7 @@ const sidebars = {
     },
     {
       "type": "category",
-      "label": "Support",
+      "label": "Support & Tools",
       "collapsible": false,
       "collapsed": false,
       "items": [

@@ -76,7 +76,7 @@ curl --request POST \
 
 Navigate to [dashboard.nanostream.cloud/stream/create](https://dashboard.nanostream.cloud/stream/create) and set up your stream.
 
-:::tip
+:::tip Create new Stream with the dashboard
 In order to learn more about stream creation with the dashboard and setting tags, transcoding profiles, and options such as live processing, check out our dedicated documentation: [Create Stream](/docs/dashboard/start_streaming#create-stream).
 :::
 
@@ -109,6 +109,12 @@ import TabItem from '@theme/TabItem';
   The **nanoStream Webcaster** is a browser-based encoder that requires no installation or plugins. It is ideal for quick broadcasts live streaming setups.
 
   You can stream directly from your browser by going to [dashboard.nanostream.cloud/webcaster](https://dashboard.nanostream.cloud/webcaster) and creating a new stream or by selecting an existing one. Alternatively, it is possible to manually append the stream ID to the URL at any time, e.g. `dashboard.nanostream.cloud/webcaster/YOUR-STREAM-ID`.
+
+  **Steps:**
+  1. Open the Webcaster via Dashboard → *Webcaster*
+  2. Select or create a Stream
+  3. Choose camera and microphone
+  4. Click **Start Broadcast**
 
   To learn more about how to set up the webcaster and process the stream, simply refer to our dedicated docs: [Ingesting with the nanoStream Webcaster](/docs/dashboard/start_streaming#ingesting-with-the-nanostream-webcaster).
 
