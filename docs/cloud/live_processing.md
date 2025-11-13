@@ -205,7 +205,20 @@ This is particularly useful for dynamic monitoring interfaces or automated highl
 
 ### Get Live Processing Assets via Dashboard
 
-All live processing assets can be accessed via the nanoStream Cloud Dashboard. There is a separate tab for this in each [stream overview](/docs/dashboard/stream_overview#single-stream-overview), where all assets are stored. The dashboard docs offer
+All live processing assets can be accessed via the nanoStream Cloud Dashboard. There is a separate tab for this in each [stream overview](/docs/dashboard/stream_overview#single-stream-overview), where all assets are stored. The dashboard documentation provides a detailed introduction to the various live processes and how they are presented in the dashboard.
+
+<article className="margin-vert--lg">
+  <Columns className="list_ZO3j" >
+    <Card className="col col--6 margin-horiz--md" href="/docs/dashboard/live_processing">
+      <Card.Header title="Installation">Dashboard: Live Processing</Card.Header>
+      <Card.Body className="padding-vert--md">Learn more about live processes and their appearance in the dashboard.</Card.Body>
+    </Card>
+    <Card className="col col--6 margin-horiz--md" href="/docs/dashboard/live_processing#overview-of-live-processing-options">
+      <Card.Header title="Configuration">Overview of live processing options</Card.Header>
+      <Card.Body className="padding-vert--md">Learn how to access your data via the dashboard.</Card.Body>
+    </Card>
+  </Columns>
+</article>
 
 
 :::tip Accessing the live processing assets
