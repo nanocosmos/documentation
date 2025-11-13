@@ -4,32 +4,29 @@ title: Live Processing
 sidebar_label: Live Processing
 ---
 
-Live Processing options allow users to enhance the playback experience and manage stream content more effectively. 
-These features can be applied to all streams, providing flexibility and customization in how content is processed and presented to viewers.
+:::warning Prerequisites
+To make use of **Live Processing**, it must be explicitly enabled for your organization. Activation may be subject to additional pricing or service terms.
 
-:::tip Prerequisites
-To make use of `live processing`, the feature must be explicitly enabled for your organization. Activation may be subject to additional pricing or service terms.
-
-You can verify whether this feature is available by navigating to [dashboard.nanostream.cloud/organisation/overview](https://dashboard.nanostream.cloud/organisation) in your dashboard.  
-In the **[Enabled Packages](./organization_overview#enabled-packages)** section, locate the entry for `live processing`. If it shows **Upgrade needed**, please contact us.
+You can verify whether this feature is available by navigating to [dashboard.nanostream.cloud/organisation](https://dashboard.nanostream.cloud/organisation) in your dashboard.  
+In the **[Enabled Packages](./organization_overview#enabled-packages)** section, locate the entry for `Live Processing`. If it shows **Upgrade needed**, please contact us.
 
 ![Screenshot: Enabled Packages](../assets/dashboard/enabled-packages.png)  
 
-To activate this feature or learn more about available plans, feel free to reach out via [nanocosmos.de/contact](https://www.nanocosmos.de/contact). We're happy to assist you in finding the best setup for your use case.
+To activate `live processing` or learn more about available plans, feel free to reach out via [nanocosmos.de/contact](https://www.nanocosmos.de/contact). We're happy to assist you in finding the best setup for your use case.
 :::
 
-<article className="margin-vert--lg">
-  <Columns className="list_ZO3j" >
-    <Card className="col col--6 margin-horiz--md" href="../dashboard/live_processing">
-      <Card.Header title="Live Processing">Dashboard</Card.Header>
-      <Card.Body className="padding-vert--md">To configure the live processing options, follow the steps during the stream creation.</Card.Body>
-    </Card>
-    <Card className="col col--6 margin-horiz--md" href="https://doc.pages.nanocosmos.de/bintuapi-docs/#operation/processing">
-      <Card.Header title="Configuration">Bintu API</Card.Header>
-      <Card.Body className="padding-vert--md">To utilize the API requests, read more in the bintu docs.</Card.Body>
-    </Card>
-  </Columns>
-</article>
+## Overview
+
+**Live Processing** enables you to automatically enhance, extend, or transform your live streams within the nanoStream Cloud infrastructure.  
+These real-time processing features can be applied to any active stream, allowing operators to generate thumbnails, create motion previews, record segments, or offer instant replay capabilities, all without additional local encoding steps.
+
+Live Processing runs entirely in the cloud and is optimized for ultra-low-latency workflows. This makes it ideal for use cases such as interactive live streaming, gaming, auctions, or betting environments where both live engagement and data-driven automation are crucial.
+
+Typical benefits include:
+
+- Automated generation of dynamic stream assets (thumbnails, replays, highlights)
+- Improved content management and viewer experience
+- Consistent processing across global ingest regions
 
 ## Example Use Cases
 
@@ -44,11 +41,17 @@ To activate this feature or learn more about available plans, feel free to reach
 
 ### Thumbnail
 
-The thumbnail option captures snapshots of the stream at defined intervals. These snapshots allow quick and easy visual review of key moments, making it an essential tool for content managers looking to enhance stream previews and navigation.
+The **Thumbnail** feature periodically captures still images (snapshots) of a live stream at defined intervals. These snapshots can be displayed in dashboards, user interfaces, or custom applications to visualize stream activity.
 
-:::tip Key benefits
-- Enables fast review of important moments without watching the full stream.
-- Ideal for creating visual highlights or navigating to specific segments of the stream.
+Typical use cases include:
+- Visual overviews of multiple streams for monitoring
+- Dynamic website previews or stream galleries
+- Content management workflows where image-based indexing is required
+
+:::tip Key Benefits
+- Enables fast, lightweight visual monitoring of live streams
+- Reduces the need for continuous video playback
+- Useful for dashboards, portals, or automated content management systems
 :::
 
 | Setting    | Description                 | Min | Max   |
@@ -57,11 +60,17 @@ The thumbnail option captures snapshots of the stream at defined intervals. Thes
 
 ### Motion Clip
 
-Motion clip generates short sequences of snapshots, offering a more dynamic way to preview moments in the stream. These clips can be used to create engaging content previews, helping viewers get a quick sense of what’s happening in the stream.
+The **Motion Clip** option generates short, animated sequences of your live stream by combining a series of snapshots into a short video-like preview. This provides a dynamic alternative to static thumbnails and helps convey activity at a glance.
 
-:::tip Key benefits
-- Provides dynamic visual content that enhances user engagement.
-- Helps users quickly assess key moments with a moving snapshot sequence.
+Typical use cases include:
+- Preview animations for live event listings
+- Interactive betting and sports dashboards
+- Automated highlight snippets for social media or app displays
+
+:::tip Key Benefits
+- Delivers more engaging content previews than static images
+- Ideal for showcasing live activity or capturing fast-moving scenes
+- Can be integrated with content feeds or automated media workflows
 :::
 
 | Setting    | Description                    | Min | Max   |
@@ -71,11 +80,18 @@ Motion clip generates short sequences of snapshots, offering a more dynamic way 
 
 ### Recording
 
-The recording option allows parts or the entire stream to be recorded for later access as Video on Demand (VOD) available after the session. This is ideal for customers who wish to provide viewers with the ability to rewatch streams.
+The **Recording** process allows your live stream (or portions of it) to be automatically stored and made available for later playback as **Video on Demand (VOD)**.  
+This is fully cloud-managed and ideal for long-running live services that require replay, compliance, or archival functionality.
 
-:::tip Key benefits
-- Provides a recording of the stream for future playback and processing.
-- Facilitates video archiving and on-demand access for viewers.
+Typical use cases include:
+- Legal or compliance-related stream storage  
+- Rewatchable event content for users  
+- Creating VOD libraries or backups of live shows
+
+:::tip Key Benefits
+- Automatically archives live sessions for future access  
+- Enables VOD publishing and compliance tracking  
+- Integrates seamlessly with the **Live Recording and VOD** feature set
 :::
 
 | Setting    | Description                     | Min | Max           |
@@ -84,14 +100,118 @@ The recording option allows parts or the entire stream to be recorded for later 
 
 ### Replay
 
-Replay enables users to rewind and view previous sections of the live stream, offering greater flexibility and control over the live playback experience.
+The **Replay** option provides real-time rewatch functionality, allowing viewers or operators to access recent portions of a live stream without interrupting ongoing playback. This is particularly valuable in interactive or event-driven scenarios, such as live sports, auctions, or eSports.
 
-:::tip Key benefits
-- Allows users to revisit earlier moments in the stream without interrupting the ongoing broadcast.
-- Predefined replay clippings of the stream that users can instantly share.
-- Improves the viewer experience by adding on-the-fly rewatchability.
+Typical use cases include:
+- Sports replays during live matches
+- Quick rewatch for moderation or compliance review
+- Audience-driven instant replay functionality
+
+:::tip Key Benefits
+- Allows instant playback of previous segments
+- Maintains continuous live streaming without disruption
+- Enhances interactivity and viewer retention
 :::
 
 | Setting    | Description                  | Min | Max           |
 | ---------- | ---------------------------- | --- | ------------- |
 | `duration` | Length of the replay buffer. | 1s  | Entire stream |
+
+
+## Accessing Live Processing Assets
+
+Once a stream has been processed, all generated assets, such as **thumbnails**, **motion clips**, or **replay segments**, can be accessed either **programmatically** via the **bintu REST API** or directly within the **nanoStream Cloud Dashboard**. Each processed stream is automatically linked to one or more associated assets. These can be previewed, downloaded, or integrated into your own application depending on your workflow.
+
+### Get Live Processing Assets via REST API
+
+You can retrieve processed assets for a specific stream using the [bintu REST API](https://doc.pages.nanocosmos.de/bintuapi-docs/#operation/Stream%20Info).  
+This endpoint returns metadata for the stream, including a list of available processing outputs (e.g., thumbnails, motion clips, or replay URLs).
+
+**Parameters:**
+- `YOUR_STREAM_ID` — the unique ID of your stream in nanoStream Cloud  
+- `X-BINTU-APIKEY` — your API key for authentication
+
+```bash title="bintu/get_stream.sh"
+curl --request GET \
+  --url 'https://bintu.nanocosmos.de/stream/YOUR_STREAM_ID?asset_limit=10' \
+  --header 'X-BINTU-APIKEY: REPLACE_WITH_YOUR_API_KEY'
+```
+
+When requesting stream details via the **bintu REST API**, the response contains all available ingest, playout, and processing information. Below is a simplified example response showing different output formats for a single stream and its related assets:
+
+```json title="Example: GET /stream/{YOUR_STREAM_ID}"
+{
+  "id": "YOUR_STREAM_ID",
+  "streamgroup": "YOUR_STREAM_GROUP_ID",
+  ...
+  "tags": [],
+  "ingest": { ... },
+  "playout": {
+    "h5live": [
+      {
+        "id": "YOUR_STREAM_ID",
+        "type": "live",
+        "tags": [],
+        "server": { ... }
+      },
+      {
+        "id": "YOUR_TRANSCODE_ID",
+        "type": "live",
+        "tags": [],
+        "info": { ... }
+      }
+    ],
+    "hls": [ ... ],
+    "web": [ // recordings can be identified in this array by their type "vod"
+      {
+        "url": "https://bintu.nanocosmos.de:443/playout/YOUR_STREAM_ID",
+        "type": "live",
+        "createdAt": "2025-11-04T17:09:19.899Z",
+        "streamId": "YOUR_STREAM_ID",
+        "id": "YOUR_STREAM_ID",
+        "pushUrl": null,
+        "opcode": null,
+        "processing": [],
+        "tags": []
+      },
+      {
+          "url": "https://bintu-vod.nanocosmos.de:443/vod/YOUR_STREAM_NAME.mp4",
+          "type": "vod",
+          "createdAt": "2025-11-04T17:10:49.413Z",
+          "streamId": "YOUR_STREAM_ID",
+          "index": 1
+      },
+     ], 
+    "replay": [ // urls to the instant replay 
+      {
+        "url": "https://replay.nanocosmos.de/live-replay/demo/?streamname=YOUR_STREAM_NAME&bintu=bintu.nanocosmos.de",
+        "type": "playout",
+        "index": 0,
+        "streamId": "YOUR_STREAM_ID",
+        "streamname": "YOUR_STREAM_NAME"
+      }, 
+    ],
+    "thumbnails": [ ... ], // contains the 
+    "motionclip": [ ... ]
+  }
+}
+```
+
+:::tip Developer Tip
+You can automate the retrieval of live processing assets by integrating the bintu REST API into your own dashboard or content management system.
+This is particularly useful for dynamic monitoring interfaces or automated highlight generation.
+:::
+
+
+### Get Live Processing Assets via Dashboard
+
+All live processing assets can be accessed via the nanoStream Cloud Dashboard. There is a separate tab for this in each [stream overview](/docs/dashboard/stream_overview#single-stream-overview), where all assets are stored. The dashboard docs offer
+
+
+:::tip Accessing the live processing assets
+The live processing tab can be accessed in various areas of the dashboard:
+
+- **Playout Overview**: [dashboard.nanostream.cloud/playout/YOUR-STREAM-ID](https://dashboard.nanostream.cloud/playout/YOUR-STREAM-ID)
+- **Stream Overview**: [dashboard.nanostream.cloud/stream/YOUR-STREAM-ID](https://dashboard.nanostream.cloud/stream/YOUR-STREAM-ID)
+- **Webcaster Overview**: [dashboard.nanostream.cloud/webcaster/YOUR-STREAM-ID](https://dashboard.nanostream.cloud/webcaster/YOUR-STREAM-ID)
+:::

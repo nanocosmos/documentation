@@ -98,11 +98,11 @@ The VOD playback URLs can be easily accessed through the nanoStream Cloud Dashbo
 ![Screenshot: Example Stream Overview (Streamgroup)](../assets/dashboard/stream-overview.png)
 *Screenshot: Example Stream Overview (Streamgroup)*
 
+:::tip Accessing the recorded assets
+
 The URLs can be accessed in various areas of the dashboard:
 
-- Playout Overview
-   - [dashboard.nanostream.cloud/playout/YOUR-STREAM-ID](https://dashboard.nanostream.cloud/playout/YOUR-STREAM-ID)
-- Stream Overview
-   - [dashboard.nanostream.cloud/stream/YOUR-STREAM-ID](https://dashboard.nanostream.cloud/stream/YOUR-STREAM-ID)
-- Webcaster Overview
-   - [dashboard.nanostream.cloud/webcaster/YOUR-STREAM-ID](https://dashboard.nanostream.cloud/webcaster/YOUR-STREAM-ID)
+- **Playout Overview**: [dashboard.nanostream.cloud/playout/YOUR-STREAM-ID](https://dashboard.nanostream.cloud/playout/YOUR-STREAM-ID)
+- **Stream Overview**: [dashboard.nanostream.cloud/stream/YOUR-STREAM-ID](https://dashboard.nanostream.cloud/stream/YOUR-STREAM-ID)
+- **Webcaster Overview**: [dashboard.nanostream.cloud/webcaster/YOUR-STREAM-ID](https://dashboard.nanostream.cloud/webcaster/YOUR-STREAM-ID)
+:::
