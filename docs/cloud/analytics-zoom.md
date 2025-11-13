@@ -66,7 +66,7 @@ While `Buffering Ratio`, `Latency`, `Playtime Average`, `ABR Viewers`, `ABR Play
 Zooming into an usage diagram opens detailed information about the top 10 with biggest playout or ingest traffic within a specific time frame. (e.g. the top 10 countries with the highest stream data traffic)
 
 ### Protocol Usage
-The protocol usage shows the traffic for every protocol individually (e.g. H5Live, RTMP, HLS and H5Live Token). 
+The protocol usage shows the traffic for every protocol individually (e.g. H5Live, RTMP, HLS, H5Live Token, MoQ). 
 
 ![Screenshot: Zoom on Protocol Usage](../assets/analytics/analytics-zoom-home-protocols.png)
 *Screenshot: Zoom on Protocol Usage*

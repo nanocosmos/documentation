@@ -142,6 +142,7 @@ The total playout traffic for each playout method.
 - **RTMP**: less scalable
 - **HLS**: long latency playback
 - **H5Live Token**: in case you have your own (RTMP) ingest server, from which the streams are pulled and then distributed in the nanoStream cloud to your viewers
+- **MoQ**: ultra-low-latency playback
 
 #### Usage Ingest
 

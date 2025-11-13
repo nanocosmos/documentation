@@ -7,14 +7,105 @@ sidebar_label: History
 
 # Changelog
 
+## 2.31 - Cloud Optimizations
+
+- internal system optimizations
+
+## 2.30 - Alerts via Email Notification
+
+-  added API routes for alert manager:
+   -  `/api/v2/alerting/config` -> get alert notification config (just admin)
+   -  `/api/v2/alerting/config/create` -> create alert notification config (just admin)
+   -  `/api/v2/alerting/config/delete` -> delete alert notification config (just admin)
+   -  `/api/v2/alerting/config/smtp` -> set SMTP settings in alert notification config (just admin)
+   -  `/api/v2/alerting/config/email` -> get all configured email receivers
+   -  `/api/v2/alerting/config/email/add` -> add new email receiver to config
+   -  `/api/v2/alerting/config/email/delete` -> delete email receiver from config
+   -  `/api/v2/alerting/config/email/replaceAll` -> overwrite email receiver config
+-  added API routes for creating stream player config
+   -  `/api/streamWatch/playerPage?streams=...` => returns html for test player for stream
+   -  `/api/streamWatch/playerConfig?streams=...` => returns sPlay token for stream
+-  added API routes for getting latest RTMP metrics
+   -  `/api/v2/monitoring/ingest/rtmp/latestMetrics?streams=...` => returns RTMP metrics (bitrate audio/video, stream time ratio, max frame delay, stream elapsed time) for latest datapoint in ES for a stream
+-  added max time offset (aka max frame delay) metric to troubleshooting ingest
+
+## 2.29 - Alerting data adpation / Use protocol tags
+
+-  added API routes for successful playback start ratio (**SPSR**) to get TOP 100 for streams:
+   -  `/api/v2/playback/start/success/ratio/streams/top100` (ascending order)
+   -  `/api/v2/playback/start/errors/streams/top100` (descending order)
+-  changed behavior of alerting API routes `/api/v2/alerting/ingest` / `/api/v2/alerting/ingest/custom`
+   -  reduced detection time range from 15 to 5 minutes -> makes detection more responsive
+   -  new fields:
+      -  `alerts/advices -> name` => each single alert/advice now has a name like `DUPLICATED_INGEST`
+      -  `alerts/advices -> servers` => all hosts found for alert detection
+      -  `alerts/advices -> highestStreamElapsedTime` => highest elapsed time found for the stream in the detection time range -> gives an indication of how long the stream has been running when the alert was detected
+   -  `streamDetails` has been replaced by `connectionsDetails`: `streamDetails` only contained a summary of the most frequent values for all ingest connections, whereas `connectionsDetails` lists each ingest connection that occurred in the alert detection time range
+   -  `CONTINUOUS_RESTARTS` with code 22001 is now code 22000
+   -  new alert: `CONTINUOUS_RESTARTS_POOR_PERFORMANCE` (code: 22001), this alert indicates continuous restarts where the stream time ratio reflects a poor performance
+
+## 2.28 - Alert Guiding & Publishes Search Optimization
+
+- improved alert analysis and enriched details about alert handling
+- optimized publish search algorithm for faster and more accurate results  
+
+## 2.27 - Public world map API routes
+
+-  added **world map metric** routes to metrics API
+   -  **Playout/Ingest:** `/api/v2/world/playoutIngest`
+   -  **Buffering ratio:** `/api/v2/world/buffering/ratio`
+   -  **Latency:** `/api/v2/world/latency`
+   -  **Playtime:** `/api/v2/world/playtime`
+   -  **Usage:** `/api/v2/world/usage`
+   -  **ABR playtime:** `/api/v2/world/abr/playtime`
+   -  **ABR viewer:** `/api/v2/world/abr/viewer`
+   -  **ABR switches:** `/api/v2/world/abr/switches`
+-  added API routes for **H5Live playtime broken down by browser/os**:
+   -  **browser:** `/api/v2/h5live/playtime/browser`
+   -  **os:** `/api/v2/h5live/playtime/os`
+
+## 2.26 - Official successful playback start ratio API release
+
+added API routes for successful playback start ratio:
+
+-  `/api/v2/playback/start/success/ratio/timeseries`
+-  `/api/v2/playback/start/success/ratio/streams/timeseries`
+-  `/api/v2/playback/start/success/ratio/tags/timeseries`
+-  `/api/v2/playback/start/success/ratio/countries/timeseries`
+-  `/api/v2/playback/start/success/ratio/world`
+
+-  `/api/v2/playback/start/success/ratio/{breakdownTerm}`
+-  `/api/v2/playback/start/success/ratio/streams/{breakdownTerm}`
+-  `/api/v2/playback/start/success/ratio/tags/{breakdownTerm}`
+-  `/api/v2/playback/start/success/ratio/countries/{breakdownTerm}`
+
+-  `/api/v2/playback/start/errors`
+-  `/api/v2/playback/start/errors/streams`
+-  `/api/v2/playback/start/errors/tags`
+-  `/api/v2/playback/start/errors/world`
+
+-  `/api/v2/playback/start/errors/{breakdown}`
+-  `/api/v2/playback/start/errors/streams/{breakdown}`
+-  `/api/v2/playback/start/errors/tags/{breakdown}`
+-  `/api/v2/playback/start/errors/countries/{breakdown}`
+
+-  `/api/v2/playback/start/success/ratio/organizations` (admin route)
+-  `/api/v2/playback/start/errors/organizations` (admin route)
+
+
+## 2.25 - Successful playback start / failure service & SRT metrics monitoring API route
+
+:::info Release Version Differentiation
+With the introduction of version 2.25 we made versioning of our API and the Analytics Dashboard independant from each other. This release contained no changes for the Analytics Dashboard service and as a consequence this service remains at version 2.24 for now.
+:::
+
+-  added API route for SRT ingest metrics monitoring `/api/v2/monitoring/ingest/srt/timeseries`:
+   -  bitrate (combined video/audio)
+   -  round trip time
+   -  packet lost
+   -  packet dropped
+
 ## 2.24 - Alerting service & Error response improvement
-
-### Analytics Dashboard
-
--  use toasts for error messages
--  improved troubleshooting fine time range slider to automatically keep the maximal selected time range duration at 12 hours
-
-### API
 
 -  added timestamp as a human readable date string (in addition to the existing UNIX seconds timestamp) to all API route responses containing a timestamp (property name: `timestampAsString`)
 -  added additional fields to detected alerts/advices via `/api/v2/alerting/ingest/`:
