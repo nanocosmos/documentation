@@ -127,9 +127,19 @@ Once a stream has been processed, all generated assets, such as **thumbnails**, 
 You can retrieve processed assets for a specific stream using the [bintu REST API](https://doc.pages.nanocosmos.de/bintuapi-docs/#operation/Stream%20Info).  
 This endpoint returns metadata for the stream, including a list of available processing outputs (e.g., thumbnails, motion clips, or replay URLs).
 
+It is possible to retrieve stream info with the following roles:
+
+|<span className="role role-admin">nanoAdmin</span>|<span className="role role-user">nanoUser</span>|<span className="role role-readonly">nanoReadOnly</span>|
+|---|---|---|
+| ✓ | ✓ | ✓ |
+
 **Parameters:**
-- `YOUR_STREAM_ID` — the unique ID of your stream in nanoStream Cloud  
-- `X-BINTU-APIKEY` — your API key for authentication
+- `YOUR_STREAM_ID`: the unique ID of your stream in nanoStream Cloud
+- `X-BINTU-APIKEY`: your API key for authentication
+
+:::info Locate your API Key
+To find your API key, please sign in to your nanoStream Cloud/Bintu account and copy your API key [here](https://dashboard.nanostream.cloud/organisation).
+:::
 
 ```bash title="bintu/get_stream.sh"
 curl --request GET \
@@ -142,57 +152,120 @@ When requesting stream details via the **bintu REST API**, the response contains
 ```json title="Example: GET /stream/{YOUR_STREAM_ID}"
 {
   "id": "YOUR_STREAM_ID",
-  "streamgroup": "YOUR_STREAM_GROUP_ID",
+  "streamgroup": "YOUR_STREAM_ID",
   ...
-  "tags": [],
-  "ingest": { ... },
   "playout": {
     "h5live": [
       {
-        "id": "YOUR_STREAM_ID",
-        "type": "live",
-        "tags": [],
-        "server": { ... }
+        "id": "YOUR_PASSTHROUGH_STREAM_ID",
+        ...
+        "processing": [
+          { "id": "rec", "duration": null },  // Recording Settings for Passthrough Stream
+          { "id": "replay", "duration": null }, // Replay Settings for Passthrough Stream
+          { "id": "thumbs", "interval": 10 }, // Thumbnail Settings for Passthrough Stream
+          { "id": "motionclip", "interval": 10, "duration": 5 } // Motionclip Settings for Passthrough Stream
+        ],
+        "tags": ["Passthrough"],  // Auto-generated tag if the streamgroup was created using the nanoStream Cloud Dashboard
+        "index": 0
       },
       {
-        "id": "YOUR_TRANSCODE_ID",
-        "type": "live",
-        "tags": [],
-        "info": { ... }
-      }
+        "id": "YOUR_TRANSCODE_STREAM_ID",
+        ...
+        "processing": [
+          { "id": "rec", "duration": null },  // Recording Settings for 1. Transcode Stream
+          { "id": "replay", "duration": null },  // Replay Settings for 1. Transcode Stream
+          { "id": "thumbs", "interval": 10 },  // Thumbnail Settings for 1. Transcode Stream
+          { "id": "motionclip", "interval": 10, "duration": 5 }  // Motionclip Settings for 1. Transcode Stream
+        ],
+        "tags": ["1. Transcode"], // Auto-generated tag if the streamgroup was created using the nanoStream Cloud Dashboard
+        "index": 1
+      },
+      ....
+    ],
+    "rtmp": [
+     {
+        "id": "YOUR_PASSTHROUGH_STREAM_ID",
+        ...
+        "processing": [
+          { "id": "rec", "duration": null },  // Recording Settings for Passthrough Stream
+          { "id": "replay", "duration": null }, // Replay Settings for Passthrough Stream
+          { "id": "thumbs", "interval": 10 }, // Thumbnail Settings for Passthrough Stream
+          { "id": "motionclip", "interval": 10, "duration": 5 } // Motionclip Settings for Passthrough Stream
+        ],
+        "tags": ["Passthrough"],  // Auto-generated tag if the streamgroup was created using the nanoStream Cloud Dashboard
+        "index": 0
+      },
+      {
+        "id": "YOUR_TRANSCODE_STREAM_ID",
+        ...
+        "processing": [
+          { "id": "rec", "duration": null },  // Recording Settings for 1. Transcode Stream
+          { "id": "replay", "duration": null },  // Replay Settings for 1. Transcode Stream
+          { "id": "thumbs", "interval": 10 },  // Thumbnail Settings for 1. Transcode Stream
+          { "id": "motionclip", "interval": 10, "duration": 5 }  // Motionclip Settings for 1. Transcode Stream
+        ],
+        "tags": ["1. Transcode"], // Auto-generated tag if the streamgroup was created using the nanoStream Cloud Dashboard
+        "index": 1
+      },
+      ...
+    ],
+    // Recordings of the stream are available here if 1. vod is enabled for the organisation or 2. the live process recording is active
+    "web": [
+      {
+        "url": "https://bintu-vod.nanocosmos.de:443/vod/STREAM_NAME.mp4",
+        "type": "vod",  // The type "vod" indicates that this is a recording of the stream
+        "streamId": "STREAM_ID",
+        ...
+      },
+      ...
     ],
     "hls": [ ... ],
-    "web": [ // recordings can be identified in this array by their type "vod"
+    // Thumbnails can be found here, sorted per quality of the stream (if streamgroup)
+    "thumbnails": [
       {
-        "url": "https://bintu.nanocosmos.de:443/playout/YOUR_STREAM_ID",
-        "type": "live",
-        "createdAt": "2025-11-04T17:09:19.899Z",
-        "streamId": "YOUR_STREAM_ID",
-        "id": "YOUR_STREAM_ID",
-        "pushUrl": null,
-        "opcode": null,
-        "processing": [],
-        "tags": []
+        "url": "https://bintu-vod.nanocosmos.de:443/vod/thumbnails/STREAM_NAME.jpg",
+        "type": "image",
+        "streamId": "YOUR_PASSTHROUGH_ID",
+        "streamname": "YOUR_PASSTHROUGH_STREAMNAME"
+        ...
       },
       {
-          "url": "https://bintu-vod.nanocosmos.de:443/vod/YOUR_STREAM_NAME.mp4",
-          "type": "vod",
-          "createdAt": "2025-11-04T17:10:49.413Z",
-          "streamId": "YOUR_STREAM_ID",
-          "index": 1
+        "url": "https://bintu-vod.nanocosmos.de:443/vod/thumbnails/STREAM_NAME.jpg",
+        "type": "image",
+        "streamId": "YOUR_TRANSCODE_ID",
+        "streamname": "YOUR_TRANSCODE_STREAMNAME"
       },
-     ], 
-    "replay": [ // urls to the instant replay 
-      {
-        "url": "https://replay.nanocosmos.de/live-replay/demo/?streamname=YOUR_STREAM_NAME&bintu=bintu.nanocosmos.de",
-        "type": "playout",
-        "index": 0,
-        "streamId": "YOUR_STREAM_ID",
-        "streamname": "YOUR_STREAM_NAME"
-      }, 
+      ...
     ],
-    "thumbnails": [ ... ], // contains the 
-    "motionclip": [ ... ]
+    // To start a replay session, you will find all assets and urls here
+    "replay": [
+      {
+        "url": "https://replay.nanocosmos.de/live-replay/demo/?streamname=xsTvy-JgqqV&bintu=bintu.nanocosmos.de",
+        "type": "playout",
+        "streamId": "YOUR_PASSTHROUGH_ID",
+        "streamname": "YOUR_PASSTHROUGH_STREAMNAME"
+        ...
+      },
+      ...
+    ],
+    // Motionclips are stored in this property
+    "motionclip": [
+      {
+        "url": "https://bintu-vod.nanocosmos.de:443/vod/thumbnails/xsTvy-JgqqV.gif",
+        "type": "gif",
+        "streamId": "YOUR_PASSTHROUGH_ID",
+        "streamname": "YOUR_PASSTHROUGH_STREAMNAME"
+        ...
+      },
+      {
+        "url": "https://bintu-vod.nanocosmos.de:443/vod/thumbnails/xsTvy-nkQMf.gif",
+        "type": "gif",
+        "streamId": "YOUR_TRANSCODE_ID",
+        "streamname": "YOUR_TRANSCODE_STREAMNAME"
+        ...
+      },
+      ...
+    ]
   }
 }
 ```
