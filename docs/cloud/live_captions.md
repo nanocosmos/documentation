@@ -204,7 +204,7 @@ Advances in AI continue to expand the capabilities of live captioning. Upcoming 
 We're here to support you throughout your Live Captions integration.
 If you would like to discuss your Live Captions requirements, pricing, or custom solutions, feel free to contact our sales team via [nanocosmos.de/contact](https://www.nanocosmos.de/contact) or by email at sales(at)nanocosmos.net.
 
-*If you require technical help or want to report an issue, simply use our official support form:* Check the [support form](https://www.nanocosmos.net/support).
+*If you require technical help or want to report an issue, simply use our official [support form](https://www.nanocosmos.net/support).*
 
 We're happy to assist you in finding the best configuration for your workflow.
 :::
