@@ -16,7 +16,6 @@ nanoStream Cloud provides a comprehensive, multi-layered security framework desi
 
 ## Encrypted Streaming
 
-
 nanoStream Cloud ensures that data transfer across ingest, control, and playback layers is encrypted using modern standards.  
 All H5Live Player and Webcaster operations run over **HTTPS/TLS**, ensuring secure communication by default. For ingest workflows, you may choose to enforce encrypted streaming using **RTMPS** instead of standard RTMP. RTMPS provides SSL encryption to protect audio/video data as it is sent to nanoStream Cloud.
 
@@ -176,6 +175,14 @@ JWTs can also be created directly in the nanoStream Cloud Dashboard, without usi
     </Card>
   </Columns>
 </article>
+
+## nanoStream Guardian
+
+In addition to proactive access control mechanisms such as JWT-based Secure Playback, nanoStream Cloud includes **nanoStream Guardian**, a real-time protection layer designed to block unwanted traffic the moment it appears. Guardian helps you mitigate threats such as illegal restreaming, unauthorized embedding, bot-based abuses, or sudden spikes in traffic that may indicate DDoS-like behavior.
+
+Guardian can be used directly from the Analytics Dashboard or via a dedicated Guardian API, enabling both manual operation and automated workflows.
+
+Get a deep dive by visiting the [dedicated nanoStream Guardian docs](/docs/cloud/guardian).
 
 ## Webhoks & Ingest Authorization
 

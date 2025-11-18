@@ -4,65 +4,90 @@ title: nanoStream Guardian
 sidebar_label: nanoStream Guardian
 ---
 
+
+nanoStream Guardian is a security extension of **nanoStream Cloud**, designed to **instantly block unwanted viewers, domains, or entire IP ranges** from accessing your live streams.
+With just a single API call or directly from your Analytics Dashboard, you can **prevent illegal restreaming, unauthorized embedding, malicious attacks, or suspicious traffic spikes**.
+
+The Guardian acts as an additional, real-time protection layer that complements your existing secure playback and token workflow.
+
+:::warning Prerequisites
+To use nanoStream Guardian, you need an active nanoStream Cloud/Bintu account (trial or paid). If you are just getting started:
+
+- Create an account via **[Sign Up](https://dashboard.nanostream.cloud/auth?signup)**  
+- Follow the **[Getting Started Guide](/docs/dashboard/getting_started)**  
+- Or reach out to our sales team via the **[contact form](https://www.nanocosmos.de/contact)** or by email via *sales(at)nanocosmos.de*
+:::
+
 <div class="video-wrap">
     <div class="video-container">
         <iframe src="https://www.youtube.com/embed/hVbkifac1uo" frameborder="0" allowfullscreen></iframe>
     </div>
 </div>
 
-***Click `PLAY` button to start***
+*Tutorial: Instantly protect your live streams by blocking IP addresses with nanoStream Guardian.*
 
-## What is nanoStream Guardian?
+## Why use nanoStream Guardian?
 
-nanoStream Guardian is a new service integrated into nanoStream Cloud, which allows you to **block specific IP addresses, referrers, and even entire CIDR masks from accessing your streams**.
+nanoStream Guardian provides **reactive security**, allowing you to respond immediately when suspicious or abusive activity appears in your analytics.
 
-:::info good to know
-A CIDR mask is a notation that allows to affect a range of IP adresses. For example blocking the following mask: 255.255.255.0 /24 would block all 256 IP adresses starting with 255.255.255`
+With Guardian, you can:
+
+- **Block individual IP addresses** showing unauthorized or malicious behavior
+- **Block full IP ranges (CIDR masks)** when attacks originate from networks or cloud providers
+- **Block referrer domains** that illegally embed your stream on external sites
+- Benefit from **fast propagation** (new connections blocked within max. **6 minutes**)
+- Use automatic **24-hour expiry** for IP blocks (referrers stay blocked until removed)
+- Apply the rules **organization-wide** without additional configuration
+
+This makes Guardian especially useful for:
+
+- Protecting against **illegal rebroadcasting / restreaming**
+- Stopping **DDoS-like spikes** or unusual bursts of traffic
+- Securing **premium events**, ticketed content, and private access sessions
+- Handling **abusive users** or bots in real time
+
+:::tip What is a CIDR Mask?
+CIDR masks allow blocking large ranges of IP addresses (useful for cloud-hosted VPNs or datacenter-based attacks).
+Example: Blocking `255.255.255.0/24` covers all **256 IPs** from `255.255.255.*`.
 :::
 
-By including nanoStream Guardian in your workflow, you can effectively **prevent unauthorized access and illegal replication of your streams, ensuring that only legitimate viewers can watch your content**.
+## How to Use nanoStream Guardian
 
-*Blocking an IP address is effective for 24 hours* and will affect all your organization's playouts new connections from the given IP address after a delay of max. 6 minutes. Blocking a referrer will prevent the given web domain from playing your streams *until you unblock it*.
+You can interact with the Guardian through:
+1. **Analytics Dashboard** (UI-based control, great for operators)
+2. **Guardian API** (automation, backend integration, workflows at scale)
 
-## What do you need to use nanoStream Guardian?
 
-:::info Before starting
-To begin, you need a valid bintu account, based on our trial or a paid plan. <br/>
-If you have not created an account yet, you can [sign up](https://dashboard.nanostream.cloud/auth?signup) or reach out to our dedicated sales team via the [contact form](https://www.nanocosmos.de/contact) or by sending an email to sales(at)nanocosmos.de.
+## Guardian in the Analytics Dashboard
 
-* [Homepage: Overview and Plans](https://info.nanocosmos.de/)
-* [Introduction](cloud_introduction)
+The **Analytics Dashboard**, available at [metrics.nanocosmos.de](http://metrics.nanocosmos.de), provides a real-time overview of viewer activity, allowing operators to detect anomalies and react within seconds. It is ideal for production teams, monitoring centers, and live event operations that require **immediate situational awareness**.
+
+| Tab | URL | Description |
+| --- | --- | ----------- |
+| Guardian | [metrics.nanocosmos.de/streamGuard](https://metrics.nanocosmos.de/streamGuard) | The Guardian tab is your central control panel for managing all active and historical security actions. This area is perfect for technical operators who must enforce security rules on the fly. |
+| Breakdown |  [metrics.nanocosmos.de/breakdown](https://metrics.nanocosmos.de/breakdown) | The Breakdown tab helps you detect suspicious patterns. From here, you can block IPs directly with a single click, enabling rapid mitigation during critical moments. |
+
+:::tip Learn More
+For a detailed walkthrough of analytics workflows and Guardian controls, visit the [Analytics Guardian Guide](/docs/analytics/guardian)
 :::
 
-## How to use nanoStream Guardian
+## Guardian API
 
-### With nanoStream Cloud Analytics Dashboard
+The API provides full programmatic control—ideal for automation, backend systems, or large-scale operations.
 
-Via the Analytics Dashboard, you can easily access the data you need to quickly observe any suspicious activities and take action.
+**API base URL:** https://guardian.nanostream.cloud/  
 
-nanoStream Guardian is included in the Analytics Dashboard in the Guardian and the Breakdown tab.
+### Supported Block Types
 
-- Analytics Dashboard URL: http://metrics.nanocosmos.de/
+| Block Type | Example | Effect | Duration |
+|-----------|---------|--------|----------|
+| Single IP | `103.13.113.1` | Blocks one viewer | 24h |
+| CIDR Mask | `103.13.113.0/24` | Blocks *all* addresses in a subnet | 24h |
+| Referrer Domain | `bad-stream-site.com` | Blocks entire domain from using H5Live playback | Until manually unblocked |
 
-- [In-depth information on using nanoStream Guardian with the Analytics Dashboard](./analytics-guardian.md)
+### Block a single IP (24h)
 
-### With nanoStream Guardian API
-
-If you require additional control over the service (e.g: for automatization or blocking a high number of IPs) or simply want to integrate the service into your programmers existing workflow, you are also able to use the nanoStream Guardian API.
-
-Manipulating CIDR-masks is yet only available via the API. 
-
-- API Entry point: https://guardian.nanostream.cloud/
-
-- API documentation: https://guardian.nanostream.cloud/docs
-
-
-### API Examples
-
-#### Block an IP for 24 hours
-
-
-```shell
+```bash title="guardian/block_single_ip.sh"
 curl --location 'https://guardian.nanostream.cloud/ip' \
 --header 'Content-Type: application/json' \
 --header 'X-BINTU-APIKEY: BINTU_API_KEY' \
@@ -73,20 +98,93 @@ curl --location 'https://guardian.nanostream.cloud/ip' \
 }'
 ```
 
-#### Block a Referrer
+### Block a CIDR Mask
 
-```shell
+```bash title="guardian/block_cidr_mask.sh"
+curl --location 'https://guardian.nanostream.cloud/ip' \
+--header 'Content-Type: application/json' \
+--header 'X-BINTU-APIKEY: BINTU_API_KEY' \
+--data '{
+    "ip": "103.13.113.0/24",
+    "type": "deny",
+    "tag": "Blocking suspicious subnet"
+}'
+```
+
+### Block a Referrer Domain
+
+```bash title="guardian/block_referrer_domain.sh"
 curl --location 'https://guardian.nanostream.cloud/referrer' \
 --header 'Content-Type: application/json' \
 --header 'X-BINTU-APIKEY: BINTU_API_KEY' \
 --data '{
     "domain": "all-good-streams.com",
-    "info": "Domain that replicates 3 streams on 24/02",
+    "info": "Domain replicating 3 streams on 24/02",
     "type": "deny"
 }'
 ```
 
-:::caution support
-For further assistance using nanoStream Guardian, use our [support form](https://www.nanocosmos.de/support), browse the [FAQs](../faq/faq_streaming/) or contact us via support(at)nanocosmos.de
+## How Blocking Works Internally
 
-:::
+Guardian applies security rules with minimal disruption:
+- Blocks apply **organization-wide**
+- New incoming connections from blocked IPs are denied within **≤ 6 minutes**
+- IP blocks expire automatically after 24 hours
+- Referrer blocks persist until explicitly removed
+- Existing sessions from a blocked IP remain active until the viewer disconnects
+- Blocks are logged and visible in the Analytics Dashboard
+
+This design ensures:
+- complete transparency
+- non-interference with ongoing sessions
+- immediate protection against new connection attempts
+
+## Best Practices
+
+Here are recommended strategies to help you get the most out of nanoStream Guardian in combination with the rest of the nanoStream Cloud security stack:
+
+
+### Use Guardian as a Real-Time Defense Layer
+Guardian is ideal for situations where suspicious activity appears unexpectedly during a live event. Examples include:
+- A single IP suddenly initiates hundreds of connections
+- Automated reconnect attempts from the same viewer
+- Anomalous traffic during high-value streams
+A quick IP or CIDR block stops unauthorized activity immediately without disrupting legitimate viewers.
+
+### Combine Guardian with JWT Secure Playback
+Guardian acts as a reactive shield, while JWT protects streams proactively. Together, they create a layered security model:
+- JWT ensures that only authorized viewers can access your content
+- Guardian blocks malicious or abusive behavior even if someone gains access
+This combination offers strong protection for premium, ticketed, or compliance-sensitive content.
+
+### Monitor Analytics for Early Threat Detection
+Use the Breakdown tab in the analytics dashboard to detect anomalies early:
+- Unusual geographic spikes
+- Repeated connection attempts
+- High viewer numbers from single IPs or unknown referrers
+- Unexpected embeds
+Active monitoring helps you address issues before they become critical.
+
+### Use CIDR Blocks Against Network-Based Attacks
+If suspicious traffic originates from VPNs, datacenters, or proxy networks, blocking a single IP is not enough.
+CIDR masks like `/24` or `/20` allow you to:
+- Suppress larger subnet ranges
+- Neutralize clusters of malicious actors
+- Stop automated scraping or restreaming services
+This is especially effective against botnets or cloud-hosted attackers.
+
+### Automate Blocking Through Backend Workflows
+Integrating Guardian into your backend ensures continuous protection without manual intervention.
+Common automation triggers:
+- Multiple concurrent sessions from the same viewer
+- Token sharing detected by your authentication system
+- Suspicious behavior flagged by your paywall or monitoring service
+Automation ensures fast, consistent security responses.
+
+### Keep Your Block List Organized Using Tags
+Tags make it easy to understand the reason behind each block, e.g.:
+- `"tag": "suspected restreaming"`
+- `"tag": "VPN subnet"`
+- `"tag": "DDoS spike during event"`
+- `"tag": "repeated reconnects"`
+Clear tagging is essential for team collaboration and incident reviews.
