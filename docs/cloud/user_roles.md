@@ -8,6 +8,11 @@ sidebar_label: Role-Based Access Control (RBAC)
 :::info Bintu API v1.23.0.0
 With the **`Bintu API v1.23.0.0`** we introduced a role-based access control system in Q3/2024.
 :::
+:::caution User Roles Update: No Action Needed
+With the **`Bintu API v1.23.0.0`** release introducing user roles, all users will retain their current permissions, now equivalent to the <span className="role role-admin">nanoAdmin</span> role. Therefore, **no immediate action is required** from organizations.
+:::
+
+**Role-Based Access Control (RBAC)** introduces a structured permission system to nanoStream Cloud, ensuring that access to resources and administrative functions is assigned based on clearly defined user roles. With this system, organizations gain better security, clearer permission structures, and simplified user administration. RBAC helps prevent unauthorized changes, reduces operational risks, and streamlines team workflows—especially in environments with multiple users, distributed teams, or complex streaming setups.
 
 ## Concept and Benefits
 
@@ -23,10 +28,6 @@ With the **`Bintu API v1.23.0.0`** we introduced a role-based access control sys
    - **Simplified Reporting and Auditing**: Since roles aggregate multiple permissions, generating reports on user access becomes more straightforward. This visibility is crucial for maintaining security, identifying potential issues, and demonstrating compliance with regulations.
 
 ## Getting started
-
-:::caution User Roles Update: No Action Needed
-With the **`Bintu API v1.23.0.0`** release introducing user roles, all users will retain their current permissions, now equivalent to the <span className="role role-admin">nanoAdmin</span> role. Therefore, **no immediate action is required** from organizations.
-:::
 
 Implementing Role-Based Access Control (RBAC) in your organization is a straightforward process that enhances security and simplifies user management. The following guide will walk you through the initial steps to configure user roles and manage permissions effectively.
 
@@ -50,10 +51,6 @@ It’s important to monitor user access and enforce RBAC policies consistently:
 - Regularly review the permissions and roles assigned to users to ensure they align with current responsibilities and security requirements.
 
 ## User Roles in nanoStream Cloud
-
-:::caution User Roles Update: No Action Needed
-With the **`Bintu API v1.23.0.0`** release introducing user roles, all users will retain their current permissions, now equivalent to the <span className="role role-admin">nanoAdmin</span> role. Therefore, **no immediate action is required** from organizations.
-:::
 
 :::info nanoStream Cloud Dashboard Instructions
 To learn more about user management using the dashboard, [click here](../dashboard/user_management).

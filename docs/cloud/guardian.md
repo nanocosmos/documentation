@@ -68,7 +68,7 @@ The **Analytics Dashboard**, available at [metrics.nanocosmos.de](http://metrics
 | Breakdown |  [metrics.nanocosmos.de/breakdown](https://metrics.nanocosmos.de/breakdown) | The Breakdown tab helps you detect suspicious patterns. From here, you can block IPs directly with a single click, enabling rapid mitigation during critical moments. |
 
 :::tip Learn More
-For a detailed walkthrough of analytics workflows and Guardian controls, visit the [Analytics Guardian Guide](/docs/analytics/guardian)
+For a detailed walkthrough of analytics workflows and Guardian controls, visit the [Analytics Guardian Guide](/docs/analytics/guardian).
 :::
 
 ## Guardian API
