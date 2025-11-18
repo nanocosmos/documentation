@@ -171,7 +171,7 @@ You can access the requests with the following permission level:
 |---|---|---|
 | ✓ | ✓ | ✗ |
 
-**Parameters:**
+**Parameters**
 - `YOUR_STREAM_ID`: the unique ID of your stream in nanoStream Cloud
 - `X-BINTU-APIKEY`: your API key for authentication
 
@@ -179,9 +179,9 @@ You can access the requests with the following permission level:
 To find your API key, please sign in to your nanoStream Cloud/Bintu account and copy your API key [here](https://dashboard.nanostream.cloud/organisation).
 :::
 
-**Body:**
-- `NAME`: immer "captions" für Live Captions
-- `OPTIONS`: Angepasste Optionen, inklusive ausgewählte engine und source /und oder Target Language. Die Details dazu, welche 
+**Body**
+- `NAME`: must always be set to `"captions"` to enable Live Captions for the stream.
+- `OPTIONS`: Contains all configuration options for the caption engine, this includes: `engine`, `sourceLanguage`, `targetLanguage` (optional)
 
 ```bash title="bintu/post_stream_options.sh"
 curl --request POST \
@@ -191,14 +191,7 @@ curl --request POST \
   --data '{"name":"captions","options":{"engine":"deepgram","sourceLanguage":"en"}}'
 ```
 
-## Outlook
-
-Advances in AI continue to expand the capabilities of live captioning. Upcoming improvements include:
-
-- **Multi-language translation** to allow single streams to serve diverse global audiences
-- **Industry-specific optimization** with specialized terminology
-- **Superior subtitle accuracy** through continuous learning from client feedback
-- **Deeper integration** with business systems and workflows (e.g., Cloud platform Dashboard)
+## Need assistance?
 
 :::tip Need assistance?
 We're here to support you throughout your Live Captions integration.

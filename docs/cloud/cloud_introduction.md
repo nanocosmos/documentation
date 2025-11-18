@@ -27,7 +27,7 @@ Once logged in, you can access bintu through:
     <Card className="col col--6 margin-horiz--md" href="/docs/dashboard/overview">
       <Card.Header title="Dashboard" />
       <Card.Body className="padding-vert--md">
-        The <strong>nanoStream Cloud Dashboard</strong> provides an intuitive, web-based interface to manage streams, analytics, and account settings, where no coding is required.v
+        The <strong>nanoStream Cloud Dashboard</strong> provides an intuitive, web-based interface to manage streams, analytics, and account settings, where no coding is required.
       </Card.Body>
     </Card>
     <Card className="col col--6 margin-horiz--md" href="https://doc.pages.nanocosmos.de/bintuapi-docs/">

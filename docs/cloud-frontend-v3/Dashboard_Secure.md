@@ -6,12 +6,16 @@ sidebar_label: Secure Playback & Secure Token
 
 Secure Playback Tokens are a valuable tool that enhances the security of your streams by providing controlled access. With these tokens, you have the ability to decide who can play back your stream, ensuring that only authorized viewers can access your content. The regular playout URL alone will not grant playback privileges.
 
-:::info Enable Secure Feature
-If you are interested in utilizing the `secure` feature offered by nanoStream Cloud, please ensure that it is enabled for your account. You can check that on the "[Organisation Overview](https://dashboard.nanostream.cloud/organisation)“ (1). If it is not enabled, or if you have any inquiries regarding this feature, we recommend reaching out to our [sales team](https://www.nanocosmos.de/support). They will be more than happy to provide you with the necessary information and guide you through the process to enable this feature.
-:::
+:::warning Prerequisites
+To make use of **Secure Playback**, it must be explicitly enabled for your organization. Activation may be subject to additional pricing or service terms.
 
-![Screenshot: Enabled Features](../assets/cloud-frontend/cf-secure-feature.jpg)
-*Screenshot: Enabled Features*
+You can verify whether this feature is available by navigating to [dashboard.nanostream.cloud/organisation](https://dashboard.nanostream.cloud/organisation) in your dashboard.  
+In the **[Enabled Packages](./organization_overview#enabled-packages)** section, locate the entry for `Secure`. If it shows **Upgrade needed**, please contact us.
+
+![Screenshot: Enabled Packages](../assets/dashboard/enabled-packages.png)  
+
+To activate `Secure` or learn more about available plans, feel free to reach out via [nanocosmos.de/contact](https://www.nanocosmos.de/contact). We're happy to assist you in finding the best setup for your use case.
+:::
 
 ## Token Configuration
 

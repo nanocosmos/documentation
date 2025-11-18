@@ -133,7 +133,7 @@ It is possible to retrieve stream info with the following roles:
 |---|---|---|
 | ✓ | ✓ | ✓ |
 
-**Parameters:**
+**Parameters**
 - `YOUR_STREAM_ID`: the unique ID of your stream in nanoStream Cloud
 - `X-BINTU-APIKEY`: your API key for authentication
 
@@ -297,7 +297,7 @@ All live processing assets can be accessed via the nanoStream Cloud Dashboard. T
 :::tip Accessing the live processing assets
 The live processing tab can be accessed in various areas of the dashboard:
 
-- **Playout Overview**: [dashboard.nanostream.cloud/playout/YOUR-STREAM-ID](https://dashboard.nanostream.cloud/playout/YOUR-STREAM-ID)
 - **Stream Overview**: [dashboard.nanostream.cloud/stream/YOUR-STREAM-ID](https://dashboard.nanostream.cloud/stream/YOUR-STREAM-ID)
+- **Playout Overview**: [dashboard.nanostream.cloud/playout/YOUR-STREAM-ID](https://dashboard.nanostream.cloud/playout/YOUR-STREAM-ID)
 - **Webcaster Overview**: [dashboard.nanostream.cloud/webcaster/YOUR-STREAM-ID](https://dashboard.nanostream.cloud/webcaster/YOUR-STREAM-ID)
 :::
