@@ -21,7 +21,7 @@ In the **[Enabled Packages](./organization_overview#enabled-packages)** section,
 
 ![Screenshot: Enabled Packages](../assets/dashboard/enabled-packages.png)  
 
-To activate this feature or learn more about available plans, feel free to reach out via [nanocosmos.de/contact](https://www.nanocosmos.de/contact). We're happy to assist you in finding the best setup for your use case.
+To activate this feature or learn more about available plans, feel free to reach out via [nanocosmos.net/contact](https://www.nanocosmos.net/contact). We're happy to assist you in finding the best setup for your use case.
 :::
 
 ## Configuring a Live Process

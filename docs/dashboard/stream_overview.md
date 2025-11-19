@@ -9,7 +9,7 @@ If a stream is an ABR stream, it belongs to a so-called **streamgroup**. You can
 
 :::info Before starting
 To get started with the **nanoStream Dashboard**, sign in with your existing *nanoStream account*.  
-If you don’t have an account yet, you can [sign up](https://dashboard.nanostream.cloud/signup), or get in touch with our sales team via [nanocosmos.de/contact](https://www.nanocosmos.de/contact) or by email at sales(at)nanocosmos.net.
+If you don’t have an account yet, you can [sign up](https://dashboard.nanostream.cloud/signup), or get in touch with our sales team via [nanocosmos.net/contact](https://www.nanocosmos.net/contact) or by email at sales(at)nanocosmos.net.
 
 *Need help accessing an existing organization or unsure how to proceed?* <br/>
 👉  Check the [Authentication section](./getting_started#authentication) for step-by-step guidance on creating an account, logging in, and requesting access from your system administrator.
@@ -167,7 +167,7 @@ When sharing the live playout URL, this token is applied, ensuring transparency 
 
 :::info Enable secure playback
 **nanoStream** provides a `secure` feature to enable secure playback. This feature lets you customize token with settings like expiration date, not-before date, client IP, domain, user ID, or a tag for enhanced security.   
-You can verify whether this feature is available for your organization by navigating to [dashboard.nanostream.cloud/organisation](https://dashboard.nanostream.cloud/organisation) in your dashboard. *To enable this feature for your organization, contact us via [nanocosmos.de/contact](https://www.nanocosmos.de/contact)*.
+You can verify whether this feature is available for your organization by navigating to [dashboard.nanostream.cloud/organisation](https://dashboard.nanostream.cloud/organisation) in your dashboard. *To enable this feature for your organization, contact us via [nanocosmos.net/contact](https://www.nanocosmos.net/contact)*.
 :::
 
 ![Screenshot: Secure Playback Token Section in Stream Overview](../assets/dashboard/secure-playback-token.png)
@@ -199,7 +199,7 @@ In the **[Enabled Packages](./organization_overview#enabled-packages)** section,
 
 ![Screenshot: Enabled Packages](../assets/dashboard/enabled-packages.png)  
 
-To activate this feature or learn more about available plans, feel free to reach out via [nanocosmos.de/contact](https://www.nanocosmos.de/contact). We're happy to assist you in finding the best setup for your use case.
+To activate this feature or learn more about available plans, feel free to reach out via [nanocosmos.net/contact](https://www.nanocosmos.net/contact). We're happy to assist you in finding the best setup for your use case.
 :::
 
 Assets for each process are displayed in a **tab-based structure**, depending on whether they belong to an **ABR stream** ( <span className="badge-streamgroup">Streamgroup (*n* Playouts)</span>) or a **single stream** (<span className="badge-noStreamgroup">Single Stream</span>). Users can switch between different quality levels for ABR streams, while single streams have only one quality level available.  

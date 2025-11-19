@@ -12,7 +12,7 @@ Regardless of the method, you first need to create a stream.
 
 :::info Before starting
 To get started, sign in with your existing *nanoStream account*.  
-If you don’t have an account yet, you can [sign up](https://dashboard.nanostream.cloud/signup), or get in touch with our sales team via [nanocosmos.de/contact](https://www.nanocosmos.de/contact) or by email at sales(at)nanocosmos.net.
+If you don’t have an account yet, you can [sign up](https://dashboard.nanostream.cloud/signup), or get in touch with our sales team via [nanocosmos.net/contact](https://www.nanocosmos.net/contact) or by email at sales(at)nanocosmos.net.
 
 *Need help accessing an existing organization or unsure how to proceed?* <br/>
 👉  Check the [Authentication section](./getting_started#authentication) for step-by-step guidance on creating an account, logging in, and requesting access from your system administrator.
@@ -60,7 +60,7 @@ Check [**Modifying Transcoding Profiles After Stream Creation**](./abr_transcodi
 
 :::tip Prerequisites
 To utilize the `live processing` feature, you need to enable it and ensure the corresponding pricing and payment options are set up.    
-Contact us via [nanocosmos.de/contact](https://www.nanocosmos.de/contact) to find the perfect solution for you!  
+Contact us via [nanocosmos.net/contact](https://www.nanocosmos.net/contact) to find the perfect solution for you!  
 :::
 
 Live Processing lets you enhance your stream with additional automated features. You can either apply the same settings to all streams part of your ABR streamgroup by clicking on **Sync settings across profiles** or configure them individually. <br/> Applying uniform settings is useful for **Live Replay**, while separate settings allow tailored configurations for different stream qualities.
@@ -80,7 +80,7 @@ Live Processing lets you enhance your stream with additional automated features.
 
 :::tip Prerequisites
 To utilize the `timecode` feature, you need to enable it and ensure the corresponding pricing and payment options are set up.   
-Contact us via [nanocosmos.de/contact](https://www.nanocosmos.de/contact) to find the perfect solution for you!  
+Contact us via [nanocosmos.net/contact](https://www.nanocosmos.net/contact) to find the perfect solution for you!  
 :::
 
 By clicking on **Add timecode** you can enable this feature. It allows precise synchronization or indexing of video content. You can set the time injection interval between 500 ms and 3600000 ms (1 hour), while we recommend: 1000-5000 ms. The default is 2000ms. 
@@ -116,7 +116,7 @@ Below these three buttons, you can see the following sections:
 2. **Access the Web Playout**: Here you will find the **live playout URL** for streaming your content.
     :::info Enable secure playback
     **nanoStream** also provides a `secure` feature to generate a playback token. This lets you customize token settings like expiration date, not-before date, client IP, domain, user ID, or a tag for enhanced security.   
-    You can verify whether this feature is available for your organization by navigating to [dashboard.nanostream.cloud/organisation](https://dashboard.nanostream.cloud/organisation) in your dashboard. *To enable this feature for your organization, contact us via [nanocosmos.de/contact](https://www.nanocosmos.de/contact)*.
+    You can verify whether this feature is available for your organization by navigating to [dashboard.nanostream.cloud/organisation](https://dashboard.nanostream.cloud/organisation) in your dashboard. *To enable this feature for your organization, contact us via [nanocosmos.net/contact](https://www.nanocosmos.net/contact)*.
     :::
 3.  **[Code Snippets](./code_snippets)**: We provide two types of code snippets to embed the H5Live Player with your stream on your website: **iFrame Code Snippet**, **HTML Code Snippet**. You can simply copy and paste the appropriate code into your webpage to integrate the nanoStream H5Live Player.
 4. **[Stream Overview](./stream_overview)**: This section provides a link to the full stream overview page. Clicking the URL will take you to the detailed overview with more relevant details about the stream.

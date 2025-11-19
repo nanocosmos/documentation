@@ -12,7 +12,7 @@ In the **[Enabled Packages](./organization_overview#enabled-packages)** section,
 
 ![Screenshot: Enabled Packages](../assets/dashboard/enabled-packages.png)  
 
-To activate `Live Captions` or learn more about available plans, feel free to reach out via [nanocosmos.de/contact](https://www.nanocosmos.de/contact). We're happy to assist you in finding the best setup for your use case.
+To activate `Live Captions` or learn more about available plans, feel free to reach out via [nanocosmos.net/contact](https://www.nanocosmos.net/contact). We're happy to assist you in finding the best setup for your use case.
 :::
 
 ## Overview
@@ -28,18 +28,18 @@ This provides dynamic, accurate, and easy-to-follow text output that helps viewe
 To ensure low-latency and reliable delivery, all captions are produced and transmitted through a **dedicated real-time output channel**, separate from the video stream.
 
 :::warning Please note  
-Live Captions and the caption switcher are **not included in the default H5Live Player UI**.This means: they are **not embedded automatically**.
+Live Captions and the caption switcher are **not included in the default H5Live Player UI**. This means: they are **not embedded automatically**.
 To allow viewers to enable, disable, or style captions, your playback environment must integrate caption handling explicitly.
 For implementation guidance or UI integration examples, please contact our support team via [nanocosmos.net/support](https://www.nanocosmos.net/support)
 :::
 
 ## How It Works
 
-During an active stream, the audio is forwarded to the selected **Automatic Speech Recognition (ASR) engine**. The engine converts speech into text and outputs a continuous caption stream. The H5Live Player subscribes to this caption feed and displays it to viewers in real-time.
+During an active stream, the audio is forwarded to the selected **Automatic Speech Recognition (ASR) engine**. The engine converts speech into text and outputs a continuous caption stream. The H5Live Player synchronizes to this caption feed and displays it to viewers in real-time.
 
 :::info Custom set-up for the ASR service
 Some of our ASR services require a 24-hour advance notice.
-Please contact our sales team via [nanocosmos.de/contact](https://www.nanocosmos.de/contact) to find the best configuration for your business. They will also be happy to give you in-depth advice and recommendations on the ASR types for your use case.
+Please contact our sales team via [nanocosmos.net/contact](https://www.nanocosmos.net/contact) to find the best configuration for your business. They will also be happy to give you in-depth advice and recommendations on the ASR types for your use case.
 :::
 
 ## ASR Engines And Langauges
@@ -60,54 +60,33 @@ import TabItem from '@theme/TabItem';
   <TabItem className="tab-item" value="deepgram">
   
   **Deepgram** is an enterprise-grade ASR engine designed for high accuracy and very low latency in real-time captioning. It uses neural-network models optimized for live audio and supports multiple languages for both transcription and live translation.
-
-  **Additional Ressources**: 
-  - [deepgram.com](https://deepgram.com/)
-  - [developers.deepgram.com](https://developers.deepgram.com/)
-  
   </TabItem>
     <TabItem className="tab-item" value="whisper">
 
     **Whisper** is an open-source ASR system developed by OpenAI.
     It offers robust multilingual speech recognition and performs well across diverse audio conditions.
-  
-    **Additional Ressources**: 
-    - [github.com/openai/whisper](https://github.com/openai/whisper)
-
   </TabItem>
 </Tabs>
 
-### Source Languages 
+### Supported Languages 
 
-The *source language* is **the spoken language of the incoming audio**.
-The ASR engine uses this language to interpret the speech and generate text.
+The *source language* is **the spoken language of the incoming audio**. This language is used by the ASR engine to interpret the speech and generate text. The *target language* defines **the output language of the captions**. Only engines that support translation can provide multiple output languages.
 
-| Source Language | ID  | Supported Engines         |
-|-----------------|-----|---------------------------|
-| English         | `en` | Deepgram, Whisper        |
-| German          | `de` | Deepgram, Whisper        |
-| Spanish         | `es` | Deepgram                 |
-| Indonesian      | `id` | Deepgram                 |
+| Language    | ID  | Source | Target | Supported Engines |
+|-------------|-----|--------|--------|-------------------|
+| English     | `en` | ✓ | ✓ | Deepgra, Whisper |
+| German      | `de` | ✓ | ✓ | Deepgram, Whisper |
+| Spanish     | `es` | ✓ | ✓ | Deepgram |
+| Indonesian  | `id` | ✓ | ✓ | Deepgram |
+
+:::info Multi target translation
+Because Deepgram supports translation, any **source language** listed above can be combined with any **target language**.
+:::
 
 :::warning Missing a language?
 If your desired language is not listed, please get in touch.
 We can evaluate your use case, discuss engine support, and, where possible, include you in upcoming beta programs for additional languages.
 :::
-
-### Target Languages 
-The *target language* defines **the output language of the captions**.
-Only engines that support translation can provide multiple output languages.
-
-- Deepgram → supports multilingual target output  
-- Whisper → supports English & German output
-
-
-| Target Language | ID  | Supported Engines         |
-|-----------------|-----|---------------------------|
-| English         | `en` | Deepgram, Whisper        |
-| German          | `de` | Deepgram, Whisper        |
-| Spanish         | `es` | Deepgram                 |
-| Indonesian      | `id` | Deepgram                 |
 
 ## Managing Live Captions
 
@@ -195,7 +174,7 @@ curl --request POST \
 
 :::tip Need assistance?
 We're here to support you throughout your Live Captions integration.
-If you would like to discuss your Live Captions requirements, pricing, or custom solutions, feel free to contact our sales team via [nanocosmos.de/contact](https://www.nanocosmos.de/contact) or by email at sales(at)nanocosmos.net.
+If you would like to discuss your Live Captions requirements, pricing, or custom solutions, feel free to contact our sales team via [nanocosmos.net/contact](https://www.nanocosmos.net/contact) or by email at sales(at)nanocosmos.net.
 
 *If you require technical help or want to report an issue, simply use our official [support form](https://www.nanocosmos.net/support).*
 

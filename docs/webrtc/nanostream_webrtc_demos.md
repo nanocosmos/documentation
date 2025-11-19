@@ -9,7 +9,7 @@ These samples are designed to showcase the broad capabilities of our Webcaster t
 
 :::info Before starting
 To fully utilize the samples below, sign in to the **nanoStream Dashboard** with your existing *nanoStream account*.  
-If you don’t have an account yet, you can [sign up](https://dashboard.nanostream.cloud/signup), or get in touch with our sales team via [nanocosmos.de/contact](https://www.nanocosmos.de/contact) or by email at sales(at)nanocosmos.net.
+If you don’t have an account yet, you can [sign up](https://dashboard.nanostream.cloud/signup), or get in touch with our sales team via [nanocosmos.net/contact](https://www.nanocosmos.net/contact) or by email at sales(at)nanocosmos.net.
 
 *Need help accessing an existing organization or unsure how to proceed?* <br/>
 👉  Check the [Authentication section](../dashboard/getting_started#authentication) for step-by-step guidance on creating an account, logging in, and requesting access from your system administrator.
