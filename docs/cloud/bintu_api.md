@@ -111,7 +111,6 @@ This is useful for dashboards, monitoring tools, or backend systems that need qu
 - `QUANTITY`: number of returned stream objects
 
 **cURL**
-
 ```js title="bintu/get_latest_stream.sh"
 curl -X GET "https://bintu.nanocosmos.de/stream?quantity=1" \
 -H 'content-type: application/json' \
@@ -119,7 +118,6 @@ curl -X GET "https://bintu.nanocosmos.de/stream?quantity=1" \
 ```
 
 **JavaScript**
-
 ```js title="bintu/get_latest_stream.js"
 fetch("https://bintu.nanocosmos.de/stream?quantity=1", {
   method: "GET",
@@ -149,7 +147,6 @@ To understand *what multi-bitrate streams are* and *how adaptive bitrate and liv
 - `TAGS`: useful for grouping, filtering, or searching streams
 
 **cURL**
-
 ```js title="bintu/create_stream.sh"
 curl 'https://bintu.nanocosmos.de/stream' \
   -H 'content-type: application/json' \
@@ -164,7 +161,6 @@ curl 'https://bintu.nanocosmos.de/stream' \
 ```
 
 **JavaScript**
-
 ```js title="bintu/create_stream.js"
 fetch("https://bintu.nanocosmos.de/stream", {
   method: "POST",

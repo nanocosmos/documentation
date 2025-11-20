@@ -88,7 +88,7 @@ The API provides full programmatic control—ideal for automation, backend syste
 
 ### Block a single IP (24h)
 
-```bash title="guardian/block_single_ip.sh"
+```js title="guardian/block_single_ip.sh"
 curl --location 'https://guardian.nanostream.cloud/ip' \
 --header 'Content-Type: application/json' \
 --header 'X-BINTU-APIKEY: BINTU_API_KEY' \
@@ -101,7 +101,7 @@ curl --location 'https://guardian.nanostream.cloud/ip' \
 
 ### Block a CIDR Mask
 
-```bash title="guardian/block_cidr_mask.sh"
+```js title="guardian/block_cidr_mask.sh"
 curl --location 'https://guardian.nanostream.cloud/ip' \
 --header 'Content-Type: application/json' \
 --header 'X-BINTU-APIKEY: BINTU_API_KEY' \
@@ -114,7 +114,7 @@ curl --location 'https://guardian.nanostream.cloud/ip' \
 
 ### Block a Referrer Domain
 
-```bash title="guardian/block_referrer_domain.sh"
+```js title="guardian/block_referrer_domain.sh"
 curl --location 'https://guardian.nanostream.cloud/referrer' \
 --header 'Content-Type: application/json' \
 --header 'X-BINTU-APIKEY: BINTU_API_KEY' \
@@ -188,4 +188,5 @@ Tags make it easy to understand the reason behind each block, e.g.:
 - `"tag": "VPN subnet"`
 - `"tag": "DDoS spike during event"`
 - `"tag": "repeated reconnects"`
+
 Clear tagging is essential for team collaboration and incident reviews.

@@ -24,14 +24,24 @@ Whether you use **software encoders**, **hardware devices**, or **browser-based 
 
 You can ingest streams through popular protocols such as **RTMP**, **SRT**, **WHIP**, and **WebRTC**. nanoStream Cloud integrates easily with industry-standard tools like [OBS](https://www.nanocosmos.net/blog/how-to-use-obs-for-low-latency-live-encoding-to-nanostream-cloud/) or [Osprey Talon](https://www.nanocosmos.net/blog/osprey-talon-and-nanostream-cloud/). For instant browser-based streaming, the **nanoStream Webcaster** lets you broadcast directly without any plugins or third-party software.
 
+:::info Try for free
+Check our end-to-end instant test on [nanocosmos.net/trial](https://www.nanocosmos.net/trial/).
+:::
+
 This combination of flexibility, ultra-low latency, and browser compatibility makes nanoStream Cloud ideal for interactive applications where speed and simplicity matter most.
 
-
-:::tip nanoStream Webcaster Resources
-- **Try for free:** Check our end-to-end [instant test](https://www.nanocosmos.net/trial/) on our website.
-- **Getting Started:** Learn how to stream directly from your browser. [Read docs →](../webrtc/nanostream_webrtc_getting_started)
-- **Webcaster API:** Build your own web-based live broadcast solution with our JavaScript API. [View API Docs →](https://nanocosmos.github.io/webcaster/docs/)
-:::
+<article className="margin-vert--lg">
+  <Columns className="list_ZO3j">
+    <Card className="col col--6 margin-horiz--md" href="/docs/webrtc/nanostream_webrtc_getting_started">
+      <Card.Header title="Getting Started" />
+      <Card.Body>Learn how to stream directly from your browser.</Card.Body>
+    </Card>
+    <Card className="col col--6 margin-horiz--md" href="https://nanocosmos.github.io/webcaster/docs/">
+      <Card.Header title="Webcaster API" />
+      <Card.Body>Build your own web-based live broadcast solution with our JavaScript API.</Card.Body>
+    </Card>
+  </Columns>
+</article>
 
 ### nanoStream Player
 
@@ -42,10 +52,18 @@ The player automatically adjusts to the viewer’s network conditions using **[A
 
 The **H5Live Player** is designed for performance, scalability, and brand integration, allowing you to maintain your look and feel while delivering the speed and reliability your users expect.
 
-:::tip nanoStream H5Live Player Resources
-- **Getting Started:** Understand the basics of nanoStream H5Live known as nanoPlayer. [Learn more →](../nanoplayer/nanoplayer_getting_started)
-- **ABR & Stream Switching:** Discover how to enable automatic or viewer-controlled stream switching. [See details →](../nanoplayer/nanoplayer_feature_stream_switching)
-:::
+<article className="margin-vert--lg">
+  <Columns className="list_ZO3j">
+    <Card className="col col--6 margin-horiz--md" href="/docs/nanoplayer/nanoplayer_getting_started">
+      <Card.Header title="Getting Started" />
+      <Card.Body>Understand the basics of nanoStream H5Live known as nanoPlayer.</Card.Body>
+    </Card>
+    <Card className="col col--6 margin-horiz--md" href="/docs/nanoplayer/nanoplayer_feature_stream_switching">
+      <Card.Header title="ABR & Stream Switching" />
+      <Card.Body>Discover how to enable automatic or viewer-controlled stream switching.</Card.Body>
+    </Card>
+  </Columns>
+</article>
 
 ### nanoStream Analytics
 
@@ -54,10 +72,18 @@ To ensure the best possible live streaming experience, **nanoStream Analytics** 
 With detailed metrics on stream performance, viewer activity, and network behavior, you can identify trends, detect issues early, and make data-driven improvements to your live events. Custom alerts can help you monitor specific streams or regions.
 Together with the **nanoStream Guardian**, you can also actively protect your streams by blocking unwanted access, whether by IP, referrer, or entire regions.
 
-:::tip nanoStream Analytics Resources
-- **Introduction:** Learn how to monitor and analyze your live streaming performance. [Read more →](../cloud/analytics)
-- **nanoStream Guardian:** Discover how to secure your content with IP and referrer blocking. [See more →](../analytics/guardian)
-:::
+<article className="margin-vert--lg">
+  <Columns className="list_ZO3j">
+    <Card className="col col--6 margin-horiz--md" href="/docs/cloud/analytics">
+      <Card.Header title="Introduction" />
+      <Card.Body>Learn how to monitor and analyze your live streaming performance.</Card.Body>
+    </Card>
+    <Card className="col col--6 margin-horiz--md" href="/docs/cloud/guardian">
+      <Card.Header title="nanoStream Guardian" />
+      <Card.Body>Discover how to secure your content with IP and referrer blocking.</Card.Body>
+    </Card>
+  </Columns>
+</article>
 
 ### Stream Management: Dashboard & API
 

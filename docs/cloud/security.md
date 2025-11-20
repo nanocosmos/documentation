@@ -104,7 +104,7 @@ This is recommended for all access-controlled streaming systems.
 
 **Example Request**
 
-```bash title="token/create_jwt.sh"
+```js title="token/create_jwt.sh"
 curl --request POST \
   --url https://token.nanostream.cloud/api/v1/splay \
   --header 'content-type: application/json' \

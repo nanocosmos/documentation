@@ -164,7 +164,7 @@ To find your API key, please sign in to your nanoStream Cloud/Bintu account and 
 - `NAME`: must always be set to `"captions"` to enable Live Captions for the stream.
 - `OPTIONS`: Contains all configuration options for the caption engine, this includes: `engine`, `sourceLanguage`, `targetLanguage` (optional)
 
-```bash title="bintu/post_stream_options.sh"
+```js title="bintu/post_stream_options.sh"
 curl --request POST \
   --url https://bintu.nanocosmos.de/stream/%7Bid%7D/options \
   --header 'X-BINTU-APIKEY: REPLACE_WITH_YOUR_API_KEY' \

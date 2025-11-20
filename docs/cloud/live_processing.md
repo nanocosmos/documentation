@@ -141,7 +141,7 @@ It is possible to retrieve stream info with the following roles:
 To find your API key, please sign in to your nanoStream Cloud/Bintu account and copy your API key [here](https://dashboard.nanostream.cloud/organisation).
 :::
 
-```bash title="bintu/get_stream.sh"
+```js title="bintu/get_stream.sh"
 curl --request GET \
   --url 'https://bintu.nanocosmos.de/stream/YOUR_STREAM_ID?asset_limit=10' \
   --header 'X-BINTU-APIKEY: REPLACE_WITH_YOUR_API_KEY'

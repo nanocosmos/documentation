@@ -81,7 +81,7 @@ The [bintu REST API](https://doc.pages.nanocosmos.de/bintuapi-docs/#operation/St
 - `asset_limit` – optional parameter defining how many assets (recordings) should be returned
 - `X-BINTU-APIKEY` – your API key for authentication
 
-```bash title="bintu/get_vod_assets.sh"
+```js title="bintu/get_vod_assets.sh"
 curl --request GET \
   --url 'https://bintu.nanocosmos.de/stream/YOUR_STREAM_ID?asset_limit=10' \
   --header 'X-BINTU-APIKEY: REPLACE_WITH_YOUR_API_KEY'
