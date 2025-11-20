@@ -2,6 +2,7 @@
 id: security
 title: nanoStream Cloud Security
 sidebar_label: nanoStream Cloud Security
+description: nanoStream Cloud provides a comprehensive, multi-layered security framework designed to protect your data, secure live and on-demand streaming, and control user access throughout the entire workflow. The platform combines encryption, authorization controls, and role-based access management to maintain reliability and prevent unauthorized usage.
 ---
 
 nanoStream Cloud provides a comprehensive, multi-layered security framework designed to protect your data, secure live and on-demand streaming, and control user access throughout the entire workflow. The platform combines encryption, authorization controls, and role-based access management to maintain reliability and prevent unauthorized usage.
@@ -155,7 +156,7 @@ curl --request POST \
 
 Once created, the JWT is appended to your H5Live playback URL: `https://demo.nanocosmos.de/nanoplayer/release/nanoplayer.html?bintu.streamname=YOUR_STREAM_NAME&token=YOUR_JWT_TOKEN`.The player validates the token automatically.
 
-:::tip Additional Ressources
+:::tip Additional Resources
 - [How to create JSON Web Token for secure playback via API](/docs/nanoplayer/nanoplayer_security_jwt#how-to-create-json-web-token-for-secure-playback-via-api)
 - [How to verify JSON Web Token for secure playback via API](/docs/nanoplayer/nanoplayer_security_jwt#how-to-verify-json-web-token-for-secure-playback-via-api)
 - [How to integrate secure H5Live player configuration with JWT](/docs/nanoplayer/nanoplayer_security_jwt#how-to-integrate-secure-h5live-player-configuration-with-jwt)
@@ -209,7 +210,7 @@ nanoStream Cloud includes a role-based permission model to ensure that only auth
 | <span className="role role-user">nanoUser</span>    | The Operator  | High  | Can perform all tasks related to stream management and operations, expect for changes that could disrupt operations, such as deleting or stopping streams or changing critical settings. |
 | <span className="role role-readonly">nanoReadOnly</span>| The Observer  | Low  | Has read-only access to basic information such as stream configuration, stream states, metrics and alerts. |
 
-:::tip Additional Ressources
+:::tip Additional Resources
 We have outlined the concepts and advantages of [Role-Based Access Control (RBAC)](/docs/cloud/user_roles) on the dedicated page. In addition, this page provides a detailed description of how to get started with roles, which roles are available, which API endpoints can be accessed and a high-level permission overview.
 
 For more information on how to manage users in an organisation, please refer to our [User Management Guide](/docs/dashboard/user_management), which includes instructions on how to manage users, and invite new ones.

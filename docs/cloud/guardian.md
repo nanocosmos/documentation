@@ -2,6 +2,7 @@
 id: guardian
 title: nanoStream Guardian
 sidebar_label: nanoStream Guardian
+description: nanoStream Guardian is a security extension of nanoStream Cloud, designed to **instantly block unwanted viewers, domains, or entire IP ranges** from accessing your live streams.
 ---
 
 

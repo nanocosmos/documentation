@@ -147,6 +147,11 @@ curl --request GET \
   --header 'X-BINTU-APIKEY: REPLACE_WITH_YOUR_API_KEY'
 ```
 
+:::note Advanced Developer bintu API docs
+For additional languages, advanced configuration options, and complete request/response samples, please refer to the official **bintu API documentation**: [doc.pages.nanocosmos.de/bintuapi-docs](https://doc.pages.nanocosmos.de/bintuapi-docs). \
+The API reference provides full details on all available endpoints and workflows for managing stream options, including the topic discussed in this section.
+:::
+
 When requesting stream details via the **bintu REST API**, the response contains all available ingest, playout, and processing information. Below is a simplified example response showing different output formats for a single stream and its related assets:
 
 ```json title="Example: GET /stream/{YOUR_STREAM_ID}"

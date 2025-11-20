@@ -1,6 +1,6 @@
 ---
 id: cloud_introduction
-title: Core Concepts of bintu
+title: Core Concepts of nanoStream Cloud
 sidebar_label: Core Concepts
 description: Learn the fundamentals of nanoStream Cloud and its stream management system, bintu. Understand how to create, manage, and secure ultra-low-latency live streams using the Dashboard and API.
 ---

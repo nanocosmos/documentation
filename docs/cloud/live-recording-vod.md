@@ -2,6 +2,7 @@
 id: live-recording-vod
 title: Live Recording and VOD
 sidebar_label: Live Recording and VOD
+description: Live recording and Video on Demand (VOD) enable you to automatically archive your incoming live streams for later playback. When recording is enabled, nanoStream Cloud captures the upstream signal in real time and stores it securely in a regional data center. The resulting MP4 file can then be accessed, downloaded, or embedded as VOD content.
 ---
 
 :::warning Prerequisites
@@ -85,6 +86,10 @@ curl --request GET \
   --url 'https://bintu.nanocosmos.de/stream/YOUR_STREAM_ID?asset_limit=10' \
   --header 'X-BINTU-APIKEY: REPLACE_WITH_YOUR_API_KEY'
 ```
+:::note Advanced Developer bintu API docs
+For additional languages, advanced configuration options, and complete request/response samples, please refer to the official **bintu API documentation**: [doc.pages.nanocosmos.de/bintuapi-docs](https://doc.pages.nanocosmos.de/bintuapi-docs). \
+The API reference provides full details on all available endpoints and workflows for managing stream options, including the topic discussed in this section.
+:::
 
 :::tip Developer Tip
 If your application manages multiple streams, you can use the bintu API to list and filter VOD assets automatically.

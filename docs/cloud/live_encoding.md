@@ -256,7 +256,7 @@ For ABR Playback, several live streams need to be running at the same time with 
 - To understand how stream switching and ABR work on the player side, visit the [player docs](/docs/nanoplayer/nanoplayer_feature_stream_switching).
 :::
 
-## Additional info
+## Additional resources
 
 See the links below for recommendations by apple, youtube, vimeo and adobe:
 - https://developer.apple.com/library/ios/technotes/tn2224/_index.html

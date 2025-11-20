@@ -72,6 +72,11 @@ curl --request POST \
   --data '{"tags":["foo","bar"],"processing":[[{"id":"replay","duration":30},{"id":"thumbs","interval":45},{"id":"rec","duration":null},{"id":"motionclip","duration":5,"interval":30}]]}'
 ```
 
+:::note Advanced Developer bintu API docs
+For additional languages, advanced configuration options, and complete request/response samples, please refer to the official **bintu API documentation**: [doc.pages.nanocosmos.de/bintuapi-docs](https://doc.pages.nanocosmos.de/bintuapi-docs). \
+The API reference provides full details on all available endpoints and workflows for managing stream options, including the topic discussed in this section.
+:::
+
 ### Dashboard
 
 Navigate to [dashboard.nanostream.cloud/stream/create](https://dashboard.nanostream.cloud/stream/create) and set up your stream.

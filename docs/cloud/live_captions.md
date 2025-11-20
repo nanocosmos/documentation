@@ -2,6 +2,7 @@
 id: live_captions
 title: Live Captions
 sidebar_label: Live Captions
+description: nanoStream Live Captions convert spoken audio into readable text in real time. This AI-driven feature enhances accessibility and content comprehension across a wide range of live-streaming.
 ---
 
 :::warning Prerequisites
@@ -138,17 +139,18 @@ You can modify live captions settings at any time. **However, it’s important t
 
 Live Captions are controlled via **Stream Options**, managed through the bintu API.
 
-Supported API actions:
-- [`POST`](https://doc.pages.nanocosmos.de/bintuapi-docs/#tag/Stream-Options/paths/~1stream~1{id}~1options/post) → Add live captions to a stream
-- [`GET`](https://doc.pages.nanocosmos.de/bintuapi-docs/#tag/Stream-Options/paths/~1stream~1{id}~1options/get) → Retrieve current caption settings
-- [`PUT`](https://doc.pages.nanocosmos.de/bintuapi-docs/#tag/Stream-Options/paths/~1stream~1{id}~1options/put) → Update existing settings
-- [`DELETE`](https://doc.pages.nanocosmos.de/bintuapi-docs/#tag/Stream-Options/paths/~1stream~1{id}~1options/delete) → Remove live captions settings
-
 You can access the requests with the following permission level:
 
 |<span className="role role-admin">nanoAdmin</span>|<span className="role role-user">nanoUser</span>|<span className="role role-readonly">nanoReadOnly</span>|
 |---|---|---|
 | ✓ | ✓ | ✗ |
+
+**Supported API actions**
+
+- [`POST`](https://doc.pages.nanocosmos.de/bintuapi-docs/#tag/Stream-Options/paths/~1stream~1{id}~1options/post) → Add live captions to a stream
+- [`GET`](https://doc.pages.nanocosmos.de/bintuapi-docs/#tag/Stream-Options/paths/~1stream~1{id}~1options/get) → Retrieve current caption settings
+- [`PUT`](https://doc.pages.nanocosmos.de/bintuapi-docs/#tag/Stream-Options/paths/~1stream~1{id}~1options/put) → Update existing settings
+- [`DELETE`](https://doc.pages.nanocosmos.de/bintuapi-docs/#tag/Stream-Options/paths/~1stream~1{id}~1options/delete) → Remove live captions settings
 
 **Parameters**
 - `YOUR_STREAM_ID`: the unique ID of your stream in nanoStream Cloud
@@ -169,6 +171,11 @@ curl --request POST \
   --header 'content-type: application/json' \
   --data '{"name":"captions","options":{"engine":"deepgram","sourceLanguage":"en"}}'
 ```
+
+:::note Advanced Developer bintu API docs
+For additional languages, advanced configuration options, and complete request/response samples, please refer to the official **bintu API documentation**: [doc.pages.nanocosmos.de/bintuapi-docs](https://doc.pages.nanocosmos.de/bintuapi-docs). \
+The API reference provides full details on all available endpoints and workflows for managing stream options, including the topic discussed in this section.
+:::
 
 ## Need assistance?
 

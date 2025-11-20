@@ -1,8 +1,8 @@
 ---
-slug: /user_roles
 id: userroles
 title: Role-Based Access Control (RBAC)
 sidebar_label: Role-Based Access Control (RBAC)
+description: Role-Based Access Control introduces a structured permission system to nanoStream Cloud, ensuring that access to resources and administrative functions is assigned based on clearly defined user roles.
 ---
 
 :::info Bintu API v1.23.0.0
@@ -12,7 +12,7 @@ With the **`Bintu API v1.23.0.0`** we introduced a role-based access control sys
 With the **`Bintu API v1.23.0.0`** release introducing user roles, all users will retain their current permissions, now equivalent to the <span className="role role-admin">nanoAdmin</span> role. Therefore, **no immediate action is required** from organizations.
 :::
 
-**Role-Based Access Control (RBAC)** introduces a structured permission system to nanoStream Cloud, ensuring that access to resources and administrative functions is assigned based on clearly defined user roles. With this system, organizations gain better security, clearer permission structures, and simplified user administration. RBAC helps prevent unauthorized changes, reduces operational risks, and streamlines team workflows—especially in environments with multiple users, distributed teams, or complex streaming setups.
+**Role-Based Access Control (RBAC)** introduces a structured permission system to nanoStream Cloud, ensuring that access to resources and administrative functions is assigned based on clearly defined user roles. With this system, organizations gain better security, clearer permission structures, and simplified user administration. RBAC helps prevent unauthorized changes, reduces operational risks, and streamlines team workflows, especially in environments with multiple users, distributed teams, or complex streaming setups.
 
 ## Concept and Benefits
 
