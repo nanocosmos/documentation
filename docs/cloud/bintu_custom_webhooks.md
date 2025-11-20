@@ -81,9 +81,7 @@ It is possible to set it up with the following roles:
 
 ### Dashboard
 
-If you open the organisation overview page in the dashboard using [dashboard.nanostream.cloud/organisation/overview](https://dashboard.nanostream.cloud/organisation/overview), you can easily set the custom webhook there by clicking on the edit icon at the end of the text field . This will allow you to set/edit the value or delete it, if you are authorised to do so.
-
-[dashboard.nanostream.cloud/organisation/overview](https://dashboard.nanostream.cloud/organisation/overview)
+If you open the organisation overview page in the dashboard using [dashboard.nanostream.cloud/organisation/overview](https://dashboard.nanostream.cloud/organisation/overview), you can easily set the custom webhook there by clicking on the edit icon at the end of the text field. This will allow you to set/edit the value or delete it, if you are authorised to do so.
 
 ![Screenshot: Organization Overview](../assets/dashboard/orga-overview.png)
 *Screenshot: Organization Overview*
