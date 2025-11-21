@@ -72,7 +72,6 @@ Below that, you can expand the **Permission Overview** panel for a detailed list
 ![Screenshot: User Overview](../assets/dashboard/user-overview.png)
 *Screenshot: User Overview*
 
-
 ### Update Permission
 
 By clicking on the **Update Permission** Button on the top of the **User Overview** its possible to change a user's access level, by following the steps:

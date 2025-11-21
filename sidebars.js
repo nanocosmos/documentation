@@ -40,7 +40,7 @@ const sidebars = {
       "items": [
         "cloud/security",
         "cloud/guardian",
-        "cloud/userroles",
+        "cloud/user_roles",
       ]
     },
     {

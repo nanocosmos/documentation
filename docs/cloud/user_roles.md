@@ -1,5 +1,5 @@
 ---
-id: userroles
+id: user_roles
 title: Role-Based Access Control (RBAC)
 sidebar_label: Role-Based Access Control (RBAC)
 description: Role-Based Access Control introduces a structured permission system to nanoStream Cloud, ensuring that access to resources and administrative functions is assigned based on clearly defined user roles.

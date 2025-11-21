@@ -272,7 +272,7 @@
 }
 
 .tabs {
-  background-color: #00486C!important;
+  background-color: #00486C !important;
   color: #fff;
   border-top-left-radius: 15px;
   border-top-right-radius: 15px;
@@ -298,6 +298,25 @@
 
 .tabs div {
   margin-top: 0 !important;
+}
+
+.tag {
+  border-spacing: 0 8px !important;
+  line-height: 1.43;
+  font-size: 0.8125rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: 0;
+  padding-left: 8px;
+  padding-right: 9px;
+  vertical-align: middle;
+  box-sizing: border-box;
+  height: 24px;
+  font-weight: 600;
+  background-color: rgba(240, 151, 62, 0.2);
+  border-radius: 8px;
+  color: #ed7d0e;
 }
 
 /* BEGINN ANALYTICS --> These classes were designed for the analytics sections. */
