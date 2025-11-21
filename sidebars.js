@@ -279,23 +279,23 @@ const sidebars = {
           "type": "category",
           "label": "Analytics Dashboard",
           "link": {
-            "type": 'generated-index',
-            "title": 'Analytics Dashboard',
-            "description": 'Engage with our important and easy to use analytical tools, available inside our dedicated Analytics Dashboard!',
-            "slug": '/analytics/dashboard',
-            "keywords": ['features, list, utilities, dashboard, analytics, product, tool, toolset, analytical']
+            "type": 'doc',
+            "id": 'cloud/analytics-dashboard'
           },
           "collapsible": false,
           "collapsed": false,
           "items": [
-            "cloud/worldmap",
-            "cloud/analytics-zoom",
-            "cloud/analytics-guardian",
+            "cloud/analytics-dashboard-home",
+            "cloud/analytics-dashboard-breakdown",
+            "cloud/analytics-dashboard-worldmap",
+            "cloud/analytics-dashboard-h5live",
+            "cloud/analytics-dashboard-adaptive-bitrate",
+            "cloud/analytics-dashboard-webcaster",
             {
               "type": "category",
               "label": "Stream Health Monitoring",
-              "collapsible": false,
-              "collapsed": false,
+              "collapsible": true,
+              "collapsed": true,
               "link": {
                 "type": 'generated-index',
                 "title": 'Stream Health Monitoring',
@@ -306,9 +306,10 @@ const sidebars = {
               "items": [
                 "cloud/alerting",
                 "cloud/email-notification",
-                "cloud/troubleshooting",
+                "cloud/analytics-dashboard-troubleshooting",
               ]
             },
+            "cloud/analytics-dashboard-guardian",
             {
               "type": "category",
               "label": "Releases for Dashboard",

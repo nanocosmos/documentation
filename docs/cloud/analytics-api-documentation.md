@@ -41,7 +41,7 @@ Being able to monitor your live streams is a great idea to observe live performa
 
 The alerting routes provide an overview of either your current and historical alerts, recommended actions and their potential causes. For more details about Alerting, please refer to our [Stream Health Monitoring Guide](../analytics/monitoring).
 
-### Successful Playback Start Ratio
+### Successful Playback Start Ratio (SPSR)
 
 This ratio determines the relation between all occuring playback initializations that **DO NOT** terminate with an error **within the first 30 seconds** after the playback starts and the total number of playback initializations. Terminations after pausing or subsequently restarting the playback are not taken into account.
 

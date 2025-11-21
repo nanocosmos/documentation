@@ -14,19 +14,9 @@ sidebar_label: History
 ## 2.30 - Alerts via Email Notification
 
 -  added API routes for alert manager:
-   -  `/api/v2/alerting/config` -> get alert notification config (just admin)
-   -  `/api/v2/alerting/config/create` -> create alert notification config (just admin)
-   -  `/api/v2/alerting/config/delete` -> delete alert notification config (just admin)
-   -  `/api/v2/alerting/config/smtp` -> set SMTP settings in alert notification config (just admin)
    -  `/api/v2/alerting/config/email` -> get all configured email receivers
    -  `/api/v2/alerting/config/email/add` -> add new email receiver to config
    -  `/api/v2/alerting/config/email/delete` -> delete email receiver from config
-   -  `/api/v2/alerting/config/email/replaceAll` -> overwrite email receiver config
--  added API routes for creating stream player config
-   -  `/api/streamWatch/playerPage?streams=...` => returns html for test player for stream
-   -  `/api/streamWatch/playerConfig?streams=...` => returns sPlay token for stream
--  added API routes for getting latest RTMP metrics
-   -  `/api/v2/monitoring/ingest/rtmp/latestMetrics?streams=...` => returns RTMP metrics (bitrate audio/video, stream time ratio, max frame delay, stream elapsed time) for latest datapoint in ES for a stream
 -  added max time offset (aka max frame delay) metric to troubleshooting ingest
 
 ## 2.29 - Alerting data adpation / Use protocol tags
@@ -88,9 +78,6 @@ added API routes for successful playback start ratio:
 -  `/api/v2/playback/start/errors/streams/{breakdown}`
 -  `/api/v2/playback/start/errors/tags/{breakdown}`
 -  `/api/v2/playback/start/errors/countries/{breakdown}`
-
--  `/api/v2/playback/start/success/ratio/organizations` (admin route)
--  `/api/v2/playback/start/errors/organizations` (admin route)
 
 
 ## 2.25 - Successful playback start / failure service & SRT metrics monitoring API route

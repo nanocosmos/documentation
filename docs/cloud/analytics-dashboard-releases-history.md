@@ -13,7 +13,7 @@ sidebar_label: History
 
 ## 2.28 - Alert manager UI
 
--  added max time offset (aka max frame delay) metric to troubleshooting -> ingest
+-  added `max frame delay` metric to troubleshooting :arrow_right: ingest
 -  added an error notification via Toast for issues that occur while parsing app states from a URL
 
 ## 2.27 - Alerting Adjustments & Authentication Improvement
