@@ -10,27 +10,26 @@ sidebar_label: Latest
 
 ## For easy-to-use migration follow our [guide](https://docs.nanocosmos.net/docs/nanoplayer/nanoplayer_v5_migration_guide)
 
-## **[5.0.3]**
+## **[5.0.4]**
 
 ### **Release Notes**
 
-This release includes fixes for loading timeout behavior and fast-start buffer management, along with improved screen wake behavior on mobile devices. The loading timeout now properly resets when updating sources during the loading state. Separately, fast-start buffer requests are now prevented during playback to avoid unnecessary buffering. Additionally, mobile devices will stay active during MOQ mode playback, with screen dimming and locking disabled by default through the new playback.enableWakeLock setting.
+This release includes an improvement to the overall resilience of the player’s error handling and recovery. It resolves an issue that caused a black screen during error recovery in MSE and HLS playback modes. Furthermore, it fixes a playback start error that occurred when MOQ mode was enabled without a configured `server.webtransport` URL.
 
 ### **Changelog**
 
 ### Fixed
 
-- loading timeout is now correctly reinstated after updateSource is called in the loading state.
-- prevent fast-start buffer from being requested by updateSource while in the playing state.
+ - an issue causing a black screen during error recovery in MSE and HLS playback modes.
+ - a playback start failure that occurred when MOQ mode was enabled but no server.webtransport URL was provided in the configuration.
 
 ### Improved
 
-- mobile devices no longer dim or lock the screen during playback in MOQ mode, ensuring consistent behavior across browsers and playback modes.
-    - controlled via playback.enableWakeLock (default: enabled)
+- Enhanced overall resilience of error handling and recovery mechanisms.
 
-### **Release Package 5.0.3**
+### **Release Package 5.0.4**
 
-- [5.0.3](https://files.nanocosmos.de/index.php/s/tb2aX3H6CjCTBNw)
+- [5.0.4](https://files.nanocosmos.de/index.php/s/BGD7YEiXxsirPmw)
 - [latest 5.x](https://files.nanocosmos.de/index.php/s/y4e2axW7s8qEtJb)
 - [latest](https://files.nanocosmos.de/index.php/s/2tpCzgRjNEZDzeP)
 
