@@ -4,20 +4,21 @@ title: Latest Release v4
 sidebar_label: Latest v4
 ---
 
-## **[4.31.0]**
+## **[4.31.1]**
 
 ### **Release Notes**  
 
-In this release, we introduce the new config option `metrics.serverDomain`, which allows you to configure a custom white-label domain for nanoStream Cloud metrics and telemetry endpoints.
+This release includes fixes for fast-start buffer management and hls playback error recovery. Fast-start buffer requests are now prevented during playback to avoid unnecessary buffering. Furthermore, it resolves an issue that caused a black screen during error recovery in HLS playback mode.
 
 ### **Changelog**
 
-### Added
+### Fixed
 
-- option `metrics.serverDomain` enabling to configure a custom white-label domain name for nanoStream Cloud metrics/telemetry endpoints
+- prevent fast-start buffer from being requested by updateSource while in the playing state.
+- an issue causing a black screen during error recovery in HLS playback mode.
 
 ### **Release Package**
 
-- [4.31.0](https://files.nanocosmos.de/index.php/s/Xf9X46ctW3im7LB)
+- [4.31.1](https://files.nanocosmos.de/index.php/s/C64L5SyarMLdjH2)
 - [latest 4.x](https://files.nanocosmos.de/index.php/s/4nndC45mcB6oSa6)
 - [latest](https://files.nanocosmos.de/index.php/s/2tpCzgRjNEZDzeP)

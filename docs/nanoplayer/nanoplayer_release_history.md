@@ -120,6 +120,19 @@ Finally, we have cleaned up outdated and rarely used features. Flash player and 
   - remaining valid source configurations are `config.source.group` and `config.source.entries`
 - scaling modes `"resize"` and `"original"`
 
+## **[4.31.1]**
+
+### **Release Notes**  
+
+This release includes fixes for fast-start buffer management and hls playback error recovery. Fast-start buffer requests are now prevented during playback to avoid unnecessary buffering. Furthermore, it resolves an issue that caused a black screen during error recovery in HLS playback mode.
+
+### **Changelog**
+
+### Fixed
+
+- prevent fast-start buffer from being requested by updateSource while in the playing state.
+- an issue causing a black screen during error recovery in HLS playback mode.
+
 ## **[4.31.0]**
 
 ### **Release Notes**  
