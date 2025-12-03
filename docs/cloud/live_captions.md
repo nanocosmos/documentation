@@ -16,6 +16,12 @@ In the **[Enabled Packages](./organization_overview#enabled-packages)** section,
 To activate `Live Captions` or learn more about available plans, feel free to reach out via [nanocosmos.net/contact](https://www.nanocosmos.net/contact). We're happy to assist you in finding the best setup for your use case.
 :::
 
+:::info Live Caption Security Requirements
+Live captions are only available for **secure playback**. Therefore, by enabling `live captions`, you will also need to enable the `secure` feature. Please reach out to our sales team via [nanocosmos.net/contact](https://www.nanocosmos.net/contact) or by email at sales(at)nanocosmos.net if you have any questions. \
+To learn more about secure playback, visit the dedicated article [Secure Playback (H5Live)](/docs/cloud/security#secure-playback-h5live).
+:::
+
+
 ## Overview
 
 **Live Captions** convert spoken audio into readable text in real time. This AI-driven feature enhances accessibility and content comprehension across a wide range of live-streaming, especially for:
@@ -56,7 +62,6 @@ import TabItem from '@theme/TabItem';
   defaultValue="deepgram"
   values={[
     {label: 'Deepgram', value: 'deepgram'},
-    {label: 'Whisper', value: 'whisper'},
   ]}>
   <TabItem className="tab-item" value="deepgram">
   
@@ -73,19 +78,67 @@ import TabItem from '@theme/TabItem';
 
 The *source language* is **the spoken language of the incoming audio**. This language is used by the ASR engine to interpret the speech and generate text. The *target language* defines **the output language of the captions**. Only engines that support translation can provide multiple output languages.
 
-| Language    | ID  | Source | Target | Supported Engines |
-|-------------|-----|--------|--------|-------------------|
-| English     | `en` | ✓ | ✓ | Deepgra, Whisper |
-| German      | `de` | ✓ | ✓ | Deepgram, Whisper |
-| Spanish     | `es` | ✓ | ✓ | Deepgram |
-| Indonesian  | `id` | ✓ | ✓ | Deepgram |
+:::note Region-specific language codes
+Some ASR engines offer region-specific language codes (e.g. **es-419** for *Latin American Spanish*).
+Use these variants when **your target audience is primarily from a specific region** and you want **improved recognition of regional accents, vocabulary, and spelling conventions**.
+
+If you do not require a regional focus, the generic language code (e.g. **es**) is typically sufficient.
+:::
+
+| Language                    | ID        | Source | Target | Supported Engines |
+|-----------------------------|-----------|--------|--------|-------------------|
+| Bulgarian                   | bg        | ✓ | ✓ | Deepgram |
+| Catalan                     | ca        | ✓ | ✓ | Deepgram |
+| Czech                       | cs        | ✓ | ✓ | Deepgram |
+| Danish                      | da        | ✓ | ✓ | Deepgram |
+| Danish (Denmark)            | da-DK     | ✓ | ✓ | Deepgram |
+| Dutch                       | nl        | ✓ | ✓ | Deepgram |
+| Flemish (Belgium)           | nl-BE     | ✓ | ✓ | Deepgram |
+| English (Generic)           | en        | ✓ | ✓ | Deepgram |
+| English (United States)     | en-US     | ✓ | ✓ | Deepgram |
+| English (Australia)         | en-AU     | ✓ | ✓ | Deepgram |
+| English (United Kingdom)    | en-GB     | ✓ | ✓ | Deepgram |
+| English (India)             | en-IN     | ✓ | ✓ | Deepgram |
+| English (New Zealand)       | en-NZ     | ✓ | ✓ | Deepgram |
+| Estonian                    | et        | ✓ | ✓ | Deepgram |
+| Finnish                     | fi        | ✓ | ✓ | Deepgram |
+| French (Generic)            | fr        | ✓ | ✓ | Deepgram |
+| French (Canada)             | fr-CA     | ✓ | ✓ | Deepgram |
+| German (Generic)            | de        | ✓ | ✓ | Deepgram |
+| German (Switzerland)        | de-CH     | ✓ | ✓ | Deepgram |
+| Greek                       | el        | ✓ | ✓ | Deepgram |
+| Hindi                       | hi        | ✓ | ✓ | Deepgram |
+| Hungarian                   | hu        | ✓ | ✓ | Deepgram |
+| Indonesian                  | id        | ✓ | ✓ | Deepgram |
+| Italian                     | it        | ✓ | ✓ | Deepgram |
+| Japanese                    | ja        | ✓ | ✓ | Deepgram |
+| Korean (Generic)            | ko        | ✓ | ✓ | Deepgram |
+| Korean (South Korea)        | ko-KR     | ✓ | ✓ | Deepgram |
+| Latvian                     | lv        | ✓ | ✓ | Deepgram |
+| Lithuanian                  | lt        | ✓ | ✓ | Deepgram |
+| Malay                       | ms        | ✓ | ✓ | Deepgram |
+| Norwegian                   | no        | ✓ | ✓ | Deepgram |
+| Polish                      | pl        | ✓ | ✓ | Deepgram |
+| Portuguese (Generic)        | pt        | ✓ | ✓ | Deepgram |
+| Portuguese (Brazil)         | pt-BR     | ✓ | ✓ | Deepgram |
+| Portuguese (Portugal)       | pt-PT     | ✓ | ✓ | Deepgram |
+| Romanian                    | ro        | ✓ | ✓ | Deepgram |
+| Russian                     | ru        | ✓ | ✓ | Deepgram |
+| Slovak                      | sk        | ✓ | ✓ | Deepgram |
+| Spanish (Generic)           | es        | ✓ | ✓ | Deepgram |
+| Spanish (Latin America)     | es-419    | ✓ | ✓ | Deepgram |
+| Swedish (Generic)           | sv        | ✓ | ✓ | Deepgram |
+| Swedish (Sweden)            | sv-SE     | ✓ | ✓ | Deepgram |
+| Turkish                     | tr        | ✓ | ✓ | Deepgram |
+| Ukrainian                   | uk        | ✓ | ✓ | Deepgram |
+| Vietnamese                  | vi        | ✓ | ✓ | Deepgram |
 
 :::info Multi target translation
 Because Deepgram supports translation, any **source language** listed above can be combined with any **target language**.
 :::
 
 :::warning Missing a language?
-If your desired language is not listed, please get in touch.
+If your desired language is not listed, please get in touch with us via [nanocosmos.net/contact](https://www.nanocosmos.net/contact) or by email at sales(at)nanocosmos.net. \
 We can evaluate your use case, discuss engine support, and, where possible, include you in upcoming beta programs for additional languages.
 :::
 

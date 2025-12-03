@@ -86,6 +86,7 @@ const sidebars = {
         "dashboard/start_streaming",
         "dashboard/stream_overview",
         "dashboard/live_processing",
+        "dashboard/live_captions",
         "dashboard/code_snippets",
         "dashboard/abr_transcoding",
         "dashboard/secure_playback",

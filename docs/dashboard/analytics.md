@@ -4,13 +4,6 @@ title: Analytics
 sidebar_label: Analytics
 ---
 
-<div class="video-wrap">
-    <div class="video-container">
-        <iframe src="https://www.youtube.com/embed/vvxU_9qJD4I" frameborder="0" allowfullscreen></iframe>
-    </div>
-</div>
-*Click `PLAY` button to start*
-
 As the digital landscape progresses, real-time monitoring and analytics play a crucial role in ensuring the efficiency and performance of live streams. Integrating nanoStream Analytics API with the nanoStream Dashboard enhances your ability to monitor and analyze live streams in terms of performance and the quality of service.
 
 :::info Before starting
@@ -21,6 +14,12 @@ If you don’t have an account yet, you can [sign up](https://dashboard.nanostre
 👉  Check the [Authentication section](./getting_started#authentication) for step-by-step guidance on creating an account, logging in, and requesting access from your system administrator.
 :::
 
+<div class="video-wrap">
+    <div class="video-container">
+        <iframe src="https://www.youtube.com/embed/vvxU_9qJD4I" frameborder="0" allowfullscreen></iframe>
+    </div>
+</div>
+*Tutorial: Learn how to utilize nanoStream Analytics tools*
 
 ## Getting Started
 
