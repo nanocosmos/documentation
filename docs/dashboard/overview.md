@@ -23,7 +23,7 @@ This documentation explains the key features and how to use the dashboard effici
   </Columns>
   <Columns className="list_ZO3j padding-bottom--lg" >
     <Card className="col col--6 margin-horiz--md" href="./stream_overview">
-      <Card.Header title="Start Streaming"/>
+      <Card.Header title="Stream Overview"/>
       <Card.Body className="padding-vert--md">Understand how to read stream data.</Card.Body>
     </Card>
     <Card className="col col--6 margin-horiz--md" href="./abr_transcoding">

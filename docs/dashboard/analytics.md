@@ -6,7 +6,7 @@ sidebar_label: Analytics
 
 As the digital landscape progresses, real-time monitoring and analytics play a crucial role in ensuring the efficiency and performance of live streams. Integrating nanoStream Analytics API with the nanoStream Dashboard enhances your ability to monitor and analyze live streams in terms of performance and the quality of service.
 
-:::info Before starting
+:::warning Before starting
 To get started with the **nanoStream Dashboard**, sign in with your existing *nanoStream account*.  
 If you don’t have an account yet, you can [sign up](https://dashboard.nanostream.cloud/signup), or get in touch with our sales team via [nanocosmos.net/contact](https://www.nanocosmos.net/contact) or by email at sales(at)nanocosmos.net.
 

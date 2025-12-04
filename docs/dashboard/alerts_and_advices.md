@@ -11,7 +11,7 @@ To start, please navigate to [dashboard.nanostream.cloud/alerts](https://dashboa
 ![Screenshot: Notifications Overview](../assets/dashboard/alerts-overview.png)
 *Screenshot: Notifications Overview*
 
-:::info Before starting
+:::warning Before starting
 To get started with the **nanoStream Dashboard**, sign in with your existing *nanoStream account*.  
 If you don’t have an account yet, you can [sign up](https://dashboard.nanostream.cloud/signup), or get in touch with our sales team via [nanocosmos.net/contact](https://www.nanocosmos.net/contact) or by email at sales(at)nanocosmos.net.
 
