@@ -11,6 +11,112 @@ This guide assumes **Live Captions** are already enabled for your organization.
 If you still need to enable the feature, please contact our **[Sales team](https://www.nanocosmos.net/contact/)** or send an email to sales(at)nanocosmos.net.
 :::
 
+## Choose your integration method
+
+### Quick start: Embed player with captions
+
+This method allows you to embed a player with captions directly into your web page or application by using an `<iframe>` element.
+
+It doesn't require any additional changes to your page, everything is configurable via URL query parameters.
+
+[Jump to: Embed player with captions](#embed-player-with-captions)
+
+### Build a custom integration
+
+This method allows you to integrate live captions into your web player or application by using the **nanoStream Messenger** JavaScript library. 
+
+It provides a flexible way to customize the caption display and integrate it with your existing player.
+
+[Jump to: Custom integration](#custom-integration)
+
+---
+
+## Embed player with captions
+
+We have created a reference implementation for embedding live captions into your web page or application using an `<iframe>` element, which you can use as a starting point before reaching for your own custom implementation.
+
+To enable live captions in the embedded player, you'll need:
+
+1. **Stream ID/name** - Your video stream identifier
+2. **Caption channel** - The caption channel name (you'll receive this from us)
+3. **Security token** - A JWT token for secure playback & captions delivery
+
+The embed player is available at:
+
+```
+https://bintu-nmessenger.autodevops-prod.nanostream.cloud/client/embed/nanoplayer.html
+```
+
+These parameters are required to be put in a URL query string to configure the embedded player:
+
+- `group.id=<STREAM_ID_OR_NAME>`
+- `caption.channel=<CAPTION_CHANNEL>`
+- `caption.token=<SECURITY_TOKEN>`
+- `group.security.jwtoken=<SECURITY_TOKEN>`
+
+:::tip
+Here you can find more information about the security token and how to generate it: [Secure Playback & Secure Token](../dashboard/secure_playback)
+
+The same security token can be used for both playback and captions delivery. 
+The restrictions set on the secure token (stream name, stream group, domain etc.) will be applied to both playback and captions.
+:::
+
+:::warning Security best practice
+Generate JWTs server-side and use short-lived tokens.
+Avoid hard-coding long-lived tokens in public code, your playback system.
+:::
+
+The code snippet below demonstrates how to embed the live captions into your web page or application using an `<iframe>` element:
+
+```html
+<iframe
+  src="https://bintu-nmessenger.autodevops-prod.nanostream.cloud/client/embed/nanoplayer.html?group.id=<STREAM_ID_OR_NAME>&caption.channel=<CAPTION_CHANNEL>&caption.token=<SECURITY_TOKEN>&group.security.jwtoken=<SECURITY_TOKEN>"
+  width="100%"
+  height="720"
+  frameborder="0"
+  allowfullscreen>
+</iframe>
+```
+
+Replace `<STREAM_ID_OR_NAME>`, `<CAPTION_CHANNEL>`, and `<SECURITY_TOKEN>` with your actual values.
+
+<details>
+
+<summary>Example with real data of a demo stream</summary>
+
+:::warning
+The token included in the example expires on 2026-12-08.
+:::
+
+```html
+<iframe
+  src="https://bintu-nmessenger.autodevops-prod.nanostream.cloud/client/embed/nanoplayer.html?group.id=nNCcf-ZexY6&caption.channel=nNCcf-ZexY6-de-de&caption.token=eyJhbGciOiJFZERTQSIsImtpZCI6Im5hbm9feDI1NTE5IiwidHlwIjoiSldUIn0.eyJhdWQiOiJzcGxheSIsImV4cCI6MTc5NjczMDg0MSwiaWF0IjoxNzY1MTk4NDkzLCJpc3MiOiJuYW5vY29zbW9zIiwibmJmIjoxNzY1MTk4NDkzLCJzdHJlYW1zIjpbIm5OQ2NmLVpleFk2Il0sInN1YiI6IjU4ODYyNTFjLTJmM2UtNGQ3YS1hYWQ4LWQ3YWU1ZDBhNTdhMCJ9._EFR028lTwF2wt1F46LU4byJiWNb3qmuDJkS9Z_Yf2lEn0a9lUWXytZR05P3tbg_wtohyu9N9clTRxT8tYxqDA&group.security.jwtoken=eyJhbGciOiJFZERTQSIsImtpZCI6Im5hbm9feDI1NTE5IiwidHlwIjoiSldUIn0.eyJhdWQiOiJzcGxheSIsImV4cCI6MTc5NjczMDg0MSwiaWF0IjoxNzY1MTk4NDkzLCJpc3MiOiJuYW5vY29zbW9zIiwibmJmIjoxNzY1MTk4NDkzLCJzdHJlYW1zIjpbIm5OQ2NmLVpleFk2Il0sInN1YiI6IjU4ODYyNTFjLTJmM2UtNGQ3YS1hYWQ4LWQ3YWU1ZDBhNTdhMCJ9._EFR028lTwF2wt1F46LU4byJiWNb3qmuDJkS9Z_Yf2lEn0a9lUWXytZR05P3tbg_wtohyu9N9clTRxT8tYxqDA"
+  width="100%"
+  height="720"
+  frameborder="0"
+  allowfullscreen>
+</iframe>
+
+```
+
+</details>
+
+### That's it!
+
+Once you've created your `iframe` URL with the parameters above and integrated it into your web page or application, you're ready to enjoy live captions! The captions will automatically appear over your video stream, no additional code or configuration is needed.
+
+**What happens automatically:**
+- [x] Connection to caption server is established
+- [x] Captions appear as text overlay at the bottom of the video
+- [x] Captions update in real-time as transcription happens
+- [x] Reconnection is handled automatically if connection drops
+
+## Custom integration
+
+This section provides instructions for integrating live captions into your custom player or application.
+
+To integrate the captions, we'll use the **nanoStream Messenger** JavaScript library which takes care of delivering the captions over WebSocket.
+
 ### 1. Load the Caption Library
 
 Include the [nanoStream Messenger](https://bintu-nmessenger.autodevops-prod.nanostream.cloud/nmessenger.js) JavaScript library in your HTML page or application:
@@ -19,10 +125,22 @@ Include the [nanoStream Messenger](https://bintu-nmessenger.autodevops-prod.nano
 <script src="https://bintu-nmessenger.autodevops-prod.nanostream.cloud/client/nmessenger.js"></script>
 ```
 
-This library handles the WebSocket connection to the caption channel and outputs live text.
+:::warning
+Make sure the script tag loads **before** you try to use `NanoMessenger` in your code. The safest approach is to initialize inside a `DOMContentLoaded` event listener in a separate script tag:
+
+```javascript
+document.addEventListener("DOMContentLoaded", function() {
+  // Your caption initialization code here
+  const messenger = new NanoMessenger(/* ... */);
+});
+```
+:::
+
+This library handles the WebSocket connection to the caption channel and outputs live text to the caption overlay element.
 
 ### 2. Create a Caption Overlay
-Add a `<div>` in your player page or application where the captions will be written:
+
+Add a container element (e.g. `<div>`) in your player page or application where the captions will be displayed:
 
 ```html
 <div id="caption-text" class="overlay-text"></div>
@@ -58,54 +176,86 @@ Adjust to your UI as needed:
 ### 3. Initialize the Messenger Client
 After loading the library, create a new Messenger object and configure it with your channel and secure token:
 
-```html
-<script>
-  const messenger = new NanoMessenger({
-    channel: "your-caption-channel-id",
-    token: "your-secure-caption-token",
-    target: "caption-text" // the ID of the div where captions should appear
-  });
+```javascript
+document.addEventListener("DOMContentLoaded", function() {
+  // Step 1: Create the messenger client
+  const messenger = new NanoMessenger(
+    "bintu-nmessenger.autodevops-prod.nanostream.cloud", // server
+    443,                                                 // port
+    { overlayDiv: "caption-text" }                       // options
+  );
 
-  messenger.connect();
-</script>
+  // Step 2: Connect to your caption channel
+  messenger.connect(
+    "your-caption-token",      // authentication token
+    null,                      // user (optional)
+    "your-caption-channel",    // channel ID
+    () => {                    // on success callback
+      console.log("Captions connected");
+    },
+    (error) => {               // on error callback
+      console.error("Caption connection failed:", error);
+    }
+  );
+});
 ```
 
-**Parameters**
+**Replace these values:**
+- `your-caption-token` - Your secure JWT token
+- `your-caption-channel` - Your caption channel ID (you'll receive this from us)
 
-- **channel**: The caption channel you receive from us.
-
-- **token**: Your secure JWT token (required for authentication).
-
-- **target**: The id of the element where the text should be displayed.
-
-:::tip Security best practice
+:::warning Security best practice
 Generate JWTs server-side and use short-lived tokens.
 Avoid hard-coding long-lived tokens in public code, your playback system.
+:::
+
+:::note
+Make sure the `overlayDiv` name in the options matches the ID of the element you want to use as the caption overlay. 
+
+For example, if you want to use an element with the ID `caption-overlay`, set the `overlayDiv` option to `"caption-overlay"`.
 :::
 
 ### 4. Display Captions
 Once connected, the Messenger library automatically writes incoming captions into the target element.
 
-Example when a caption `Hello world` arrives:
+When a caption like `"Hello world"` arrives, your HTML will automatically update:
+
 ```html
-<div id="caption-text" class="overlay-text">Hello world</div>
+<div id="caption-text">Hello world</div>
 ```
 
-No extra rendering logic is required.
+No additional code needed &mdash; the library manages everything.
 
-### 5. Use the Reference Implementation (Optional)
+### That's it!
+
+With the above integration steps completed, you're ready to receive the live captions from your stream.
+
+**What happens automatically:**
+- [x] Connection to caption server is established
+- [x] Captions appear in the specified target element
+- [x] Captions update in real-time as transcription happens
+- [x] Reconnection is handled automatically if connection drops
+
+### Use the Reference Implementation (Optional)
+
 If you prefer a ready-to-use solution:
 
 - Use the iframe caption player provided as a reference implementation or embed the example HTML snippet in your system.
-- If you want a custom UI, you can still use the same Messenger library — just style the overlay `<div>` as you like.
+- If you want a custom UI, you can still use the same Messenger library &mdash; just style the overlay `<div>` as you like.
 
-That’s it — load the library, create an overlay, initialize Messenger with channel, token and captions will appear.
+That’s it &mdash; load the library, create an overlay, initialize Messenger with channel, token and captions will appear.
 
- <details>
- <summary> See receive-captions.html </summary>
+The `receive-captions.html` example below demonstrates how to use the reference implementation. It uses the same URL query parameters as the iframe caption player described in the [Embed player with captions](#embed-player-with-captions) section.
+
+ :::tip
+ For a complete end-to-end example, see this [interactive CodePen](https://codepen.io/pen?template=jEqXyrN) that integrates our [nanoStream H5Live Player (nanoPlayer)](../nanoplayer/nanoplayer_introduction) with live stream captions delivered via NanoMessenger.
+ :::
+
+<details>
+<summary>See receive-captions.html</summary>
 
  ```html 
- <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="utf-8" />
@@ -188,3 +338,61 @@ That’s it — load the library, create an overlay, initialize Messenger with c
 ```
 
 </details>
+
+## Troubleshooting
+
+### Captions not appearing
+
+**Check these common issues:**
+
+1. **Is the caption channel correct?**
+   - Verify your `channel` or `caption.channel` parameter matches the channel ID we provided
+2. **Is the token valid?**
+   - JWT tokens expire &mdash; check if your token is still valid
+   - Tokens are case-sensitive
+   - In case of embed player method: check if the token is passed in both `caption.token` and `group.security.jwtoken`
+
+3. **Is the overlay element present?**
+   - For custom integration: Verify the element with ID `caption-text` (or your custom ID) exists in your HTML
+
+4. **Check browser console**
+   - Open browser developer tools (F12) and check for error messages
+
+---
+
+### Connection keeps dropping
+
+The automatically reconnect feature is enabled by default, you don't need to do anything.
+If captions disconnect frequently:
+
+1. **Check network connectivity** - Test your internet connection
+2. **Verify server availability** - Contact support if the issue persists
+
+---
+
+### "NanoMessenger is not defined" error
+
+**For custom integration only:**
+
+This means you're trying to use the library before it has loaded. Make sure you initialize inside `DOMContentLoaded`:
+
+```javascript
+// ✅ Correct
+document.addEventListener("DOMContentLoaded", function() {
+  const messenger = new NanoMessenger(...);
+});
+
+// ❌ Incorrect - runs before library loads
+const messenger = new NanoMessenger(...);
+```
+
+## Getting Help
+
+If you encounter issues:
+
+1. Check the troubleshooting section above
+2. Verify all parameters (channel ID, tokens, stream ID)
+3. Check browser console for error messages
+4. Contact our support team:
+   - [Support contact form](https://www.nanocosmos.net/support/)
+   - Include: error messages, browser console logs, and your configuration
