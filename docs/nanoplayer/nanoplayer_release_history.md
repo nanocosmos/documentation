@@ -10,6 +10,22 @@ sidebar_label: History
 
 ## For easy-to-use migration follow our [guide](https://docs.nanocosmos.net/docs/nanoplayer/nanoplayer_v5_migration_guide)
 
+## **[5.0.5]**
+
+### **Release Notes**
+
+This update improves onReady metrics and resolves a slight audio delay in MOQ playback that could gradually become noticeable after repeated stream switches.
+
+### **Changelog**
+
+### Fixed
+
+- slight audio delay in MOQ playback that could gradually become noticeable after repeated stream switches
+
+### Improved
+
+- metrics for onReady event
+
 ## **[5.0.4]**
 
 ### **Release Notes**
