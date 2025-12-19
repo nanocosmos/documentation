@@ -9,7 +9,7 @@ description: nanoStream Live Captions convert spoken audio into readable text in
 To make use of **Live Captions**, it must be explicitly enabled for your organization. Activation may be subject to additional pricing or service terms.
 
 You can verify whether this feature is available by navigating to [dashboard.nanostream.cloud/organisation](https://dashboard.nanostream.cloud/organisation) in your dashboard.  
-In the **[Enabled Packages](./organization_overview#enabled-packages)** section, locate the entry for `Live Captions`. If it shows **Upgrade needed**, please contact us.
+In the **[Enabled Packages](./organization_overview#enabled-packages)** section, locate the entry for `Live Captions`. If it shows **Upgrade needed**, please [contact us](https://www.nanocosmos.net/contact).
 
 ![Screenshot: Enabled Packages](../assets/dashboard/enabled-packages.png)  
 
@@ -80,53 +80,53 @@ Use these variants when **your target audience is primarily from a specific regi
 If you do not require a regional focus, the generic language code (e.g. **es**) is typically sufficient.
 :::
 
-| Language                    | ID        | Source | Target | Supported Engines |
-|-----------------------------|-----------|--------|--------|-------------------|
-| Bulgarian                   | bg        | ✓ | ✓ | Deepgram |
-| Catalan                     | ca        | ✓ | ✓ | Deepgram |
-| Czech                       | cs        | ✓ | ✓ | Deepgram |
-| Danish                      | da        | ✓ | ✓ | Deepgram |
-| Danish (Denmark)            | da-DK     | ✓ | ✓ | Deepgram |
-| Dutch                       | nl        | ✓ | ✓ | Deepgram |
-| Flemish (Belgium)           | nl-BE     | ✓ | ✓ | Deepgram |
-| English (Generic)           | en        | ✓ | ✓ | Deepgram |
-| English (United States)     | en-US     | ✓ | ✓ | Deepgram |
-| English (Australia)         | en-AU     | ✓ | ✓ | Deepgram |
-| English (United Kingdom)    | en-GB     | ✓ | ✓ | Deepgram |
-| English (India)             | en-IN     | ✓ | ✓ | Deepgram |
-| English (New Zealand)       | en-NZ     | ✓ | ✓ | Deepgram |
-| Estonian                    | et        | ✓ | ✓ | Deepgram |
-| Finnish                     | fi        | ✓ | ✓ | Deepgram |
-| French (Generic)            | fr        | ✓ | ✓ | Deepgram |
-| French (Canada)             | fr-CA     | ✓ | ✓ | Deepgram |
-| German (Generic)            | de        | ✓ | ✓ | Deepgram |
-| German (Switzerland)        | de-CH     | ✓ | ✓ | Deepgram |
-| Greek                       | el        | ✓ | ✓ | Deepgram |
-| Hindi                       | hi        | ✓ | ✓ | Deepgram |
-| Hungarian                   | hu        | ✓ | ✓ | Deepgram |
-| Indonesian                  | id        | ✓ | ✓ | Deepgram |
-| Italian                     | it        | ✓ | ✓ | Deepgram |
-| Japanese                    | ja        | ✓ | ✓ | Deepgram |
-| Korean (Generic)            | ko        | ✓ | ✓ | Deepgram |
-| Korean (South Korea)        | ko-KR     | ✓ | ✓ | Deepgram |
-| Latvian                     | lv        | ✓ | ✓ | Deepgram |
-| Lithuanian                  | lt        | ✓ | ✓ | Deepgram |
-| Malay                       | ms        | ✓ | ✓ | Deepgram |
-| Norwegian                   | no        | ✓ | ✓ | Deepgram |
-| Polish                      | pl        | ✓ | ✓ | Deepgram |
-| Portuguese (Generic)        | pt        | ✓ | ✓ | Deepgram |
-| Portuguese (Brazil)         | pt-BR     | ✓ | ✓ | Deepgram |
-| Portuguese (Portugal)       | pt-PT     | ✓ | ✓ | Deepgram |
-| Romanian                    | ro        | ✓ | ✓ | Deepgram |
-| Russian                     | ru        | ✓ | ✓ | Deepgram |
-| Slovak                      | sk        | ✓ | ✓ | Deepgram |
-| Spanish (Generic)           | es        | ✓ | ✓ | Deepgram |
-| Spanish (Latin America)     | es-419    | ✓ | ✓ | Deepgram |
-| Swedish (Generic)           | sv        | ✓ | ✓ | Deepgram |
-| Swedish (Sweden)            | sv-SE     | ✓ | ✓ | Deepgram |
-| Turkish                     | tr        | ✓ | ✓ | Deepgram |
-| Ukrainian                   | uk        | ✓ | ✓ | Deepgram |
-| Vietnamese                  | vi        | ✓ | ✓ | Deepgram |
+| Language                    | ID        | Source | Target |
+|-----------------------------|-----------|--------|--------|
+| Bulgarian                   | bg        | ✓ | ✓ | 
+| Catalan                     | ca        | ✓ | ✓ | 
+| Czech                       | cs        | ✓ | ✓ | 
+| Danish                      | da        | ✓ | ✓ | 
+| Danish (Denmark)            | da-DK     | ✓ | ✓ | 
+| Dutch                       | nl        | ✓ | ✓ | 
+| Flemish (Belgium)           | nl-BE     | ✓ | ✓ | 
+| English (Generic)           | en        | ✓ | ✓ | 
+| English (United States)     | en-US     | ✓ | ✓ | 
+| English (Australia)         | en-AU     | ✓ | ✓ | 
+| English (United Kingdom)    | en-GB     | ✓ | ✓ | 
+| English (India)             | en-IN     | ✓ | ✓ | 
+| English (New Zealand)       | en-NZ     | ✓ | ✓ | 
+| Estonian                    | et        | ✓ | ✓ | 
+| Finnish                     | fi        | ✓ | ✓ | 
+| French (Generic)            | fr        | ✓ | ✓ | 
+| French (Canada)             | fr-CA     | ✓ | ✓ | 
+| German (Generic)            | de        | ✓ | ✓ | 
+| German (Switzerland)        | de-CH     | ✓ | ✓ | 
+| Greek                       | el        | ✓ | ✓ | 
+| Hindi                       | hi        | ✓ | ✓ | 
+| Hungarian                   | hu        | ✓ | ✓ | 
+| Indonesian                  | id        | ✓ | ✓ | 
+| Italian                     | it        | ✓ | ✓ | 
+| Japanese                    | ja        | ✓ | ✓ | 
+| Korean (Generic)            | ko        | ✓ | ✓ | 
+| Korean (South Korea)        | ko-KR     | ✓ | ✓ | 
+| Latvian                     | lv        | ✓ | ✓ | 
+| Lithuanian                  | lt        | ✓ | ✓ | 
+| Malay                       | ms        | ✓ | ✓ | 
+| Norwegian                   | no        | ✓ | ✓ | 
+| Polish                      | pl        | ✓ | ✓ | 
+| Portuguese (Generic)        | pt        | ✓ | ✓ | 
+| Portuguese (Brazil)         | pt-BR     | ✓ | ✓ | 
+| Portuguese (Portugal)       | pt-PT     | ✓ | ✓ | 
+| Romanian                    | ro        | ✓ | ✓ | 
+| Russian                     | ru        | ✓ | ✓ | 
+| Slovak                      | sk        | ✓ | ✓ | 
+| Spanish (Generic)           | es        | ✓ | ✓ | 
+| Spanish (Latin America)     | es-419    | ✓ | ✓ | 
+| Swedish (Generic)           | sv        | ✓ | ✓ | 
+| Swedish (Sweden)            | sv-SE     | ✓ | ✓ | 
+| Turkish                     | tr        | ✓ | ✓ | 
+| Ukrainian                   | uk        | ✓ | ✓ | 
+| Vietnamese                  | vi        | ✓ | ✓ | 
 
 :::info Multi target translation
 Because nanoStream Live Captions feature supports translation, any **source language** listed above can be combined with any **target language**.
