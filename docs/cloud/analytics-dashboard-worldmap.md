@@ -1,9 +1,12 @@
 ---
-slug: /analytics/worldmap
-id: worldmap
-title: Worldmap
+slug: /analytics/dashboard/worldmap
+id: analytics-dashboard-worldmap
+title: Analytics Dashboard
 sidebar_label: World Map
 ---
+
+# World Map
+
 The selected filter options affect all availabe metrics.
 
 :::info Before starting
@@ -79,3 +82,30 @@ In **Country View** the Top 50 ranked countries are marked by a small indicator,
 
 (A) `Country` - **Hovering** over the indicator shows country specific details, while **Clicking** opens up a [**Breakdown Menu**](./analytics-zoom#zoom-on-worldmap) of this countrys streaming activity. <br/>
 (B) `Country Overview` is shown when hovering over one of the Top 50 ranked countries.
+
+## Zoom on Worldmap
+
+This Zoom/Breakdown menu is shown when clicking on a marked country in the [**Zoom Region View**](./worldmap#zoom-region-view) or [**Country View**](./worldmap#country-view). It represents a more detailed overview of this countrys Top 10 results by the selected metric category and filter option.
+
+![Screenshot: Zoom on Worldmap](../assets/analytics/analytics-zoom-worldmap.png)
+*Screenshot: Zoom on Worldmap*
+
+### Playout/Ingest (Usage)
+Like the usage details from home tab, but only for the selected country.
+
+### Aggregated Metrics
+The following aggregated metrics provide more insight for different use cases regarding your stream quality:
+
+#### Buffering Play Ratio 
+- the ratio between stream buffering and fluent play back (ranked by highest ratio)
+
+#### Playtime
+- the average and total play back time (ranked by highest average play back time)
+
+#### Latency
+- the average and total latency from ingest to playout (ranked by highest latency)
+
+#### ABR
+- successfull profile switch count
+- playtime per device per profile
+- viewers per profile

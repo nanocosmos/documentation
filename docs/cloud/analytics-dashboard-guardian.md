@@ -1,9 +1,11 @@
 ---
-slug: /analytics/guardian
-id: analytics-guardian
-title: nanoStream Guardian
-sidebar_label: nanoStream Guardian
+slug: /analytics/dashboard/guardian
+id: analytics-dashboard-guardian
+title: Analytics Dashboard
+sidebar_label: Guardian
 ---
+
+# Guardian
 
 This section describes the Guardian features which can be accessed within the [Analytics Dashboard](https://metrics.nanocosmos.de).
 
@@ -11,7 +13,7 @@ This section describes the Guardian features which can be accessed within the [A
 Further details and general information about the **nanoStream Guardian** features can be found [here](./guardian).
 :::
 
-### Guardian Menu
+## Guardian Menu
 
 :::info Before starting
 To begin, please sign in to the [Analytics dashboard](https://metrics.nanocosmos.de/login) using your nanoStream Cloud/Bintu account credentials. <br/>
@@ -38,7 +40,7 @@ To use referrer blocking as a security measure, you have to switch into the [Bre
 
 (E) `Referrer Block Button` that blocks requests from a specific referrer.
 
-### Detailed View
+## Detailed View
 
 ![Screenshot: Guardian Detailed View](../assets/analytics/analytics-guardian-zoom.png)
 *Screenshot: Guardian Detailed View*
