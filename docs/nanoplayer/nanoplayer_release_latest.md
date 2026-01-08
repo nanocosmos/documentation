@@ -14,7 +14,7 @@ sidebar_label: Latest
 
 ### **Release Notes**
 
-This update resolves a slight audio delay in MOQ playback that could gradually become noticeable after repeated stream switches and improves the robustness of `config.general.serverDomain` parsing for edge cases. In addition, onReady metrics have been improved, and an inconsistency in error emission for malformed or missing source configurations has been fixed.
+This update resolves a slight audio delay in MOQ playback that could gradually become noticeable after repeated stream switches and improves the robustness of `config.general.serverDomain` parsing for edge cases. In addition, `onReady` metrics have been improved, and an inconsistency in error emission for malformed or missing source configurations has been fixed.
 
 ### **Changelog**
 
