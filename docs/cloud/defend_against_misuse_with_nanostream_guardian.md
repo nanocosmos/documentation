@@ -10,7 +10,7 @@ You're now able to protect your live streams with the touch of a button. With th
 
 <div class="video-wrap">
     <div class="video-container">
-        <iframe src="https://www.youtube.com/embed/hVbkifac1uo" frameborder="0" allowfullscreen></iframe>
+        <iframe src="https://www.youtube.com/embed/MVaIqxy3nQU" frameborder="0" allowfullscreen></iframe>
     </div>
 </div>
 
