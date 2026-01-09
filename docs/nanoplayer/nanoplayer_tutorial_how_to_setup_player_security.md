@@ -10,7 +10,7 @@ In this video we will show you how to secure your streams by making sure only th
 
 <div class="video-wrap">
     <div class="video-container">
-        <iframe src="https://www.youtube.com/embed/nOmcvcgr6UI" frameborder="0" allowfullscreen></iframe>
+        <iframe src="https://www.youtube.com/embed/tiaL9M8YVjc" frameborder="0" allowfullscreen></iframe>
     </div>
 </div>
 
