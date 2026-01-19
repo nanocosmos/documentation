@@ -97,7 +97,7 @@ To enable that, you need to configure the **ASR engine**, **source language** (s
 To understand how Live Captions work end-to-end, including activation, configuration flows, engine selection, supported languages, and API integration, explore the full documentation:
 
 - [ASR Engines And Languages](/docs/cloud/live_captions#asr-engines-and-langauges): Learn which recognition engines are available, how they differ, and which languages they support.
-- [Manage Live Captions via Dashboard](/docs/dashboard//live_captions): Step-by-step instructions for enabling, editing, or removing captions in the nanoStream Cloud Dashboard.
+- [Manage Live Captions via Dashboard](/docs/dashboard/live_captions): Step-by-step instructions for enabling, editing, or removing captions in the nanoStream Cloud Dashboard.
 - [Integrate Live Captions programmatically](/docs/cloud/live_captions#api-integration): Add or modify caption settings using the bintu REST API with practical request examples.
 
 👉 Dive into the [Live Captions Docs](/docs/cloud/live_captions) for the complete feature guide.

@@ -172,6 +172,9 @@ The workflow in the UI is designed to be simple and intuitive:
 3. Choose one or more **target languages** (caption output).
 4. Save your configuration.
 
+![Screenshot: Adding live captions to a new stream](../assets/dashboard/create-add-captions.png)
+*Screenshot: Adding live captions to a new stream*
+
 A detailed guide with screenshots on how to manage streams with live captions is available in the [Live Captions in the Dashboard](/docs/dashboard/live_captions) documentation.
 
 :::tip Accessing Live Captions Management  
