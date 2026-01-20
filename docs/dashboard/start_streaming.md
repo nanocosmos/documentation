@@ -140,14 +140,14 @@ Under the Header of the page, you can see three buttons:
 Below these three buttons, you can see the following sections:
 
 1. **Start the Ingest**: This section displays the **RTMP stream name** and **RTMP URL** needed to begin your stream. To copy the details easily, click on the copy icon next to the information.
-2. **Access the Web Playout**: Here you will find the **live playout URL** for streaming your content.
+2. **Access the Web Playout**: Here you will find all **playout URLs** for streaming your content.
     :::info Enable secure playback
     **nanoStream** also provides a `secure` feature to generate a JWT playback token. This lets you customize token settings like expiration date, not-before date, client IP, domain, user ID, or a tag for enhanced security. \
     Verify whether this feature is available for your organization by navigating to [dashboard.nanostream.cloud/organisation](https://dashboard.nanostream.cloud/organisation) in your dashboard. *To enable this feature for your organization, contact us via [nanocosmos.net/contact](https://www.nanocosmos.net/contact)*. 
 
     You can learn more about nanoStream Cloud Security on our dedicated feature docs: **[nanoStream Cloud: Secure Playback (H5Live)](/docs/cloud/security#secure-playback-h5live)**.
     :::
-3.  **[Code Snippets](./code_snippets)**: We provide two types of code snippets to embed the H5Live Player with your stream on your website: **iFrame Code Snippet**, **HTML Code Snippet**. You can simply copy and paste the appropriate code into your webpage to integrate the nanoStream H5Live Player.
+3.  **[Code Snippets](./code_snippets)**: We provide two types of code snippets to embed the H5Live Player with your stream on your website: **Live Captions Player Code Snippet**, **iFrame Code Snippet** and **HTML Code Snippet**. You can simply copy and paste the appropriate code into your webpage to integrate the nanoStream H5Live Player.
 4. **[Stream Overview](./stream_overview)**: This section provides a link to the full stream overview page. Clicking the URL will take you to the detailed overview with more relevant details about the stream.
 
 ## Ingesting with the nanoStream Webcaster

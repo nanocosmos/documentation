@@ -39,6 +39,7 @@ This documentation explains the key features and how to use the dashboard effici
 - **Stream Management & Filtering**: Easily manage and filter your streams to find and control your content quickly and efficiently.
 - **Customizable Stream Code Snippets**: Generate and customize embeddable code snippets to seamlessly integrate streams into external websites or applications.
 - **Adaptive Transcoding & Live Processing**: Configure streams with transcoding profiles and manage live processing options like recording, thumbnails, and motion clips.
+- **Live Captions & Accessibility**: Enable real-time captions powered by AI-based speech recognition to improve accessibility, support multilingual audiences, and enhance comprehension in sound-off environments.
 - **Real-Time Analytics**: Monitor key performance metrics, including concurrent viewers, ingest/stream usage, and usage breakdowns for real-time insights.
 - **Alerts & Notifications**: Stay updated with notifications for minor, moderate, and critical stream issues, ensuring you can take action when needed.
 - **User & Organization Management**: Control user permissions, manage access, and track your enabled packages for streamlined organization administration.
