@@ -4,9 +4,26 @@ title: Live Captions
 sidebar_label: Live Captions
 ---
 
-**Live Captions** convert spoken audio into readable text in real time. This feature improves accessibility and keeps viewers engaged, especially for streams with spoken content, in sound-off environments, or for users who are hard of hearing.
+**Live Captions** convert speech into readable text in multiple languages in real time to support accessibility and compliance. This feature improves accessibility and keeps viewers engaged, especially for streams with spoken content, in sound-off environments, or for users who are hard of hearing.
 
 Through the **nanoStream Cloud Dashboard**, you can easily set up, manage, and integrate Live Captions into your playback environment. This guide explains how to enable, configure, and use Live Captions from within the dashboard.
+
+<article className="margin-vert--lg">
+  <Columns className="list_ZO3j">
+    <Card className="col col--4 margin-horiz--md" href="/docs/cloud/live_captions#how-it-works">
+      <Card.Header title="How Live Captions Work" />
+      <Card.Body>Detailed explanation of the real-time caption generation process and low-latency delivery.</Card.Body>
+    </Card>
+    <Card className="col col--4 margin-horiz--md" href="/docs/cloud/live_captions#asr-engines-and-languages">
+      <Card.Header title="Supported ASR Engines & Languages" />
+      <Card.Body>Overview of available engines and the full list of source and target languages, including regional variants.</Card.Body>
+    </Card>
+        <Card className="col col--4 margin-horiz--md" href="/docs/cloud/live_captions#managing-live-captions">
+      <Card.Header title="Managing Live Captions via API" />
+      <Card.Body>Learn how to control captions programmatically using the bintu API, including adding, editing, and removing captions.</Card.Body>
+    </Card>
+  </Columns>
+</article>
 
 :::warning Prerequisites
 To make use of **Live Captions**, it must be explicitly enabled for your organization. Activation may be subject to additional pricing or service terms.
@@ -31,19 +48,8 @@ When creating a new stream in the dashboard, live captions can be configured dir
 ![Screenshot: Adding live captions during stream creation](../assets/dashboard/create-add-captions.png)
 *Screenshot: Adding live captions during stream creation*
 
-First, select the desired live caption engine. Then specify the language of the audio source, which is the language spoken during the stream. You can then select one or more target languages in which the live captions should be displayed; engines that support translations enable simultaneous output in multiple languages.\
-Once the engine and languages are configured, save your settings. From that point, Live Captions will automatically activate as soon as the stream goes live, with the first lines typically appearing within **5–7 seconds**.
-
-:::info Learn more about Live Captions
-For a deeper understanding of Live Captions, including how they work, supported ASR engines, and language options, you can explore the following resources:
-
-- **How Live Captions Work**:  Detailed explanation of the real-time caption generation process and low-latency delivery. [Read more →](/docs/cloud/live_captions#how-it-works)
-
-- **Supported ASR Engines & Languages**: Overview of available engines (Deepgram, Whisper) and the full list of source and target languages, including regional variants. [Read more →](/docs/cloud/live_captions#asr-engines-and-languages)
-
-- **Managing Live Captions via API**: Learn how to control captions programmatically using the bintu API, including adding, editing, and removing captions. [Read more →](/docs/cloud/live_captions#managing-live-captions)
-:::
-
+First, select the desired live caption engine. Then specify the language of the audio  (i.e., the language spoken during the stream). Next, select one or more target languages in which the captions should be displayed. Live Captions support translation and can output text in multiple target languages simultaneously.\
+Once the engine and languages are configured, click **Create stream**, this saves the settings as part of the stream configuration. From that point, Live Captions will automatically activate as soon as the stream goes live, with the first lines typically appearing within 5–7 seconds.
 
 ## Overview of Live Captions Setup
 
@@ -79,44 +85,7 @@ Changes only take effect after **re-ingesting your stream**. If the stream is li
 ![Screenshot: Edit Live Captions Settings](../assets/dashboard/edit-captions.png)
 *Screenshot: Editing Live Captions settings*
 
-**Remove Live Captions**: Click **Remove** and confirm the deletion.
+**Remove Live Captions**: Click **Confirm & Delete** and the captions will be removed.
 
 ![Screenshot: Remove Live Captions](../assets/dashboard/remove-captions.png)
 *Screenshot: Removing Live Captions from a stream*
-
-## Live Captions Player & Code Snippets
-
-The **Live Captions player** can be embedded using an iframe. Code snippets are available in:
-
-- **Stream Overview → Code Snippets tab** ([dashboard.nanostream.cloud/stream/YOUR-STREAM-ID/code-snippets](https://dashboard.nanostream.cloud/stream/YOUR-STREAM-ID/code-snippets))
-- **New Stream Instructions → Access the Playout section** ([dashboard.nanostream.cloud/stream/new/YOUR-STREAM-ID](https://dashboard.nanostream.cloud/stream/new/YOUR-STREAM-ID))
-
-```js title="live_captions/iframe.html"
-<iframe
-    frameborder="0"
-    allowfullscreen
-    width="1280"
-    height="720"
-    src="https://bintu-nmessenger.autodevops-prod.nanostream.cloud/client/embed/nanoplayer.html?group.apiurl=GROUP_API&group.id=STREAM_ID&caption.channel=STREAM_ID-SOURCE_LANG-TARGET_LANG&caption.token=CAPTION_TOKEN&group.security.jwtoken=JWT_TOKEN">
-</iframe>
-```
-
-:::tip
-You can assemble your own player URL by combining these parameters with valid tokens. Use organization-wide tokens for logged-in users or generate new tokens for external viewers.
-
-**URL**: \
-https://bintu-nmessenger.autodevops-prod.nanostream.cloud/client/embed/nanoplayer.html  \
-?group.apiurl=GROUP_API \
-&group.id=STREAM_ID \
-&caption.channel=STREAM_ID-SOURCE_LANG-TARGET_LANG \
-&caption.token=CAPTION_TOKEN \
-&group.security.jwtoken=JWT_TOKEN
-
-| Parameter | Description |
-|-----------|-------------|
-| `group.apiurl` | Base API URL of the bintu instance |
-| `group.id` | Stream ID / Group ID |
-| `caption.channel` | Caption channel (includes stream ID + source language id + target language id) e.g. `STREAMNAME-en-en` |
-| `caption.token` | JWT token for accessing captions |
-| `group.security.jwtoken` | JWT token for secure playback |
-:::

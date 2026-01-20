@@ -164,7 +164,7 @@ To use captions, you must first create a stream. See the stream creation guides:
 
 ### Dashboard Integration
 
-Live Captions can be configured directly through the **nanoStream Cloud Dashboard**.
+Live Captions can be configured directly through the **nanoStream Dashboard**.
 The workflow in the UI is designed to be simple and intuitive:
 
 1. Select the **Live Captions engine**.
@@ -172,18 +172,18 @@ The workflow in the UI is designed to be simple and intuitive:
 3. Choose one or more **target languages** (caption output).
 4. Save your configuration.
 
-![Screenshot: Adding live captions to a new stream](../assets/dashboard/create-add-captions.png)
-*Screenshot: Adding live captions to a new stream*
+![Screenshot: Adding live captions during stream creation](../assets/dashboard/create-add-captions.png)
+*Screenshot: Adding live captions during stream creation*
 
-A detailed guide with screenshots on how to manage streams with live captions is available in the [Live Captions in the Dashboard](/docs/dashboard/live_captions) documentation.
+A detailed guide with screenshots on how to manage streams with live captions is available in the [**Live Captions in the Dashboard**](/docs/dashboard/live_captions) documentation.
 
 :::tip Accessing Live Captions Management  
 The **Live Captions** configuration can be created, edited, or removed in multiple dashboard locations:
 
 - During stream creation: [dashboard.nanostream.cloud/stream/create](https://dashboard.nanostream.cloud/stream/create)
 - Later via the Stream Overview tab **Live Captions** tab, which can be found:
-  - **Stream Overview**: [dashboard.nanostream.cloud/stream/YOUR-STREAM-ID](https://dashboard.nanostream.cloud/stream/YOUR-STREAM-ID)
-  - **Playout Overview**: [dashboard.nanostream.cloud/playout/YOUR-STREAM-ID](https://dashboard.nanostream.cloud/playout/YOUR-STREAM-ID)
+  - **Stream Overview**: [dashboard.nanostream.cloud/stream/YOUR-STREAM-ID/live-captions](https://dashboard.nanostream.cloud/stream/YOUR-STREAM-ID/live-captions)
+  - **Playout Overview**: [dashboard.nanostream.cloud/playout/YOUR-STREAM-ID/live-captions](https://dashboard.nanostream.cloud/playout/YOUR-STREAM-ID/live-captions)
   - **Webcaster Overview**: [dashboard.nanostream.cloud/webcaster/YOUR-STREAM-ID](https://dashboard.nanostream.cloud/webcaster/YOUR-STREAM-ID)
 :::
 
