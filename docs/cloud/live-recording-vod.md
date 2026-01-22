@@ -4,6 +4,14 @@ title: Live Recording and VOD
 sidebar_label: Live Recording and VOD
 ---
 
+:::warning Deprecated Feature 🚨 
+
+You're looking at a deprecated feature. Please use the new [live processing recording](../cloud/live_processing#recording) instead.
+
+
+:::
+
+
 :::info Live Recording and VOD will require a business upgrade
 Please reach out to our dedicated sales team via the [contact form](https://www.nanocosmos.de/contact) or by sending an email to sales(at)nanocosmos.de
 :::
