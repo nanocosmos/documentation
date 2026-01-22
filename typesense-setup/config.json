@@ -11,7 +11,8 @@
   ],
   "stop_urls": [
     "/blog",
-    "/docs/cloud/live_captions_retrieve"
+    "/docs/cloud/live_captions_retrieve",
+    "/docs/cloud/live-recording-vod"
   ],
   "selectors": {
     "lvl0": {

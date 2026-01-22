@@ -21,7 +21,6 @@ const sidebars = {
     "cloud/cloud_getting_started",
     "cloud/live_encoding",
     "cloud/srt_ingest",
-    "cloud/live-recording-vod",
     "cloud/live_processing",
     "cloud/live_captions",
     {
