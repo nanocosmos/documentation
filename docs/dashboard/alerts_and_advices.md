@@ -35,7 +35,7 @@ Selecting an alert opens a side panel with detailed information, structured as H
 - **Alert title** at the top
 - A row of **available actions**:
   - **Open Playout** – View the stream to verify its current status.
-  - **Troubleshooting** – Open the [metrics.nanocosmos.de](https://metrics.nanocosmos.de/) to inspect ingest-to-playout metrics. Learn more about troubleshooting [here](../analytics/troubleshooting).
+  - **Troubleshooting** – Open the [metrics.nanocosmos.de](https://metrics.nanocosmos.de/) to inspect ingest-to-playout metrics. Learn more about troubleshooting [here](../cloud/analytics-dashboard-troubleshooting.mdx).
   - **Open Support Ticket** – Create a support request so we can assist you directly.
 
 #### Alert Metadata
