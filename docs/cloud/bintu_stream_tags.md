@@ -19,9 +19,9 @@ Tags are lightweight and flexible and help you:
 To keep your tagging system clean and useful use consistent naming. This makes it easier to search and categorize streams.
 
 Tags can follow different patterns depending on your workflow:
-- simple labels: <span className="tag">camera1</span> <span className="tag">vip</span> <span className="tag">marketing</span>
-- hierarchical labels: <span className="tag">event2025</span> <span className="tag">studio/west</span>
-- key/value structure: <span className="tag">location:berlin</span> <span className="tag">type:concert</span> <span className="tag">role:guest</span>
+- simple labels: <span className="streamTag">camera1</span> <span className="streamTag">vip</span> <span className="streamTag">marketing</span>
+- hierarchical labels: <span className="streamTag">event2025</span> <span className="streamTag">studio/west</span>
+- key/value structure: <span className="streamTag">location:berlin</span> <span className="streamTag">type:concert</span> <span className="streamTag">role:guest</span>
 :::
 
 Bintu does not enforce a fixed naming scheme, you define tags as they fit your workflow. They should help your operators understand the context of a stream at a glance.
@@ -83,7 +83,7 @@ Depending on the stream type (Single Stream or MBR Stream), tags can be updated 
 With a click on the **edit icon** at the end of the row you can open the tag editor, where it is possible to add new tags, remove tags or select tags from your organization-wide tag list.
 
 :::warning Important to know  
-When creating **MBR Streams** through the Dashboard, Bintu automatically adds descriptive tags to each variant stream of the group (e.g., <span className="tag">Passthrough</span>, <span className="tag">1. Transcode</span>, <span className="tag">n Transcode</span>, ...).  
+When creating **MBR Streams** through the Dashboard, Bintu automatically adds descriptive tags to each variant stream of the group (e.g., <span className="streamTag">Passthrough</span>, <span className="streamTag">1. Transcode</span>, <span className="streamTag">n Transcode</span>, ...).  
 This **does not** happen when creating streams through the REST API.  
 :::
 

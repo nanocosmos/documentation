@@ -16,12 +16,12 @@ You will learn how to:
 If you don’t have an account yet you can [sign up](https://dashboard.nanostream.cloud/signup), or get in touch with our sales team via [nanocosmos.net/contact](https://www.nanocosmos.net/contact) or by email at sales(at)nanocosmos.net.
 
 *Need help accessing an existing organization or unsure how to proceed?* <br/>
-👉 Check the [Authentication section](#authentication) in our docs for step-by-step guidance on creating an account, logging in or requesting access from your system administrator.
+👉 Check the [Authentication section](/docs/dashboard/getting_started) in our docs for step-by-step guidance on creating an account, logging in or requesting access from your system administrator.
 :::
 
 ## Quick start
 
-1. Sign up / log in to the Dashboard: [dashboard.nanostream.cloud/](https://dashboard.nanostream.cloud/)
+1. Signup/login to the Dashboard: [dashboard.nanostream.cloud](https://dashboard.nanostream.cloud)
 2. Create a new stream in the Dashboard (or via the bintu API).  
 3. Copy the **Ingest URL** and **Stream name**.  
 4. Start your encoder (nanoStream Webcaster / OBS / Osprey / ...) and paste the ingest details.  

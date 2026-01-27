@@ -17,7 +17,7 @@ To get started with the **nanoStream Dashboard**, sign in with your existing *na
 If you don’t have an account yet you can [sign up](https://dashboard.nanostream.cloud/signup), or get in touch with our sales team via [nanocosmos.net/contact](https://www.nanocosmos.net/contact) or by email at sales(at)nanocosmos.net.
 
 *Need help accessing an existing organization or unsure how to proceed?* <br/>
-👉  Check the [Authentication section](#authentication) in our docs for step-by-step guidance on creating an account, logging in or requesting access from your system administrator.
+👉  Check the [Authentication section](/docs/dashboard/getting_started) in our docs for step-by-step guidance on creating an account, logging in or requesting access from your system administrator.
 :::
 
 Once logged in, you can access bintu through:
@@ -69,7 +69,7 @@ A **stream** created with **bintu** represents a single live broadcast within na
 
 Both are based on a basic URL e.g. *rtmp://bintu-stream.nanocosmos.de/live* and a stream name e.g. *XXXX-YYYY*.
 
-You can use any live encoder, like [OBS](https://www.nanocosmos.net/blog/how-to-use-obs-for-low-latency-live-encoding-to-nanostream-cloud/) or [Osprey Talon](https://www.nanocosmos.net/blog/osprey-talon-and-nanostream-cloud/) or simply start streaming directly from your browser with the nanoStream Webcaster. Find detailed instructions [here](/docs/dashboard/start_streaming).
+You can use any live encoder, like [OBS](https://www.nanocosmos.net/blog/how-to-use-obs-for-low-latency-live-encoding-to-nanostream-cloud/) or [Osprey Talon](https://www.nanocosmos.net/blog/osprey-talon-and-nanostream-cloud/) or simply start streaming directly from your browser with the [nanoStream Webcaster](/docs/dashboard/start_streaming#ingesting-with-the-nanostream-webcaster). Find detailed step-by-step instructions [here](/docs/cloud/cloud_getting_started#start-a-stream).
 
 :::tip Example Stream
 Example stream ID: **1dec3bbc-758b-4879-a202-7ae877d511ba**
@@ -98,9 +98,9 @@ With AI-powered real-time captioning, spoken words are automatically converted i
 Security is a key pillar of nanoStream Cloud. It provides multiple layers of protection to keep your content, streams, and data safe:
 
 - **Transport Security**: All communication uses HTTPS/TLS by default. [Details →](/docs/cloud/security)
-- **Authorization**: Access to streams can be controlled via secure tokens and webhooks. [Learn more →](/docs/nanoplayer/nanoplayer_token_security)
+- **Authorization**: Access to streams can be controlled via secure tokens and webhooks.
 - **nanoStream Guardian**: Block unwanted access to your streams. It supports IP-based blocking, referrer filtering, and CIDR range restrictions. [Read more →](/docs/cloud/guardian)
-- **RBAC (Role-Based Access Control)**: Limit Dashboard and API permissions by user roles. [More about user roles →](/docs/user_roles)
+- **RBAC (Role-Based Access Control)**: Limit Dashboard and API permissions by user roles. [More about user roles →](/docs/cloud/user_roles)
 
 ### nanoStream CDN
 
