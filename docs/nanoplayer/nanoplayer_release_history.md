@@ -6,9 +6,62 @@ sidebar_label: History
 
 # **NanoPlayer - Release History**
 
-## Please find more about the **MOQ playback mode** feature in our [documentation](https://docs.nanocosmos.de/docs/nanoplayer/nanoplayer_feature_moq/)
+## Please find more about the **MOQ playback mode** feature in our [documentation](https://docs.nanocosmos.net/docs/nanoplayer/nanoplayer_feature_moq/)
 
-## For easy-to-use migration follow our [guide](https://docs.nanocosmos.de/docs/nanoplayer/nanoplayer_v5_migration_guide)
+## For easy-to-use migration follow our [guide](https://docs.nanocosmos.net/docs/nanoplayer/nanoplayer_v5_migration_guide)
+
+## **[5.0.5]**
+
+### **Release Notes**
+
+This update resolves a slight audio delay in MOQ playback that could gradually become noticeable after repeated stream switches and improves the robustness of `config.general.serverDomain` parsing for edge cases. In addition, `onReady` metrics have been improved, and an inconsistency in error emission for malformed or missing source configurations has been fixed.
+
+### **Changelog**
+
+### Fixed
+
+- slight audio delay in MOQ playback that could gradually become noticeable after repeated stream switches
+- ensure a dedicated error with code 5004 is emitted consistently when the source configuration is missing or incomplete
+
+### Improved
+
+- metrics for the `onReady` event
+- robustness of `config.general.serverDomain` parsing for edge cases
+
+## **[5.0.4]**
+
+### **Release Notes**
+
+This release includes an improvement to the overall resilience of the player’s error handling and recovery. It resolves an issue that caused a black screen during error recovery in MSE and HLS playback modes. Furthermore, it fixes a playback start error that occurred when MOQ mode was enabled without a configured `server.webtransport` URL.
+
+### **Changelog**
+
+### Fixed
+
+ - an issue causing a black screen during error recovery in MSE and HLS playback modes.
+ - a playback start failure that occurred when MOQ mode was enabled but no server.webtransport URL was provided in the configuration.
+
+### Improved
+
+- Enhanced overall resilience of error handling and recovery mechanisms.
+
+## **[5.0.3]**
+
+### **Release Notes**
+
+This release includes fixes htmlFor loading timeout behavior and fast-start buffer management, along with improved screen wake behavior on mobile devices. The loading timeout now properly resets when updating sources during the loading state. Separately, fast-start buffer requests are now prevented during playback to avoid unnecessary buffering. Additionally, mobile devices will stay active during MOQ mode playback, with screen dimming and locking disabled by default through the new playback.enableWakeLock setting.
+
+### **Changelog**
+
+### Fixed
+
+- loading timeout is now correctly reinstated after updateSource is called in the loading state.
+- prevent fast-start buffer from being requested by updateSource while in the playing state.
+
+### Improved
+
+- mobile devices no longer dim or lock the screen during playback in MOQ mode, ensuring consistent behavior across browsers and playback modes.
+    - controlled via playback.enableWakeLock (default: enabled)
 
 ## **[5.0.2]**
 
@@ -85,6 +138,19 @@ Finally, we have cleaned up outdated and rarely used features. Flash player and 
   - remaining valid source configurations are `config.source.group` and `config.source.entries`
 - scaling modes `"resize"` and `"original"`
 
+## **[4.31.1]**
+
+### **Release Notes**  
+
+This release includes fixes for fast-start buffer management and hls playback error recovery. Fast-start buffer requests are now prevented during playback to avoid unnecessary buffering. Furthermore, it resolves an issue that caused a black screen during error recovery in HLS playback mode.
+
+### **Changelog**
+
+### Fixed
+
+- prevent fast-start buffer from being requested by updateSource while in the playing state.
+- an issue causing a black screen during error recovery in HLS playback mode.
+
 ## **[4.31.0]**
 
 ### **Release Notes**  
@@ -126,7 +192,7 @@ In this update, additional media and network capabilities are now logged in the 
 - removed an issue where the player view was not properly set up following a failed bintu source configuration
 - resolved an issue that could cause metrics and event duplication when multiple setup calls occurred in rapid succession
 
-## Please find more about the **stream switching and abr** feature in our [documentation](https://docs.nanocosmos.de/docs/nanoplayer/nanoplayer_feature_stream_switching/)
+## Please find more about the **stream switching and abr** feature in our [documentation](https://docs.nanocosmos.net/docs/nanoplayer/nanoplayer_feature_stream_switching/)
 
 ## **[4.29.0]**
 
@@ -149,7 +215,7 @@ These updates enhance flexibility and reliability in ABR setups.
   - accepted values include predefined quality identifiers (type: `string`) or stream entry indexes (type: `number`):
     - qualities: `"high"`, `"medium-high"`, `"medium"`, `"medium-low"`, `"low"`
     - indexes: `0`, `1`, `2`, etc.
-  - see the [feature description](https://docs.nanocosmos.de/docs/nanoplayer/nanoplayer_feature_stream_switching#advanced-abr-settings) htmlFor more details
+  - see the [feature description](https://docs.nanocosmos.net/docs/nanoplayer/nanoplayer_feature_stream_switching#advanced-abr-settings) htmlFor more details
 
 ### **Fixed**
 
@@ -161,7 +227,7 @@ These updates enhance flexibility and reliability in ABR setups.
 
 This update introduces improved error observability and enhanced player responsiveness.
 Startup errors now include detailed insights, making it easier to identify and resolve playback issues during the initial loading phase, including the first 30 seconds of playback.
-For full details, refer to our [Startup Errors Documentation](https://docs.nanocosmos.de/docs/nanoplayer/nanoplayer_api_errors#startup-errors).
+For full details, refer to our [Startup Errors Documentation](https://docs.nanocosmos.net/docs/nanoplayer/nanoplayer_api_errors#startup-errors).
 Additionally, the player’s resizing behavior has been optimized, ensuring a smoother experience when the container dimensions change.
 These enhancements ensure a more reliable and user-friendly experience.
 
@@ -171,7 +237,7 @@ These enhancements ensure a more reliable and user-friendly experience.
 
 - enhanced observability with additional information in the error event when identified as a startup error:
   - errors occurring during playback attempts in the initial loading phase, including the first 30 seconds of playback
-  - htmlFor details, see [Startup Errors Documentation](https://docs.nanocosmos.de/docs/nanoplayer/nanoplayer_api_errors#startup-errors)
+  - htmlFor details, see [Startup Errors Documentation](https://docs.nanocosmos.net/docs/nanoplayer/nanoplayer_api_errors#startup-errors)
 
 ### **Improved**
 
@@ -221,7 +287,7 @@ This version includes several improvements. Playback attempts on mobile devices 
   - in case of a playback attempt rejected due to missing user interaction, the player will now emit error `1005 Playback must be initialized by user gesture.` early on
   - this enables the application to handle the condition faster by asking the user to interact
   - see recommended settings htmlFor iOS WebView:[nanoplayer WebView iOS](./nanoplayer_webview#ios)
-  
+
 ## **[4.25.1]**
 
 ### **Release Notes**
@@ -326,7 +392,7 @@ As a last point we enabled H5Live-HLS fallbacks when access to ManagedMediaSourc
 - stream switch failing in paused state with `keepConnection` and `forcePlay` options enabled
 - remove unintended fallback htmlFor latency control mode `fastadaptive` to `balancedadaptive` htmlFor Safari 17.4+ on MacOS Sonoma (introduced in 4.23.1)
 
-## Please find more about the **latency control modes** feature in our [documentation](https://docs.nanocosmos.de/docs/nanoplayer/nanoplayer_feature_latency_control_modes/)
+## Please find more about the **latency control modes** feature in our [documentation](https://docs.nanocosmos.net/docs/nanoplayer/nanoplayer_feature_latency_control_modes/)
 
 ## **[4.23.1]**
 
@@ -334,7 +400,7 @@ As a last point we enabled H5Live-HLS fallbacks when access to ManagedMediaSourc
 
 In this latest release, we're exited to introduce enhanced playback support through the Managed Media Source API (MMSE) htmlFor iOS 17.1 and above. By default, this feature provides an upgraded media playback experience in line with desktop and Android platforms, resulting in improved latency, faster start-up times, and an overall enhanced user experience. In the event that MMSE API is unsupported or disabled, H5live-HLS will seamlessly take over on iOS.
 
-Moreover, we've expanded support htmlFor the latency control mode `balancedadaptive` across all iOS versions. This empowers users to achieve lower latency while ensuring a smooth playback experience on iOS devices. For more detailed information, refer to our comprehensive feature description in the [documentation](https://docs.nanocosmos.de/docs/nanoplayer/nanoplayer_feature_latency_control_modes#v4231).
+Moreover, we've expanded support htmlFor the latency control mode `balancedadaptive` across all iOS versions. This empowers users to achieve lower latency while ensuring a smooth playback experience on iOS devices. For more detailed information, refer to our comprehensive feature description in the [documentation](https://docs.nanocosmos.net/docs/nanoplayer/nanoplayer_feature_latency_control_modes#v4231).
 
 Additionally, this version includes a general enhancement to buffer and latency control htmlFor H5live-HLS playback on iOS. These improvements contribute to an even more refined and optimized playback experience.
 
@@ -362,7 +428,7 @@ Additionally, this version includes a general enhancement to buffer and latency 
 - adaptive bitrate control after error recovery on iOS
 - redundant adaptive bitrate control down step attempts
 
-## Please find more about the **fast playback start** feature in our [documentation](https://docs.nanocosmos.de/docs/nanoplayer/nanoplayer_feature_fast_start/)
+## Please find more about the **fast playback start** feature in our [documentation](https://docs.nanocosmos.net/docs/nanoplayer/nanoplayer_feature_fast_start/)
 
 ## **[4.22.3]**
 
@@ -442,7 +508,7 @@ In addition, a layout issue that occured after exiting fullscreen mode in Safari
 
 - deprecated unused option `config.source.options.switch.fastStart`
 
-## Please find more about the **media error recovery** feature in our [documentation](https://docs.nanocosmos.de/docs/nanoplayer/nanoplayer_feature_media_error_recovery/)
+## Please find more about the **media error recovery** feature in our [documentation](https://docs.nanocosmos.net/docs/nanoplayer/nanoplayer_feature_media_error_recovery/)
 
 ## **[4.21.0]**
 
@@ -507,8 +573,8 @@ The issue has been introduced in version 4.20.2.
 This version is adding further improvements htmlFor error handling and automatic recovery on iOS.
 The improvements include detection and automatic recovery in cases of stalled video playback due to
 decoding issues and in cases of buffering errors that could formerly lead to playback stopping.
-For further informations see the [feature description](https://docs.nanocosmos.de/docs/nanoplayer/nanoplayer_feature_media_error_recovery/) htmlFor media error recoveries
-and the `errorcode` [definitions](https://docs.nanocosmos.de/docs/nanoplayer/nanoplayer_api#nanoplayererrorcode--codenumbercode) in the documentation.
+For further informations see the [feature description](https://docs.nanocosmos.net/docs/nanoplayer/nanoplayer_feature_media_error_recovery/) htmlFor media error recoveries
+and the `errorcode` [definitions](https://docs.nanocosmos.net/docs/nanoplayer/nanoplayer_api#nanoplayererrorcode--codenumbercode) in the documentation.
 
 Another improvement is related to `updateSource` API calls made during LOADING state.
 Until now, `updateSource` API calls made during LOADING state could run into a loading timeout,
@@ -529,8 +595,8 @@ The issue has been introduced in version 4.19.
   - related error: `3005` - `'An error occurred while hls playback when decoding video.'`
 - detection and automatic recovery of buffering errors on iOS
   - related error: `3101` - `'An error occurred while buffering on hls playback.'`
-- see `errorcode` [definitions](https://docs.nanocosmos.de/docs/nanoplayer/nanoplayer_api#nanoplayererrorcode--codenumbercode)
-- see [feature](https://docs.nanocosmos.de/docs/nanoplayer/nanoplayer_feature_media_error_recovery/) description
+- see `errorcode` [definitions](https://docs.nanocosmos.net/docs/nanoplayer/nanoplayer_api#nanoplayererrorcode--codenumbercode)
+- see [feature](https://docs.nanocosmos.net/docs/nanoplayer/nanoplayer_feature_media_error_recovery/) description
 
 ### Improved
 
@@ -565,9 +631,9 @@ This was introduced in version 4.15.0.
 - unreasoned configuration warnings htmlFor event handlers `onServerInfo` and `onFullscreenChange`
 - added fields `id`, `player`, `version`, `state` in `onFullscreenChange` event object
 
-## Please find more about the **stream group configuration** feature in our [documentation](https://docs.nanocosmos.de/docs/nanoplayer/nanoplayer_feature_stream_group_configuration/)
+## Please find more about the **stream group configuration** feature in our [documentation](https://docs.nanocosmos.net/docs/nanoplayer/nanoplayer_feature_stream_group_configuration/)
 
-## Please find more about **secure playback with JWT** in our [documentation](https://docs.nanocosmos.de/docs/nanoplayer/nanoplayer_token_security/)
+## Please find more about **secure playback with JWT** in our [documentation](https://docs.nanocosmos.net/docs/nanoplayer/nanoplayer_token_security/)
 
 ## **[4.18.0]**
 
@@ -580,16 +646,16 @@ by passing only the corresponding bintu stream group id via the player source co
 This allows a much easier configuration htmlFor ABR playback.
 All existing options that are part of the configuration remain unchanged.
 
-Please find more about the **stream group configuration** feature in our [documentation](https://docs.nanocosmos.de/docs/nanoplayer/nanoplayer_feature_stream_group_configuration/).
+Please find more about the **stream group configuration** feature in our [documentation](https://docs.nanocosmos.net/docs/nanoplayer/nanoplayer_feature_stream_group_configuration/).
 
 Furthermore, this version is adding support htmlFor the new secure playback using JSON Web Token (JWT).
 The new token type can contain playback permissions htmlFor one or more stream names.
 This way a single token can be used htmlFor all secure use cases.
 It can be applied with the current `entries` configuration and with the new `group` configuration.
 
-Please find more about **secure playback with JWT** in our [documentation](https://docs.nanocosmos.de/docs/nanoplayer/nanoplayer_token_security/).
+Please find more about **secure playback with JWT** in our [documentation](https://docs.nanocosmos.net/docs/nanoplayer/nanoplayer_token_security/).
 
-Since this version, the nanoStream Player will not attempt to autoPlay non live streams configured via bintu stream ID or bintu group ID after the `setup` call.
+Since this version, the nanoStream Player will not attempt to autoplay non live streams configured via bintu stream ID or bintu group ID after the `setup` call.
 Instead it will pause with reason `'sourcestreamstopped'` and emit the error event 2004 with message `'The source stream has been stopped.'`.
 This will enable the nanoStream Player to properly initialize in the setup method and allow users to reattempt playback even if the stream was not in `live` state at the time of the initialization.
 
@@ -598,15 +664,15 @@ This will enable the nanoStream Player to properly initialize in the setup metho
 ### Added
 
 - stream group configuration via `config.source.group` object
-  - see [feature](https://docs.nanocosmos.de/docs/nanoplayer/nanoplayer_feature_stream_group_configuration/) description
+  - see [feature](https://docs.nanocosmos.net/docs/nanoplayer/nanoplayer_feature_stream_group_configuration/) description
 - support htmlFor secure playback using JSON Web Token (JWT)
-  - see [feature](https://docs.nanocosmos.de/docs/nanoplayer/nanoplayer_token_security/) description
+  - see [feature](https://docs.nanocosmos.net/docs/nanoplayer/nanoplayer_token_security/) description
 
 ### Improved
 
 - player setup with bintu stream ID or bintu group ID if the stream in not `live`
 
-## Please find more about the **video processing** feature in our [documentation](https://docs.nanocosmos.de/docs/nanoplayer/nanoplayer_feature_video_processing/)
+## Please find more about the **video processing** feature in our [documentation](https://docs.nanocosmos.net/docs/nanoplayer/nanoplayer_feature_video_processing/)
 
 ## **[4.17.0]**
 
@@ -614,7 +680,7 @@ This will enable the nanoStream Player to properly initialize in the setup metho
 
 This version is adding a new public event to the player. The event `onActiveVideoElementChange` is emitted when the active video element htmlFor playback has been created and if the element has been changed in case of a stream switch on iOS. The event data is providing the `activeVideoElement` and the complete `videoElementList`.
 Having a reference to the `activeVideoElement` simplifies use cases like drawing or rendering images to a canvas or saving snapshots from the video.
-See the [api description](https://docs.nanocosmos.de/docs/nanoplayer/nanoplayer_api#onactivevideoelementchange) of the event and our [docs feature entry](https://docs.nanocosmos.de/docs/nanoplayer/nanoplayer_feature_video_access_and_processing/) htmlFor more information.
+See the [api description](https://docs.nanocosmos.net/docs/nanoplayer/nanoplayer_api#onactivevideoelementchange) of the event and our [docs feature entry](https://docs.nanocosmos.net/docs/nanoplayer/nanoplayer_feature_video_access_and_processing/) htmlFor more information.
 
 ### **Changelog**
 
@@ -623,13 +689,13 @@ See the [api description](https://docs.nanocosmos.de/docs/nanoplayer/nanoplayer_
 - new public event `onActiveVideoElementChange`
   - is emitted when the active video element htmlFor playback has been created and if the element has been changed in case of a stream switch on iOS
   - provides the `videoElementList {Array.HTMLVideoElement}` and the `activeVideoElement {HTMLVideoElement}` in the event data
-  - see the [api description](https://docs.nanocosmos.de/docs/nanoplayer/nanoplayer_api#onactivevideoelementchange)
+  - see the [api description](https://docs.nanocosmos.net/docs/nanoplayer/nanoplayer_api#onactivevideoelementchange)
 
 ## **[4.16.0]**
 
 ### **Release Notes**
 
-This version adds the possibility to set a general H5Live server domain. A domain can be applied via `config.source.general.serverDomain`. This can be especially useful with configurations via `source.defaults` or `bintu.streamid`. By default, these configurations are using the standard geo-load-balanced domain namest. Please find further information in our [documentation](https://docs.nanocosmos.de/docs/nanoplayer/nanoplayer_feature_source_defaults#applying-a-custom-h5live-server-domain) regarding this feature.
+This version adds the possibility to set a general H5Live server domain. A domain can be applied via `config.source.general.serverDomain`. This can be especially useful with configurations via `source.defaults` or `bintu.streamid`. By default, these configurations are using the standard geo-load-balanced domain namest. Please find further information in our [documentation](https://docs.nanocosmos.net/docs/nanoplayer/nanoplayer_feature_source_defaults#applying-a-custom-h5live-server-domain) regarding this feature.
 
 In addition an issue in relation to timed out stream switches has been fixed. Previously this could lead to a temporarily inconsistent internal stream state.
 
@@ -664,7 +730,7 @@ Also the visual switching behaviour on iOS has been improved to prevent a possib
 - playback speed ~1.0 on iOS 15 as standard to reduce rebuffering effects after latency adjustment
 - z-index only htmlFor video element switch on iOS to avoid black frame effect
 
-## Please find more about the **latency control modes** feature in our [documentation](https://docs.nanocosmos.de/docs/nanoplayer/nanoplayer_feature_latency_control_modes/)
+## Please find more about the **latency control modes** feature in our [documentation](https://docs.nanocosmos.net/docs/nanoplayer/nanoplayer_feature_latency_control_modes/)
 
 ## **[4.14.2]**
 
@@ -693,7 +759,7 @@ The established latency control mode is available as the `'classic'` option whic
 In addition the new latency control modes `'balancedadaptive'` and `'fastadaptive'` have been added.
 According to the current stream and network conditions they can adjust the latency adaptively.
 This allows to achieve a lower latency while keeping the playback experience smooth.
-Please find further information in our [feature description](https://docs.nanocosmos.de/docs/nanoplayer/nanoplayer_feature_latency_control_modes/) in the documentation.
+Please find further information in our [feature description](https://docs.nanocosmos.net/docs/nanoplayer/nanoplayer_feature_latency_control_modes/) in the documentation.
 
 ### **Changelog**
 
@@ -707,7 +773,7 @@ Please find further information in our [feature description](https://docs.nanoco
 
 - improved handling in case of video frames being dropped by the browser
 
-## Please find more about the **source defaults** feature in our [documentation](https://docs.nanocosmos.de/docs/nanoplayer/nanoplayer_feature_source_defaults/)
+## Please find more about the **source defaults** feature in our [documentation](https://docs.nanocosmos.net/docs/nanoplayer/nanoplayer_feature_source_defaults/)
 
 ## **[4.13.3]**
 
@@ -767,7 +833,7 @@ Further an issue with `updateSource` in `PAUSED` state with `source.options.swit
 
 ### **Release Notes**
 
-This version introduces the new **source defaults** feature that simplifies the source configuration by adding `defaults.service` to the `config.source` object. If a service is set, the `h5live.server` object and the `h5live.rtmp.url` in each entry can be omitted. In this case defaults will be applied internally. Values htmlFor `h5live.server` and/or `h5live.rtmp.url` that are defined explicitly in the entry have priority. The available value htmlFor `defaults.service` is `'bintu'` htmlFor using the standard **nanoStream Cloud**. See our [docs feature entry](https://docs.nanocosmos.de/docs/nanoplayer/nanoplayer_feature_source_defaults/) htmlFor more information.
+This version introduces the new **source defaults** feature that simplifies the source configuration by adding `defaults.service` to the `config.source` object. If a service is set, the `h5live.server` object and the `h5live.rtmp.url` in each entry can be omitted. In this case defaults will be applied internally. Values htmlFor `h5live.server` and/or `h5live.rtmp.url` that are defined explicitly in the entry have priority. The available value htmlFor `defaults.service` is `'bintu'` htmlFor using the standard **nanoStream Cloud**. See our [docs feature entry](https://docs.nanocosmos.net/docs/nanoplayer/nanoplayer_feature_source_defaults/) htmlFor more information.
 Furthermore this release includes improvements in preventing exceptions in case of DOM access restrictions or unreachable DOM elements.
 A last change is regarding the metrics module of the player. The minimum value of the `metrics.statsInterval` parameter has been raised to `5` seconds.
 
@@ -900,7 +966,7 @@ The following improvements to the fullscreen mode have been added htmlFor iOS Sa
 
 - script error in nanoplayer-multi demo page
 
-## Please find more about the **media error recovery** feature in our [documentation](https://docs.nanocosmos.de/docs/nanoplayer/nanoplayer_feature_media_error_recovery/)
+## Please find more about the **media error recovery** feature in our [documentation](https://docs.nanocosmos.net/docs/nanoplayer/nanoplayer_feature_media_error_recovery/)
 
 ## **[4.10.6]**
 
@@ -955,12 +1021,12 @@ Now after a pause the last frame will be kept instead of displaying the poster i
     - `3100` (media source ended)
     - `1008` (hls playback error)
   - new config parameter (number) `playback.mediaErrorRecoveries`, default: `3`, to set the number of max recoveries within 60 seconds
-  - recoveries will be indicated by an [`onWarning`](https://docs.nanocosmos.de/docs/nanoplayer/nanoplayer_api#onwarning) event
+  - recoveries will be indicated by an [`onWarning`](https://docs.nanocosmos.net/docs/nanoplayer/nanoplayer_api#onwarning) event
   - sample warning message:
     - `'Recovering from media error 3003, recovery 1/3 within the last 60 seconds (12 total).'`
   - if threshold reached the error will be thrown followed by a pause with reason `'playbackerror'`
-  - see playback section in [config](https://docs.nanocosmos.de/docs/nanoplayer/nanoplayer_api#nanoplayerconfig--codeobjectcode)
-  - see [feature description](https://docs.nanocosmos.de/docs/nanoplayer/nanoplayer_feature_media_error_recovery/)
+  - see playback section in [config](https://docs.nanocosmos.net/docs/nanoplayer/nanoplayer_api#nanoplayerconfig--codeobjectcode)
+  - see [feature description](https://docs.nanocosmos.net/docs/nanoplayer/nanoplayer_feature_media_error_recovery/)
 - support of native `crossOrigin` attribute htmlFor HTMLMediaElements (applies to all player-internal video & image elements)
   - new config parameter (string) `playback.crossOrigin`, default: `'not-set'`
   - sets or disables the native "crossOrigin" attribute htmlFor all internal video elements and images (poster)
@@ -968,7 +1034,7 @@ Now after a pause the last frame will be kept instead of displaying the poster i
     - `'anonymous'`
     - `'use-credentials'`
     - `'not-set'` (default), if used the attribute will not be added
-  - see playback section in [config](https://docs.nanocosmos.de/docs/nanoplayer/nanoplayer_api#nanoplayerconfig--codeobjectcode)
+  - see playback section in [config](https://docs.nanocosmos.net/docs/nanoplayer/nanoplayer_api#nanoplayerconfig--codeobjectcode)
 
 ### Improved
 
@@ -1059,7 +1125,7 @@ This version introduces a new error code. In case the media element fires an err
 - add new error code `3200` - `An unspecific media error occurred.`
 - removed WebSocket prototype polyfill
 
-## Please find more about the **fullscreen API** feature in our [documentation](https://docs.nanocosmos.de/docs/nanoplayer/nanoplayer_feature_fullscreen_api/)**
+## Please find more about the **fullscreen API** feature in our [documentation](https://docs.nanocosmos.net/docs/nanoplayer/nanoplayer_feature_fullscreen_api/)**
 
 ## **[4.7.8]**
 
@@ -1229,7 +1295,7 @@ Please find more about setAdaption API in our [documentation](https://demo.nanoc
 
 This version handles the usage of metrics with the old deprecated single stream configuration over 'config.source.h5live'.
 
-See our [documentation](https://docs.nanocosmos.de/docs/nanoplayer/nanoplayer_feature_stream_switching/#single-stream-configuration) htmlFor detailed information about the new stream configuration.
+See our [documentation](https://docs.nanocosmos.net/docs/nanoplayer/nanoplayer_feature_stream_switching/#single-stream-configuration) htmlFor detailed information about the new stream configuration.
 
 ### **Changelog**
 
@@ -1300,7 +1366,7 @@ Furthermore, the ABR prediction cycle is improved to reduce load.
 This version implements the communication of switchStream and updateSource API events and data to the metrics service.
 In addition the internal 'streamInfo' event flow is improved and detailed stream information propagated through the event object.
 
-Please find more about the stream switching & ABR feature in our [documentation]( https://docs.nanocosmos.de/docs/nanoplayer/nanoplayer_feature_stream_switching/).
+Please find more about the stream switching & ABR feature in our [documentation]( https://docs.nanocosmos.net/docs/nanoplayer/nanoplayer_feature_stream_switching/).
 
 ### **Changelog**
 
@@ -1372,7 +1438,7 @@ A set of stream sources (entries) is expected inside the 'entries' array of the 
 The config's 'source' object now holds an 'options' object to set the ABR 'rule' (algorithm) inside the 'adaption' object and the switch options inside the 'switch' object.
 To manually switch between entries the new 'switchStream' API is used which comes along with 4 new public events and error codes.
 
-Please find more about the stream switching & ABR feature in our [documentation]( https://docs.nanocosmos.de/docs/nanoplayer/nanoplayer_feature_stream_switching/).
+Please find more about the stream switching & ABR feature in our [documentation]( https://docs.nanocosmos.net/docs/nanoplayer/nanoplayer_feature_stream_switching/).
 
 ### **Changelog**
 
@@ -1450,7 +1516,7 @@ to correctly detect H5Live MSE or LL-HLS modes htmlFor playback.
 The new nanoStream H5Live Player version 4 brings an updated stream switch feature. We improved the old 'updateSource' functionality by the possibility to switch to another stream by server-side switch and a better client-side switch.
 Now the switch to another source is much more smoother and faster. The old behaviour with stopping the player by reason 'playbackrestart' and restart playback with the new source is removed except htmlFor iOS.
 
-Please find more about the new feature in our [documentation]( https://docs.nanocosmos.de/docs/nanoplayer/nanoplayer_feature_stream_switching/).
+Please find more about the new feature in our [documentation]( https://docs.nanocosmos.net/docs/nanoplayer/nanoplayer_feature_stream_switching/).
 
 ### **Changelog**
 
@@ -1748,7 +1814,7 @@ Now also 'Windows 10' will be detected correctly and on 'Destroy' pause will be 
     - 5001: An exception was thrown during setup.
     - 5002: A forced tech is not supported by your browser.
     - 5003: The players source configuration is malformed or missing.
-    - 5004: This browser does not fully support HTML5 and H5Live. Supported are: Chrome ≥54 (Windows, MacOSX, Android), Firefox ≥48 (Windows, MacOSX, Android), Microsoft Edge (Windows), Microsoft Internet Explorer 11 (at least Windows 8), Safari (MacOSX & at least iOS 10).
+    - 5004: This browser does not fully support HTML5 and H5Live. Supported are: Chrome ≥ 54 (Windows, MacOSX, Android), Firefox ≥ 48 (Windows, MacOSX, Android), Microsoft Edge (Windows), Microsoft Internet Explorer 11 (at least Windows 8), Safari (MacOSX & at least iOS 10).
     - 5005: Configuration error. Could not create player, the rtmp configuration is missing or incomplete. Add an rtmp url and streamname to the configuration.
     - 5006: Configuration error. Could not create player, with this configuration an security token is required. Add an token to the configuration.
     - 5007: Configuration error. Could not create player, the websocket server configuration is missing.

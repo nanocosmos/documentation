@@ -10,7 +10,9 @@
     "https://docs.nanocosmos.de/docs/samples"
   ],
   "stop_urls": [
-    "/blog"
+    "/blog",
+    "/docs/cloud/live_captions_retrieve",
+    "/docs/cloud/live-recording-vod"
   ],
   "selectors": {
     "lvl0": {

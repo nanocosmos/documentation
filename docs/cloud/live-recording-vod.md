@@ -5,15 +5,16 @@ sidebar_label: Live Recording and VOD
 description: Live recording and Video on Demand (VOD) enable you to automatically archive your incoming live streams for later playback. When recording is enabled, nanoStream Cloud captures the upstream signal in real time and stores it securely in a regional data center. The resulting MP4 file can then be accessed, downloaded, or embedded as VOD content.
 ---
 
-:::warning Prerequisites
-To make use of **Live Recording and VOD**, it must be explicitly enabled for your organization. Activation may be subject to additional pricing or service terms.
+:::warning Deprecated Feature 🚨 
 
-You can verify whether this feature is available by navigating to [dashboard.nanostream.cloud/organisation](https://dashboard.nanostream.cloud/organisation) in your dashboard.  
-In the **[Enabled Packages](./organization_overview#enabled-packages)** section, locate the entry for `vod`. If it shows **Upgrade needed**, please contact us.
+You're looking at a deprecated feature. Please use the new [live processing recording](../cloud/live_processing#recording) instead.
 
-![Screenshot: Enabled Packages](../assets/dashboard/enabled-packages.png)  
 
-To activate `vod` or learn more about available plans, feel free to reach out via [nanocosmos.net/contact](https://www.nanocosmos.net/contact). We're happy to assist you in finding the best setup for your use case.
+:::
+
+
+:::info Live Recording and VOD will require a business upgrade
+Please reach out to our dedicated sales team via the [contact form](https://www.nanocosmos.de/contact) or by sending an email to sales(at)nanocosmos.de
 :::
 
 ## Overview

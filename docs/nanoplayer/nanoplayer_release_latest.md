@@ -6,32 +6,55 @@ sidebar_label: Latest
 
 # **NanoPlayer - Release Overview**
 
-## Please find more about the **MOQ playback mode** feature in our [documentation](https://docs.nanocosmos.de/docs/nanoplayer/nanoplayer_feature_moq/)
+## Please find more about the **MOQ playback mode** feature in our [documentation](https://docs.nanocosmos.net/docs/nanoplayer/nanoplayer_feature_moq/)
 
-## For easy-to-use migration follow our [guide](https://docs.nanocosmos.de/docs/nanoplayer/nanoplayer_v5_migration_guide)
+## For easy-to-use migration follow our [guide](https://docs.nanocosmos.net/docs/nanoplayer/nanoplayer_v5_migration_guide)
 
-## **[5.0.2]**
+## **[5.0.5]**
 
 ### **Release Notes**
 
-This update fixes an issue with secure token playback on iOS ≤ 17.1 in H5Live-HLS mode, resulting in error code `4200`.
+This update resolves a slight audio delay in MOQ playback that could gradually become noticeable after repeated stream switches and improves the robustness of `config.general.serverDomain` parsing for edge cases. In addition, `onReady` metrics have been improved, and an inconsistency in error emission for malformed or missing source configurations has been fixed.
 
 ### **Changelog**
 
 ### Fixed
 
-- secure token playback failing with error `4200` on iOS ≤ 17.1 in H5Live-HLS mode
+- slight audio delay in MOQ playback that could gradually become noticeable after repeated stream switches
+- ensure a dedicated error with code 5004 is emitted consistently when the source configuration is missing or incomplete
 
-### **Release Package 5.0.2**
+### Improved
 
-- [5.0.2](https://files.nanocosmos.de/index.php/s/8bPD38aotdGc6BP)
+- metrics for the `onReady` event
+- robustness of `config.general.serverDomain` parsing for edge cases
+
+## **[5.0.4]**
+
+### **Release Notes**
+
+This release includes an improvement to the overall resilience of the player’s error handling and recovery. It resolves an issue that caused a black screen during error recovery in MSE and HLS playback modes. Furthermore, it fixes a playback start error that occurred when MOQ mode was enabled without a configured `server.webtransport` URL.
+
+### **Changelog**
+
+### Fixed
+
+ - an issue causing a black screen during error recovery in MSE and HLS playback modes.
+ - a playback start failure that occurred when MOQ mode was enabled but no server.webtransport URL was provided in the configuration.
+
+### Improved
+
+- Enhanced overall resilience of error handling and recovery mechanisms.
+
+### **Release Package 5.0.4**
+
+- [5.0.4](https://files.nanocosmos.de/index.php/s/BGD7YEiXxsirPmw)
 - [latest 5.x](https://files.nanocosmos.de/index.php/s/y4e2axW7s8qEtJb)
 - [latest](https://files.nanocosmos.de/index.php/s/2tpCzgRjNEZDzeP)
 
 ### **Documentation**
 
-- [docs.nanocosmos.de](https://docs.nanocosmos.de/docs/nanoplayer/nanoplayer_api/)
+- [docs.nanocosmos.net](https://docs.nanocosmos.net/docs/nanoplayer/nanoplayer_api/)
 
 ### **Release History**
 
-- [release history](https://docs.nanocosmos.de/docs/nanoplayer/nanoplayer_release_history)
+- [release history](https://docs.nanocosmos.net/docs/nanoplayer/nanoplayer_release_history)

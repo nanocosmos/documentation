@@ -9,7 +9,7 @@ description: nanoStream Live Captions convert spoken audio into readable text in
 To make use of **Live Captions**, it must be explicitly enabled for your organization. Activation may be subject to additional pricing or service terms.
 
 You can verify whether this feature is available by navigating to [dashboard.nanostream.cloud/organisation](https://dashboard.nanostream.cloud/organisation) in your dashboard.  
-In the **[Enabled Packages](./organization_overview#enabled-packages)** section, locate the entry for `Live Captions`. If it shows **Upgrade needed**, please contact us.
+In the **[Enabled Packages](./organization_overview#enabled-packages)** section, locate the entry for `Live Captions`. If it shows **Upgrade needed**, please [contact us](https://www.nanocosmos.net/contact).
 
 ![Screenshot: Enabled Packages](../assets/dashboard/enabled-packages.png)  
 
@@ -51,7 +51,7 @@ Please contact our sales team via [nanocosmos.net/contact](https://www.nanocosmo
 
 ## ASR Engines And Langauges
 
-As already explained earlier, Live Captions rely on **Automatic Speech Recognition (ASR) engines** to convert spoken audio into real-time text. This section explains which ASR providers are available, how they differ, and which languages they support. You will also learn the difference between **source** and **target** languages and how they are applied during live caption generation.
+As already explained earlier, Live Captions rely on **Automatic Speech Recognition (ASR) engines** to convert spoken audio into real-time text. This section explains which ASR provider is available, and which languages it supports. You will also learn the difference between **source** and **target** languages and how they are applied during live caption generation.
 
 ### Supported ASR Engines
 
@@ -65,12 +65,7 @@ import TabItem from '@theme/TabItem';
   ]}>
   <TabItem className="tab-item" value="deepgram">
   
-  **Deepgram** is an enterprise-grade ASR engine designed for high accuracy and very low latency in real-time captioning. It uses neural-network models optimized for live audio and supports multiple languages for both transcription and live translation.
-  </TabItem>
-    <TabItem className="tab-item" value="whisper">
-
-    **Whisper** is an open-source ASR system developed by OpenAI.
-    It offers robust multilingual speech recognition and performs well across diverse audio conditions.
+  **Deepgram** is an enterprise-grade ASR engine designed for high accuracy and very low latency in real-time captioning. It uses neural-network models optimized for live audio and supports multiple languages for instant transcription.
   </TabItem>
 </Tabs>
 
@@ -85,56 +80,56 @@ Use these variants when **your target audience is primarily from a specific regi
 If you do not require a regional focus, the generic language code (e.g. **es**) is typically sufficient.
 :::
 
-| Language                    | ID        | Source | Target | Supported Engines |
-|-----------------------------|-----------|--------|--------|-------------------|
-| Bulgarian                   | bg        | ✓ | ✓ | Deepgram |
-| Catalan                     | ca        | ✓ | ✓ | Deepgram |
-| Czech                       | cs        | ✓ | ✓ | Deepgram |
-| Danish                      | da        | ✓ | ✓ | Deepgram |
-| Danish (Denmark)            | da-DK     | ✓ | ✓ | Deepgram |
-| Dutch                       | nl        | ✓ | ✓ | Deepgram |
-| Flemish (Belgium)           | nl-BE     | ✓ | ✓ | Deepgram |
-| English (Generic)           | en        | ✓ | ✓ | Deepgram |
-| English (United States)     | en-US     | ✓ | ✓ | Deepgram |
-| English (Australia)         | en-AU     | ✓ | ✓ | Deepgram |
-| English (United Kingdom)    | en-GB     | ✓ | ✓ | Deepgram |
-| English (India)             | en-IN     | ✓ | ✓ | Deepgram |
-| English (New Zealand)       | en-NZ     | ✓ | ✓ | Deepgram |
-| Estonian                    | et        | ✓ | ✓ | Deepgram |
-| Finnish                     | fi        | ✓ | ✓ | Deepgram |
-| French (Generic)            | fr        | ✓ | ✓ | Deepgram |
-| French (Canada)             | fr-CA     | ✓ | ✓ | Deepgram |
-| German (Generic)            | de        | ✓ | ✓ | Deepgram |
-| German (Switzerland)        | de-CH     | ✓ | ✓ | Deepgram |
-| Greek                       | el        | ✓ | ✓ | Deepgram |
-| Hindi                       | hi        | ✓ | ✓ | Deepgram |
-| Hungarian                   | hu        | ✓ | ✓ | Deepgram |
-| Indonesian                  | id        | ✓ | ✓ | Deepgram |
-| Italian                     | it        | ✓ | ✓ | Deepgram |
-| Japanese                    | ja        | ✓ | ✓ | Deepgram |
-| Korean (Generic)            | ko        | ✓ | ✓ | Deepgram |
-| Korean (South Korea)        | ko-KR     | ✓ | ✓ | Deepgram |
-| Latvian                     | lv        | ✓ | ✓ | Deepgram |
-| Lithuanian                  | lt        | ✓ | ✓ | Deepgram |
-| Malay                       | ms        | ✓ | ✓ | Deepgram |
-| Norwegian                   | no        | ✓ | ✓ | Deepgram |
-| Polish                      | pl        | ✓ | ✓ | Deepgram |
-| Portuguese (Generic)        | pt        | ✓ | ✓ | Deepgram |
-| Portuguese (Brazil)         | pt-BR     | ✓ | ✓ | Deepgram |
-| Portuguese (Portugal)       | pt-PT     | ✓ | ✓ | Deepgram |
-| Romanian                    | ro        | ✓ | ✓ | Deepgram |
-| Russian                     | ru        | ✓ | ✓ | Deepgram |
-| Slovak                      | sk        | ✓ | ✓ | Deepgram |
-| Spanish (Generic)           | es        | ✓ | ✓ | Deepgram |
-| Spanish (Latin America)     | es-419    | ✓ | ✓ | Deepgram |
-| Swedish (Generic)           | sv        | ✓ | ✓ | Deepgram |
-| Swedish (Sweden)            | sv-SE     | ✓ | ✓ | Deepgram |
-| Turkish                     | tr        | ✓ | ✓ | Deepgram |
-| Ukrainian                   | uk        | ✓ | ✓ | Deepgram |
-| Vietnamese                  | vi        | ✓ | ✓ | Deepgram |
+| Language                    | ID        | Source | Target |
+|-----------------------------|-----------|--------|--------|
+| Bulgarian                   | bg        | ✓ | ✓ | 
+| Catalan                     | ca        | ✓ | ✓ | 
+| Czech                       | cs        | ✓ | ✓ | 
+| Danish                      | da        | ✓ | ✓ | 
+| Danish (Denmark)            | da-DK     | ✓ | ✓ | 
+| Dutch                       | nl        | ✓ | ✓ | 
+| Flemish (Belgium)           | nl-BE     | ✓ | ✓ | 
+| English (Generic)           | en        | ✓ | ✓ | 
+| English (United States)     | en-US     | ✓ | ✓ | 
+| English (Australia)         | en-AU     | ✓ | ✓ | 
+| English (United Kingdom)    | en-GB     | ✓ | ✓ | 
+| English (India)             | en-IN     | ✓ | ✓ | 
+| English (New Zealand)       | en-NZ     | ✓ | ✓ | 
+| Estonian                    | et        | ✓ | ✓ | 
+| Finnish                     | fi        | ✓ | ✓ | 
+| French (Generic)            | fr        | ✓ | ✓ | 
+| French (Canada)             | fr-CA     | ✓ | ✓ | 
+| German (Generic)            | de        | ✓ | ✓ | 
+| German (Switzerland)        | de-CH     | ✓ | ✓ | 
+| Greek                       | el        | ✓ | ✓ | 
+| Hindi                       | hi        | ✓ | ✓ | 
+| Hungarian                   | hu        | ✓ | ✓ | 
+| Indonesian                  | id        | ✓ | ✓ | 
+| Italian                     | it        | ✓ | ✓ | 
+| Japanese                    | ja        | ✓ | ✓ | 
+| Korean (Generic)            | ko        | ✓ | ✓ | 
+| Korean (South Korea)        | ko-KR     | ✓ | ✓ | 
+| Latvian                     | lv        | ✓ | ✓ | 
+| Lithuanian                  | lt        | ✓ | ✓ | 
+| Malay                       | ms        | ✓ | ✓ | 
+| Norwegian                   | no        | ✓ | ✓ | 
+| Polish                      | pl        | ✓ | ✓ | 
+| Portuguese (Generic)        | pt        | ✓ | ✓ | 
+| Portuguese (Brazil)         | pt-BR     | ✓ | ✓ | 
+| Portuguese (Portugal)       | pt-PT     | ✓ | ✓ | 
+| Romanian                    | ro        | ✓ | ✓ | 
+| Russian                     | ru        | ✓ | ✓ | 
+| Slovak                      | sk        | ✓ | ✓ | 
+| Spanish (Generic)           | es        | ✓ | ✓ | 
+| Spanish (Latin America)     | es-419    | ✓ | ✓ | 
+| Swedish (Generic)           | sv        | ✓ | ✓ | 
+| Swedish (Sweden)            | sv-SE     | ✓ | ✓ | 
+| Turkish                     | tr        | ✓ | ✓ | 
+| Ukrainian                   | uk        | ✓ | ✓ | 
+| Vietnamese                  | vi        | ✓ | ✓ | 
 
 :::info Multi target translation
-Because Deepgram supports translation, any **source language** listed above can be combined with any **target language**.
+Because nanoStream Live Captions feature supports translation, any **source language** listed above can be combined with any **target language**.
 :::
 
 :::warning Missing a language?
@@ -144,56 +139,13 @@ We can evaluate your use case, discuss engine support, and, where possible, incl
 
 ## Managing Live Captions
 
-There are two different ways to integrate live captions into streams: via the nanoStream Cloud Dashboard or directly via the bintu API.
-
-To use captions, you must first create a stream. See the stream creation guides:
-
-<article className="margin-vert--lg">
-  <Columns className="list_ZO3j">
-    <Card className="col col--6 margin-horiz--md" href="/docs/dashboard/start_streaming">
-      <Card.Header title="Create Stream via Dashboard" />
-      <Card.Body>Use the web-based nanoStream Cloud Dashboard to configure and start streams.</Card.Body>
-    </Card>
-    <Card className="col col--6 margin-horiz--md" href="https://doc.pages.nanocosmos.de/bintuapi-docs/#operation/Create%20Stream">
-      <Card.Header title="Create Stream via API" />
-      <Card.Body>Create streams programmatically using the bintu REST API.</Card.Body>
-    </Card>
-  </Columns>
-</article>
-
-
-### Dashboard Integration
-
-Live Captions can be configured directly through the **nanoStream Dashboard**.
-The workflow in the UI is designed to be simple and intuitive:
-
-1. Select the **Live Captions engine**.
-2. Choose a **source language** (speech input).
-3. Choose one or more **target languages** (caption output).
-4. Save your configuration.
-
-![Screenshot: Adding live captions during stream creation](../assets/dashboard/create-add-captions.png)
-*Screenshot: Adding live captions during stream creation*
-
-A detailed guide with screenshots on how to manage streams with live captions is available in the [**Live Captions in the Dashboard**](/docs/dashboard/live_captions) documentation.
-
-:::tip Accessing Live Captions Management  
-The **Live Captions** configuration can be created, edited, or removed in multiple dashboard locations:
-
-- During stream creation: [dashboard.nanostream.cloud/stream/create](https://dashboard.nanostream.cloud/stream/create)
-- Later via the Stream Overview tab **Live Captions** tab, which can be found:
-  - **Stream Overview**: [dashboard.nanostream.cloud/stream/YOUR-STREAM-ID/live-captions](https://dashboard.nanostream.cloud/stream/YOUR-STREAM-ID/live-captions)
-  - **Playout Overview**: [dashboard.nanostream.cloud/playout/YOUR-STREAM-ID/live-captions](https://dashboard.nanostream.cloud/playout/YOUR-STREAM-ID/live-captions)
-  - **Webcaster Overview**: [dashboard.nanostream.cloud/webcaster/YOUR-STREAM-ID](https://dashboard.nanostream.cloud/webcaster/YOUR-STREAM-ID)
-:::
-
 :::warning good to know
 You can modify live captions settings at any time. **However, it’s important to note that the stream must be re-ingested for the changes to take effect.**
 :::
 
 ### API Integration
 
-Live Captions are controlled via **Stream Options**, managed through the bintu API.
+Live Captions and translation are controlled via **Stream Options**, managed through the bintu API.
 
 You can access the requests with the following permission level:
 
@@ -218,7 +170,9 @@ To find your API key, please sign in to your nanoStream Cloud/Bintu account and 
 
 **Body**
 - `NAME`: must always be set to `"captions"` to enable Live Captions for the stream.
-- `OPTIONS`: Contains all configuration options for the caption engine, this includes: `engine`, `sourceLanguage`, `targetLanguage` (optional)
+- `OPTIONS`: Contains all configuration options for AI processing, this includes: `engine`, `sourceLanguage`, `targetLanguages` (optional; if translation is required)
+
+**Transcription Request Example**
 
 ```js title="bintu/post_stream_options.sh"
 curl --request POST \
@@ -227,9 +181,18 @@ curl --request POST \
   --header 'content-type: application/json' \
   --data '{"name":"captions","options":{"engine":"deepgram","sourceLanguage":"en"}}'
 ```
+**Translation Request Example**
+
+```js title="bintu/post_stream_options.sh"
+curl --request POST \
+  --url https://bintu.nanocosmos.de/stream/%7Bid%7D/options \
+  --header 'X-BINTU-APIKEY: REPLACE_WITH_YOUR_API_KEY' \
+  --header 'content-type: application/json' \
+  --data '{"name":"captions","options":{"engine":"deepgram","sourceLanguage":"en","targetLanguages":"en,de"}}'
+```
 
 :::note Advanced Developer bintu API docs
-For additional languages, advanced configuration options, and complete request/response samples, please refer to the official **bintu API documentation**: [doc.pages.nanocosmos.de/bintuapi-docs](https://doc.pages.nanocosmos.de/bintuapi-docs). \
+For additional languages, advanced configuration options, and complete request/response samples, please refer to the official **bintu API documentation**: [doc.pages.nanocosmos.de/bintuapi-docs](https://doc.pages.nanocosmos.de/bintuapi-docs/#tag/Stream-Options/paths/~1stream~1%7Bid%7D~1options/post) \
 The API reference provides full details on all available endpoints and workflows for managing stream options, including the topic discussed in this section.
 :::
 
@@ -237,7 +200,7 @@ The API reference provides full details on all available endpoints and workflows
 
 :::tip Need assistance?
 We're here to support you throughout your Live Captions integration.
-If you would like to discuss your Live Captions requirements, pricing, or custom solutions, feel free to contact our sales team via [nanocosmos.net/contact](https://www.nanocosmos.net/contact) or by email at sales(at)nanocosmos.net.
+If you would like to discuss your Live Captions and translation requirements, pricing, or custom solutions, feel free to contact our sales team via [nanocosmos.net/contact](https://www.nanocosmos.net/contact) or by email at sales(at)nanocosmos.net.
 
 *If you require technical help or want to report an issue, simply use our official [support form](https://www.nanocosmos.net/support).*
 
