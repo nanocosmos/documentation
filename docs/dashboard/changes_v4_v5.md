@@ -4,26 +4,26 @@ title: Changes Guide (v4 → v5)
 sidebar_label: Changes Guide (v4 → v5)
 ---
 
-<div class="video-wrap">
-    <div class="video-container">
-        <iframe src="https://www.youtube.com/embed/M5I6JaII_-E" frameborder="0" allowfullscreen></iframe>
-    </div>
-</div>
-*Click `PLAY` button to start*
-
 # Changes from Dashboard v4 to v5
 
 The **nanoStream Cloud Dashboard** has received a visual and structural refresh in version 5. This guide highlights the most relevant changes for users familiar with version 4. While there are no breaking changes or major workflow updates, a few UI improvements and new layout patterns were introduced to improve usability and clarity.
 
 We encourage you to check the updated views and explore the changes in your own dashboard. Below, we outline some of the major changes.
 
-:::info Before starting
+:::warning Before starting
 To get started with the **nanoStream Dashboard**, sign in with your existing *nanoStream account*.  
-If you don’t have an account yet, you can [sign up](https://dashboard.nanostream.cloud/signup), or get in touch with our sales team via [nanocosmos.de/contact](https://www.nanocosmos.de/contact) or by email at sales(at)nanocosmos.net.
+If you don’t have an account yet, you can [sign up](https://dashboard.nanostream.cloud/signup), or get in touch with our sales team via [nanocosmos.net/contact](https://www.nanocosmos.net/contact) or by email at sales(at)nanocosmos.net.
 
 *Need help accessing an existing organization or unsure how to proceed?* <br/>
 👉  Check the [Authentication section](./getting_started#authentication) for step-by-step guidance on creating an account, logging in, and requesting access from your system administrator.
 :::
+
+<div class="video-wrap">
+    <div class="video-container">
+        <iframe src="https://www.youtube.com/embed/M5I6JaII_-E" frameborder="0" allowfullscreen></iframe>
+    </div>
+</div>
+*Walkthrough: Getting Started with nanoStream Dashboard*
 
 ## Dashboard
 

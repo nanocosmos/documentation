@@ -1,137 +1,229 @@
 ---
 id: bintu_custom_webhooks
-title: Bintu custom web hooks
-sidebar_label: Bintu custom web hooks
+title: Bintu Custom Webhooks
+sidebar_label: Custom Webhooks
+description: Learn how to configure and use custom webhooks in Bintu to protect ingest workflows, apply custom authentication logic, and integrate your own backend systems.
 ---
 
-It's possible to use a custom web hook for custom based authentication. 
+Custom webhooks in **Bintu** allow you to integrate your own backend logic directly into the ingest workflow of nanoStream Cloud.  
+Instead of using fixed access rules, you can forward every **publish** and **play** attempt to your own server for validation. Your service decides, in real time, whether a stream may start, continue, or end.
 
+This mechanism enables advanced use cases such as:
+- custom authentication and authorization
+- per-stream access control
+- event-driven backend integration
+- logging and auditing of ingest/play events
+- enforcing business rules before a stream goes live
 
-:::info Note
-Using web hooks is the recommended way to protect your ingest workflow. Ask us for account upgrades to help with implementations or hosting
+Bintu webhooks are **synchronous and blocking**: Bintu will *wait* for your server's response. If your server responds with `200 OK`, the action proceeds. If it responds with `403`, the action is rejected.
+This makes webhooks a powerful and flexible control point in your streaming pipeline.
+
+## Prerequisites
+
+To use custom webhooks, you need 
+- An active **nanoStream Cloud/Bintu** account (trial or paid).
+- Administrative access to your organization in the Dashboard
+- An API key (Find here: [dashboard.nanostream.cloud/organisation](https://dashboard.nanostream.cloud/organisation))
+- A publicly reachable HTTPS endpoint for receiving webhook requests
+
+:::warning getting started
+- Create an account via **[Sign Up](https://dashboard.nanostream.cloud/auth?signup)**  
+- Follow the **[Getting Started Guide](/docs/dashboard/getting_started)**  
+- Or for account upgrades to help with implementations or hosting reach out to our sales team via the **[contact form](https://www.nanocosmos.de/contact)** or **sales(at)nanocosmos.de**
 :::
 
-:::caution Recommendation
-Using web hooks for playback is not recommended and not always enabled. Use nanoPlayer Token Security instead.
+## How Bintu Webhooks Work
+
+Webhooks are **server-to-server callbacks** that notify your backend when certain events occur in Bintu. Using custom webhooks is the recommended way to **protect your ingest workflow** with custom authentication logic.  
+
+### Event Types
+
+| Event | Description |
+|-------|-------------|
+| **on_publish** | A broadcaster attempts to start ingest |
+| **on_publish_done** | Ingest ended |
+| **on_publish_update** | Periodic ingest status update |
+| **on_play** | A viewer attempts playback |
+| **on_play_done** | Viewer disconnects |
+
+:::caution Playback Protection  
+Using webhooks for **playback** (client-side playback access) is not recommended and may not be enabled for all accounts.  
+For playback-level protection, always use **[nanoPlayer Token Security](/docs/cloud/security#secure-playback-h5live)** instead.
 :::
 
-## API 
+### Request and Response Logic
 
-Set the custom web hook via this api call (linux notation): 
+For every such event, Bintu sends an **HTTP POST request** to your custom webhook endpoint:
+- Header: `Content-Type: application/x-www-form-urlencoded`
+- Body: URL-encoded event metadata
 
-```shell
+Your server must **always** return a valid HTTP response:
+
+| HTTP response | Description |
+|---------------|-------------|
+| `200 OK` | Allow play/ingest |
+| `403 Forbidden` | Deny play/ingest |
+| any other status | Request is rejected |
+
+:::tip Performance note
+Because the call is **blocking**, slow response times will slow down stream start times. Ensure your service responds quickly (< 100–300 ms recommended).
+:::
+
+## Configure Your Custom Webhook
+
+Setting up a custom webhook is very straightforward. You can do this via the dashboard or via the REST API.
+
+It is possible to set it up with the following roles:
+
+|<span className="role role-admin">nanoAdmin</span>|<span className="role role-user">nanoUser</span>|<span className="role role-readonly">nanoReadOnly</span>|
+|---|---|---|
+| ✓ | - | - |
+
+### Dashboard
+
+If you open the organisation overview page in the dashboard using [dashboard.nanostream.cloud/organisation/overview](https://dashboard.nanostream.cloud/organisation/overview), you can easily set the custom webhook there by clicking on the edit icon at the end of the text field. This will allow you to set/edit the value or delete it, if you are authorised to do so.
+
+![Screenshot: Organization Overview](../assets/dashboard/orga-overview.png)
+*Screenshot: Organization Overview*
+
+### REST API
+
+You can configure your organization's webhook URL using the following API request.
+
+**API Reference** \
+[doc.pages.nanocosmos.de/bintuapi-docs/#operation/Set%20Webhook](https://doc.pages.nanocosmos.de/bintuapi-docs/#operation/Set%20Webhook)
+
+**Parameters**
+- `X-BINTU-APIKEY`: Your API key for authentication
+
+**Body**
+- `WEBHOOK`: A publicly reachable HTTPS endpoint for receiving webhook requests
+
+**cURL**
+```js title="bintu/set_webhook.sh"
 curl -X PUT \
-https://bintu.nanocosmos.de/organisation/webhook \
--H 'content-type: application/json' \
--H 'x-bintu-apikey: YOUR_BINTU_API_KEY' \
--d '{
+  https://bintu.nanocosmos.de/organisation/webhook \
+  -H 'content-type: application/json' \
+  -H 'x-bintu-apikey: YOUR_BINTU_API_KEY' \
+  -d '{
     "webhook": "https://your-custom-server.com/hook"
 }'
 ```
 
+## Webhook Request Parameters
 
-:::info Notes
-- The custom api call will be called from bintu for each on\_play, on\_publish, on\_play\_done, on\_publish\_done and on\_publish\_update webhook. 
-- It's a blocking api call. You need to ensure quick response times. Long response times from the customer api server will create a delay for the time required to start a playout or publish. 
-- The customer api hook needs to reply with http status code 200, otherwise the bintu api will reject this stream and it's not possible to publish or play the stream. 
-- The custom api server should response with 200 to accept a stream and with 403 to reject a stream.
+Below are the unified parameters followed by per-event parameter tables.
+
+### Common Parameters (All Events)
+
+| Parameter | Description | Example | 
+|-----------|-------------|---------|
+| **call** | Webhook event type | `publish`, `play`, `publish_done`, `play_done`, `update_publish` |
+| **name** | Bintu streamname | 'YYstV-BVPq4' |
+| **app** | Application |  `live` or `play` |
+| **addr** | Client IP address | `xxx.yyy.zzz.aaa` |
+| **clientid** | Internal client identifier | `123456`|
+
+Additional parameters depend on the specific event.
+
+### on_publish
+
+| Parameter | Description |
+|----------|-------------|
+| **call** | `publish` |
+| **name** | Stream name |
+| **app** | Publishing application (typically `live`) |
+| **addr** | Client IP address |
+| **clientid** | Unique client session ID |
+
+### on_publish_done
+
+| Parameter | Description |
+|----------|-------------|
+| **call** | `publish_done` |
+| **name** | Stream name |
+| **app** | Publishing application |
+| **addr** | Client IP |
+| **clientid** | Client session ID |
+| **bytes_in** | Total bytes received from encoder |
+| **bytes_out** | Total bytes distributed to CDN/clients |
+
+:::info For your information
+As stated above, the request body also contains the keys bytes\_in and bytes\_out. The unit of the values is byte.
 :::
 
-Bintu will send a POST request with header `Content-Type: application/x-www-form-urlencoded` and body will contain url encoded form data as in the following example:
+### on_publish_update
 
-```shell
-call=publish&name=CD6xx-123456&type=live&app=live&addr=xxx.yyy.zzz.aaa&clientid=123456
+| Parameter | Description |
+|----------|-------------|
+| **call** | `update_publish` |
+| **time** | Seconds elapsed since the publish started |
+| **timestamp** | Timestamp of the latest audio/video packet |
+| **name** | Stream name |
+| **app** | Application |
+| **addr** | Client IP |
+| **clientid** | Client ID |
+
+### on_play
+
+| Parameter | Description |
+|----------|-------------|
+| **call** | `play` |
+| **name** | Stream name |
+| **start** | Playback start position (0 for live) |
+| **duration** | Requested playback duration |
+| **app** | Application (`play`) |
+| **addr** | Viewer IP address |
+| **clientid** | Unique viewer session ID |
+
+
+### on_play_done
+
+| Parameter | Description |
+|----------|-------------|
+| **call** | `play_done` |
+| **name** | Stream name |
+| **bytes_in** | Bytes received |
+| **bytes_out** | Bytes delivered |
+| **app** | Application |
+| **addr** | Viewer IP |
+| **clientid** | Viewer session ID |
+
+
+## Custom Data With Query Parameters
+
+You can append your own custom metadata to the stream name when publishing or playing a stream. These custom fields are included in the webhook POST body exactly as they appear in the URL. This allows you to pass e.g. application-specific metadata or any custom parameters relevant to your backend logic. *Bintu will **not modify or interpret** your parameters. They are simply forwarded to your webhook.* You can add **n* query parameters**.
+
+### Custom Data on Publish
+
+1. Your encoder publishes to:
+```bash
+rtmp://bintu-stream.nanocosmos.de/live/STREAMID123?foo=bar&batz=12345&custom_data=[YOUR_CUSTOMDATA]
+```
+2. Bintu sends *on_publish* the following POST body to your webhook:
+```bash
+foo=bar&batz=12345&custom_data=[YOUR_CUSTOMDATA]&call=publish&name=STREAMID123&app=live&addr=xxx.xxx.xxx.xxx&clientid=123456
 ```
 
-**For the publish\_done webhook, the request body also contains the keys bytes\_in and bytes\_out. The unit of the values is byte.**
 
-## Custom data
+### Custom Data on Playack
 
-Its possible to amend this body with custom fields/data by adding the data as query parameter to the stream-name.
-
-## Example for publish
-
-`rtmp://bintu-stream.nanocosmos.de:80/live/CD6xx-123456?foo=bar&batz=12345`
-
-This stream name will result in the request body below:
-
-```shell
-foo=bar&batz=12345&call=publish&name=CD6xx-123456&type=live&app=live&tcurl=rtmp%3A%2F%2Fbintu-stream.nanocosmos.de%3A1935%2Flive
-&addr=xxx.yyy.zzz.aaa&clientid=123456    
-```    
-
-## Example for play
-
-`http://demo.nanocosmos.de/nanoplayer/release/nanoplayer.html?h5live.server=bintu-play.nanocosmos.de&h5live.rtmp.url=rtmp://bintu-play.nanocosmos.de/play&h5live.rtmp.streamname=CD6xx-123456?test%3D123`
-
-Which will result in the request body below:
-
+You can also attach parameters to your playback request.  
+1. You are requesting a playback as:
+```bash
+http://demo.nanocosmos.de/nanoplayer/release/nanoplayer.html?h5live.server=bintu-play.nanocosmos.de&h5live.rtmp.url=rtmp://bintu-play.nanocosmos.de/play&h5live.rtmp.streamname=CD6xx-123456?test%3D123
+```
+2. Bintu sends *on_play* the following POST body to your webhook:
 ```shell
 test=123&call=play&name=CD6xx-123456&start=0&duration=0&reset=0&app=play&addr=xxx.yyy.zzz.aaa&clientid=123456    
-```    
+```  
 
-:::info Note
-You might need to url encode your parameters, e.g. `test=123` needs to be url encoded: `test%3D123`
+:::warning URL Encoding Requirements
+When sending custom parameters, they must be URL-encoded. Otherwise your player may interpret the parameter incorrectly.
+
+| Character | Must be encoded as | Example |
+|-----------|--------------------|---------|
+| `=` | `%3D` | token=abc=123 → token=abc%3D123 |
+| `&` | `%26` | user=tom&jerry → user=tom%26jerry |
+| `?` within values | `%3F` | meta=a?b?c → meta=a%3Fb%3Fc |
 :::
-
-## Parameters
-
-- **call**: 'play\_done',  Webhook play, publish, play\_done, publish\_done, update\_publish
-- **name**: 'YYstV-BVPq4', stream name
-- **bytes\_in**: '575', Bytes, received by rtmp server
-- **bytes\_out**: '8516372', Bytes sent by rtmp server
-- **addr**: '17.31.43.214', Client IP Addr
-- **clientid**: '9466245' internal client id (displayed in log and stat)
-- **time**: '46807', number of seconds since play/publish call
-- **timestamp**: '46805903', timestamp of the last audio/video packet sent to the client
-
-## Available Parameters per Webhook
-
-Webhook play:
-
-- call
-- name
-- start
-- duration
-- app
-- addr
-- clientid
-
-Webhook play\_done:
-
-- call
-- name
-- bytes\_in
-- bytes\_out
-- app
-- addr
-- clientid
-
-Webhook publish:
-
-- call
-- name
-- app
-- addr
-- clientid
-
-Webhook publish\_done:
-
-- call
-- name
-- bytes\_in
-- bytes\_out
-- app
-- addr
-- clientid
-
-Webhook update\_publish:
-
-- call
-- time
-- timestamp
-- name
-- app
-- addr
-- clientid
-

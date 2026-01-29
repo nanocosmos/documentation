@@ -2,109 +2,185 @@
 id: network-diagnostics
 title: Network Diagnostics
 sidebar_label: Network Diagnostics
+description: A comprehensive guide for diagnosing connectivity issues with nanocosmos ingest and playback servers.
 ---
 
-In this section, we'll review some basic commands that will help you assess and diagnose network problems. 
-If you suspect connectivity issues, adding the output from the relevant commands to your [support ticket](support) can help our staff diagnose your issue. This is particularly helpful in cases where networking issues are intermittent.
+Network connectivity is essential for stable ingest and low-latency playback.
+This guide provides the recommended diagnostic steps, clean examples, and helpful explanations so you can quickly identify issues and provide complete information to support.
 
-## TL;DR
+## TL;DR (Quick Commands)
 
-First try ping to our hosts.
-If you need support for network issues, The best way we can help is when you would send us the result ot the traceroute / mtr report as described below, which is helpful information about your local network connectivity. Basically these commands measure the time it takes to send internet packets from your device.
+If you suspect network issues, run the following commands in your terminal:
 
-Please send us the results of the following commands
+```shell title="network_diagnostics-mtr.sh"
+mtr -r bintu-stream.nanocosmos.de
+mtr -r bintu-play.nanocosmos.de
+```
 
-`"mtr -r bintu-stream.nanocosmos.de"`
+if `mtr` is not installed, please run:
 
-and
+```shell title="network_diagnostics-ping.sh"
+ping bintu-stream.nanocosmos.de
+ping bintu-play.nanocosmos.de
+```
 
-`"mtr -r bintu-play.nanocosmos.de"`
+These commands reveal routing quality, latency, packet loss, and potential bottlenecks.
 
-*or*
+:::info Why This Matters
+Sharing these results with our support team helps us quickly determine where the issue originates:
+- Local network (LAN / WiFi)
+- ISP routing
+- Regional network paths
+- Global internet peering
+- Geographic load balancing
+:::
 
-`"ping bintu-stream.nanocosmos.de"`
+## Essential Tool Overview
 
-and
+| Tool | Purpose | Notes |
+|------|---------|-------|
+| `ping` | Tests reachability and latency | Installed on all systems |
+| `traceroute` / `tracert` | Shows network hops and routing path | Windows uses `tracert` |
+| `mtr`| Combines ping + traceroute with live stats | Best tool for diagnostics |
+| `dig` | Tests DNS resolution | Useful for geo-loadbalanced hosts |
 
-`"ping bintu-play.nanocosmos.de"`
+### ping
 
-You can also directly connect to specific geo locations, see our [support document](support).
+The `ping` command is the simplest way to verify whether a server is reachable and how long it takes for a packet to travel from your device to the destination and back. Behind the scenes, `ping` sends small ICMP "echo request" packets and waits for an "echo reply". This **round-trip time (RTT)** reveals the basic health of a network connection. If packets do not return, arrive late, or show inconsistent timing, this typically indicates issues in your local network, your router, or your ISP’s routing.
 
-Adding `ping`, `mtr` or `traceroute` output to [support](support) tickets is sometimes useful when trying to diagnose network issues. You may also want to forward `traceroute` information to your Internet Service Provider (ISP) if you suspect that the connectivity issue is with your ISP's network. Recording `traceroute` information is particularly useful if you are experiencing an intermittent issue.
+Because `ping` is preinstalled on almost all operating systems (Linux, macOS, Windows), it is usually the first tool you should run when troubleshooting connectivity.
 
-## IP Addresses
-
-- What is your public IP address? 
-  You can use http://whatismyip.akamai.com/ to find out, if you're unsure.
-
-- Who is the ISP?
-
-## The ping Command
-
-The `ping` command tests the connection between the local machine and a remote address or machine. 
-The ping program is installed by default on just about every operating system, Linux, MacOS, and Windows, so you do not need to install it.
-It runs from the command line.
-
-The following commands "ping" `google.com` :
+**Example Input**
 
 ```shell
 ping google.com
 ```
-    
-Instead google.com you should use any of the nanocosmos host names like mentioned above.
 
-These commands send a small amount of data (an ICMP packet) to the remote host and wait for a response. If the system is able to make a connection, it will report on the "round trip time" for every packet. <br/>
-Here is the sample output of four pings to google.com:
+To test connectivity to nanocosmos services, replace it with **any nanocosmos host**:
 
 ```shell
+ping bintu-stream.nanocosmos.de
+```
+
+**Example Output for google.com**
+```js 
 PING google.com (216.58.217.110): 56 data bytes
 64 bytes from 216.58.217.110: icmp_seq=0 ttl=54 time=14.8 ms
 64 bytes from 216.58.217.110: icmp_seq=1 ttl=54 time=16.6 ms
 64 bytes from 216.58.217.110: icmp_seq=2 ttl=54 time=16.5 ms
 ```
-The `time` field specifies in milliseconds the duration of the round trip for an individual packet. You can use **Control+C** to interrupt the process. You'll be presented with some statistics once the process is stopped. This will resemble:
 
-```shell
+When you stop the command with **CTRL+C**, a summary appears:
+
+```js
 --- google.com ping statistics ---
 4 packets transmitted, 4 received, 0% packet loss, time 3007ms
 rtt min/avg/max/mdev = 33.890/40.175/53.280/7.679 ms
 ```
 
-There are several important data points to notice:
+This summary is particularly important. It condenses all measurements into four values:
 
--   *Packet Loss*, or the discrepancy between the number of packets sent and the number of packets that return successfully. This number shows the percentage of packets that are dropped.
--   *Round Trip Time* (rtt) statistics on the final line report information about all the ping responses. For this ping we see that the fastest packet round trip (min) took 16.5 milliseconds. The average round trip (avg) took 40.175 milliseconds. The longest packet (max) took 53.28 milliseconds. A single standard deviation unit (mdev) for these four packets is 7.67 milliseconds.
+- **min**: the fastest packet response
+- **avg**: the average round-trip time
+- **max**: the slowest measured value
+- **mdev**: a measure of how much the results vary (jitter)
 
-The ping command is useful as an informal diagnostic tool to measure point-to-point network latency, and as a tool to simply ensure you are able to make a connection to a remote server.
+A stable connection will show low variation between min/avg/max and a very small mdev value. WiFi networks or congested links often show a larger spread, which reflects inconsistency.
 
-## The traceroute Command
+**What the results tell you** \
+A healthy ping result shows **0% packet loss** and relatively stable RTT values.
+If you already see packet loss here, the issue is almost always local, either your WiFi signal, router performance, firewall rules, or your ISP’s upstream connection. Even a tiny amount of loss (1–2%) can cause visible problems in live streaming.
 
-The `traceroute` command expands on the functionality of the [ping](#the-ping-command) command. 
-It is also part of every operating system, Linux, MacOS, and Windows (where it is called tracert).
+If latency fluctuates significantly (for example, min 20 ms, max 120 ms), your connection may suffer from jitter or temporary congestion. This can lead to ingest instability or buffer fluctuations during playback.
 
-It provides a report on the path that the packets take to get from the local machine to the remote machine. Each step (intermediate server) in the path is called a *hop*. This information is useful when troubleshooting a networking issue: if there is packet loss in one of the first few hops the problem is often related to the user's local area network (LAN) or Internet service provider (ISP). By contrast, if there is packet loss near the end of the route, the problem may be caused by an issue with the server's connection.
+:::tip Practical tip
+Start with `ping`. If the host is not reachable or packet loss appears here, further tools like `mtr` or `traceroute` will confirm where the issue originates.
+:::
 
-Here is an example of output from a `traceroute` command:
+### traceroute
+
+`traceroute` reveals every network hop between your device and the destination server.
+It shows **how traffic is routed**, how long each hop takes, and where latency or packet loss begins. While `ping` only measures the round-trip time, `traceroute` helps identify *where* in the network a problem occurs.
+
+On Windows, the command is called `tracert`, but the output follows the same logic.
+
+Behind the scenes, `traceroute` sends packets with increasing TTL (Time To Live). Each router on the path decreases the TTL by one When it reaches zero, the router returns an ICMP "time exceeded" message. By increasing the TTL step by step, `traceroute` discovers each hop on the route.
+
+This makes it ideal to diagnose:
+- routing loops
+- sudden latency increases
+- problematic network segments
+- issues at an ISP handover
+
+**Example Input**
 
 ```shell
+traceroute google.com
+```
+
+To diagnose routing to **any nanocosmos service**:
+
+```shell
+traceroute bintu-stream.nanocosmos.de
+```
+
+**Example Output for google.com**
+```js 
 traceroute to google.com (74.125.53.100), 30 hops max, 40 byte packets
 1 207.192.75.2 (207.192.75.2) 0.414 ms 0.428 ms 0.509 ms
 2 vlan804.tbr2.mmu.nac.net (209.123.10.13) 0.287 ms 0.324 ms 0.397 ms
 3 0.e1-1.tbr2.tl9.nac.net (209.123.10.78) 1.331 ms 1.402 ms 1.477 ms
 4 209.85.250.144 (209.85.250.144) 86.025 ms 86.151 ms 86.136 ms
-5 64.233.174.131 (64.233.174.131) 80.877 ms 216.239.48.34 (216.239.48.34) 76.212 ms 64.233.174.131 (64.233.174.131) 80.884 ms
-6 216.239.48.32 (216.239.48.32) 81.267 ms 81.198 ms 81.186 ms
-7 216.239.48.137 (216.239.48.137) 77.478 ms pw-in-f100.1e100.net (74.125.53.100) 79.009 ms 216.239.48.137 (216.239.48.137) 77.437 ms
+5 64.233.174.131 (...) 80.877 ms ...
+6 216.239.48.32 (...) 81.267 ms ...
+7 216.239.48.137 (...) 77.478 ms ...
 ```
-Often the hostnames and IP addresses on either side of a failed jump are useful in determining who operates the machine where the routing error occurs. Failed jumps are designated by lines with three asterisks (`* * *`).
 
+If a hop does not reply, you will see:
 
-## The mtr Command
-
-The `mtr` command, like the [traceroute](#the-traceroute-command) tool, provides information about the route that internet traffic takes between the local system and a remote host. However, `mtr` provides additional information about the round trip time for the packet. In a way, you can think of `mtr` as a combination of traceroute and ping. Usually mtr is not installed by default on all operating systems, so you might need to download and install it first.
-
-Here is an example of output from an `mtr` command:
 ```shell
+* * *
+```
+
+This does not automatically indicate a failure. Many routers intentionally ignore traceroute requests for security reasons.
+
+:::warning Important
+A hop is only suspicious if you see:
+- persistent packet loss across multiple following hops or
+- a sudden and lasting latency spike beginning at that hop
+
+*Isolated `* * *` entries are normal.*
+:::
+
+### mtr
+
+`mtr` combines the strengths of `ping` and `traceroute` into a continuous measurement tool.
+It repeatedly probes every hop and builds statistical data in real time, making it the **most reliable tool** for diagnosing unstable connections, jitter, packet loss, or routing flaws.
+
+Where `ping` gives basic reachability, and `traceroute` shows the path once, `mtr` reveals:
+
+- how each hop behaves over time
+- whether packet loss is persistent
+- if latency spikes are isolated or recurring
+- how stable each segment of the route is
+- the overall quality of the end-to-end connection
+
+This is especially valuable for live streaming, where jitter and intermittent loss cause visible issues such as frame drops or ingest instability.
+
+**Example Input**
+
+```shell
+mtr --report google.com
+```
+
+To test **nanocosmos routing**:
+
+```shell
+mtr --report bintu-stream.nanocosmos.de
+```
+
+**Example Output for google.com**
+```js
 HOST: google.com                        Loss%   Snt     Last    Avg     Best    Wrst    StDev
     1.  256.129.75.4                    0.0%    10      0.4     0.4     0.3     0.6     0.1
     2.  vlan804.tbr2.mmu.nac.net        0.0%    10      0.3     0.4     0.3     0.7     0.1
@@ -113,25 +189,38 @@ HOST: google.com                        Loss%   Snt     Last    Avg     Best    
     5.  209.85.255.190                  0.0%    10      27.0    27.3    23.9    37.9    4.2
     6.  gw-in-f100.1e100.net            0.0%    10      24.1    24.4    24.0    26.5    0.7
 ```
-Like the `ping` command, `mtr` tracks the speed of the connection in real time until you exit the program with **CONTROL+C**. To have `mtr` stop automatically and generate a report after ten packets, use the `--report` flag:
 
-```shell
-mtr --report google.com
-```
+The speed of the connection is tracked until you stop it with the **CTRL+C** command.
 
-Be aware that `mtr` will pause for a few moments while generating output. 
+:::info How to interpret `mtr` results
+- Loss on the first hop → local LAN / WiFi / router
+- Loss on hops 2–4 → ISP edge or local carrier
+- Loss only on final hop → destination host rate-limiting or regional routing
+- High StDev → jitter (very impactful for live streaming)
+:::
 
-For more information regarding `mtr` consider our [diagnosing network issues with mtr](./network-diagnostics-mtr) guide.
+:::tip `mtr` Guide
+For more information regarding `mtr` consider our [diagnosing network issues with mtr](/docs/cloud/network-diagnostics-mtr) guide.
+:::
 
-## The dig command
+### dig
 
-Our cloud service is based on worldwide geo-loadbalanced hosts.
-To check the correct host resolution from DNS, you can use the "dig" command:
+nanoStream Cloud uses **geo-loadbalanced DNS**, meaning hosts resolve differently depending on your location and server availability. `dig` helps verify DNS resolution, follow CNAME chains, and confirm that the client is routed to the expected nanocosmos edge.
+
+This is helpful for diagnosing:
+- wrong region selection
+- outdated DNS caches
+- local DNS server issues
+- incorrect host overrides (e.g., via /etc/hosts)
+
+**Example Input**
+
 ```shell
 dig bintu-play.nanocosmos.de
 ```
-Example result:
-```shell
+
+**Example Output**
+```js
 ; <<>> DiG 9.10.6 <<>> bintu-play.nanocosmos.de
 ;; QUESTION SECTION:
 ;bintu-play.nanocosmos.de.	IN	A
@@ -147,6 +236,30 @@ edge-eu-ams-vubm-t2a-01.out-a.nanocosmos.de. 30	IN A 209.250.245.22
 ;; SERVER: 192.168.178.1#53(192.168.178.1)
 ```
 
-## Sharing results
+## Sharing Diagnostic Results
 
-You may send your results via our [support form](https://www.nanocosmos.de/support) or paste it into a hosting service like https://paste.ubuntu.com or https://gist.github.com/
+Once you have collected your network diagnostics (`ping`, `traceroute`, `mtr`, `dig`), please share the results with our support team so we can analyze the data efficiently.
+
+There are two recommended ways to send your results:
+
+###  Submit Directly via Support Form
+Use our official support form so your data is associated with your case: **[nanocosmos.net/support](https://www.nanocosmos.net/support)**. \
+This method is ideal when you already have an ongoing issue or need fast assistance.
+
+### Upload Your Logs to a Paste Service
+If your outputs are long or include logs from multiple commands, paste them into a public paste service and send us the link:
+
+- **[paste.ubuntu.com](https://paste.ubuntu.com)**
+- **[https://gist.github.com](gist.github.com)**
+
+These services make your logs easy to read, retain formatting, and prevent long messages from being truncated.
+
+### What to Include
+To help us diagnose the issue quickly, include:
+
+- The commands you ran (e.g., `mtr -r bintu-stream.nanocosmos.de`)
+- The full unmodified output
+- Your approximate location (country/region)
+- Timestamp of when the tests were performed
+
+Providing cleanly formatted results greatly speeds up troubleshooting and allows us to compare routing across global regions.

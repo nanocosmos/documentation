@@ -7,9 +7,9 @@ sidebar_label: Stream Overview
 The [dashboard.nanostream.cloud/stream](https://dashboard.nanostream.cloud/stream) page provides a comprehensive list of all your streams, displaying their state (`created`, `live`, `ended`), **stream ID**, **stream name**, whether they are part of a **streamgroup**, and their **last update timestamp (UTC)**. Additionally, the pesence of **tags** allows for easier stream identification.    
 If a stream is an ABR stream, it belongs to a so-called **streamgroup**. You can collapse the row and view the individual streams within this specific streamgroup, such as passthrough, *n* transcodes.
 
-:::info Before starting
+:::warning Before starting
 To get started with the **nanoStream Dashboard**, sign in with your existing *nanoStream account*.  
-If you don’t have an account yet, you can [sign up](https://dashboard.nanostream.cloud/signup), or get in touch with our sales team via [nanocosmos.de/contact](https://www.nanocosmos.de/contact) or by email at sales(at)nanocosmos.net.
+If you don’t have an account yet, you can [sign up](https://dashboard.nanostream.cloud/signup), or get in touch with our sales team via [nanocosmos.net/contact](https://www.nanocosmos.net/contact) or by email at sales(at)nanocosmos.net.
 
 *Need help accessing an existing organization or unsure how to proceed?* <br/>
 👉  Check the [Authentication section](./getting_started#authentication) for step-by-step guidance on creating an account, logging in, and requesting access from your system administrator.
@@ -89,6 +89,7 @@ Each Stream Overview consists of three main elements, which ensures clarity, eas
 3. **Tabs for Detailed Management**
  - **[Stream Overview](#stream-overview)** – General information about the stream
  - **[Live Processing](#live-processing)** – Configuration of live processing features
+ - **[Live Captions](#live-captions)** – Configuration of the live captions feature
  - **[Code Snippets](#code-snippets)** – Ready-to-use implementation snippets
 
 ### Stream Overview
@@ -99,7 +100,7 @@ The Stream Overview UI changes depending on the stream-type:
 - **Adaptive Bitrate (ABR) Stream** → *Streamgroup Details* (<span className="badge-streamgroup">Streamgroup (*n* Playouts)</span>)
  ![Screenshot: Single Stream View](../assets/dashboard/streamgroup-overview.png)
 
-:::info Learn more about Adaptive Bitrate
+:::tip Learn more about Adaptive Bitrate
 Adaptive Bitrate (ABR) ensures seamless playback quality, even under unstable network conditions. It switches between multiple stream qualities depending on the viewer’s bandwidth.
 
 👉 Dive into the [Adaptive Bitrate and Transcoding section](./abr_transcoding) to understand how it works and when to use it.
@@ -167,7 +168,7 @@ When sharing the live playout URL, this token is applied, ensuring transparency 
 
 :::info Enable secure playback
 **nanoStream** provides a `secure` feature to enable secure playback. This feature lets you customize token with settings like expiration date, not-before date, client IP, domain, user ID, or a tag for enhanced security.   
-You can verify whether this feature is available for your organization by navigating to [dashboard.nanostream.cloud/organisation](https://dashboard.nanostream.cloud/organisation) in your dashboard. *To enable this feature for your organization, contact us via [nanocosmos.de/contact](https://www.nanocosmos.de/contact)*.
+You can verify whether this feature is available for your organization by navigating to [dashboard.nanostream.cloud/organisation](https://dashboard.nanostream.cloud/organisation) in your dashboard. *To enable this feature for your organization, contact us via [nanocosmos.net/contact](https://www.nanocosmos.net/contact)*.
 :::
 
 ![Screenshot: Secure Playback Token Section in Stream Overview](../assets/dashboard/secure-playback-token.png)
@@ -191,7 +192,7 @@ If your organization has enabled the `vod` feature, VOD recordings will be liste
 If your organization has enabled `live processing` features, their assets will be listed here.  
 To display them, select the desired feature from the **submenu** under the tabs. As shown in the screenshot, the currently selected process is highlighted in light orange. Clicking on a process reveals its associated details below.  
 
-:::tip Prerequisites
+:::warning Prerequisites
 To make use of `live processing`, the feature must be explicitly enabled for your organization. Activation may be subject to additional pricing or service terms.
 
 You can verify whether this feature is available by navigating to [dashboard.nanostream.cloud/organisation](https://dashboard.nanostream.cloud/organisation) in your dashboard.  
@@ -199,7 +200,7 @@ In the **[Enabled Packages](./organization_overview#enabled-packages)** section,
 
 ![Screenshot: Enabled Packages](../assets/dashboard/enabled-packages.png)  
 
-To activate this feature or learn more about available plans, feel free to reach out via [nanocosmos.de/contact](https://www.nanocosmos.de/contact). We're happy to assist you in finding the best setup for your use case.
+To activate this feature or learn more about available plans, feel free to reach out via [nanocosmos.net/contact](https://www.nanocosmos.net/contact). We're happy to assist you in finding the best setup for your use case.
 :::
 
 Assets for each process are displayed in a **tab-based structure**, depending on whether they belong to an **ABR stream** ( <span className="badge-streamgroup">Streamgroup (*n* Playouts)</span>) or a **single stream** (<span className="badge-noStreamgroup">Single Stream</span>). Users can switch between different quality levels for ABR streams, while single streams have only one quality level available.  
@@ -237,7 +238,7 @@ Replay files and access details are listed below and categorized as follows:
 - **Replay Access**  
 - **Clip & Share Access**  
 
-:::warning Note
+:::tip Note
 URLs always belong to their respective streams. For **ABR streams**, the URLs are grouped accordingly and listed separately.
 :::
 
@@ -259,24 +260,46 @@ Files are sorted by:
 - **Session Date (UTC)**  
 - **File Access**  
 
-:::warning Note
+:::tip Note
 URLs always belong to their respective streams. For **ABR streams**, the URLs are grouped accordingly and listed separately.
 :::
 
 ![Screenshot: Recordings Overview](../assets/dashboard/recordings.png)
 *Screenshot: Recordings Overview*
 
+### Live Captions
+
+If Live Captions are enabled for your organization, all related details are displayed in the **Live Captions** tab.
+
+![Screenshot: Live Captions Overview Tab](../assets/dashboard/live-captions-tab.png)
+*Screenshot: Live Captions Overview Tab*
+
+In this tab, you can see the **Live Captions Player**. Below the player, a **language selector dropdown** allows you to switch between the available caption languages when multiple target languages are enabled. \
+On the right-hand side, the **Live Captions setup panel** displays the current configuration, including:
+- the selected **ASR engine**,
+- the **source language**,
+- the configured **target language(s)**, and
+- the **Edit** and **Remove** buttons.
+
+Below the setup panel, the **decoded caption token** is shown. This token is appended to the **Captions Playout URL** and controls access to the live captions stream. If required, you can generate a customized token by clicking **Create new token**.
+
+The corresponding **Code Snippet** for embedding the Live Captions Player is available in the **Code Snippets** tab, together with all other playout and embedding examples.
+
 ### Code Snippets
 
-The **Code Snippet** tab provides the necessary details to embed the **nanoStream H5Live Player** effortlessly into your website.  
+The **Code Snippet** tab provides the necessary details to embed your live stream effortlessly into your website.  
 
+- **Live Captions Code Snippet**
 - **iFrame Code Snippet**
 - **HTML Code Snippet**
 
-Using the **Code Snippet Settings** collapsible section, users can modify these snippets. Available settings include:  
+For the **iFrame** and **HTML** code snippets, you can configure the following settings:
 
-- **Start Quality** (for ABR streams)  
-- **Latency Control Mode**  
+- **MOQ** (enabled / disabled)
+- **Start Quality** (for ABR streams)
+- **Latency Control Mode**
+
+For the **Live Captions Code Snippet**, you can select the desired **target language(s)** that should be included in the embedded player.
 
 If your organization is part of a `secure` setup, an additional **Token Settings** section is available. Here, users can generate a custom token, which is displayed in a structured format. When sharing the **live playout URL**, this token is automatically applied, ensuring transparency regarding its usage.  
 
@@ -284,6 +307,5 @@ If your organization is part of a `secure` setup, an additional **Token Settings
 👉 Dive into the [Code Snippets page](./code_snippets) for detailed instructions on how to integrate nanoPlayer into your website.
 :::
 
-
-![Screenshot: Code snippets with expanded settings](../assets/dashboard/code-snippets-expanded-settings.png)
-*Screenshot: Code snippets with expanded settings*
+![Screenshot: Code snippets](../assets/dashboard/code-snippets.png)
+*Screenshot: Code snippets*

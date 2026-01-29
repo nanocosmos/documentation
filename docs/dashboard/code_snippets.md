@@ -8,6 +8,7 @@ Embedding a live stream into your own website is incredibly simple with nanoStre
 
 You can choose between two types of code snippets for embedding:
 
+- **Live Captions Player Code Snippets**
 - **iFrame Embed Tag** (recommended for quick integration)
 - **nanoStream H5Live JavaScript Snippet** (for advanced customizations)
 
@@ -15,13 +16,20 @@ You can find these snippets in multiple locations within the dashboard:
 
     - dashboard.nanostream.cloud/stream/**YOUR-STREAM-ID**/code-snippets
     - dashboard.nanostream.cloud/stream/new/**YOUR-STREAM-ID**
-    - dashboard.nanostream.cloud/playout/**YOUR-STREAM-ID**
+    - dashboard.nanostream.cloud/playout/**YOUR-STREAM-ID/code-snippets**
     - dashboard.nanostream.cloud/webcaster/**YOUR-STREAM-ID**
 
 ![Screenshot: Code Snippets](../assets/dashboard/code-snippets.png)
 *Screenshot: Code Snippets*
 
 ## Code Snippet Settings
+
+### Media over QUIC (MoQ)
+
+The Media over QUIC protocol offers lower latency and improved reliability compared to traditional protocols and can be enabled/disabled.
+
+![Screenshot: Media over QUIC (MoQ)](../assets/dashboard/moq-settings.png)
+*Screenshot: Media over QUIC for Code Snippets*
 
 ### Start Quality (Adaptive Bitrate)
 
@@ -82,7 +90,7 @@ Token info includes:
 
 :::info Enable secure playback
 **nanoStream** provides a `secure` feature to enable secure playback. This feature lets you customize token with settings like expiration date, not-before date, client IP, domain, user ID, or a tag for enhanced security.   
-You can verify whether this feature is available for your organization by navigating to [dashboard.nanostream.cloud/organisation](https://dashboard.nanostream.cloud/organisation) in your dashboard. *To enable this feature for your organization, contact us via [nanocosmos.de/contact](https://www.nanocosmos.de/contact)*.
+You can verify whether this feature is available for your organization by navigating to [dashboard.nanostream.cloud/organisation](https://dashboard.nanostream.cloud/organisation) in your dashboard. *To enable this feature for your organization, contact us via [nanocosmos.net/contact](https://www.nanocosmos.net/contact)*.
 :::
 
 ![Screenshot: Token Settings](../assets/dashboard/secure-code-snippet.png)
@@ -102,7 +110,7 @@ A simple `<iframe>` you can drop into any HTML page.
 The `allowfullscreen` attribute is required if your site supports fullscreen playback.
 :::
 
-```html
+```js title="nanoplayer-iframe.html"
 <iframe 
     frameborder="0" 
     allowfullscreen 
@@ -130,7 +138,7 @@ Below you can see the **H5Live JavaScript Snippet** HTML code snippet. Ideal for
 :::
 
 
-```html
+```js title="nanoplayer.html"
 <div id="nanoPlayer">
     <script>
     const nanoPlayerConfig = {

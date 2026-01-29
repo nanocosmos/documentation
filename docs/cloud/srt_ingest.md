@@ -1,120 +1,158 @@
 ---
 id: srt_ingest
-title: nanoStream Cloud SRT Ingest Guide
+title: SRT Ingest
 sidebar_label: SRT Ingest
+description: How to set up SRT ingest with nanoStream Cloud including stream ID rules, ingest URLs, OBS examples, playback info, and troubleshooting tips.
 ---
 
-## What is SRT
+The Secure Reliable Transport (SRT) protocol is a modern, UDP-based streaming protocol designed to ensure **low latency**, **resilience**, and **secure delivery** of live video across unpredictable networks. By combining retransmission, adaptive latency, encryption, and congestion control, SRT offers a robust way to transport real-time media, even over long distances or unstable internet connections.
 
-The Secure Reliable Transport (SRT) protocol is a user-level protocol designed for low-latency live video streaming and generic bulk data transfer over the internet. It is built on top of UDP and provides reliability and security features optimized for real-time data transmission.
+While SRT is used exclusively as an **ingest** protocol in nanoStream Cloud, playback is performed via **H5Live** (ultra-low latency HTML5 playback) or **RTMP**. This hybrid workflow enables high-quality global ingest while maintaining ultra-low-latency delivery on all platforms.
 
-## SRT Setup Guide
+:::warning SRT Playback
+**SRT playback is currently not supported by nanoStream Cloud.**  
+Please use **H5Live Player** or **RTMP** for viewing your live streams.
+:::
 
-The SRT setup will require creating a new stream or making use of an existing stream in your organization account for publishing and viewing. In this workflow, SRT streaming protocol will be used for ingest while playing back with H5Live player or RTMP protocol. *SRT playback* is not supported at the moment.
+:::info Before starting
+If you don’t have an account yet you can [sign up](https://dashboard.nanostream.cloud/signup), or get in touch with our sales team via [nanocosmos.net/contact](https://www.nanocosmos.net/contact) or by email at sales(at)nanocosmos.net.
+
+*Need help accessing an existing organization or unsure how to proceed?* <br/>
+👉 Check the [Authentication section](#authentication) in our docs for step-by-step guidance on creating an account, logging in or requesting access from your system administrator.
+:::
+
+## Overview
+
+To use SRT ingest with nanoStream Cloud, you will need an existing **Bintu stream** inside your organization, or you can create a new one via the REST API/dashboard.
+
+:::tip Bintu Streams
+If you are new to Bintu streams, refer to the [Getting Started: Create a Stream](/docs/cloud/cloud_getting_started#create-a-stream) section for details on how to create streams. To learn how to interpret the stream informations, head to the [Stream Overview](/docs/dashboard/stream_overview) page.
+:::
+
+Once you have a stream, your encoder will push an *SRT MPEG-TS* transport stream containing a single H.264 video channel and optional AAC audio channel. On the server side, nanoStream Cloud processes the ingest and makes it available for playback immediately or through stream groups for ABR (adaptive bitrate) playback.
+
+The following sections walk you through all relevant details: supported formats, ingest addresses, SRT stream IDs, encoder parameters, and best practices for live streaming.
 
 ## Ingest
 
+When you publish a stream via SRT, your encoder (e.g., OBS Studio, vMix, hardware encoders) sends MPEG-TS over SRT to one of the nanoStream Cloud ingest domains. The system automatically distributes load and routes ingest to the appropriate data center unless you explicitly choose a region.
+
 ### Supported Formats and Codecs
 
-|                   |                                                        |
+SRT ingest in nanoStream Cloud expects a clean, single-track MPEG-TS feed. This ensures consistent decoding, stable transcoding workflows, and reliable global delivery.
+
+| Setting | Specification |
 |-------------------|--------------------------------------------------------|
 | **Stream format** | MPEG-TS                                                |
-| **Track count**   | Single channel of video and/or single channel of audio |
-| **Video codec**   | H.264                                                  |
-| **Audio codec**   | AAC                                                    |
+| **Track count**   | Single video track and/or single audio track           |
+| **Video codec**   | H.264 (recommended baseline profile settings for broad compatibility) |
+| **Audio codec**   | AAC (LC preferred for universal playback support)      |
+
+It is strongly recommended to **avoid sending multiple video or audio tracks**, as they can cause playback issues or ingest rejection. Hardware encoders, OBS, and vMix all support this minimal setup natively.
+
+:::info Multi Bitrate Stream
+If your organization has the `live transcoding` feature enabled, you can use SRT ingest as the **passthrough** source for creating multi-bitrate renditions. No additional configuration is needed on the encoder side. 
+
+To learn more about how Adaptive Bitrate and live transcoding work, visit our dedicated page: [Understanding ABR & Transcoding](/docs/dashboard/abr_transcoding).
+:::
 
 ### Server Domains and Port
 
-| Global domain (preferred) | bintu-srt.nanocosmos.de    |
-|---------------------------|----------------------------|
-| **Asia domain**           | bintu-srt-as.nanocosmos.de |
-| **Europe domain**         | bintu-srt-eu.nanocosmos.de |
-| **North America domain**  | bintu-srt-us.nanocosmos.de |
-| **South America domain**  | bintu-srt-sa.nanocosmos.de |
-| **Port number**           | 5000                       |
+Your SRT encoder connects to one of the following ingest domains. The **global** domain is recommended for most users, as it automatically routes your ingest to the nearest available region. If you experience connectivity issues or want to explicitly test a region, you may override the domain.
 
-### SRT Stream Id
+| Region                    | Domain                     |
+|---------------------------|----------------------------|
+| **Global (recommended)**  | `bintu-srt.nanocosmos.de`    |
+| **Asia**           | `bintu-srt-as.nanocosmos.de` |
+| **Europe**         | `bintu-srt-eu.nanocosmos.de` |
+| **North America**  | `bintu-srt-us.nanocosmos.de` |
+| **South America**  | `bintu-srt-sa.nanocosmos.de` |
+| **Port**           | `5000`                       |
+
+If you are unsure which domain to use, we recommend starting with the global ingest server.
+
+:::tip Debugging routing issues
+For debugging routing issues, refer to the [Network Diagnostics](/docs/cloud/network-diagnostics) page.
+:::
+
+### SRT Stream ID
+
+Every SRT ingest requires a **stream ID**, which identifies the target Bintu stream inside nanoStream Cloud.
 
 SRT stream id format definition: `prefix:streamname[:postfix]`
-- prefix: `push` for ingest or publish action
-- streamname: existing Bintu stream name in the form `XXXXX-YYYYY`
-- suffix: `record` to enable VOD recording of a live stream (optional)
+- **prefix**: `push` for ingest or publish action
+- **streamname**: existing Bintu stream name in the format `XXXXX-YYYYY`
+- **suffix**: `record` to enable VOD recording of a live stream (optional)
 
-### Stream Id limitations
-
- - The SRT protocol specification limits the Stream Id length to 512 characters.
- - Allowed character set in SRT Stream Ids: `a-z`,`A-Z`,`0-9`,`?`,`&`,`=`,`-`,`_`,`,` plus delimiter `:`. 
- - Colon delimiter `:` is permited on the stream id, **not** on stream name **nor** stream name parameters. 
- - Percent sign `%` is only allowed in the context of URL encoding.
-
-#### Stream Id examples
-
+:::tip Stream ID Examples
 Replace `XXXXX-YYYYY` with an existing Bintu stream name.
+- Basic SRT ingest: `push:XXXXX-YYYYY`
+- Enable live recording (VOD output): `push:XXXXX-YYYYY:record`
+- Push streamname with parameters: `push:XXXXX-YYYYY?param1=one&param2=two`
+- Push with streamname parameters and VOD recording: `push:XXXXX-YYYYY?param1=one&param2=two:record`
 
-Basic push: `push:XXXXX-YYYYY`
-
-Push with vod recording: `push:XXXXX-YYYYY:record`
-
-Push with stream name parameters: `push:XXXXX-YYYYY?param1=one&param2=two`
-
-Push with stream name parameters and VOD recording: `push:XXXXX-YYYYY?param1=one&param2=two:record`
-
-:::tip note
-Some streaming applications where the SRT stream id needs to be configured as part of a URL, for example _OBS Studio_, may require the stream name parameters to use URL encoding.
-The URL encoding can be applied to the entire Stream Id or stream name parameters only.
-The URL encoded parts will be decoded accordingly on the server side.
-
-**See the following examples**:
-
-Push with URL encoded stream id: <br/>
-`push%3AXXXXX-YYYYY%3Fparam1%3Done%26param2%3Dtwo`
-
-Push with URL encoded stream name parameters: <br/>
-`push:XXXXX-YYYYY%3Fparam1%3Done%26param2%3Dtwo`
-
-Push with URL encoded stream name parameters and VOD recording:<br/>
-`push:XXXXX-YYYYY%3Fparam1%3Done%26param2%3Dtwo:record`
+Some applications, such as *OBS Studio*, may require URL-encoded arguments when stream name parameters are included. See the following examples, to understand the application:
+- Push with URL encoded stream id: `push%3AXXXXX-YYYYY%3Fparam1%3Done%26param2%3Dtwo`
+- Push with URL encoded stream name parameters: `push:XXXXX-YYYYY%3Fparam1%3Done%26param2%3Dtwo`
+- Push with URL encoded stream name parameters and VOD recording: `push:XXXXX-YYYYY%3Fparam1%3Done%26param2%3Dtwo:record`
 :::
+
+:::warning Stream ID limitations
+
+The SRT protocol defines strict limitations for stream ID structure:
+
+- Maximum length: **512 characters**
+- Allowed characters: `a-z`, `A-Z`, `0-9`, `?`, `&`, `=`, `-`, `_`, `,`, `:`
+- The colon `:` is only permitted as a delimiter, **not** inside stream names or parameter values
+- Percent sign `%` is only allowed in the context of **URL encoding**.
+
+These rules are enforced by both encoder applications and the nanoStream Cloud ingest layer. Violating them may result in connection failure or invalid stream routing.
+:::
+
 
 ### Ingest Parameters
 
-|                           |                                                                                                                                               |
-|---------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------|
-| **SRT mode**              | caller                                                                                                                                        |
-| **SRT transmission type** | live                                                                                                                                          |
-| **SRT latency**           | Default is **500ms**. Higher values can be used to maintain more buffer and will help to reduce packet drop in lossy transmission situations. |
-| **SRT timeout**           | Recommended is **1 second**. Higher values can solve connect issues in case of longer routing distances or high round trip times (RTT).       |
-| **SRT stream id**         | See [Above](#srt-stream-id).                                                                                                                  |
+SRT ingest must include several important configuration parameters to ensure stable connectivity:
+
+| Parameter| Recommended |
+|----------|-------------|
+| **SRT mode**  | `caller` |
+| **Transmission type** | `live` |
+| **Latency** | Default: **500 ms** (smoother transmission under unstable network conditions) |
+| **Timeout** | Recommended: **1 second** (helps prevent connect issues when high RTT occurs) |
+| **Stream ID** | Must follow the format described in [SRT Stream ID](#srt-stream-id) |
+
+A higher latency buffer offers more protection against packet loss and jitter. For long-distance transmissions or mobile networks, you can gradually increase the latency if needed.
 
 ### Example of Setup using OBS Studio
 
-<div class="video-wrap">
-    <div class="video-container">
-        <iframe src="https://www.youtube.com/embed/vkQmMIQJl_4" frameborder="0" allowfullscreen></iframe>
-    </div>
-</div>
-*Click `PLAY` button to start*
+OBS Studio is able to support SRT streaming starting from version **25.0** and has the flexibility of fine tuning capabilities. It expects latency and timeout values in **microseconds**, so note the conversion:
+- `500 ms` → `500000`
+- `1 second` → `1000000`
 
-OBS Studio is able to support SRT streaming in versions 25.0 or newer and has the flexibility of fine tuning capabilities.
-You can refer more here: [SRT Protocol Streaming Guide](https://obsproject.com/de/kb/srt-protocol-streaming-guide#stream-with-srt. "OBS SRT Protocol Streaming Guide")
+:::tip Additional Ressources
+For more details, you can consult the official OBS SRT Protocol Streaming Guide under [obsproject.com/de/kb/srt-protocol-streaming-guide#stream-with-srt](https://obsproject.com/de/kb/srt-protocol-streaming-guide#stream-with-srt).
 
-:::info note
-OBS expects timeout and latency values in microseconds, that is, seconds ⨉ 1000000.
+If you are new to ingesting with OBS (or any encoder), our Getting Started guide offers step-by-step instructions: [Start a Stream](/docs/cloud/cloud_getting_started#start-a-stream).
+
+These resources help you understand how to prepare the encoder side correctly.
 :::
 
-### Ingest Address
+## Ingest Address
 
-#### Global Ingest Domain (Recommended)
+Replace `XXXXX-YYYYY` with an existing Bintu stream name.
+
+### Global Ingest Domain (recommended)
 
 Setup server with:
 ```http
 srt://bintu-srt.nanocosmos.de:5000?mode=caller&latency=500000&timeout=1000000&transtype=live&streamid=push:XXXXX-YYYYY
 ```
 
-![Screenshot: OBS Server Setup](../assets/cloud/obs-srt.png)
-*Screenshot: OBS Server Setup*
+![Screenshot: OBS Server Setup For Global Domain (recommended)](../assets/cloud/obs-srt.png)
+*Screenshot: OBS Server Setup For Global Domain (recommended)*
 
-#### For Europe Domain
+### Europe Domain
 
 Setup server with:
 ```http
@@ -124,7 +162,7 @@ srt://bintu-srt-eu.nanocosmos.de:5000?mode=caller&latency=500000&timeout=1000000
 ![Screenshot: OBS Server Setup For Europe Domain](../assets/cloud/obs-srt-eu.png)
 *Screenshot: OBS Server Setup For Europe Domain*
 
-#### For North America Domain
+### North America Domain
 
 Setup server with:
 ```http
@@ -134,7 +172,7 @@ srt://bintu-srt-us.nanocosmos.de:5000?mode=caller&latency=500000&timeout=1000000
 ![Screenshot: OBS Server Setup For North America Domain](../assets/cloud/obs-srt-us.png)
 *Screenshot: OBS Server Setup For North America Domain*
 
-#### For South America Domain
+### South America Domain
 
 Setup server with:
 ```http
@@ -144,43 +182,31 @@ srt://bintu-srt-sa.nanocosmos.de:5000?mode=caller&latency=500000&timeout=1000000
 ![Screenshot: OBS Server Setup For South America Domain](../assets/cloud/obs-srt-sa.png)
 *Screenshot: OBS Server Setup For South America Domain*
 
-
-Whereby `XXXXX-YYYYY` is an existing Bintu stream name in your organization account and `latency`, and`timeout` values provided in **microseconds**.
-
-### Stream Transcoding and ABR
-
-If your organization account has transcoding feature enabled you may set up ABR with SRT. Just use the pass-through stream name for SRT ingest.
-
 ## Playback
 
-SRT playback is not supported at the moment.
-Playback is possible using the H5live Player or through RTMP protocol.
+SRT playback is not available. Instead, nanoStream Cloud provides ultra-low-latency playback using the **H5live Player**, and standard RTMP protocol playback for compatibility with desktop tools.
 
 ### Using H5Live Player
 
-For a single bit-rate stream, the ingested stream can be played out with the following playback URL: 
-
+For a single bitrate stream:
 ```http
 https://demo.nanocosmos.de/nanoplayer/release/nanoplayer.html?entry.rtmp.streamname=XXXXX-YYYYY
 ```
 
-Whereby `XXXXX-YYYYY` is the Bintu stream name previously set up for SRT ingest.
+For ABR playback, you can setup a stream group on the nanoStream Cloud Dashboard via [dashboard.nanostream.cloud/](https://dashboard.nanostream.cloud/)
 
-For ABR playback, you can setup a stream group on the latest dashboard v3.
-Find more information following the video guide in the link: 
+:::tip Stream Configuration
 
-:::tip usage of streamgroups
-- [Dashboard: Set up streamgroups](../dashboard/start_streaming).
-- [nanoPlayer: Streamgroup configuration](../nanoplayer/nanoplayer_feature_stream_group_configuration).
-
-*If you are on a secure Bintu organization account, you will find information on playback with secure parameters [click here](../nanoplayer/nanoplayer_token_security).*
+- [Dashboard: Start Streaming](/docs/dashboard/start_streaming).
+- [nanoPlayer: Streamgroup configuration](/docs/nanoplayer/nanoplayer_feature_stream_group_configuration).
 :::
 
-### Using RTMP
+## RTMP
 
-Following, an example using RTMP protocol playback with _ffplay_ from the _ffmpeg_ project on the command line:
+You can view your stream via RTMP using any RTMP-compatible player. An example using **ffplay**:
 
 ```sh
 ffplay rtmp://bintu-play.nanocosmos.de/play/XXXXX-YYYYY
 ```
-Whereby `XXXXX-YYYYY` is the Bintu stream name that was configured in the SRT ingest.
+
+This is useful for testing or debugging without embedding a player.

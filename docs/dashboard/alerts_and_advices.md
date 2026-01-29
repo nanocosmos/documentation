@@ -1,7 +1,7 @@
 ---
 id: alerts_and_advices
-title: Alert and Advices
-sidebar_label: Alert and Advices
+title: Alerts and Advices
+sidebar_label: Alerts and Advices
 ---
 
 Alerts and advices are tools provided by nanoStream to give you real-time feedback and recommendations about your live streams. They provide invaluable insights into the performance of your live streams, potential issues, and even suggestions on how to enhance the viewer experience.
@@ -11,9 +11,9 @@ To start, please navigate to [dashboard.nanostream.cloud/alerts](https://dashboa
 ![Screenshot: Notifications Overview](../assets/dashboard/alerts-overview.png)
 *Screenshot: Notifications Overview*
 
-:::info Before starting
+:::warning Before starting
 To get started with the **nanoStream Dashboard**, sign in with your existing *nanoStream account*.  
-If you don’t have an account yet, you can [sign up](https://dashboard.nanostream.cloud/signup), or get in touch with our sales team via [nanocosmos.de/contact](https://www.nanocosmos.de/contact) or by email at sales(at)nanocosmos.net.
+If you don’t have an account yet, you can [sign up](https://dashboard.nanostream.cloud/signup), or get in touch with our sales team via [nanocosmos.net/contact](https://www.nanocosmos.net/contact) or by email at sales(at)nanocosmos.net.
 
 *Need help accessing an existing organization or unsure how to proceed?* <br/>
 👉  Check the [Authentication section](./getting_started#authentication) for step-by-step guidance on creating an account, logging in, and requesting access from your system administrator.
@@ -35,7 +35,7 @@ Selecting an alert opens a side panel with detailed information, structured as H
 - **Alert title** at the top
 - A row of **available actions**:
   - **Open Playout** – View the stream to verify its current status.
-  - **Troubleshooting** – Open the [metrics.nanocosmos.de](https://metrics.nanocosmos.de/) to inspect ingest-to-playout metrics. Learn more about troubleshooting [here](../analytics/troubleshooting).
+  - **Troubleshooting** – Open the [metrics.nanocosmos.de](https://metrics.nanocosmos.de/) to inspect ingest-to-playout metrics. Learn more about troubleshooting [here](../cloud/analytics-dashboard-troubleshooting.mdx).
   - **Open Support Ticket** – Create a support request so we can assist you directly.
 
 #### Alert Metadata

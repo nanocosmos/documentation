@@ -1,70 +1,107 @@
 ---
 id: cloud_introduction
-title: Introduction
-sidebar_label: Introduction
+title: Core Concepts of nanoStream Cloud
+sidebar_label: Core Concepts
+description: Learn the fundamentals of nanoStream Cloud and its stream management system, bintu. Understand how to create, manage, and secure ultra-low-latency live streams using the Dashboard and API.
 ---
 
-nanoStream Cloud is a unique live streaming platform based on different components for ultra low latency live streaming. \
-This section is about bintu, the stream management dashboard and api.
+**nanoStream Cloud** is a powerful and flexible platform for **ultra-low-latency live streaming**.
+This section introduces **bintu**, the central stream management system of nanoStream Cloud.
+With bintu, you can easily create, manage, and monitor your live streams, either via the **Dashboard** or through the **API** for automated workflows.
+
+## Getting Started
+
+To get started with the **nanoStream Dashboard**, sign in with your existing *nanoStream account*.  
 
 :::info Before starting
-To begin, please sign in to your nanoStream Cloud/Bintu account and copy your API key [here](https://dashboard.nanostream.cloud/organisation). <br/>
-If you have not created an account yet, you can [sign up](https://dashboard.nanostream.cloud/auth?signup) or reach out to our dedicated sales team via the [contact form](https://www.nanocosmos.de/contact) or by sending an email to sales(at)nanocosmos.de.
+If you don’t have an account yet you can [sign up](https://dashboard.nanostream.cloud/signup), or get in touch with our sales team via [nanocosmos.net/contact](https://www.nanocosmos.net/contact) or by email at sales(at)nanocosmos.net.
+
+*Need help accessing an existing organization or unsure how to proceed?* <br/>
+👉  Check the [Authentication section](/docs/dashboard/getting_started) in our docs for step-by-step guidance on creating an account, logging in or requesting access from your system administrator.
 :::
+
+Once logged in, you can access bintu through:
 
 <article className="margin-vert--lg">
   <Columns className="list_ZO3j" >
-    <Card className="col col--6 margin-horiz--md" href="https://dashboard.nanostream.cloud/">
-      <Card.Header title="Installation">Dashboard</Card.Header>
-      <Card.Body className="padding-vert--md">The nanoStream Cloud Dashboard is a web-based tool implemented and designed to provide users with an intuitive and comprehensive overview of their streaming activities.</Card.Body>
+    <Card className="col col--6 margin-horiz--md" href="/docs/dashboard/overview">
+      <Card.Header title="Dashboard" />
+      <Card.Body className="padding-vert--md">
+        The <strong>nanoStream Cloud Dashboard</strong> provides an intuitive, web-based interface to manage streams, analytics, and account settings, where no coding is required.
+      </Card.Body>
     </Card>
     <Card className="col col--6 margin-horiz--md" href="https://doc.pages.nanocosmos.de/bintuapi-docs/">
-      <Card.Header title="Configuration">Bintu API</Card.Header>
-      <Card.Body className="padding-vert--md">bintu.live is a stream management platform used by nanoStream for end to end live streaming services. bintu live can be used to create, manage, group and tag live streams.</Card.Body>
+      <Card.Header title="bintu API" />
+      <Card.Body className="padding-vert--md">
+        The <strong>bintu API</strong> enables developers to automate stream creation, grouping, tagging, and management for global, scalable live streaming operations.
+      </Card.Body>
     </Card>
   </Columns>
 </article>
 
+:::tip Find your Api Key
+If you plan to use the **API**, you'll need the **API Key**, available in the Dashboard under your organization's settings: [dashboard.nanostream.cloud/organisation/overview](https://dashboard.nanostream.cloud/organisation/overview). 
+*Only* <span className="role role-admin">nanoAdmin</span> *have permission to access **API keys**.*
+
+![Screenshot: Organisation Overview with API Access](../assets/dashboard/orga-overview.png)
+*Screenshot: Organisation Overview with API Access*
+:::
+
 ## What is bintu?
 
-The bintu stream management software is part of the **nanoStream Cloud** an enables easy management of low-latency live video streams with nanoStream Live Encoders and Players or any other encoder or playback software.
+**bintu** is the stream management system at the core of nanoStream Cloud. It connects your **live encoders**, **CDN**, and **playback clients** into one managed workflow.
 
-:::tip Start streaming!
-It is easy to setup and manage your live streams without additional server software. Leverage proven software know-how and quality with nanoStream Cloud live streaming services for low-latency live streaming for your own brand. Start streaming immediately!
-:::
+With bintu, you can:
 
-## bintu Concepts
+- Create and manage live streams
+- Retrieve ingest and playback URLs
+- Apply security and access control policies
+- Enable live features such as recording, transcoding, or captions
 
-Generally, you can either use the bintu.live system with 2 ways:
+Whether you're using the **Dashboard** or **API**, bintu ensures reliable and scalable stream delivery worldwide.
 
-1. **Dashboard** access in the web browser to create and manage live streams.
-2. **REST API** for development purposes. 
+### Streams
 
-:::info Please note
-If you use the REST API, you need to obtain your unique secret API Key from the dashboard.
-:::
+A **stream** created with **bintu** represents a single live broadcast within nanoStream Cloud. It can be created manually via the Dashboard or automatically via the bintu API. Each stream has a **unique ID** and contains:
 
-### Bintu streams
+- An **ingest URL** for live encoding (e.g. RTMP, SRT, WHIP, WebRTC)
+- **Playback URLs** for viewers (H5Live, HLS, RTMP, etc.)
 
-Every **bintu stream** has a unique ID and contains of:
+Both are based on a basic URL e.g. *rtmp://bintu-stream.nanocosmos.de/live* and a stream name e.g. *XXXX-YYYY*.
 
-- stream URL for ingest (live encoding) with RTMP
-- playback URL for in different formats (H5Live for Web, RTMP, HLS, …).
+You can use any live encoder, like [OBS](https://www.nanocosmos.net/blog/how-to-use-obs-for-low-latency-live-encoding-to-nanostream-cloud/) or [Osprey Talon](https://www.nanocosmos.net/blog/osprey-talon-and-nanostream-cloud/) or simply start streaming directly from your browser with the [nanoStream Webcaster](/docs/dashboard/start_streaming#ingesting-with-the-nanostream-webcaster). Find detailed step-by-step instructions [here](/docs/cloud/cloud_getting_started#start-a-stream).
 
-Example stream ID: `1dec3bbc-758b-4879-a202-7ae877d511ba`
+:::tip Example Stream
+Example stream ID: **1dec3bbc-758b-4879-a202-7ae877d511ba**
 
 Stream information can be obtained by dashboard or API with
-- API: `https://bintu.nanocosmos.de/stream/1dec3bbc-758b-4879-a202-7ae877d511ba`
-- Dashboard: `https://dashboard.nanostream.cloud/stream/1dec3bbc-758b-4879-a202-7ae877d511ba`
+- API: https://bintu.nanocosmos.de/stream/ **1dec3bbc-758b-4879-a202-7ae877d511ba**
+- Dashboard: https://dashboard.nanostream.cloud/stream/ **1dec3bbc-758b-4879-a202-7ae877d511ba**
+:::
 
-### Ingest and Playback
+### Live Recording and VOD
 
-Every bintu stream has an ingest URL and a playback URL. Both are based on a basic URL e.g. *rtmp://bintu-stream.nanocosmos.de/live* and a stream name e.g. *XXXX-YYYY*. \
-The ingest URL needs to be used for your Live Encoder, the player URL on your player web page. \
-You can instantly start any number of ingest streams and players, dependent on your booked package and agreement.
+Your live streams can be recorded and stored for later playback.
+This allows you to repurpose live events as Video on Demand (VOD) assets or use recordings for compliance and analysis.
+[Learn more →](/docs/cloud/live-recording-vod)
+
+### Live Processing
+
+Live Recording and VOD (Video on Demand) allow you to automatically store and replay your live streams. Once enabled, streams can be recorded for later playback or post-processing. [Learn more →](/docs/cloud/live_processing)
+
+### Live Captions
+
+With AI-powered real-time captioning, spoken words are automatically converted into on-screen text. This improves accessibility and engagement for global audiences, especially in multilingual or large-scale live events. [Learn more →](/docs/cloud/live_captions)
+
+### Security and Access Control
+
+Security is a key pillar of nanoStream Cloud. It provides multiple layers of protection to keep your content, streams, and data safe:
+
+- **Transport Security**: All communication uses HTTPS/TLS by default. [Details →](/docs/cloud/security)
+- **Authorization**: Access to streams can be controlled via secure tokens and webhooks.
+- **nanoStream Guardian**: Block unwanted access to your streams. It supports IP-based blocking, referrer filtering, and CIDR range restrictions. [Read more →](/docs/cloud/guardian)
+- **RBAC (Role-Based Access Control)**: Limit Dashboard and API permissions by user roles. [More about user roles →](/docs/cloud/user_roles)
 
 ### nanoStream CDN
 
-The bintu URLs point to real streaming servers, based on the closest geo location to your live encoder or player audience.
-
-
+Behind the scenes, bintu connects to the nanoStream global CDN, ensuring that both ingest and playback URLs automatically route to the closest available server. This geographic load balancing provides optimized latency and stability for your audience, no matter where they are located.

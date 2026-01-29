@@ -6,20 +6,20 @@ sidebar_label: Secure Playback & Secure Token
 
 Secure Playback Tokens are a valuable tool that enhances the security of your streams by providing controlled access. With these tokens, you have the ability to decide who can play back your stream, ensuring that only authorized viewers can access your content. The regular playout URL alone will not grant playback privileges.
 
-:::tip Prerequisites
-To make use of the `secure` feature, it must be explicitly enabled for your organization. Activation may be subject to additional pricing or service terms.
+:::warning Prerequisites
+To make use of **Secure Playback**, it must be explicitly enabled for your organization. Activation may be subject to additional pricing or service terms.
 
 You can verify whether this feature is available by navigating to [dashboard.nanostream.cloud/organisation](https://dashboard.nanostream.cloud/organisation) in your dashboard.  
 In the **[Enabled Packages](./organization_overview#enabled-packages)** section, locate the entry for `secure`. If it shows **Upgrade needed**, please contact us.
 
 ![Screenshot: Enabled Packages](../assets/dashboard/enabled-packages.png)  
 
-To activate this feature or learn more about available plans, feel free to reach out via [nanocosmos.de/contact](https://www.nanocosmos.de/contact). We're happy to assist you in finding the best setup for your use case.
+To activate this feature or learn more about available plans, feel free to reach out via [nanocosmos.net/contact](https://www.nanocosmos.net/contact). We're happy to assist you in finding the best setup for your use case.
 :::
 
 :::info Before starting
 To get started with the **nanoStream Dashboard**, sign in with your existing *nanoStream account*.  
-If you don’t have an account yet, you can [sign up](https://dashboard.nanostream.cloud/signup), or get in touch with our sales team via [nanocosmos.de/contact](https://www.nanocosmos.de/contact) or by email at sales(at)nanocosmos.net.
+If you don’t have an account yet, you can [sign up](https://dashboard.nanostream.cloud/signup), or get in touch with our sales team via [nanocosmos.net/contact](https://www.nanocosmos.net/contact) or by email at sales(at)nanocosmos.net.
 
 *Need help accessing an existing organization or unsure how to proceed?* <br/>
 👉  Check the [Authentication section](./getting_started#authentication) for step-by-step guidance on creating an account, logging in, and requesting access from your system administrator.
@@ -34,11 +34,15 @@ One way to create a secure token for your stream(s) or organisation is to naviga
 
 ### Required Information
 
-1. **Target**: Choose the target of the token.
-   - **Entire Streamgroup** The entire stream group by providing the stream ID
+1. **Target**: Choose the target of the token:
+   - **Entire Streamgroup** The entire stream group by providing/selectiong the streamgroup/stream ID,
    - **Streamname(s)** specify multiple stream names or
-   - **Entire Organization** select the entire organization
+   - **Entire Organization** select the entire organization.
 2. **Token Lifetime**: The default expiration date is set to 2 weeks, but you can choose any duration you prefer.
+
+:::danger Be careful with your organisation-wide tokens
+Always handle tokens as confidential credentials. Be careful who you share your organisation-wide token with, as it gives access to all your assets.
+:::
 
 ### Optional Settings
 
@@ -69,10 +73,20 @@ security: {
 
 In addition to the **Secure Toke** creation page, you can also find the decoded token information and create new tokens within specific sections of the nanoStream dashboard. 
 
-You can find the inline token creation dialog in multiple locations within the dashboard:
+:::warning Copy your newly created Tokens
+When using the nanoStream Cloud Dashboard, please note that **you are always operating with the organization-wide token**.  
+You can create new tokens and copy the related information, URLs, and code snippets. The copied assets will use the token.
+However, **tokens cannot be restored after refreshing or closing the page**. Make sure to copy and store them securely before leaving the page.
+:::
 
-    - dashboard.nanostream.cloud/playout/**YOUR-STREAM-ID**
-    - dashboard.nanostream.cloud/stream/**YOUR-STREAM-ID**
-    - dashboard.nanostream.cloud/stream/**YOUR-STREAM-ID**/code-snippets
-    - dashboard.nanostream.cloud/stream/new/**YOUR-STREAM-ID**
-    - dashboard.nanostream.cloud/webcaster/**YOUR-STREAM-ID**
+![Screenshot: Secure Token Creation Dialog in Stream Overview](../assets/dashboard/secure-token-dialog.png)
+*Screenshot: Secure Token Creation Dialog in Stream Overview*
+
+:::tip Locate Inline Token Creation
+You can access the inline token creation dialog in multiple locations within the dashboard:
+
+- **Playout Overview**: [dashboard.nanostream.cloud/playout/YOUR-STREAM-ID](https://dashboard.nanostream.cloud/playout/YOUR-STREAM-ID)
+- **Stream Overview**: [dashboard.nanostream.cloud/stream/YOUR-STREAM-ID](https://dashboard.nanostream.cloud/stream/YOUR-STREAM-ID) or [dashboard.nanostream.cloud/stream/YOUR-STREAM-ID/code-snippets](https://dashboard.nanostream.cloud/stream/YOUR-STREAM-ID/code-snippets) or [dashboard.nanostream.cloud/stream/YOUR-STREAM-ID/live-captions](https://dashboard.nanostream.cloud/stream/YOUR-STREAM-ID//live-captions)
+- **New Stream Overview / Stream Instructions Overview**: [dashboard.nanostream.cloud/stream/new/YOUR-STREAM-ID](https://dashboard.nanostream.cloud/stream/new/YOUR-STREAM-ID)
+- **Webcaster Overview**: [dashboard.nanostream.cloud/webcaster/YOUR-STREAM-ID](https://dashboard.nanostream.cloud/webcaster/YOUR-STREAM-ID)
+:::
