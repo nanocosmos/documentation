@@ -116,9 +116,23 @@ Stream issues that may appear as a consequence of irregular communication proble
 The system monitors stream restart attempts. If at least three restarts occur within a 5-minute period, a Continuous Restarts Alert is triggered.
 
 ##### Subtypes
-| Code | Type | Description | Recommended Action | 
+| Code | Type | Description | Recommended Action |
 | ---- | ---- | ----------- | ------------------ |
-| 22001 | Continous Restarts | The ingest stream starts and stops continuously. | Restart the stream. |
+| 22000 | Continous Restarts | The ingest stream starts and stops continuously. | Restart the stream. |
+| 22001 | Continous Restarts with low performance | The ingest stream starts and stops continuously, while also having performance issues. | Check your ingest device's internet connection. Restart the stream manually. |
+
+-----
+
+#### Inactive Ingest Alert
+
+##### Description
+This alert is triggered when the system detects that an ingest stream is connected to the nanoStream Cloud infrastructure but is not actively sending data. This may indicate encoder configuration issues, network problems, or source-side failures.
+
+##### Subtypes
+| Code | Type | Description | Recommended Action |
+| ---- | ---- | ----------- | ------------------ |
+| 22010 | Inactive Ingests | The ingest stream is connected but not actively sending data. | Check your encoder or streaming source configuration. Ensure the source is actively sending data to the stream. |
+| 22011 | Inactive and Active Ingests | The ingest stream has both inactive and active connections. | Check your encoder or streaming source configuration. Some connections are not actively sending data while others are. |
 
 -----
 
@@ -241,8 +255,9 @@ These guidelines can be used to get an idea about **what the problem is, why it 
 
 While the exact solution may vary, some common approaches include:
 
-- **General performance issues detected by *Stream Time Ratio* metrics (error codes: 23001 / 23002):**  Restart the stream and run a bandwidth speed test afterwards  
-- **Continuous restarts (error codes: 22000 / 22001):**  Restart the stream; for 22001, check local bandwidth using a speed test  
+- **General performance issues detected by *Stream Time Ratio* metrics (error codes: 23001 / 23002):**  Restart the stream and run a bandwidth speed test afterwards
+- **Continuous restarts (error codes: 22000 / 22001):**  Restart the stream; for 22001, check local bandwidth using a speed test
+- **Inactive ingests (error codes: 22010 / 22011):**  Check encoder configuration; ensure the source is actively sending data; verify network connectivity between encoder and ingest server
 - **Duplicated ingests (error codes: 24100–24103):**  Stop all ingests using the same stream name across all machines/encoders/locations; restart only one from the intended source and review the ingest workflow  
 
 :::info

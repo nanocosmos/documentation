@@ -342,6 +342,59 @@ Via **Ingests/Alerts** tab you can examine alerted streams and make potential is
 
 <br/>
 
+#### Alerts of Type - Continuous Restarts
+
+In case a *Continuous Restarts* alert is selected in the alert table, this widget will be shown. It shows the analyzed information that lead to this alert notification.
+
+![Screenshot: Alert Widget CR](../assets/analytics/analytics-alert-widget-cr.png)
+*Screenshot: Alert Widget CR*
+
+(A) `CSV data export button` - By clicking you can automatically download a `.csv` file, containing the currently displayed data
+
+(B) `Quick Info` - Short conclusion of the underlying issue
+
+(C) `Restart Count` - The counted restarts within the alert's duration
+
+(D) `Analyzed Events` - The amount of events that were analyzed within the alert's duration
+
+(E) `Min Distance` - The minimum distance between 2 restarts in seconds 
+
+(F) `Max Distance` - The maximum distance between 2 restarts in seconds
+
+(G) `Average Distance` - The average distance between 2 restarts in seconds
+
+(H) `Alert Details Panel` - Containing explanantions and further details of this alert and also provides a recommended action to potentially solve the issue
+
+(I) `Link to Documentation` - References more knowledge about alerts and how to handle them
+
+<br/>
+
+#### Alerts of Type - Inactive Ingest
+
+When an **Inactive Ingest** alert is selected in the alert table, this widget displays information about the ingest connection that is connected but not actively sending data. This can indicate encoder configuration issues, network problems, or source-side failures.
+
+![Screenshot: Alert Widget II](../assets/analytics/analytics-alert-widget-ii.png)
+*Screenshot: Alert Widget II*
+
+
+(A) `CSV data export button` - By clicking you can automatically download a `.csv` file, containing the currently displayed data
+
+(B) `Quick Info` - Short conclusion of the underlying issue
+
+(C) `Activity Timeline Overview` - The activity timeline shows all open ingest connections and their when they were active or inactive
+
+(D) `Activity Timeline Legend` - The color descriptions for the displayed data
+
+(E) `Example: Active Connection` - This example shows a regular ingest connection that is active 
+
+(F) `Example: Inactive Connection` - This example shows an ingest connection that is inactive
+
+(G) `Alert Details Panel` - Containing explanantions and further details of this alert and also provides a recommended action to potentially solve the issue
+
+(H) `Link to Documentation` - References more knowledge about alerts and how to handle them
+
+<br/>
+
 #### Alerts of Type - Stream Time Ratio Issue
 
 If a performance alert is selected in the alert table, which is **less than 2 weeks old**, the corresponding performance widget is shown below the alert table, providing crucial insights of the stream time ratio (STR) metric. Depending on how good/bad the values are this widget will show a **suboptimal** or **poor** performance. There is an example of **suboptimal performance on the left** and **poor performance on the right** below.
@@ -367,34 +420,7 @@ If a performance alert is selected in the alert table, which is **less than 2 we
 
 (I) `Alert Details Panel` - Containing explanantions and further details of this alert and also provides a recommended action to potentially solve the issue
 
-(J) `Link to Documentation` - References more knowledge about alerts and how to deal with them
-
-<br/>
-
-#### Alerts of Type - Continuous Restarts
-
-In case a *Continuous Restarts* alert is selected in the alert table, this widget will be shown. It shows the analyzed information that lead to this alert notification.
-
-![Screenshot: Alert Widget CR](../assets/analytics/analytics-alert-widget-cr.png)
-*Screenshot: Alert Widget CR*
-
-(A) `CSV data export button` - By clicking you can automatically download a `.csv` file, containing the currently displayed data
-
-(B) `Quick Info` - Short conclusion of the underlying issue
-
-(C) `Restart Count` - The counted restarts within the alert's duration
-
-(D) `Analyzed Events` - The amount of events that were analyzed within the alert's duration
-
-(E) `Min Distance` - The minimum distance between 2 restarts in seconds 
-
-(F) `Max Distance` - The maximum distance between 2 restarts in seconds
-
-(G) `Average Distance` - The average distance between 2 restarts in seconds
-
-(H) `Alert Details Panel` - Containing explanantions and further details of this alert and also provides a recommended action to potentially solve the issue
-
-(I) `Link to Documentation` - References more knowledge about alerts and how to deal with them
+(J) `Link to Documentation` - References more knowledge about alerts and how to handle them
 
 <br/>
 
@@ -411,4 +437,4 @@ In case a *Continuous Restarts* alert is selected in the alert table, this widge
 
 (C) `Alert Details Panel` - Containing explanantions and further details of this alert and also provides a recommended action to potentially solve the issue
 
-(D) `Link to Documentation` - References more knowledge about alerts and how to deal with them
+(D) `Link to Documentation` - References more knowledge about alerts and how to handle them
