@@ -26,9 +26,17 @@ The table below provides an overview of the key attributes in the stream list:
    - `locked`: The stream was live and has been locked.
 - **Stream ID**: The column displays the unique identifier of each stream. If the stream is an [ABR](./abr_transcoding.md) stream it is also the streamgroup id.
 - **Stream name**: The streamname („XXXXX-YYYYY“) shows the organisation hash and the unique stream name assigned to each stream.
+- **Options**: Indicates whether a stream is a **Visual Enhancement stream**.
 - **Streamgroup**: Indicates whether the stream is an Adaptive Bitrate (ABR) stream. It shows the number of playouts for ABR streams, e.g. <span className="badge-streamgroup">Streamgroup (*n* Playouts)</span>, and for non-ABR streams, it displays <span className="badge-noStreamgroup">Single Stream</span>.
 - **Last Updated**: Timestamp of the most recent update or modification to the stream.
 - **Tags**: Assigned tags or labels for categorizing and identifying streams.
+
+Streams with active Visual Enhancements can be expanded using the **arrow icon on the left side** of the row. Expanding the row reveals the associated **stream extensions**, such as:
+   - **Overlay**
+   - **Delay**
+   - **Full Configuration** (link to the detailed configuration view)
+
+These entries are only shown if the respective enhancement is enabled.
 
 At the bottom of this page, you can find the pagination, where you can decide how many streams (25, 50, 100, 150) you want to per page.
 
@@ -45,7 +53,6 @@ At the top of the [dashboard.nanostream.cloud/stream](https://dashboard.nanostre
 - **State**: Filter streams by their state. This includes both standard states (`live`, `created`, `ended`, `locked`) and additional state(s) (`deleted`) that are not visible in the regular stream list. Selecting `all` will only include `live`, `created`, `ended` and `locked`.
 - **Tags**: The tag filter allows you to look for streams based on specific tags. You can either manually type in the desired tag or choose from the existing tags that you have previously used. As you start typing at least 3 characters, the system will suggest tags that match the entered characters. To apply a tag, simply hit the "Enter" key after typing it.
 - **Date**: Filter streams by date range: Today, Yesterday, This Week, This Month, Past Month, Last 3 Months.
-- **Streamgroups**: Choose whether ABR stream groups should be displayed as a single entry or as individual streams. When this filter is enabled, all streams within a group appear separately. If disabled, they remain grouped, but each stream still shows its streamgroup id.
 
 :::tip Search Streams
 If you want to search for a specific stream based on its Stream ID or streamname, you can use the search field in the top app bar that is available on every page. Please note the following:
@@ -90,6 +97,7 @@ Each Stream Overview consists of three main elements, which ensures clarity, eas
  - **[Stream Overview](#stream-overview)** – General information about the stream
  - **[Live Processing](#live-processing)** – Configuration of live processing features
  - **[Live Captions](#live-captions)** – Configuration of the live captions feature
+ - **[Visual Enhancements](#visual-enhancements)** – Configuration of the visual enhancements
  - **[Code Snippets](#code-snippets)** – Ready-to-use implementation snippets
 
 ### Stream Overview
@@ -284,6 +292,13 @@ On the right-hand side, the **Live Captions setup panel** displays the current c
 Below the setup panel, the **decoded caption token** is shown. This token is appended to the **Captions Playout URL** and controls access to the live captions stream. If required, you can generate a customized token by clicking **Create new token**.
 
 The corresponding **Code Snippet** for embedding the Live Captions Player is available in the **Code Snippets** tab, together with all other playout and embedding examples.
+
+### Visual Enhancements
+
+The **Visual Enhancements** tab allows you to apply additional processing to a live stream without modifying the original source. Common enhancements include Overlay (watermarks) and Delay. Each enhancement stream acts as a substream, maintaining a live connection to the parent stream. All changes are non-destructive; the original stream continues unaltered.
+
+![Screenshot: Live Captions Overview Tab](../assets/dashboard/visual-enhancements.png)
+*Screenshot: Visual Enhancements Overview Tab*
 
 ### Code Snippets
 
