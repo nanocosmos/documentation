@@ -7,7 +7,7 @@ sidebar_label: Analytics Dashboard
 
 # Analytics Dashboard
 
-Check out our dedicated dashboard features at [metrics.nanocosmos.de](https://metrics.nanocosmos.de)! Many different metrics are available in several levels, dependent on your business agreement, support level and subscription plan. Please get in touch for any questions.
+Check out our dedicated dashboard features at [metrics.nanostream.cloud](https://metrics.nanostream.cloud)! Many different metrics are available in several levels, dependent on your business agreement, support level and subscription plan. Please get in touch for any questions.
 
 The default level allows you to access most of the metrics available on the different dashboards.
 
@@ -44,7 +44,7 @@ To export the shown data and download it as &nbsp;`.csv` &nbsp;file, simply sear
 ## Zoom Feature
 
 :::info Before starting
-To begin, please sign in to the [Analytics Dashboard](https://metrics.nanocosmos.de/login) using your nanoStream Cloud account credentials. <br/>
+To begin, please sign in to the [Analytics Dashboard](https://metrics.nanostream.cloud/login) using your nanoStream Cloud account credentials. <br/>
 If you have not created an account yet, you can [sign up](https://dashboard.nanostream.cloud/auth?signup) or reach out to our dedicated sales team via the [contact form](https://www.nanocosmos.de/contact) or by sending an email to sales(at)nanocosmos.de.
 :::
 

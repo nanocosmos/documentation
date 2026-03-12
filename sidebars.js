@@ -39,8 +39,34 @@ const sidebars = {
       "collapsed": false,
       "items": [
         "cloud/security",
-        "cloud/guardian",
-        "cloud/user_roles",
+        {
+          "type": "category",
+          "label": "Secure Playback (Tokens)",
+          "collapsible": true,
+          "collapsed": true,
+          "items": [
+            "cloud/security_token_best_practices",
+            "cloud/security_token_revocation",
+          ]
+        },
+        {
+          "type": "category",
+          "label": "Monitoring & Detection",
+          "collapsible": true,
+          "collapsed": true,
+          "items": [
+            "cloud/security_token_guardian_view",
+          ]
+        },
+        {
+          "type": "category",
+          "label": "Blocking & Response",
+          "collapsible": true,
+          "collapsed": true,
+          "items": [
+            "cloud/guardian",
+          ]
+        },
       ]
     },
     {
@@ -50,6 +76,7 @@ const sidebars = {
       "collapsed": false,
       "items": [
         "cloud/bintu_api",
+        "cloud/user_roles",
         "cloud/bintu_custom_webhooks",
         "cloud/bintu_stream_tags"
       ]

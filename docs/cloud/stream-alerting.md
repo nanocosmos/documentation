@@ -25,23 +25,23 @@ Starting from version `3.7.1.0` onwards, beside the Analytics Dashboard, the nan
 
 #### via nanoStream Analytics Dashboard
 
-> You can search for **Alerts** of your organization directly on the [nanoStream Analytics Dashboard](https://metrics.nanocosmos.de/troubleshooting?orgHash=&orgName=&countries=&tags=&streamNames=&timeShortcutId=12&timeInterval=day&timeStart=&timeEnd=&worldmapMetric=pi~Playout%20%2F%20Ingest&piWorldSubSwitch=both&abrWorldSubSwitch=chart&cdnWorldSwitch=allCdns&worldView=country&worldRegionZoom=&troubleStart=&troubleEnd=&troubleInterval=second&troubleMode=ingest&troubleIngestInput=&troubleIngestStream=&troublePublishStart=&troublePublishEnd=&troublePublishFineStart=&troublePublishFineEnd=&troublePlayoutInput=&troublePlayoutStream=&troublePlayerId=&troublePlayoutFineStart=&troublePlayoutFineEnd=&ipFilteringStart=&ipFilteringEnd=&ipFilteringStreams=&ipFilteringTags=&alertId=&alertFineStart=&alertFineEnd=&troubleIngestMode=alert) (Troubleshooting).
+> You can search for **Alerts** of your organization directly on the [nanoStream Analytics Dashboard](https://metrics.nanostream.cloud/troubleshooting?orgHash=&orgName=&countries=&tags=&streamNames=&timeShortcutId=12&timeInterval=day&timeStart=&timeEnd=&worldmapMetric=pi~Playout%20%2F%20Ingest&piWorldSubSwitch=both&abrWorldSubSwitch=chart&cdnWorldSwitch=allCdns&worldView=country&worldRegionZoom=&troubleStart=&troubleEnd=&troubleInterval=second&troubleMode=ingest&troubleIngestInput=&troubleIngestStream=&troublePublishStart=&troublePublishEnd=&troublePublishFineStart=&troublePublishFineEnd=&troublePlayoutInput=&troublePlayoutStream=&troublePlayerId=&troublePlayoutFineStart=&troublePlayoutFineEnd=&ipFilteringStart=&ipFilteringEnd=&ipFilteringStreams=&ipFilteringTags=&alertId=&alertFineStart=&alertFineEnd=&troubleIngestMode=alert) (Troubleshooting).
 
 #### via nanoStream Analytics API
 
 Our Analytics API provides 2 different alerting routes:
 
-> [Click here](https://metrics.nanocosmos.de/api/doc/v2/#tag/Alerting) to dive into the alerting routes and visit our nanoStream Analytics API developer documentation.
+> [Click here](https://metrics.nanostream.cloud/api/doc/v2/#tag/Alerting) to dive into the alerting routes and visit our nanoStream Analytics API developer documentation.
 
-- **[`GET` Ingest stream alerts/advices](https://metrics.nanocosmos.de/api/doc/v2/#tag/Alerting/paths/~1api~1v2~1alerting~1ingest/get)**: Returns all detected alerts and advices for all live ingest streams in the last 5 minutes.
-- **[`POST` Custom ingest stream alerts/advices](https://metrics.nanocosmos.de/api/doc/v2/#tag/Alerting/paths/~1api~1v2~1alerting~1ingest~1custom/post)**: Returns all detected alerts and advices for all live ingest streams in the last 5 minutes. Additionally, through this API route, it is possible to pass ingest streams that should either be excluded from detection or define ingest streams for which an alert should be triggered if they are detected as offline.
+- **[`GET` Ingest stream alerts/advices](https://metrics.nanostream.cloud/api/doc/v2/#tag/Alerting/paths/~1api~1v2~1alerting~1ingest/get)**: Returns all detected alerts and advices for all live ingest streams in the last 5 minutes.
+- **[`POST` Custom ingest stream alerts/advices](https://metrics.nanostream.cloud/api/doc/v2/#tag/Alerting/paths/~1api~1v2~1alerting~1ingest~1custom/post)**: Returns all detected alerts and advices for all live ingest streams in the last 5 minutes. Additionally, through this API route, it is possible to pass ingest streams that should either be excluded from detection or define ingest streams for which an alert should be triggered if they are detected as offline.
 
 #### via nanoStream Cloud Dashboard
 
 > You can view **Alerts and Advices** of your organization directly on the [nanoStream Cloud Dashboard](https://dashboard.nanostream.cloud/alerts).
 
 :::info Analytics Enhancement from Version `3.7.1.0`
-With the release of version `3.7.1.0`, the [nanoStream Cloud Dashboard](https://dashboard.nanostream.cloud/) has enhanced its user interface in addition to the [Analytics Dashboard](https://metrics.nanocosmos.de). <br/>
+With the release of version `3.7.1.0`, the [nanoStream Cloud Dashboard](https://dashboard.nanostream.cloud/) has enhanced its user interface in addition to the [Analytics Dashboard](https://metrics.nanostream.cloud). <br/>
 For a detailed guide and additional insights in regards of the **Alerts and Advices** feature, please refer to the cloud [dashboard's documentation page](../dashboard/alerts_and_advices). This resource offers explanations to ensure you make the most out of the features available.
 :::
 
@@ -72,7 +72,7 @@ The analysis for live stream alerts is executed every minute. The considered tim
 :::
 
 To fire up alerts we make use of 4 RTMP stats events for each minute. 20 events are collected in total for the given maximum range of 5 minutes. These events contain information regarding the **stream time ratio**, which is used to identify potential ingest stream performance/quality issues in order to classify them and raise corresponding alerts. 
-This specific stat can be examined in detail using the [troubleshooting](./analytics-dashboard-troubleshooting.mdx#stream-time-ratio) feature on the [Analytics Dashboard](https://metrics.nanocosmos.de/troubleshooting). Each alert is part of an specific **alert category** and owns a unique alert code. 
+This specific stat can be examined in detail using the [troubleshooting](./analytics-dashboard-troubleshooting.mdx#stream-time-ratio) feature on the [Analytics Dashboard](https://metrics.nanostream.cloud/troubleshooting). Each alert is part of an specific **alert category** and owns a unique alert code. 
 
 
 
@@ -97,7 +97,7 @@ Description
 
 ##### Description
 
-This alert is triggered when the alerting system identifies a stream name provided in the request for the [Custom Ingest Stream Alert API route](https://metrics.nanocosmos.de/api/doc/v2/#tag/Alerting/paths/~1api~1v2~1alerting~1ingest~1custom/post) as offline, despite it being expected to be online. This alert only appears in the response object of this API request, since users must explicitly define which streams they expect to be online. Keep in mind the 3-4 minute delay in detection.
+This alert is triggered when the alerting system identifies a stream name provided in the request for the [Custom Ingest Stream Alert API route](https://metrics.nanostream.cloud/api/doc/v2/#tag/Alerting/paths/~1api~1v2~1alerting~1ingest~1custom/post) as offline, despite it being expected to be online. This alert only appears in the response object of this API request, since users must explicitly define which streams they expect to be online. Keep in mind the 3-4 minute delay in detection.
 
 ##### Subtypes
 | Code | Type | Description | Recommended Action |
@@ -234,7 +234,7 @@ These guidelines can be used to get an idea about **what the problem is, why it 
 
 **1.** Open up the corresponding stream playback within the dashboard and look out for anomalies, like continous buffering, stuttering, visual interferences or connection issues.<br/>
 **2.** Execute a hard restart of the ingest connection / encoder source to force application to restart the ingest process.<br/>
-**3.** Use the direct link to the [Troubleshooting Page](https://metrics.nanocosmos.de/troubleshooting) right below the alert to investigate the ingest stream, while looking for anomalies within the stream duration, like performance drops or occurred errors. Using the provided direct link of the alert is automatically filling the necessary data and you can begin to troubleshoot right away. If you do not know what to look for, please consider taking a look at [these examples](./analytics-dashboard-troubleshooting.mdx#stream-time-ratio).<br/>
+**3.** Use the direct link to the [Troubleshooting Page](https://metrics.nanostream.cloud/troubleshooting) right below the alert to investigate the ingest stream, while looking for anomalies within the stream duration, like performance drops or occurred errors. Using the provided direct link of the alert is automatically filling the necessary data and you can begin to troubleshoot right away. If you do not know what to look for, please consider taking a look at [these examples](./analytics-dashboard-troubleshooting.mdx#stream-time-ratio).<br/>
 **4.** If the alert persists, please use the support link of the corresponding alert below to submit a ticket with the necessary details. 
 
 

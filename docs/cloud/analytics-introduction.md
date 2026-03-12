@@ -9,8 +9,8 @@ sidebar_label: nanoStream Analytics
 
 **nanoStream Analytics** offers a great way to monitor and analyze the performance and quality of service of your live streams.<br/>
 Get started today with either:
-- our dedicated **<a href="https://metrics.nanocosmos.de/">Analytics Dashboard</a>**, providing the most important metrics for a quick and easy start
-- and a corresponding **<a  href="https://metrics.nanocosmos.de/api/doc/v2/">API</a>** to get you covered with even more insights and full access of your streaming performances
+- our dedicated **<a href="https://metrics.nanostream.cloud/">Analytics Dashboard</a>**, providing the most important metrics for a quick and easy start
+- and a corresponding **<a  href="https://metrics.nanostream.cloud/api/doc/v2/">API</a>** to get you covered with even more insights and full access of your streaming performances
 
 ![Screenshot: nanoStream Analytics Worldmap](../assets/analytics/analytics.png)
 *Screenshot: nanoStream Analytics Worldmap*
@@ -32,6 +32,6 @@ All of this data is meant to help you improve your Quality of Service and your v
 In addition to improving your technical capabilities, nanoStream Analytics enables also a big advantage to your business intelligence, providing valuable data to your Management and to your Marketing and Sales teams to understand where they should strengthen your service and decide on the next steps to be taken.
 
 :::info Before starting
-To begin, please sign in to the [Analytics Dashboard](https://metrics.nanocosmos.de/login) using your nanoStream Cloud/Bintu account credentials. <br/>
+To begin, please sign in to the [Analytics Dashboard](https://metrics.nanostream.cloud/login) using your nanoStream Cloud/Bintu account credentials. <br/>
 If you have not created an account yet, you can [sign up](https://dashboard.nanostream.cloud/auth?signup) or reach out to our dedicated sales team via the [contact form](https://www.nanocosmos.de/contact) or by sending an email to sales(at)nanocosmos.de.
 :::

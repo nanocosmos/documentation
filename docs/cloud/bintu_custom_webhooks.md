@@ -41,14 +41,11 @@ Webhooks are **server-to-server callbacks** that notify your backend when certai
 | Event | Description |
 |-------|-------------|
 | **on_publish** | A broadcaster attempts to start ingest |
-| **on_publish_done** | Ingest ended |
 | **on_publish_update** | Periodic ingest status update |
-| **on_play** | A viewer attempts playback |
-| **on_play_done** | Viewer disconnects |
+| **on_publish_done** | Ingest ended |
 
 :::caution Playback Protection  
-Using webhooks for **playback** (client-side playback access) is not recommended and may not be enabled for all accounts.  
-For playback-level protection, always use **[nanoPlayer Token Security](/docs/cloud/security#secure-playback-h5live)** instead.
+For playback-level protection, please check out **[nanoPlayer Token Security](/docs/cloud/security#secure-playback)**.
 :::
 
 ### Request and Response Logic
