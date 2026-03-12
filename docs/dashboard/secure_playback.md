@@ -38,13 +38,25 @@ One way to create a secure token for your stream(s) or organisation is to naviga
    - **Entire Streamgroup** The entire stream group by providing/selectiong the streamgroup/stream ID,
    - **Streamname(s)** specify multiple stream names or
    - **Entire Organization** select the entire organization.
-2. **Token Lifetime**: The default expiration date is set to 2 weeks, but you can choose any duration you prefer.
+2. **Token Lifetime**: The token lifetime defines how long a playback token remains valid for authorization. *Whether existing playback sessions remain active depends on the *Force Disconnect on Expiration* option.*
+   - **Enable Token Revocation** allows you to immediately invalidate access for all users who received the token. Once revoked, the token can no longer be used to watch the stream. (**Note:** Revocable tokens can have a maximum lifetime of *24 hours*.)
+   - **Force Disconnect on Expiration** disconnects viewers immediately, once the token expires, even if they are already watching the stream.
+   - **Expiration Date** defines the lifespan of a token.
 
 :::danger Be careful with your organisation-wide tokens
 Always handle tokens as confidential credentials. Be careful who you share your organisation-wide token with, as it gives access to all your assets.
+If an organization-wide token becomes exposed, consider using **revocable tokens** with shorter lifetimes to limit potential misuse and allow immediate revocation if necessary.
 :::
 
-### Optional Settings
+
+:::info Learn more about nanoStream Security
+For more detailed information about advanced playback security features, see the following articles:
+- **[Token Revocation](/docs/cloud/security_token_revocation)**: Learn how to instantly invalidate a playback token across the entire delivery network and disconnect active sessions if a token is compromised or misused.
+- **[Force Disconnect](/docs/nanoplayer/nanoplayer_security_jwt#playback-token-expiration)**: Understand how token expiration affects active playback sessions and how enabling force disconnect ensures viewers are immediately disconnected once a token expires.
+:::
+
+
+### Additional Settings
 
 1. **Not Before Date** (optional): Set the "not before" date to ensure that the token is not valid before a specific date.
 2. **Client IP** (optional): Restrict access to streams to a specific client IP address.
