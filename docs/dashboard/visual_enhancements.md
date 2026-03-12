@@ -72,7 +72,7 @@ After enabling the overlay, the dashboard shows the generated overlay stream. Th
 *Screenshot: Overlay Setup Overview*
 
 The configuration includes:
-- **Overlay Target ID**: Identifier of the stream group where the overlay is applied. By clicking on the icon on the right, you can copy the streamid (f.r.t.l) or open the dedicated stream overview.
+- **Overlay Target ID**: Identifier of the stream group where the overlay is applied. By clicking on the icon on the right, you can copy the streamid or open the dedicated stream overview.
 - **Filename**: The selected watermark image.
 - **Profile**: The applied transcoding profile.
 - **Delay**: The configured delay value.
@@ -105,7 +105,7 @@ After enabling the delay, the delayed stream becomes available in the dashboard.
 The player shows the delayed output, while the configuration below the player displays the active settings.
 The configuration includes:
 
-- **Delay Target ID**: Identifier of the stream group where the delay is applied. By clicking on the icon on the right, you can copy the streamid (f.r.t.l) or open the dedicated stream overview.
+- **Delay Target ID**: Identifier of the stream group where the delay is applied. By clicking on the icon on the right, you can copy the streamid or open the dedicated stream overview.
 - **Delay**: The configured delay value.
 
 The delayed stream automatically receives its input from the original stream.
