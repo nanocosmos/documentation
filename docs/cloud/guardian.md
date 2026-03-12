@@ -36,6 +36,7 @@ With Guardian, you can:
 - **Block individual IP addresses** showing unauthorized or malicious behavior
 - **Block full IP ranges (CIDR masks)** when attacks originate from networks or cloud providers
 - **Block referrer domains** that illegally embed your stream on external sites
+- **Allow-list a set of referrer domains** permitted to play your streams
 - Benefit from **fast propagation** (new connections blocked within max. **6 minutes**)
 - Use automatic **24-hour expiry** for IP blocks (referrers stay blocked until removed)
 - Apply the rules **organization-wide** without additional configuration
@@ -61,15 +62,15 @@ You can interact with the Guardian through:
 
 ## Guardian in the Analytics Dashboard
 
-The **Analytics Dashboard**, available at [metrics.nanocosmos.de](http://metrics.nanocosmos.de), provides a real-time overview of viewer activity, allowing operators to detect anomalies and react within seconds. It is ideal for production teams, monitoring centers, and live event operations that require **immediate situational awareness**.
+The **Analytics Dashboard**, available at [metrics.nanostream.cloud](http://metrics.nanostream.cloud), provides a real-time overview of viewer activity, allowing operators to detect anomalies and react within seconds. It is ideal for production teams, monitoring centers, and live event operations that require **immediate situational awareness**.
 
 | Tab | URL | Description |
 | --- | --- | ----------- |
-| Guardian | [metrics.nanocosmos.de/streamGuard](https://metrics.nanocosmos.de/streamGuard) | The Guardian tab is your central control panel for managing all active and historical security actions. This area is perfect for technical operators who must enforce security rules on the fly. |
-| Breakdown |  [metrics.nanocosmos.de/breakdown](https://metrics.nanocosmos.de/breakdown) | The Breakdown tab helps you detect suspicious patterns. From here, you can block IPs directly with a single click, enabling rapid mitigation during critical moments. |
+| Guardian | [metrics.nanostream.cloud/streamGuard](https://metrics.nanostream.cloud/streamGuard) | The Guardian tab is your central control panel for managing all active and historical security actions. This area is perfect for technical operators who must enforce security rules on the fly. |
+| Breakdown |  [metrics.nanostream.cloud/breakdown](https://metrics.nanostream.cloud/breakdown) | The Breakdown tab helps you detect suspicious patterns. From here, you can block IPs directly with a single click, enabling rapid mitigation during critical moments. |
 
 :::tip Learn More
-For a detailed walkthrough of analytics workflows and Guardian controls, visit the [Analytics Guardian Guide](/docs/analytics/guardian).
+For a detailed walkthrough of analytics workflows and Guardian controls, visit the [Analytics Guardian Guide](/docs/analytics/dashboard/guardian).
 :::
 
 ## Guardian API
@@ -91,7 +92,7 @@ The API provides full programmatic control—ideal for automation, backend syste
 ```js title="guardian/block_single_ip.sh"
 curl --location 'https://guardian.nanostream.cloud/ip' \
 --header 'Content-Type: application/json' \
---header 'X-BINTU-APIKEY: BINTU_API_KEY' \
+--header 'X-BINTU-TOKEN: YOUR_BINTU_TOKEN' \
 --data '{
     "ip": "103.13.113.1",
     "type": "deny",
@@ -104,7 +105,7 @@ curl --location 'https://guardian.nanostream.cloud/ip' \
 ```js title="guardian/block_cidr_mask.sh"
 curl --location 'https://guardian.nanostream.cloud/ip' \
 --header 'Content-Type: application/json' \
---header 'X-BINTU-APIKEY: BINTU_API_KEY' \
+--header 'X-BINTU-TOKEN: YOUR_BINTU_TOKEN' \
 --data '{
     "ip": "103.13.113.0/24",
     "type": "deny",
@@ -117,12 +118,39 @@ curl --location 'https://guardian.nanostream.cloud/ip' \
 ```js title="guardian/block_referrer_domain.sh"
 curl --location 'https://guardian.nanostream.cloud/referrer' \
 --header 'Content-Type: application/json' \
---header 'X-BINTU-APIKEY: BINTU_API_KEY' \
+--header 'X-BINTU-TOKEN: YOUR_BINTU_TOKEN' \
 --data '{
     "domain": "all-good-streams.com",
     "info": "Domain replicating 3 streams on 24/02",
     "type": "deny"
 }'
+```
+
+### Allow-list a Set of Referrer Domains
+The Guardian API supports adding a wildcard (*) in the referrer deny list, 
+so you can now block all domains by default and only allow your specified domains, 
+removing the need to continuously update blocklists.
+
+[Guardian API Reference](https://guardian.nanostream.cloud/docs/#tag/Playout-Referer)
+
+Steps to apply:
+
+**1. Allow your permitted domains**
+```
+POST https://guardian.nanostream.cloud/referer
+{
+  "domain": "app.your-domain.com",
+  "type": "allow"
+}
+```
+
+**2. Block all remaining domains:**
+```
+POST https://guardian.nanostream.cloud/referer
+{
+  "domain": "*",
+  "type": "deny"
+}
 ```
 
 ## How Blocking Works Internally
@@ -139,6 +167,14 @@ This design ensures:
 - complete transparency
 - non-interference with ongoing sessions
 - immediate protection against new connection attempts
+
+## ASN / Network Blocking {#asn-blocking}
+
+For attacks originating from cloud infrastructure, blocking individual IPs is often insufficient because attackers can quickly rotate to new addresses within the same network. ASN blocking allows you to block entire networks or data centers (e.g., all of AWS in a specific region).
+
+**Example:** You identify a suspicious IP in the Guardian View that belongs to AWS India. You can either block this individual client, or request to block the entire network / data center.
+
+ASN blocking is currently managed by nanocosmos support. Contact us with the ASN you want to block, and we will apply the rule across the infrastructure.
 
 ## Best Practices
 

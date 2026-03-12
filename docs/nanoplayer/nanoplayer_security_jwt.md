@@ -16,20 +16,22 @@ There are 2 locations in the dashboard where tokens can be created
 
 ## How to create JSON Web Token for secure playback via API
 
+[Token API Reference](https://doc.pages.nanocosmos.de/cloudtokenservice-api-docs/#operation/Create%20a%20token%20for%20the%20H5Live%20Playback%20service)
+
 ### Request URL and method
 * URL : `https://token.nanostream.cloud/api/v1/splay` 
 * Method: `POST`
 
 ### HTTP request header 
 * `content-type` : `application/json` 
-* Authentication via bintu API key or bintu token 
-  * `X-BINTU-APIKEY` : Your API key. Can be obtained from the nanoStream Cloud dashboard. 
-  * `X-BINTU-TOKEN` : Your bintu token. 
+* Authentication via bintu token (recommended) or API key
+  * `X-BINTU-TOKEN` : Your bintu token. Temporary, session-based, and role-scoped. Recommended for production use.
+  * `X-BINTU-APIKEY` : Your organization API key. Permanent and grants the highest level of access. Can be obtained from the nanoStream Cloud dashboard.
   
 ### HTTP request body 
 * Format: JSON object containing the following fields 
 
-#### Stream group id, stream names or entire organisation 
+#### **Stream group id, stream names or entire organisation** 
 
 * There are 3 options available for identifying the streams included in the token 
 * One of the options must be included 
@@ -49,7 +51,7 @@ There are 2 locations in the dashboard where tokens can be created
   * Value: boolean, true 
   * Example: `"orgawide": true` 
 
-#### Time range restrictions 
+#### **Time range restrictions** 
 
 * Start time 
   * The parameter nbf stands for NotBefore and is the time in the future when the token becomes valid. It is not possible to use the token before this time is reached. 
@@ -64,8 +66,27 @@ There are 2 locations in the dashboard where tokens can be created
   * Key: `exp` 
   * Value: number, UNIX timestamp in seconds 
   * Example: `"exp": 1686903652` 
+  * see [Playback Token Expiration](#playback-token-expiration)
 
-#### Web application domain name/referer restriction 
+#### **Disconnect after expiration**
+
+* Enforce disconnect of active playback sessions when the token expires
+  * optional
+  * Key: `forceDisconnect` 
+  * Value: boolean, default: false 
+  * Example: `"forceDisconnect": true` 
+  * see [Playback Token Expiration](#playback-token-expiration)
+
+#### **Revocability**
+
+* Option to make token revocable
+  * optional
+  * Key: `revocable` 
+  * Value: boolean, default: false 
+  * Implication: if enabled, the maximum token expiration time is limited to 24 hours
+  * Example: `"revocable": true` 
+
+#### **Web application domain name/referer restriction** 
 
 * Web application domain 
   * optional 
@@ -73,7 +94,7 @@ There are 2 locations in the dashboard where tokens can be created
   * Value: string, domain name 
   * Example: `"domain": "example.domain.com"`
   
-#### IP address restriction 
+#### **IP address restriction** 
   
 * IP address
   * optional 
@@ -81,7 +102,7 @@ There are 2 locations in the dashboard where tokens can be created
   * Value: string, IP address 
   * Example: `"ip": "123.45.67.89"` 
 
-#### Tag 
+#### **Tag** 
 
 * Tag 
   * optional 
@@ -89,7 +110,7 @@ There are 2 locations in the dashboard where tokens can be created
   * Value: string, tag 
   * Example: `"tag": "table 7"` 
   
-#### User identifier 
+#### **User identifier** 
 
 * User 
   * optional 
@@ -97,7 +118,7 @@ There are 2 locations in the dashboard where tokens can be created
   * Value: string, user id, name or alias 
   * Example: `"user": "aaa-bbb-ccc-ddd"` 
 
-#### Example of a complete JSON object
+#### **Example of a complete request body JSON object**
 
 ```
 {
@@ -106,7 +127,9 @@ There are 2 locations in the dashboard where tokens can be created
   "domain": "example.domain.com",
   "ip": "123.45.67.89",
   "tag": "table 7",
-  "user": "aaa-bbb-ccc-ddd"
+  "user": "aaa-bbb-ccc-ddd",
+  "revocable": true,
+  "forceDisconnect": false
 }
 ```
 
@@ -114,7 +137,7 @@ There are 2 locations in the dashboard where tokens can be created
 
 * Content type: `application/json; charset=utf-8` 
 
-#### HTTP response codes 
+#### HTTP response codes
 
 * `200`: success 
   * example body: `{"success": true,"data": {"token": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6Im5hbm9jb3Ntb3MifQ..."}}` 
@@ -123,7 +146,34 @@ There are 2 locations in the dashboard where tokens can be created
 * `403`: forbidden 
   * example body: `{"success": false,"errorCode": 1001,"message": "Provided APIKey is not valid"}`
 
+## Playback Token Expiration
+
+After a playback token expires, it **cannot be used for any new authorization actions**.
+
+### Effects of Expiration
+
+Once expired, the token can no longer be used to:
+
+* **Establish new sessions, connections** (e.g., starting playback or reconnecting)
+* **Switch streams on an existing connection** (e.g., changing streams or quality renditions)
+
+Whether **existing sessions remain active or are terminated** depends on the `forceDisconnect` claim in the token.
+
+### Active Session Termination Policy
+
+With `forceDisconnect` enabled
+
+* All active sessions associated with the token are **terminated after expiration**.
+* Any ongoing playback is **forcefully disconnected**.
+
+With `forceDisconnect` disabled (default)
+
+* **Existing sessions remain active** even after the token expires.
+* Only **new operations requiring authorization** (such as new connections or stream switches) are rejected.
+
 ## How to verify JSON Web Token for secure playback via API
+
+[Token API Reference](https://doc.pages.nanocosmos.de/cloudtokenservice-api-docs/#operation/Validate%20a%20token%20for%20the%20H5Live%20Playback%20service)
 
 ### Request URL and method 
 
@@ -152,6 +202,42 @@ There are 2 locations in the dashboard where tokens can be created
   * example body: `{"success": true, "data": {"token": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6Im5hbm9jb3Ntb3MifQ..."}}`
 * `403`: error, invalid token
   * example body: `{"success": false, "errorCode": 1002,"message": "jwt expired"}`
+
+## How to revoke a JSON Web Token for secure playback via API
+
+[Token API Reference](https://doc.pages.nanocosmos.de/cloudtokenservice-api-docs/#operation/Revoke%20a%20token%20for%20the%20H5Live%20Playback%20service)
+
+### Request URL and method 
+
+* URL : `https://token.nanostream.cloud/api/v1/splay/revoke` 
+* Method: `POST`
+
+### HTTP request header 
+* `content-type` : `application/json` 
+* Authentication via bintu token (recommended) or API key
+  * `X-BINTU-TOKEN` : Your bintu token. Temporary, session-based, and role-scoped. Recommended for production use.
+  * `X-BINTU-APIKEY` : Your organization API key. Permanent and grants the highest level of access. Can be obtained from the nanoStream Cloud dashboard.
+  
+### HTTP request body 
+
+* Format: JSON object containing the following fields 
+* Token 
+  * Key: `token` 
+  * Value: string, JSON Web Token
+* Example body: `{"token": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6Im5hbm9jb3Ntb3MifQ..."}`
+
+### HTTP response 
+
+* Content type: `application/json; charset=utf-8`
+
+#### HTTP response codes 
+
+* `204`: success, token was revoked
+  * no response body
+* `400`: error, bad request
+  * example body: `{"success": false, "errorCode": 2011, "message": "The token is not allowed for revocation"}`
+* `403`: error, forbidden
+  * example body: `{"success": false, "errorCode": 1001, "message": "Provided APIKey is not valid"}`
 
 ## How to integrate secure H5Live player configuration with JWT
 

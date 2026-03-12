@@ -180,3 +180,5 @@ Temporary Items
 
 # End of https://www.toptal.com/developers/gitignore/api/macos
 /package-lock.json
+
+draft/

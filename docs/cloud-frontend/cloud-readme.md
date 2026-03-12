@@ -198,7 +198,7 @@ You can filter them by clicking on the "Search" Button and search for stream tag
 
 ## Metrics
 
-By clicking on the menu item "[Metrics](https://bintu-cloud-frontend.nanocosmos.de/metrics)" you will be able to choose between two buttons called "[Login](https://metrics.nanocosmos.de/#/login)" and "[Learn more](https://docs.nanocosmos.de/docs/cloud/analytics/)". By clicking on the first button the nanoStream Analytics tool will be opened in another tab, while clicking on second button opens the nanocosmos blog.
+By clicking on the menu item "[Metrics](https://bintu-cloud-frontend.nanocosmos.de/metrics)" you will be able to choose between two buttons called "[Login](https://metrics.nanostream.cloud/#/login)" and "[Learn more](https://docs.nanocosmos.de/docs/cloud/analytics/)". By clicking on the first button the nanoStream Analytics tool will be opened in another tab, while clicking on second button opens the nanocosmos blog.
 
 
 ## Organisation

@@ -346,8 +346,10 @@ Example ingest comparison:
 
 | Type | Example |
 |-------|---------|
-| **RTMP (non-encrypted)** | `rtmp://bintu-stream.nanocosmos.de:1935/live/STREAM` |
-| **RTMPS (encrypted)** | `rtmps://bintu-stream.nanocosmos.de:1937/live/STREAM` |
+| **RTMP (non-encrypted)** | `rtmp://bintu-stream.nanocosmos.de:1935/live/STREAM-NAME` |
+| **RTMPS (encrypted)** | `rtmps://bintu-stream.nanocosmos.de:1937/live/STREAM-NAME` |
+| **SRT   (encrypted)** | `srt://bintu-srt.nanocosmos.de:5000?streamid=push:STREAM-NAME&...` |
+
 
 :::tip Security Features
 

@@ -287,7 +287,7 @@ With the introduction of version 2.25 we made versioning of our API and the Anal
 ## 2.11 - public API
 
 -  added direct API access: accounting data for last month can be queried
--  created API documentation: https://metrics.nanocosmos.de/api/doc/
+-  created API documentation: https://metrics.nanostream.cloud/api/doc/
 
 ## 2.10 - troubleshooting
 

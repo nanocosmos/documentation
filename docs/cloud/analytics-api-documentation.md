@@ -7,7 +7,7 @@ sidebar_label: Documentation
 
 ## Technical Developer Documentation
 
-For API route specifications please refer to our <a className="badge-inText" href="https://metrics.nanocosmos.de/api/doc/v2/">technical API documentation. ⚙️</a>
+For API route specifications please refer to our <a className="badge-inText" href="https://metrics.nanostream.cloud/api/doc/v2/">technical API documentation. ⚙️</a>
 
 ## General Details
 
@@ -79,8 +79,8 @@ Either the calculated **ratios and errors** are based on your **organisation**, 
 #### API Details
 
 Basically the API routes are divided in 2 groups: 
-- [SPSR API Routes](https://metrics.nanocosmos.de/api/doc/v2/#tag/Playback-start-success)
-- [PSE API Routes](https://metrics.nanocosmos.de/api/doc/v2/#tag/Playback-start-errors)
+- [SPSR API Routes](https://metrics.nanostream.cloud/api/doc/v2/#tag/Playback-start-success)
+- [PSE API Routes](https://metrics.nanostream.cloud/api/doc/v2/#tag/Playback-start-errors)
 
 **SPSR** returns 3 metric values:
 - Total count of errors

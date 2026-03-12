@@ -145,7 +145,7 @@ Below these three buttons, you can see the following sections:
     **nanoStream** also provides a `secure` feature to generate a JWT playback token. This lets you customize token settings like expiration date, not-before date, client IP, domain, user ID, or a tag for enhanced security. \
     Verify whether this feature is available for your organization by navigating to [dashboard.nanostream.cloud/organisation](https://dashboard.nanostream.cloud/organisation) in your dashboard. *To enable this feature for your organization, contact us via [nanocosmos.net/contact](https://www.nanocosmos.net/contact)*. 
 
-    You can learn more about nanoStream Cloud Security on our dedicated feature docs: **[nanoStream Cloud: Secure Playback (H5Live)](/docs/cloud/security#secure-playback-h5live)**.
+    You can learn more about nanoStream Cloud Security on our dedicated feature docs: **[nanoStream Cloud: Secure Playback (H5Live)](/docs/cloud/security#secure-playback)**.
     :::
 3.  **[Code Snippets](./code_snippets)**: We provide two types of code snippets to embed the H5Live Player with your stream on your website: **Live Captions Player Code Snippet**, **iFrame Code Snippet** and **HTML Code Snippet**. You can simply copy and paste the appropriate code into your webpage to integrate the nanoStream H5Live Player.
 4. **[Stream Overview](./stream_overview)**: This section provides a link to the full stream overview page. Clicking the URL will take you to the detailed overview with more relevant details about the stream.

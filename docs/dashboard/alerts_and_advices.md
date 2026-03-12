@@ -35,7 +35,7 @@ Selecting an alert opens a side panel with detailed information, structured as H
 - **Alert title** at the top
 - A row of **available actions**:
   - **Open Playout** – View the stream to verify its current status.
-  - **Troubleshooting** – Open the [metrics.nanocosmos.de](https://metrics.nanocosmos.de/) to inspect ingest-to-playout metrics. Learn more about troubleshooting [here](../cloud/analytics-dashboard-troubleshooting.mdx).
+  - **Troubleshooting** – Open the [metrics.nanostream.cloud](https://metrics.nanostream.cloud/) to inspect ingest-to-playout metrics. Learn more about troubleshooting [here](../cloud/analytics-dashboard-troubleshooting.mdx).
   - **Open Support Ticket** – Create a support request so we can assist you directly.
 
 #### Alert Metadata
@@ -77,7 +77,7 @@ Determine if the alert message is self-explanatory. Often, the alert might provi
 Always consult the specific [alert code description](../cloud/stream-alerting.md#alert-codes) for a deeper understanding of the alert and the recommended corrective actions.
 
 **3. Troubleshoot the Alert**:
-If the problem persists or isn't evident, consider using our troubleshooting tools available on the [Analytics Dashboard](https://metrics.nanocosmos.de/troubleshooting). 
+If the problem persists or isn't evident, consider using our troubleshooting tools available on the [Analytics Dashboard](https://metrics.nanostream.cloud/troubleshooting). 
 
 **4. Contact Support**:
 If challenges persist, we're here to help! [Create a new support request](https://www.nanocosmos.de/support) and ensure you attach all relevant data related to the alert. Our team will address your concerns promptly.
