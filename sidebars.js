@@ -113,6 +113,7 @@ const sidebars = {
         "dashboard/stream_overview",
         "dashboard/live_processing",
         "dashboard/live_captions",
+        "dashboard/visual_enhancements",
         "dashboard/code_snippets",
         "dashboard/abr_transcoding",
         "dashboard/secure_playback",
