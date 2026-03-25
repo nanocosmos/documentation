@@ -10,44 +10,21 @@ sidebar_label: Latest
 
 ## For easy-to-use migration follow our [guide](https://docs.nanocosmos.net/docs/nanoplayer/nanoplayer_v5_migration_guide)
 
-## **[5.0.5]**
+## **[5.0.6]**
 
 ### **Release Notes**
 
-This update resolves a slight audio delay in MOQ playback that could gradually become noticeable after repeated stream switches and improves the robustness of `config.general.serverDomain` parsing for edge cases. In addition, `onReady` metrics have been improved, and an inconsistency in error emission for malformed or missing source configurations has been fixed.
+This release fixes an fullscreen issue with MOQ playback on iOS 26.4 and higher where the video isn't visible. THIS UPDATE IS MANDATORY FOR NANOPLAYER 5.0.X USERS AND SHOULD BE APPLIED ASAP.
 
 ### **Changelog**
 
 ### Fixed
 
-- slight audio delay in MOQ playback that could gradually become noticeable after repeated stream switches
-- ensure a dedicated error with code 5004 is emitted consistently when the source configuration is missing or incomplete
+- video not visible in fullscreen mode with MOQ playback on iOS 26.4 and higher
 
-### Improved
+### **Release Package 5.0.6**
 
-- metrics for the `onReady` event
-- robustness of `config.general.serverDomain` parsing for edge cases
-
-## **[5.0.4]**
-
-### **Release Notes**
-
-This release includes an improvement to the overall resilience of the player’s error handling and recovery. It resolves an issue that caused a black screen during error recovery in MSE and HLS playback modes. Furthermore, it fixes a playback start error that occurred when MOQ mode was enabled without a configured `server.webtransport` URL.
-
-### **Changelog**
-
-### Fixed
-
- - an issue causing a black screen during error recovery in MSE and HLS playback modes.
- - a playback start failure that occurred when MOQ mode was enabled but no server.webtransport URL was provided in the configuration.
-
-### Improved
-
-- Enhanced overall resilience of error handling and recovery mechanisms.
-
-### **Release Package 5.0.4**
-
-- [5.0.4](https://files.nanocosmos.de/index.php/s/BGD7YEiXxsirPmw)
+- [5.0.6](https://files.nanocosmos.de/index.php/s/HR4Hj3KqBdsfXKJ)
 - [latest 5.x](https://files.nanocosmos.de/index.php/s/y4e2axW7s8qEtJb)
 - [latest](https://files.nanocosmos.de/index.php/s/2tpCzgRjNEZDzeP)
 
