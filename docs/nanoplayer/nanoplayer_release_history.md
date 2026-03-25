@@ -10,6 +10,18 @@ sidebar_label: History
 
 ## For easy-to-use migration follow our [guide](https://docs.nanocosmos.net/docs/nanoplayer/nanoplayer_v5_migration_guide)
 
+## **[5.0.6]**
+
+### **Release Notes**
+
+This release fixes an fullscreen issue with MOQ playback on iOS 26.4 and higher where the video isn't visible. THIS UPDATE IS MANDATORY FOR NANOPLAYER 5.0.X USERS AND SHOULD BE APPLIED ASAP.
+
+### **Changelog**
+
+### Fixed
+
+- video not visible in fullscreen mode with MOQ playback on iOS 26.4 and higher
+
 ## **[5.0.5]**
 
 ### **Release Notes**
@@ -38,8 +50,8 @@ This release includes an improvement to the overall resilience of the player’s
 
 ### Fixed
 
- - an issue causing a black screen during error recovery in MSE and HLS playback modes.
- - a playback start failure that occurred when MOQ mode was enabled but no server.webtransport URL was provided in the configuration.
+- an issue causing a black screen during error recovery in MSE and HLS playback modes.
+- a playback start failure that occurred when MOQ mode was enabled but no server.webtransport URL was provided in the configuration.
 
 ### Improved
 
@@ -61,7 +73,7 @@ This release includes fixes htmlFor loading timeout behavior and fast-start buff
 ### Improved
 
 - mobile devices no longer dim or lock the screen during playback in MOQ mode, ensuring consistent behavior across browsers and playback modes.
-    - controlled via playback.enableWakeLock (default: enabled)
+  - controlled via playback.enableWakeLock (default: enabled)
 
 ## **[5.0.2]**
 
