@@ -25,7 +25,7 @@ MOQ builds on modern browser APIs such as **WebTransport**, **WebCodecs**, and *
 - **Mozilla Firefox**
   - Supported in version 130 and higher on Windows and macOS.
 - **Apple Safari (macOS/iOS/iPadOS)**:
-  - No official support at the time (Safari/WebKit 18). Experimental feature flags already exist, but not completely working yet.
+  - Supported in OS versions 26.4 and higher.
 
 ## New Configuration Options
 
