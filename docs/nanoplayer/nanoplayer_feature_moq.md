@@ -30,7 +30,7 @@ MOQ depends on **WebTransport** and **WebCodecs** APIs in modern browsers:
 
 - **Google Chrome, Microsoft Edge and other Chromium-based browsers (Opera, Brave, Samsung Internet, etc.)**: Supported in Chromium version 110 and higher.
 - **Mozilla Firefox**: Supported in version 130 and higher on Windows and macOS.
-- **Apple Safari (macOS/iOS/iPadOS)**: No official support at the time (v18). Experimental feature flags already exist, but not completely working yet.
+- **Apple Safari (macOS/iOS/iPadOS)**: Supported in OS versions 26.4 and higher.
 
 ---
 
