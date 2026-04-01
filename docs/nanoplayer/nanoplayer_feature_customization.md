@@ -213,13 +213,25 @@ Use Case: Suitable for cases where filling the player frame with the video conte
 
 ## Other Customizations {#other-customizations}
 
-To disable all custom properties in the player, e.g. in case you want to build your controls or display the video as a background without any icons, you can simply set the `view` to false in `config.style.controls`. In this way, you receive a plain video element.
+The NanoPlayer exposes several configuration options to control how the player is rendered, from
+completely hiding the player UI to accessing the underlying media element directly.
 
-```javascript
+## Disable View Completely
+ 
+Setting `view` to `false` removes all player chrome: controls, icons, overlays, and container
+styling. You receive a plain media element: either a `<video>` or `<canvas>` depending on the
+active playback mode with no visual wrapping from the player.
+ 
+```js
 "style": {
     "view": false
 }
 ```
+ 
+**When to use this:**
+- Embedding the stream as a background element
+- Integrating the player into a design system where no default styling should be used
+ 
 
 ### Disable built-in controls
 
@@ -234,6 +246,33 @@ Inline controls are set by default. However, it is possible to disable them by c
 :::info
 If you create custom controls or other overlay elements make sure to set the z-index value > 10 to ensure they are positioned on top of the video layer.
 :::
+
+### Video Element vs. Canvas
+ 
+Depending on the active playback mode, the player renders using different underlying elements:
+ 
+| Playback mode | Element | Notes |
+|---|---|---|
+| MSE / HLS (h5live) | `<video>` | Standard HTML5 video element |
+| MoQ / WebCodecs | `<canvas>` | Frames are decoded and painted by the player |
+ 
+ 
+### Applying your own styles
+ 
+If you need to override default appearance, for example, to fill a container, apply a border,
+or set a background colour, target the player's wrapper rather than the media element directly:
+ 
+```css
+/* Target the player wrapper */
+#playerDiv {
+    border-radius: 8px;
+    overflow: hidden;
+    background: #000;
+}
+```
+ 
+Avoid setting `width`, `height`, or `object-fit` directly on the inner media element, as the player manages these internally.
+---
 
 ### Style as an audio-only player
 

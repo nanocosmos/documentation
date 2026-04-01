@@ -85,7 +85,7 @@ In case of bintu configuration being set via **group** or **entries** or the **s
 
 ### 3. Canvas vs Video Element
 
-MoQ playback mode now uses `<canvas>` instead of HTML5 `<video>` element.
+MoQ playback mode now uses `<canvas>` instead of HTML5 `<video>` element. Read more about this difference in [UI customization](./nanoplayer_feature_customization##other-customizations)
 
 **Migration Options:**
 
