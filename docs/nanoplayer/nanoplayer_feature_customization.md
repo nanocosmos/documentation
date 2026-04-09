@@ -218,9 +218,10 @@ completely hiding the player UI to accessing the underlying media element direct
 
 ## Disable View Completely
  
-Setting `view` to `false` removes all player chrome: controls, icons, overlays, and container
+Setting `style.view` to `false` removes all player chrome: controls, icons, overlays, and container
 styling. You receive a plain media element: either a `<video>` or `<canvas>` depending on the
-active playback mode with no visual wrapping from the player.
+active playback mode with no visual wrapping from the player. 
+Since H5Live Player version 5.0.7 default `CanvasElement` behavior for MOQ playback with `style.view: false` is adjusted to match `HTMLVideoElement` behavior in MSE/HLS playback, ensuring similar display across all playback modes.
  
 ```js
 "style": {
