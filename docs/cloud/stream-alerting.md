@@ -132,8 +132,7 @@ This alert is triggered when the system detects that an ingest stream is connect
 | Code | Type | Description | Recommended Action |
 | ---- | ---- | ----------- | ------------------ |
 | 22010 | Inactive Ingests | The ingest stream is connected but not actively sending data. | Check your encoder or streaming source configuration. Ensure the source is actively sending data to the stream. |
-| 22011 | Inactive and Active Ingests | The ingest stream has both inactive and active connections. | Check your encoder or streaming source configuration. Some connections are not actively sending data while others are. |
-
+| 22011 | Inactive and Active Ingests | The ingest stream has both inactive and active connections. | Check your encoder or streaming source configuration. Some connections are not actively sending data while others are. Make sure to terminate all unintended (inactive) ingests, so the active connection is the only one running. |
 -----
 
 ### <span className="analytics-alertHeading-performance" /> [23000 - 23999]
