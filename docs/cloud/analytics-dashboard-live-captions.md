@@ -7,7 +7,7 @@ sidebar_label: Live Captions
 
 # Live Captions
 
-The Live Captions page provides usage analytics for the Live Captions service. It gives you an overview of transcription session uptime, language distribution, and per-stream usage — for up to 92 days of historical data. Each widget includes a CSV export button to download the underlying data for that widget.
+The Live Captions page provides usage analytics for the Live Captions service. It gives you an overview of transcription session uptime, language distribution, and per-stream usage.
 
 :::info
 Live Captions must be enabled for your organization before data appears here. To learn how to set up and configure Live Captions, see the [Live Captions setup guide](/docs/dashboard/live_captions).
@@ -33,7 +33,7 @@ Click any bar segment to open a detailed breakdown for that time period and serv
 
 ## Source Language
 
-A pie chart showing the distribution of transcription session uptime by **source language** — the spoken language being transcribed by the ASR (Automatic Speech Recognition) engine. Each slice displays the percentage share and total uptime (e.g., `2h 15m 30s`), sorted by uptime descending.
+A pie chart showing the distribution of transcription session uptime by **source language** — the spoken language being transcribed by the ASR (Automatic Speech Recognition) engine. Each slice displays the percentage share and total uptime (e.g., `2.26 h`), sorted by uptime descending.
 
 Click any slice to drill down into a per-stream uptime breakdown for that language.
 
