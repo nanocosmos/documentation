@@ -7,7 +7,7 @@ sidebar_label: Live Captions
 
 # Live Captions
 
-The Live Captions page provides usage analytics for the live captioning and transcription service. It gives you an overview of transcription session uptime, language distribution, and per-stream usage — for up to 92 days of historical data. All widgets support CSV export.
+The Live Captions page provides usage analytics for the Live Captions service. It gives you an overview of transcription session uptime, language distribution, and per-stream usage — for up to 92 days of historical data. Each widget includes a CSV export button to download the underlying data for that widget.
 
 :::info
 Live Captions must be enabled for your organization before data appears here. To learn how to set up and configure Live Captions, see the [Live Captions setup guide](/docs/dashboard/live_captions).
@@ -15,11 +15,13 @@ Live Captions must be enabled for your organization before data appears here. To
 
 ## Uptime Usage
 
-A bar chart showing the total uptime hours of live caption sessions over the selected time range. Each bar represents a time period, and the aggregate total is shown in the top-right corner of the widget.
+A stacked bar chart showing total transcription session uptime over the selected time range, broken down by ASR (Automatic Speech Recognition) service — **Whisper** and **Deepgram**. Each bar represents one time period; each colored segment corresponds to one service. The top-right corner of the widget shows individual totals for Whisper and Deepgram, as well as the combined total across both services.
 
-Uptime is measured from the start to the end of a transcription session. Partial or real-time usage is not reflected until the session ends.
+:::note
+Uptime is measured from the start to the end of a transcription session. Sessions that are still active are not reflected until they end.
+:::
 
-Click on any bar to open a detailed breakdown for that time period.
+Click any bar segment to open a detailed breakdown for that time period and service.
 
 <img src={require('../assets/analytics/analytics-live-captions-uptime-usage.png').default} width="100%" />
 
@@ -31,9 +33,9 @@ Click on any bar to open a detailed breakdown for that time period.
 
 ## Source Language
 
-A pie chart showing the distribution of transcription session uptime by **source language** — the spoken language of the stream that the ASR (Automatic Speech Recognition) engine transcribes. Each slice shows the percentage and total uptime in a readable format (e.g., 2h 15m 30s), sorted by uptime descending.
+A pie chart showing the distribution of transcription session uptime by **source language** — the spoken language being transcribed by the ASR (Automatic Speech Recognition) engine. Each slice displays the percentage share and total uptime (e.g., `2h 15m 30s`), sorted by uptime descending.
 
-Click on any slice to drill down into a per-stream uptime breakdown for the selected language.
+Click any slice to drill down into a per-stream uptime breakdown for that language.
 
 <img src={require('../assets/analytics/analytics-live-captions-source-language.png').default} width="100%" />
 
@@ -45,9 +47,9 @@ Click on any slice to drill down into a per-stream uptime breakdown for the sele
 
 ## Target Language
 
-A pie chart showing the distribution of transcription session uptime by **target language** — the language captions are translated into and displayed to viewers (e.g., `en`, `de`, `fr`). Since a single stream can output captions in multiple target languages simultaneously, each language is tracked independently. Sorted by uptime descending.
+A pie chart showing the distribution of transcription session uptime by **target language** — the language into which captions are translated and displayed to viewers (e.g., `en`, `de`, `fr`). Because a single stream can output captions in multiple target languages simultaneously, each language is tracked independently. Sorted by uptime descending.
 
-Click on any slice to drill down into a per-stream uptime breakdown for the selected language.
+Click any slice to drill down into a per-stream uptime breakdown for that language.
 
 <img src={require('../assets/analytics/analytics-live-captions-target-language.png').default} width="100%" />
 
@@ -59,7 +61,7 @@ Click on any slice to drill down into a per-stream uptime breakdown for the sele
 
 ## Uptime Usage by Stream
 
-A paginated table listing uptime duration per stream name.
+A paginated table showing total caption session uptime per stream.
 
 | Column | Description |
 |---|---|
@@ -71,3 +73,4 @@ You can search by stream name and sort by either column. The footer shows the to
 <img src={require('../assets/analytics/analytics-live-captions-usage-by-stream.png').default} width="100%" />
 
 *Screenshot: Uptime Usage by Stream*
+
