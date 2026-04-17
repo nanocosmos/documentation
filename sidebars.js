@@ -323,6 +323,7 @@ const sidebars = {
           "items": [
             "cloud/analytics-dashboard-home",
             "cloud/analytics-dashboard-breakdown",
+            "cloud/analytics-dashboard-live-captions",
             "cloud/analytics-dashboard-worldmap",
             "cloud/analytics-dashboard-h5live",
             "cloud/analytics-dashboard-adaptive-bitrate",
