@@ -625,7 +625,7 @@ The ABR Stream Omission allows users to:
 
 Potential use case:
 
-- omit high or low quality depending on expected bandwith conditions e.g. mobile vs desktop
+- omit high or low quality depending on expected bandwidth conditions e.g. mobile vs desktop
 
 Configuration:
 

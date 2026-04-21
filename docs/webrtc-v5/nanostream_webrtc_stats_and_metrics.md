@@ -46,7 +46,7 @@ There are specific stats that indicate the current upstream quality:
 - **packetLoss** - Percentage of packets lost during past 10 seconds.
 - **videoSendDelay** (Chromium based browsers only) - Delay before video frames are send to the server. 
 
-Those statitics will allow you to show a **traffic light** to your webcasters, that indicates the current ingest quality. This regards the upstream network conditions from your customers browsers to our webcast servers.
+Those statistics will allow you to show a **traffic light** to your webcasters, that indicates the current ingest quality. This regards the upstream network conditions from your customers browsers to our webcast servers.
 
 ### Traffic Light Recommendations
 

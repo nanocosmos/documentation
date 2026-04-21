@@ -26,7 +26,7 @@ Read more about playback section in [config](./nanoplayer_api#NanoPlayer..config
 
 :::caution Important
 It is important to note, that the recoveries are counted in the frame of **60 seconds**.
-When a recovery is triggered, the last 60 seconds of playback are checked for the total number of recoveries which were set off. If the number (of recoveries) is higher than the allowed maximum number within this time frame, an error is thrown. If no error occured and there were no issues in i.e. media decoding in the last 60 seconds, the count will start again from 0. The number of allowed recoveries can be customized.
+When a recovery is triggered, the last 60 seconds of playback are checked for the total number of recoveries which were set off. If the number (of recoveries) is higher than the allowed maximum number within this time frame, an error is thrown. If no error occurred and there were no issues in i.e. media decoding in the last 60 seconds, the count will start again from 0. The number of allowed recoveries can be customized.
 :::
 
 The default number of recoveries is `3`. When the threshold is reached, an error is thrown, followed by a pause with reason: `'playbackerror'`.

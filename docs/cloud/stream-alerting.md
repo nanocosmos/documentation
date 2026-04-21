@@ -60,7 +60,7 @@ Alerts are categorized in multiple **severity levels**, that should help to prio
 | <span className="badge badge-minorAlert">Minor</span>         | low       | The corresponding issue might partially affecting the stream quality. |
 | <span className="badge badge-adviceAlert">Advices</span>      | info      | This can be seen as a general info about unused streaming potential. Please consider reading the advice message or refer to the [advice codes in the table below.](#advices)|
 
-Lastly we fire an **<u>Advice</u>** for non-ABR streams with a higher bitrate than 4 MBit on every RTMP stat event. If you encounter such an advice, please consider using transcoding profiles ([Activating ABR](../dashboard/abr_transcoding)) to insure a better streaming experience for clients located in lower bandwith regions.
+Lastly we fire an **<u>Advice</u>** for non-ABR streams with a higher bitrate than 4 MBit on every RTMP stat event. If you encounter such an advice, please consider using transcoding profiles ([Activating ABR](../dashboard/abr_transcoding)) to insure a better streaming experience for clients located in lower bandwidth regions.
 
 ## Alert Detection
 
@@ -159,7 +159,7 @@ If the average of all [stream time ratio (STR)](./analytics-dashboard-troublesho
             <td>23001</td>
             <td>Suboptimal Performance</td> 
             <td>The ingest streaming is not optimal; ultra-low latency reliant apps may be affected.</td>
-            <td rowSpan="2">Restart the stream and do a bandwith speedtest afterwards.</td>
+            <td rowSpan="2">Restart the stream and do a bandwidth speedtest afterwards.</td>
         </tr>
         <tr>
             <td>23002</td>
