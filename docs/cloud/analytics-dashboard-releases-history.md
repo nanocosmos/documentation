@@ -7,6 +7,37 @@ sidebar_label: History
 
 # Changelog
 
+## 2.32.0 - Live Captions & Inactive Ingest Alerts
+
+-  added **Live Captions** analytics page (`/liveCaptions`) with the following widgets
+-  uptime usage (timeseries + CSV export)
+-  uptime per source language (zoom + CSV export)
+-  uptime per target language (zoom + CSV export)
+-  uptime usage per stream name (zoom + CSV export)
+
+-  added **Inactive Ingest** alert to the Troubleshooting section
+-  new dedicated widget shows the timeline of inactive ingest occurrences with legend visibility toggling
+
+-  worldmap ABR switch metric improvements
+   -  ABR profile switch now displays the correct quality levels where a stream switched into
+   -  simplified worldmap's ABR switches hover tooltip to display aggregated total counts
+
+## 2.31.0 - Guardian View & Token Revocation
+
+-  added playback token revocation to Guardian View for misuse detection
+   -  the JWT Misuse table now displays a **"revoked"** status column, showing at a glance whether each token has been revoked
+   -  clicking on a table row opens a detail modal with a dedicated **"Playback Token Revocation"** panel, showing the current revocation status and a **"Revoke"** button to immediately revoke the token
+   -  the IP Misuse detail modal now also lists associated playback tokens with their revocation status and the ability to revoke them directly
+   -  expired tokens are clearly indicated as **"Expired"** and cannot be revoked
+-  renamed "Concurrency" to "Max Concurrency" in the JWT misuse table and descriptions for clarity
+
+## 2.30.0 - Webcaster v6 Support & JWT Misuse Table & H5Live StopReasons/ErrorCodes Update
+
+-  added misuse analysis via JWT to Guardian View
+-  webcaster widgets now support webcaster version 5 and version 6 metrics
+   -  included buttons on UI to switch between version 5 and version 6 on the 'Status/Error Codes' widget on the Webcaster tab
+   -  added 'BROADCAST_STOPPED' for v6 as a new stop reason category for 'Stop reasons' widget
+
 ## 2.29 Cloud Optimizations
 
 - internal system optimizations

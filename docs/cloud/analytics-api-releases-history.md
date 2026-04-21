@@ -7,6 +7,32 @@ sidebar_label: History
 
 # Changelog
 
+## 2.33.0 - Playback Token Revocation API & JTI Lookup
+
+-  added support for Playback Token Revocation through Analytics Dashboard
+-  fixed a bug, where MoQ ingest/playout counts were not added to Worldmap > ingest/playout counts metric
+
+## 2.32.0 - Webhook API & WebRTC v6 Support & H5Live Controller Update & JWT Misuse
+
+-  added API routes for alert manager / mimir API:
+   -  `/api/v2/alerting/config/webhook` (GET) -> get configured webhook receiver
+   -  `/api/v2/alerting/config/webhook/add` (POST) -> add new webhook receiver to config
+   -  `/api/v2/alerting/config/webhook/delete` (DELETE) -> delete webhook receiver from config
+   -  `/api/v2/alerting/config/webhook/replace` (PUT) -> overwrite webhook receiver config
+
+-  added API routes for misuse detection via playback tokens:
+
+   -  `/api/v2/usage/token/playback/details` (GET) -> get playback token usage details
+
+-  added API routes for h5live stop reasons & error codes:
+
+   -  `/api/v2/h5live/stopReasons/timeseries` (GET) -> get h5live stop reasons timeseries
+   -  `/api/v2/h5live/errorCodes/timeseries` (GET) -> get h5live error codes timeseries
+
+## 2.31.5 - MoQ traffic
+
+- added MoQ protocol traffic insights to playout traffic
+
 ## 2.31 - Cloud Optimizations
 
 - internal system optimizations
