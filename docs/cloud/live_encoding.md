@@ -182,7 +182,7 @@ nanoStream Cloud works with a wide range of live encoder configurations. In gene
 | **Encoder GOP Size** | ~2 seconds (e.g. 50-60 frames for 25/30 fps) |
 | **Bitrate** | Choose *as low as possible, as high as necessary* |
 | **Camera Resolution** | Configure the camera with the max. resolution you would like to use for streaming, *not higher*. Don't capture `1080p` if you stream with `720p` |
-| **Upscaling** | Avoid upscaling, it wastes bandwith and reduces quality |
+| **Upscaling** | Avoid upscaling, it wastes bandwidth and reduces quality |
 | **Resolution Choice** | Prefer `720p` for ultra-low latency use cases|
 
 
@@ -207,7 +207,7 @@ nanoStream Cloud works with a wide range of live encoder configurations. In gene
 | **1080p Full HD** (*1920x1080*) | ≥ 2-3 MBit/s |
 | **4K** (*4096x2160*) | ≤ 6 MBit/s |
 
-:::info Low-bandwith tip
+:::info Low-bandwidth tip
 If you expect to have audiences in bad network environments (e.g. mobile or public Wi-Fi), we suggest to reduce the bitrate to far below `1 MBit/s - (1000 kBits/s)`, for example `500 kBits/s`.
 :::
 
@@ -224,7 +224,7 @@ There you will once again find instructions for the most common encoders (includ
 :::
 
 
-## Data Traffic (Bandwith Usage)
+## Data Traffic (Bandwidth Usage)
 
 Data traffic depends and grows with the `bitrate sent from the encoder` and the `bitrate received for every viewer`.
 You can estimate the required upstream or downstream traffic per hour as:

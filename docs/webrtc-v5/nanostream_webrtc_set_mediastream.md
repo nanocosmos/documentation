@@ -37,7 +37,7 @@ Use the [startPreview()](./nanostream_webrtc_api#rtcuserstartpreviewconfig) call
 When utilizing this API call, application developers are responsible for the externally created stream.
 
 - **Maintaining the provided framerate** is critical for end to end latency of the webcast.
-- **Tab throttling**. When the current tab gets out of focus, most browsers will enable tab throttling. Timers, like `setInterval`, will be updated less frequently. You should check wether the tab left focus, and warn your users accordingly. E.g. with the DOM [visibilitychange event](https://developer.mozilla.org/en-US/docs/Web/API/Document/visibilitychange_event)
+- **Tab throttling**. When the current tab gets out of focus, most browsers will enable tab throttling. Timers, like `setInterval`, will be updated less frequently. You should check whether the tab left focus, and warn your users accordingly. E.g. with the DOM [visibilitychange event](https://developer.mozilla.org/en-US/docs/Web/API/Document/visibilitychange_event)
 - **Video dimensions (width & height)** must not change during a webcast.
 - Under certain circumstances the browsers encoder will **adapt the video resolution**, for example when **CPU overusage** is being detected.
 

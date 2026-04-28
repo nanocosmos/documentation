@@ -22,7 +22,7 @@ In general you will see metrics for all of the streams available for your organi
 It is possible to use the following filter options to get a more fine-grained overview:
 
 - **Country**: let you select one or more countries
-- **Tag**: can be used to filter for specifc stream names
+- **Tag**: can be used to filter for specific stream names
   - you need to assign [tags in Bintu](../dashboard/start_streaming#tags) to your stream(s) to be able to use them for filtering, this is described in our [Blog post about Analytics](https://www.nanocosmos.de/blog/2019/09/nanostream-analytics-get-insights-in-your-nanostream-cloud-service-and-h5live-player-performance/) (search for "Tagging").
 :::tip Good to know
 Tag selection works like an `AND` filter, only metrics for streams are shown, which have all of the selected tags assigned

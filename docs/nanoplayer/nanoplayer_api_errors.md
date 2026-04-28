@@ -82,7 +82,7 @@ These errors have codes in a **range from 2000 to 2999**.
 
 2xxx codes are related to fetching the media stream on the player side and the occurrence
 of timeouts during loading or playback. It is about the availability of the stream on the player side,
-which can be connected to the general availabilty of the stream, but as well to bad network conditions
+which can be connected to the general availability of the stream, but as well to bad network conditions
 on the player side.<br />
 The most frequent errors here are `2001`, `2002`, `2003` and `2004`.
 
@@ -176,7 +176,7 @@ In most cases it makes sense to check the configuration that has been used.
 
 ### 5001 "?javascript error?"
 
-A javascript error occured during setup promise execution. Most often the is reason an 'undefined' error within the setup promise resolve or triggered events (e.g. [`onReady`](./nanoplayer_api/#NanoPlayer..event_onReady), [`onMute`](./nanoplayer_api/#NanoPlayer..event_onMute) or [`onVolumeChange`](./nanoplayer_api/#NanoPlayer..event_onVolumeChange)) during setup.<br />
+A javascript error occurred during setup promise execution. Most often the is reason an 'undefined' error within the setup promise resolve or triggered events (e.g. [`onReady`](./nanoplayer_api/#NanoPlayer..event_onReady), [`onMute`](./nanoplayer_api/#NanoPlayer..event_onMute) or [`onVolumeChange`](./nanoplayer_api/#NanoPlayer..event_onVolumeChange)) during setup.<br />
 
 Example:
 
@@ -430,7 +430,7 @@ These errors are not limited to specific error codes. Defined as "Startup Error"
 
 In addition to `data.code` and `data.message` the event object of a startup error event provides more detailed information about the loading and startup phase.
 ```js
-// The playback object includes the current playback stats as the error occured.
+// The playback object includes the current playback stats as the error occurred.
 data.playback = {
     bufferDelayCurrent: 'number', // seconds, always
     bitrateCurrent:     'number', // milliseconds, always
@@ -452,7 +452,7 @@ data.state  = {
 
 ### Event Object Examples
 
-* 2003 error occured after loading timeout fired. There was no media data received but the connection was healty.
+* 2003 error occurred after loading timeout fired. There was no media data received but the connection was healty.
 
 ``` javascript
 {
@@ -477,7 +477,7 @@ data.state  = {
 }
 ```
 
-* 1005 error occured immediately before playing. Media has already received and start buffer was reached.
+* 1005 error occurred immediately before playing. Media has already received and start buffer was reached.
 
 ``` javascript
 {
@@ -505,7 +505,7 @@ data.state  = {
 }
 ```
 
-* 3100 error occured after a successful playback start but within the first 30 seconds of playback. Every timestamp is present.
+* 3100 error occurred after a successful playback start but within the first 30 seconds of playback. Every timestamp is present.
 
 ``` javascript
 {

@@ -522,7 +522,7 @@ Please note that it is disabled by default, so you have full control over its ac
 The unused option `config.source.options.switch.fastStart` has been deprecated.
 
 Furthermore we have improved the Adaptive Bitrate (ABR) initial switch-up behavior in case of degraded network conditions.
-In addition, a layout issue that occured after exiting fullscreen mode in Safari 16.5 macOS has been fixed.
+In addition, a layout issue that occurred after exiting fullscreen mode in Safari 16.5 macOS has been fixed.
 
 ### **Changelog**
 
@@ -773,7 +773,7 @@ Also the visual switching behaviour on iOS has been improved to prevent a possib
 ### **Release Notes**
 
 This release is solving issues related to the center view player controls and the layout in fullscreen mode.
-Previously in case the bottom control bar was disabled, the center view player control did not trigger related actions. It occured after a resize of the player e.g. upon entering the fullscreen mode or mobile device rotation.
+Previously in case the bottom control bar was disabled, the center view player control did not trigger related actions. It occurred after a resize of the player e.g. upon entering the fullscreen mode or mobile device rotation.
 Furthermore a fullscreen layout issue has been resolved. Before, parts of the player were not being rendered inside of the display area under following circumstances: If CSS padding was set on the player div and the player's aspect ratio did not match the form factor of the screen.
 
 ### **Changelog**
@@ -1022,7 +1022,7 @@ The control bar didn't appear by tap in `PAUSED` state with `keepFrame` disabled
 ### **Release Notes**
 
 This version provides a fix htmlFor an error related to the player view.
-The issue occured in case of a rejected setup call or if
+The issue occurred in case of a rejected setup call or if
 the `config.playback` object was not defined in the configuration.
 The player view is enabled by default (`config.style.view=true`).
 
@@ -1152,7 +1152,7 @@ This version improves the compatibility of the player. The 'toLocaleTimeString' 
 
 ### **Release Notes**
 
-This version introduces a new error code. In case the media element fires an error event without a specifc error code the new player error code `3200` with the message `An unspecific media error occurred.` will be passed in the `onError` event. Furthermore a WebSocket prototype polyfill is removed completely. This finally solves a compatibility issue with connection handling with angular/zone.
+This version introduces a new error code. In case the media element fires an error event without a specific error code the new player error code `3200` with the message `An unspecific media error occurred.` will be passed in the `onError` event. Furthermore a WebSocket prototype polyfill is removed completely. This finally solves a compatibility issue with connection handling with angular/zone.
 
 ### **Changelog**
 
@@ -1800,7 +1800,7 @@ config.playback.timeouts = {
 
 ### **Release Notes**
 
-This version addresses an issue with the full screen functionality on iOS Safari. The player now can go full screen within nested iframes. NOTE: The iframe(s) must have the attribute 'allowFullScreen="allowfullscreen|true"]**' or just 'allowfullscreen'. Another issue adressed is the handling of stable playback after viewport lost on IE/Edge. Here the detection is improved to prevent misbehaviour in case of not related framedropping.
+This version addresses an issue with the full screen functionality on iOS Safari. The player now can go full screen within nested iframes. NOTE: The iframe(s) must have the attribute 'allowFullScreen="allowfullscreen|true"]**' or just 'allowfullscreen'. Another issue addressed is the handling of stable playback after viewport lost on IE/Edge. Here the detection is improved to prevent misbehaviour in case of not related framedropping.
 
 ### **Changelog**
 
@@ -2012,7 +2012,7 @@ In this version an issue with the loading icon is handled. The loading icon didn
 
 ### **Release Notes**
 
-One part of this release addresses the correct indication of an audio symbol in case of muted autoPlay or audio only. The second issue that is adressed handles the muted state on reset after an unsuccessful (denied) muted autoPlay (automuted) on iOS. The last improvement is related to the behaviour in case of multiple destroy calls.
+One part of this release addresses the correct indication of an audio symbol in case of muted autoPlay or audio only. The second issue that is addressed handles the muted state on reset after an unsuccessful (denied) muted autoPlay (automuted) on iOS. The last improvement is related to the behaviour in case of multiple destroy calls.
 
 ### **Changelog**
 
@@ -2646,7 +2646,7 @@ For the On-Premise setup this server values have to be replaced with the own ser
 
 ### BREAKING CHANGE
 
-The seperate configuration of the rtmp url htmlFor the fallback to flash player,
+The separate configuration of the rtmp url htmlFor the fallback to flash player,
 the source.rtmp object, has been removed. Instead the rtmp url and stream name
 from the source.h5live.rtmp object will be used in this case.
 

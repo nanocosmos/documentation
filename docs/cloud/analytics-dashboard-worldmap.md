@@ -17,7 +17,7 @@ If you have not created an account yet, you can [sign up](https://dashboard.nano
 The world map gives an overview where your customers are located and shows statistics per country.
 
 :::tip special case
-The USA (as a special case) are seperated in different regions, where each region counts individually.
+The USA (as a special case) are separated in different regions, where each region counts individually.
 :::
 
 You can choose from the following categories:
@@ -106,6 +106,6 @@ The following aggregated metrics provide more insight for different use cases re
 - the average and total latency from ingest to playout (ranked by highest latency)
 
 #### ABR
-- successfull profile switch count
+- successful profile switch count
 - playtime per device per profile
 - viewers per profile

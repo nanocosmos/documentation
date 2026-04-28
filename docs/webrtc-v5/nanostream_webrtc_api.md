@@ -921,7 +921,7 @@ When utilizing this API call, application developers are responsible for the ext
 
   - **Maintaining the provided framerate** is critical for end to end latency of the webcast.
   - **Tab throttling.** When the current tab gets out of focus, most browsers will enable tab throttling.
-    Timers, like `setInterval`, will be updated less frequently. You should check wether the tab left focus, and warn your users accordingly.
+    Timers, like `setInterval`, will be updated less frequently. You should check whether the tab left focus, and warn your users accordingly.
     E.g. with the DOM [visibilitychange event](https://developer.mozilla.org/en-US/docs/Web/API/Document/visibilitychange_event)
   - **Video dimensions (width & height)** must not change during a webcast.
   - Under certain circumstances the browsers encoder will **adapt the video resolution**, for example when **CPU overusage** is being detected.
@@ -1015,7 +1015,7 @@ SignOutSuccess event. The event is fired if sign out succeeded. Session is now d
 <a name="RtcUser+event_SignOutError"></a>
 
 ## "SignOutError"
-SignOutError event. The event is fired if an error occured. Session is destroyed in any case.
+SignOutError event. The event is fired if an error occurred. Session is destroyed in any case.
 
 **Kind**: event emitted by [<code>RtcUser</code>](#RtcUser)  
 **Typeof**: [<code>ErrorEvent</code>](#ErrorEvent)  
@@ -1092,7 +1092,7 @@ ReceivedDeviceList event. The event is fired if a list of connected input video 
 <a name="RtcUser+event_GetDevicesError"></a>
 
 ## "GetDevicesError"
-GetDevicesError event. The event is fired if an error occured while getting connected input video and audio devices.
+GetDevicesError event. The event is fired if an error occurred while getting connected input video and audio devices.
 
 **Kind**: event emitted by [<code>RtcUser</code>](#RtcUser)  
 **Typeof**: [<code>ErrorEvent</code>](#ErrorEvent)  
@@ -1176,17 +1176,17 @@ MuteDeviceError event. The event is fired if a video/audio device mute/unmute fa
     </tr><tr>
     <td>[error.userinfo.metadata.sessionId]</td><td><code>object</code></td><td><p>Session id (defined only if signed in).</p> </td>
     </tr><tr>
-    <td>[error.userinfo.metadata.isSignedIn]</td><td><code>object</code></td><td><p>Wether a session to the server was established successfully.</p> </td>
+    <td>[error.userinfo.metadata.isSignedIn]</td><td><code>object</code></td><td><p>Whether a session to the server was established successfully.</p> </td>
     </tr><tr>
     <td>[error.userinfo.metadata.server]</td><td><code>object</code></td><td><p>Server url (defined only if a connection to the server was made).</p> </td>
     </tr><tr>
     <td>[error.userinfo.metadata.streamname]</td><td><code>object</code></td><td><p>RTMP stream name (defined only if a broadcast was started).</p> </td>
     </tr><tr>
-    <td>[error.userinfo.metadata.hasAudio]</td><td><code>object</code></td><td><p>Wether the current stream has an audio track.</p> </td>
+    <td>[error.userinfo.metadata.hasAudio]</td><td><code>object</code></td><td><p>Whether the current stream has an audio track.</p> </td>
     </tr><tr>
-    <td>[error.userinfo.metadata.hasVideo]</td><td><code>object</code></td><td><p>Wether the current stream has an video track.</p> </td>
+    <td>[error.userinfo.metadata.hasVideo]</td><td><code>object</code></td><td><p>Whether the current stream has an video track.</p> </td>
     </tr><tr>
-    <td>[error.userinfo.metadata.isMobile]</td><td><code>object</code></td><td><p>Wether the current device is a mobile device.</p> </td>
+    <td>[error.userinfo.metadata.isMobile]</td><td><code>object</code></td><td><p>Whether the current device is a mobile device.</p> </td>
     </tr><tr>
     <td>[error.userinfo.metadata.browser]</td><td><code>object</code></td><td><p>Currently used browser.</p> </td>
     </tr><tr>
@@ -1591,7 +1591,7 @@ The possible client error codes in an ErrorEvent event.
  </tr><tr>
     <td>103000</td><td></td><td><p>The server could not initialize authentication.</p>  </td>
  </tr><tr>
-    <td>103001</td><td></td><td><p>Wrong authentification data. A valid token, or username and password is/are required.</p>  </td>
+    <td>103001</td><td></td><td><p>Wrong authentication data. A valid token, or username and password is/are required.</p>  </td>
  </tr><tr>
     <td>103002</td><td></td><td><p>Access to a feature is forbidden (features: &#39;webrtc&#39;).</p>  </td>
  </tr><tr>
@@ -1609,7 +1609,7 @@ The possible client error codes in an ErrorEvent event.
  </tr><tr>
     <td>106000-106999</td><td><code>SystemMonitorError</code></td><td><p>Server-side monitoring errors.</p>  </td>
  </tr><tr>
-    <td>106001</td><td></td><td><p>An error occured while retrieving system info.</p>  </td>
+    <td>106001</td><td></td><td><p>An error occurred while retrieving system info.</p>  </td>
  </tr><tr>
     <td>107000-107999</td><td><code>SessionError</code></td><td></td> 
     </tr><tr>
