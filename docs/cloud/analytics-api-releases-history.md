@@ -15,19 +15,19 @@ sidebar_label: History
 ## 2.32.0 - Webhook API & WebRTC v6 Support & H5Live Controller Update & JWT Misuse
 
 -  added API routes for alert manager / mimir API:
-   -  `/api/v2/alerting/config/webhook` (GET) -> get configured webhook receiver
-   -  `/api/v2/alerting/config/webhook/add` (POST) -> add new webhook receiver to config
-   -  `/api/v2/alerting/config/webhook/delete` (DELETE) -> delete webhook receiver from config
-   -  `/api/v2/alerting/config/webhook/replace` (PUT) -> overwrite webhook receiver config
+   -  `/v2/alerting/config/webhook` (GET) -> get configured webhook receiver
+   -  `/v2/alerting/config/webhook/add` (POST) -> add new webhook receiver to config
+   -  `/v2/alerting/config/webhook/delete` (DELETE) -> delete webhook receiver from config
+   -  `/v2/alerting/config/webhook/replace` (PUT) -> overwrite webhook receiver config
 
 -  added API routes for misuse detection via playback tokens:
 
-   -  `/api/v2/usage/token/playback/details` (GET) -> get playback token usage details
+   -  `/v2/usage/token/playback/details` (GET) -> get playback token usage details
 
 -  added API routes for h5live stop reasons & error codes:
 
-   -  `/api/v2/h5live/stopReasons/timeseries` (GET) -> get h5live stop reasons timeseries
-   -  `/api/v2/h5live/errorCodes/timeseries` (GET) -> get h5live error codes timeseries
+   -  `/v2/h5live/stopReasons/timeseries` (GET) -> get h5live stop reasons timeseries
+   -  `/v2/h5live/errorCodes/timeseries` (GET) -> get h5live error codes timeseries
 
 ## 2.31.5 - MoQ traffic
 
@@ -40,17 +40,17 @@ sidebar_label: History
 ## 2.30 - Alerts via Email Notification
 
 -  added API routes for alert manager:
-   -  `/api/v2/alerting/config/email` -> get all configured email receivers
-   -  `/api/v2/alerting/config/email/add` -> add new email receiver to config
-   -  `/api/v2/alerting/config/email/delete` -> delete email receiver from config
+   -  `/v2/alerting/config/email` -> get all configured email receivers
+   -  `/v2/alerting/config/email/add` -> add new email receiver to config
+   -  `/v2/alerting/config/email/delete` -> delete email receiver from config
 -  added max time offset (aka max frame delay) metric to troubleshooting ingest
 
 ## 2.29 - Alerting data adpation / Use protocol tags
 
 -  added API routes for successful playback start ratio (**SPSR**) to get TOP 100 for streams:
-   -  `/api/v2/playback/start/success/ratio/streams/top100` (ascending order)
-   -  `/api/v2/playback/start/errors/streams/top100` (descending order)
--  changed behavior of alerting API routes `/api/v2/alerting/ingest` / `/api/v2/alerting/ingest/custom`
+   -  `/v2/playback/start/success/ratio/streams/top100` (ascending order)
+   -  `/v2/playback/start/errors/streams/top100` (descending order)
+-  changed behavior of alerting API routes `/v2/alerting/ingest` / `/v2/alerting/ingest/custom`
    -  reduced detection time range from 15 to 5 minutes -> makes detection more responsive
    -  new fields:
       -  `alerts/advices -> name` => each single alert/advice now has a name like `DUPLICATED_INGEST`
@@ -68,42 +68,42 @@ sidebar_label: History
 ## 2.27 - Public world map API routes
 
 -  added **world map metric** routes to metrics API
-   -  **Playout/Ingest:** `/api/v2/world/playoutIngest`
-   -  **Buffering ratio:** `/api/v2/world/buffering/ratio`
-   -  **Latency:** `/api/v2/world/latency`
-   -  **Playtime:** `/api/v2/world/playtime`
-   -  **Usage:** `/api/v2/world/usage`
-   -  **ABR playtime:** `/api/v2/world/abr/playtime`
-   -  **ABR viewer:** `/api/v2/world/abr/viewer`
-   -  **ABR switches:** `/api/v2/world/abr/switches`
+   -  **Playout/Ingest:** `/v2/world/playoutIngest`
+   -  **Buffering ratio:** `/v2/world/buffering/ratio`
+   -  **Latency:** `/v2/world/latency`
+   -  **Playtime:** `/v2/world/playtime`
+   -  **Usage:** `/v2/world/usage`
+   -  **ABR playtime:** `/v2/world/abr/playtime`
+   -  **ABR viewer:** `/v2/world/abr/viewer`
+   -  **ABR switches:** `/v2/world/abr/switches`
 -  added API routes for **H5Live playtime broken down by browser/os**:
-   -  **browser:** `/api/v2/h5live/playtime/browser`
-   -  **os:** `/api/v2/h5live/playtime/os`
+   -  **browser:** `/v2/h5live/playtime/browser`
+   -  **os:** `/v2/h5live/playtime/os`
 
 ## 2.26 - Official successful playback start ratio API release
 
 added API routes for successful playback start ratio:
 
--  `/api/v2/playback/start/success/ratio/timeseries`
--  `/api/v2/playback/start/success/ratio/streams/timeseries`
--  `/api/v2/playback/start/success/ratio/tags/timeseries`
--  `/api/v2/playback/start/success/ratio/countries/timeseries`
--  `/api/v2/playback/start/success/ratio/world`
+-  `/v2/playback/start/success/ratio/timeseries`
+-  `/v2/playback/start/success/ratio/streams/timeseries`
+-  `/v2/playback/start/success/ratio/tags/timeseries`
+-  `/v2/playback/start/success/ratio/countries/timeseries`
+-  `/v2/playback/start/success/ratio/world`
 
--  `/api/v2/playback/start/success/ratio/{breakdownTerm}`
--  `/api/v2/playback/start/success/ratio/streams/{breakdownTerm}`
--  `/api/v2/playback/start/success/ratio/tags/{breakdownTerm}`
--  `/api/v2/playback/start/success/ratio/countries/{breakdownTerm}`
+-  `/v2/playback/start/success/ratio/{breakdownTerm}`
+-  `/v2/playback/start/success/ratio/streams/{breakdownTerm}`
+-  `/v2/playback/start/success/ratio/tags/{breakdownTerm}`
+-  `/v2/playback/start/success/ratio/countries/{breakdownTerm}`
 
--  `/api/v2/playback/start/errors`
--  `/api/v2/playback/start/errors/streams`
--  `/api/v2/playback/start/errors/tags`
--  `/api/v2/playback/start/errors/world`
+-  `/v2/playback/start/errors`
+-  `/v2/playback/start/errors/streams`
+-  `/v2/playback/start/errors/tags`
+-  `/v2/playback/start/errors/world`
 
--  `/api/v2/playback/start/errors/{breakdown}`
--  `/api/v2/playback/start/errors/streams/{breakdown}`
--  `/api/v2/playback/start/errors/tags/{breakdown}`
--  `/api/v2/playback/start/errors/countries/{breakdown}`
+-  `/v2/playback/start/errors/{breakdown}`
+-  `/v2/playback/start/errors/streams/{breakdown}`
+-  `/v2/playback/start/errors/tags/{breakdown}`
+-  `/v2/playback/start/errors/countries/{breakdown}`
 
 
 ## 2.25 - Successful playback start / failure service & SRT metrics monitoring API route
@@ -112,7 +112,7 @@ added API routes for successful playback start ratio:
 With the introduction of version 2.25 we made versioning of our API and the Analytics Dashboard independant from each other. This release contained no changes for the Analytics Dashboard service and as a consequence this service remains at version 2.24 for now.
 :::
 
--  added API route for SRT ingest metrics monitoring `/api/v2/monitoring/ingest/srt/timeseries`:
+-  added API route for SRT ingest metrics monitoring `/v2/monitoring/ingest/srt/timeseries`:
    -  bitrate (combined video/audio)
    -  round trip time
    -  packet lost
@@ -121,7 +121,7 @@ With the introduction of version 2.25 we made versioning of our API and the Anal
 ## 2.24 - Alerting service & Error response improvement
 
 -  added timestamp as a human readable date string (in addition to the existing UNIX seconds timestamp) to all API route responses containing a timestamp (property name: `timestampAsString`)
--  added additional fields to detected alerts/advices via `/api/v2/alerting/ingest/`:
+-  added additional fields to detected alerts/advices via `/v2/alerting/ingest/`:
    -  **id** : every alert/advice has now an unique id, that stays the same until the alert/advice will no longer be detected
    -  **firstDetection** : the minute the alert/advice has been detected for the first time
    -  **elapsedTime** : minute of the current detection cycle minus `firstDetection` timestamp in seconds
@@ -134,8 +134,8 @@ With the introduction of version 2.25 we made versioning of our API and the Anal
    -  **error.userInfo**: more specific details to the error
    -  **error.summary**: short summary of the error
 -  added API route for H5Live playback counts broken down by:
-   -  **browser** `/api/v2/h5live/views/browser`
-   -  **operation system** `/api/v2/h5live/views/os`
+   -  **browser** `/v2/h5live/views/browser`
+   -  **operation system** `/v2/h5live/views/os`
 
 ## 2.23 - CSV export
 
@@ -149,8 +149,8 @@ With the introduction of version 2.25 we made versioning of our API and the Anal
 ## 2.22 - Alerting service
 
 -  added route to request detected alerts
-   -  GET `/api/v2/alerting/ingest/`
-   -  POST `/api/v2/alerting/ingest/` (supports excluded streams / stream expected to be online detection)
+   -  GET `/v2/alerting/ingest/`
+   -  POST `/v2/alerting/ingest/` (supports excluded streams / stream expected to be online detection)
 -  added `stream time ratio` and `real-time framerate` metrics to troubleshooting ingest metrics
 
 ## 2.21 - JWT / API improvement / agg service extension
@@ -162,7 +162,7 @@ With the introduction of version 2.25 we made versioning of our API and the Anal
 
 ## 2.20.1 - new API routes part 2
 
--  new API route: `/api/v2/usage/hourly/bytes/timeseries`:
+-  new API route: `/v2/usage/hourly/bytes/timeseries`:
    -  time series of byte usage for playout and ingest traffic with a maximum temporal resolution of an hour
    -  no support for stream filtering
    -  start and end date have to point to a full hour e.g. 2021-01-14T15:00
@@ -173,19 +173,19 @@ With the introduction of version 2.25 we made versioning of our API and the Anal
 
 -  new API routes to request monitoring metrics
 
-   -  `/api/v2/monitoring/playout/bufferingRatio` (play buffering ratio)
-   -  `/api/v2/monitoring/playout/startuptime` (startup time)
-   -  `/api/v2/monitoring/playout/errorcode` (recent occurred error codes)
-   -  `/api/v2/monitoring/ingest/timeRatio/timeseries` (stream time ratio)
+   -  `/v2/monitoring/playout/bufferingRatio` (play buffering ratio)
+   -  `/v2/monitoring/playout/startuptime` (startup time)
+   -  `/v2/monitoring/playout/errorcode` (recent occurred error codes)
+   -  `/v2/monitoring/ingest/timeRatio/timeseries` (stream time ratio)
 
 -  new API routes to request bytes usage in timeseries
 
-   -  `/api/v2/usage/bytes/timeseries` (byte usage of playout/ingest in timeseries)
+   -  `/v2/usage/bytes/timeseries` (byte usage of playout/ingest in timeseries)
 
 -  new API routes to request to broken down bytes usage (supported break down metrics: "ip" "stream" "country" "city" "referrer")
 
-   -  `/api/v2/usage/{break down metric}/ingest/bytes` (breakdown of ingest bytes)
-   -  `/api/v2/usage/{break down metric}/playout/bytes` (breakdown of playout bytes)
+   -  `/v2/usage/{break down metric}/ingest/bytes` (breakdown of ingest bytes)
+   -  `/v2/usage/{break down metric}/playout/bytes` (breakdown of playout bytes)
 
 -  new API doc interface
 
@@ -313,7 +313,7 @@ With the introduction of version 2.25 we made versioning of our API and the Anal
 ## 2.11 - public API
 
 -  added direct API access: accounting data for last month can be queried
--  created API documentation: https://metrics.nanostream.cloud/api/doc/
+-  created API documentation: https://api.nanostream.cloud/docs/analytics/v2/
 
 ## 2.10 - troubleshooting
 

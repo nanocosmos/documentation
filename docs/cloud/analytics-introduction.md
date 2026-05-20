@@ -10,7 +10,7 @@ sidebar_label: nanoStream Analytics
 **nanoStream Analytics** offers a great way to monitor and analyze the performance and quality of service of your live streams.<br/>
 Get started today with either:
 - our dedicated **<a href="https://metrics.nanostream.cloud/">Analytics Dashboard</a>**, providing the most important metrics for a quick and easy start
-- and a corresponding **<a  href="https://metrics.nanostream.cloud/api/doc/v2/">API</a>** to get you covered with even more insights and full access of your streaming performances
+- and a corresponding **<a  href="https://api.nanostream.cloud/docs/analytics/v2/">API</a>** to get you covered with even more insights and full access of your streaming performances
 
 ![Screenshot: nanoStream Analytics Worldmap](../assets/analytics/analytics.png)
 *Screenshot: nanoStream Analytics Worldmap*

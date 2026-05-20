@@ -64,7 +64,7 @@ Insights of each entry can be viewed by left-clicking the row. This will open th
 
 ### Guardian - IP Breakdown
 
-When choosing to search based on **IPs**, a breakdown of this can be opened by selecting a row in the [guardian table](https://metrics.nanocosmos.de/streamguard?misTerm=ip).
+When choosing to search based on **IPs**, a breakdown of this can be opened by selecting a row in the [guardian table](https://metrics.nanostream.cloud/streamguard?misTerm=ip).
 
 ![Screenshot: Guardian - IP Breakdown](../assets/analytics/analytics-guardian-table-ip-details.png)
 *Screenshot: Guardian - IP Details*
@@ -85,7 +85,7 @@ When choosing to search based on **IPs**, a breakdown of this can be opened by s
 
 ### Guardian - Playback Token Breakdown
 
-When choosing to search based on **Playback Tokens**, a breakdown of this can be opened by selecting a row in the [guardian table](https://metrics.nanocosmos.de/streamguard?misTerm=jwtoken).
+When choosing to search based on **Playback Tokens**, a breakdown of this can be opened by selecting a row in the [guardian table](https://metrics.nanostream.cloud/streamguard?misTerm=jwtoken).
 
 ![Screenshot: Guardian - Playback Token Breakdown](../assets/analytics/analytics-guardian-table-token-details.png)
 *Screenshot: Guardian - Playback Token Details*
@@ -110,7 +110,7 @@ When choosing to search based on **Playback Tokens**, a breakdown of this can be
 
 ## IP & Referrer Blocking in Breakdown View
 
-Accessing IP and Referrer Blocking based on playout traffic analysis, can be done easily by taking a look inside the [**Breakdown View**](https://metrics.nanocosmos.de/breakdown). 
+Accessing IP and Referrer Blocking based on playout traffic analysis, can be done easily by taking a look inside the [**Breakdown View**](https://metrics.nanostream.cloud/breakdown). 
 
 ![Screenshot: Breakdown View](../assets/analytics/analytics-guardian-referrer.png)
 *Screenshot: IP/Referrer Blocking Breakdown View*

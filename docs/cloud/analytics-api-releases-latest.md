@@ -16,10 +16,10 @@ sidebar_label: Latest
 #### Added API routes for live caption usage
 
 -  added API routes for live captions analytics:
-   -  `/api/v2/captions/usage/stream/uptime` (GET) -> uptime usage breakdown by stream name with CSV export
-   -  `/api/v2/captions/usage/language/source` (GET) -> source language breakdown with CSV export
-   -  `/api/v2/captions/usage/language/target` (GET) -> target language breakdown with CSV export
-   -  `/api/v2/captions/usage/timeseries` (GET) -> uptime usage timeseries with CSV export
+   -  `/v2/captions/usage/stream/uptime` (GET) -> uptime usage breakdown by stream name with CSV export
+   -  `/v2/captions/usage/language/source` (GET) -> source language breakdown with CSV export
+   -  `/v2/captions/usage/language/target` (GET) -> target language breakdown with CSV export
+   -  `/v2/captions/usage/timeseries` (GET) -> uptime usage timeseries with CSV export
 
 #### Misuse Detection — MOQ Support
 
