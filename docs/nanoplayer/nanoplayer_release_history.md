@@ -191,6 +191,19 @@ Finally, we have cleaned up outdated and rarely used features. Flash player and 
   - remaining valid source configurations are `config.source.group` and `config.source.entries`
 - scaling modes `"resize"` and `"original"`
 
+## **[4.31.2]**
+
+### **Release Notes**
+
+This release focuses on stability improvements and fixes for iOS playback behavior and stream quality handling. The playback resume behavior after background suspension has been improved for MSE playback, fixing an issue where playback could get stuck when resuming in muted mode if the session was never unmuted, particularly on iOS 26.4. This release also fixes an issue with incorrect group.startQuality selection when the configured quality was not available in the active rendition set.
+
+### **Changelog**
+
+### Fixed
+
+- fixed an issue in MSE playback where playback could get stuck when resuming in muted mode if the session was never unmuted, after being suspended in background state, particularly on iOS 26.4
+- fixed incorrect group.startquality matching when the configured quality was not included in the available group renditions
+
 ## **[4.31.1]**
 
 ### **Release Notes**  
