@@ -10,21 +10,26 @@ sidebar_label: Latest
 
 ## For easy-to-use migration follow our [guide](https://docs.nanocosmos.net/docs/nanoplayer/nanoplayer_v5_migration_guide)
 
-## **[5.0.8]**
+## **[5.0.9]**
 
 ### **Release Notes**
 
-This release resolves an issue with growing memory allocation during MOQ playback if audio is remaining muted from playback start. The update is recommended for NanoPlayer 5.0.x users.
+This release focuses on stability improvements and fixes for iOS playback behavior and stream quality handling.
+The playback resume behavior after background suspension has been improved for MSE playback, fixing an issue where playback could get stuck when resuming in muted mode if the session was never unmuted, particularly on iOS 26.4.
+In addition, HLS playback in iOS WebViews has been improved to ensure fallback playback when MSE/MOQ playback is not possible.
+This release also fixes an issue with incorrect `group.startQuality` selection when the configured quality was not available in the active rendition set.
 
 ### **Changelog**
 
-### Fixed
+### **Fixed**
 
-- increasing memory allocation when MOQ playback is started and remains in muted state
+- fixed an issue in MSE playback where playback could get stuck when resuming in muted mode if the session was never unmuted, after being suspended in background state, particularly on iOS 26.4
+- ensured HLS playback in iOS WebViews as fallback when MSE/MOQ playback is not possible
+- fixed incorrect `group.startquality` matching when the configured quality was not included in the available group renditions
 
-### **Release Package 5.0.8**
+### **Release Package 5.0.9**
 
-- [5.0.8](https://files.nanocosmos.de/index.php/s/e2mZX2o8idR28Ey)
+- [5.0.9](https://files.nanocosmos.de/index.php/s/PCgA6oTnQnb4ake)
 - [latest 5.x](https://files.nanocosmos.de/index.php/s/y4e2axW7s8qEtJb)
 - [latest](https://files.nanocosmos.de/index.php/s/2tpCzgRjNEZDzeP)
 
