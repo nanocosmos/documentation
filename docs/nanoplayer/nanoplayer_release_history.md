@@ -23,9 +23,9 @@ This release also fixes an issue with incorrect `group.startQuality` selection w
 
 ### **Fixed**
 
-- fixed an issue in MSE playback where playback could get stuck when resuming in muted mode if the session was never unmuted, after being suspended in background state, particularly on iOS 26.4
+- issue in MSE playback where playback could get stuck when resuming in muted mode if the session was never unmuted, after being suspended in background state, particularly on iOS 26.4
 - ensured HLS playback in iOS WebViews as fallback when MSE/MOQ playback is not possible
-- fixed incorrect `group.startquality` matching when the configured quality was not included in the available group renditions
+- incorrect `group.startQuality` matching when the configured quality was not included in the available group renditions
 
 ## **[5.0.8]**
 
