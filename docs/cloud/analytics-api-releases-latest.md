@@ -18,12 +18,7 @@ sidebar_label: Latest
 
 -  **Analytics Dashboard:** `https://metrics.nanostream.cloud`
    - the domain has changed from `metrics.nanocosmos.de` to `https://metrics.nanostream.cloud`
-   - The old URLs (with `https://metrics.nanocosmos.de`) are still supported but are now deprecated
-
-#### Removal of `/api` Prefix
-
--  the `/api` prefix has been removed from all analytics API endpoint paths on the new base URL
-   -  example: `https://metrics.nanocosmos.de/api/v2/h5live/playtime/timeseries` is now `https://metrics-api.nanostream.cloud/v2/h5live/playtime/timeseries`
+   - the URL https://metrics.nanocosmos.de (using /api/v2 ...) is still support, but is now deprecated
 
 #### API Documentation
 
