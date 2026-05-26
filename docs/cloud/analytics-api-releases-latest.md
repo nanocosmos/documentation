@@ -7,18 +7,18 @@ sidebar_label: Latest
 
 # Changelog
 
-## 2.35.0 - Domain Migration & API Endpoint Update
+## 2.34.1 - Domain Migration & API Endpoint Update
 
 #### New Base URLs
 
--  **Analytics API:** `https://metrics-api.nanostream.cloud` (no `/api` prefix required)
+-  **Analytics API:** `https://metrics-api.nanostream.cloud` (without `/api` at the end)
 -  **Analytics Dashboard:** `https://metrics.nanostream.cloud`
 -  the old URLs are still supported but are now deprecated
 
 #### Removal of `/api` Prefix
 
--  the `/api` prefix has been removed from all analytics API endpoint paths
-   -  example: `/api/v2/h5live/playtime/timeseries` is now `/v2/h5live/playtime/timeseries`
+-  the `/api` prefix has been removed from all analytics API endpoint paths on the new base URL
+   -  example: `https://metrics.nanocosmos.de/api/v2/h5live/playtime/timeseries` is now `https://metrics-api.nanostream.cloud/v2/h5live/playtime/timeseries`
 
 #### API Documentation
 
