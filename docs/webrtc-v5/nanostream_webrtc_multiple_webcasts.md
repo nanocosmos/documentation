@@ -4,6 +4,16 @@ title: Multiple Webcasts
 sidebar_label: Multiple Webcasts
 ---
 
+:::danger deprecated version
+
+You're looking at the deprecated Webcaster Client API. If you're still on v5,
+learn more about features and changes [here](../webrtc/nanostream_webrtc_introduction.md).
+
+Follow this link If are ready to [migrate](../webrtc/migration_guide_v6) to the new API version 6.
+
+:::
+
+
 Multiple Webcasts can be started from a single browser tab. <br/>
 Use cases can be:
 - broadcast multiple camera (and/or microphone) streams at once

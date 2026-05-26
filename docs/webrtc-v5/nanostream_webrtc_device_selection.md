@@ -4,6 +4,16 @@ title: Device Selection
 sidebar_label: Device Selection
 ---
 
+
+:::danger deprecated version
+
+You're looking at the deprecated Webcaster Client API. If you're still on v5,
+learn more about features and changes [here](../webrtc/nanostream_webrtc_introduction.md).
+
+Follow this link If are ready to [migrate](../webrtc/migration_guide_v6) to the new API version 6.
+
+:::
+
 The Webcaster API gives you the possibility to present all currently attached audio and video devices to your users.
 The API call to requrest the device list is [getDevices()](./nanostream_webrtc_api#rtcusergetdevices).
 

@@ -4,6 +4,16 @@ title: Support
 sidebar_label: Support
 ---
 
+:::danger deprecated version
+
+You're looking at the deprecated Webcaster Client API. If you're still on v5,
+learn more about features and changes [here](../webrtc/nanostream_webrtc_introduction.md).
+
+Follow this link If are ready to [migrate](../webrtc/migration_guide_v6) to the new API version 6.
+
+:::
+
+
 ## Reporting bugs or issues 
 
 To report any bugs or issues, please send a complete issue report including the following:

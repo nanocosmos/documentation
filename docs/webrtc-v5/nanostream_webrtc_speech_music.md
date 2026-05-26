@@ -4,6 +4,15 @@ title: Speech / Music Streaming
 sidebar_label: Speech / Music Streaming
 ---
 
+:::danger deprecated version
+
+You're looking at the deprecated Webcaster Client API. If you're still on v5,
+learn more about features and changes [here](../webrtc/nanostream_webrtc_introduction.md).
+
+Follow this link If are ready to [migrate](../webrtc/migration_guide_v6) to the new API version 6.
+
+:::
+
 Since Webcaster version 5.8.0 additional audio preprocessing options are available.<br/>
 Additionally to configuring bitrates ([Features > Quality Settings](./nanostream_webrtc_quality/)),
 it is from now on possible to disable or enable the following filters explicitly:

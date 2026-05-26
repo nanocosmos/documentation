@@ -4,6 +4,15 @@ title: Screen Sharing
 sidebar_label: Screen Sharing
 ---
 
+:::danger deprecated version
+
+You're looking at the deprecated Webcaster Client API. If you're still on v5,
+learn more about features and changes [here](../webrtc/nanostream_webrtc_introduction.md).
+
+Follow this link If are ready to [migrate](../webrtc/migration_guide_v6) to the new API version 6.
+
+:::
+
 The nanoStream Webcaster supports screen sharing!
 
 Instead of a web camera you can use a screen or a window, depending on the browser used, as a live video source.

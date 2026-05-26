@@ -4,7 +4,7 @@ title: Introduction
 sidebar_label: Introduction
 ---
 
-:::warning deprecated version
+:::danger deprecated version
 
 You're looking at the deprecated Webcaster Client API. If you're still on v5,
 learn more about features and changes [here](../webrtc/nanostream_webrtc_introduction.md).
