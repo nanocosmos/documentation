@@ -17,8 +17,10 @@ sidebar_label: Latest
    -  example: `https://metrics.nanocosmos.de/api/v2/h5live/playtime/timeseries` is now `https://metrics-api.nanostream.cloud/v2/h5live/playtime/timeseries`
 
 -  **Analytics Dashboard:** `https://metrics.nanostream.cloud`
-   - the domain has changed from `metrics.nanocosmos.de` to `https://metrics.nanostream.cloud`
-   - the URL `https://metrics.nanocosmos.de` (using /api/v2 ...) is still support, but is now deprecated
+   -  the domain has changed from `metrics.nanocosmos.de` to `metrics.nanostream.cloud`
+
+-  **Support for `https://metrics.nanocosmos.de`**
+   -  the URL `https://metrics.nanocosmos.de` (using `/api/v2/...`) is still supported, but is now deprecated
 
 #### API Documentation
 
