@@ -4,6 +4,15 @@ title: Automatic Reconnection
 sidebar_label: Automatic Reconnection
 ---
 
+:::danger deprecated version
+
+You're looking at the deprecated Webcaster Client API. If you're still on v5,
+learn more about features and changes [here](../webrtc/nanostream_webrtc_introduction.md).
+
+Follow this link If are ready to [migrate](../webrtc/migration_guide_v6) to the new API version 6.
+
+:::
+
 This feature allows configuration of the reconnection behaviour on API level.
 Once the webcaster will register any connection loss, it will attempt to reconnect the current webcast.
 

@@ -4,6 +4,16 @@ title: Secure ingest with Webcaster
 sidebar_label: Secure ingest with Webcaster
 ---
 
+
+:::danger deprecated version
+
+You're looking at the deprecated Webcaster Client API. If you're still on v5,
+learn more about features and changes [here](../webrtc/nanostream_webrtc_introduction.md).
+
+Follow this link If are ready to [migrate](../webrtc/migration_guide_v6) to the new API version 6.
+
+:::
+
 We enable secure ingest with the Webcaster by using **JWT (JSON Web Token)**.
 
 ## What is JWT?

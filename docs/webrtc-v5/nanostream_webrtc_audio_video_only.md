@@ -4,6 +4,15 @@ title: Audio- / Video-Only
 sidebar_label: Audio- / Video-Only
 ---
 
+:::danger deprecated version
+
+You're looking at the deprecated Webcaster Client API. If you're still on v5,
+learn more about features and changes [here](../webrtc/nanostream_webrtc_introduction.md).
+
+Follow this link If are ready to [migrate](../webrtc/migration_guide_v6) to the new API version 6.
+
+:::
+
 In addition to regular streaming, with the nanoStream Webcaster you can stream Audio-Only and Video-Only.<br/>
 
 Audio-Only or Video-Only streaming is enabled by setting video or audio device to `false` in the configuration object passed to [startPreview(config)](./nanostream_webrtc_api#rtcuserstartpreviewconfig).<br/>

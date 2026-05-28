@@ -4,6 +4,15 @@ title: External Streams / Mixing
 sidebar_label: External Streams / Mixing
 ---
 
+:::danger deprecated version
+
+You're looking at the deprecated Webcaster Client API. If you're still on v5,
+learn more about features and changes [here](../webrtc/nanostream_webrtc_introduction.md).
+
+Follow this link If are ready to [migrate](../webrtc/migration_guide_v6) to the new API version 6.
+
+:::
+
 Since Webcaster version 5.11.0 you can use sources based on HTML5 canvas or other stream sources to enable user-generated live sources, separate to live camera or device screens.
 
 To use this feature, a new API call was added, [setMediaStream()](./nanostream_webrtc_api#rtcusersetmediastreamconfig).
