@@ -7,20 +7,23 @@ sidebar_label: Latest
 
 # Changelog
 
-## 2.34.0 - Live Captions & Inactive Ingest Alerts
+## 2.34.2 - Domain Migration & API Endpoint Update
 
-#### ABR switches
+#### New Base URLs
 
--  API route for worldmap's ABR switches metric now reports breakdown by correct quality levels
+-  **Analytics API:** `https://metrics-api.nanostream.cloud` (without `/api` at the end)
+   -  the domain has changed from `metrics.nanocosmos.de` to `metrics-api.nanostream.cloud`
+   -  all endpoint paths now start directly with `/v2/` instead of `/api/v2/`
+   -  example: `https://metrics.nanocosmos.de/api/v2/h5live/playtime/timeseries` is now `https://metrics-api.nanostream.cloud/v2/h5live/playtime/timeseries`
 
-#### Added API routes for live caption usage
+-  **Analytics Dashboard:** `https://metrics.nanostream.cloud`
+   -  the domain has changed from `metrics.nanocosmos.de` to `metrics.nanostream.cloud`
 
--  added API routes for live captions analytics:
-   -  `/v2/captions/usage/stream/uptime` (GET) -> uptime usage breakdown by stream name with CSV export
-   -  `/v2/captions/usage/language/source` (GET) -> source language breakdown with CSV export
-   -  `/v2/captions/usage/language/target` (GET) -> target language breakdown with CSV export
-   -  `/v2/captions/usage/timeseries` (GET) -> uptime usage timeseries with CSV export
+-  **Support for `https://metrics.nanocosmos.de`**
+   -  the URL `https://metrics.nanocosmos.de` (using `/api/v2/...`) is still supported, but is now deprecated
 
-#### Misuse Detection — MOQ Support
+#### API Documentation
 
--  added MOQ protocol support to IP misuse and JWT misuse detection controllers
+-  API documentation is now available at: `https://api.nanostream.cloud/docs/analytics/v2/`
+-  the previous URL `https://metrics.nanocosmos.de/api/doc/v2/` redirects to the new location
+
